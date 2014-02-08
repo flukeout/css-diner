@@ -1,6 +1,8 @@
 $(document).ready(function(){
   $("input").focus();
 
+  $(".markup").text($(".table").html());
+
   $("input").on("keypress",function(e){
     if(e.keyCode ==  13){
       var rule = $(this).val();
@@ -14,6 +16,8 @@ $(document).ready(function(){
     }
   })
 
+
+  //Add tooltips
   $(".table *").mouseover(function(e){
     $(".hovered").removeClass("hovered");
     e.stopPropagation();
@@ -24,7 +28,13 @@ $(document).ready(function(){
     helper.css("left",pos.left + ($(this).width()/2));
     console.log(pos.left,pos.top);
     el.attr("data-hovered",true);
-    var helpertext ='class="'+el.attr("class")+'"';
+
+    var helpertext = 'class="' + el.attr("class") + '"';
+
+    var id = el.attr("id");
+    if(id) {
+      helpertext = helpertext + ' id="' + id + '"';
+    }
 
     helper.show();
     helper.html(helpertext);
