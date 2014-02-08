@@ -6,7 +6,8 @@
 
 body {
   background: black;
-  -webkit-perspective: 800;
+  -webkit-perspective: 800px;
+  perspective: 800px;
   position: relative;
   padding-top: 40px;
 }
@@ -46,10 +47,15 @@ h1, h2, h3, h4, h5 {
   background: #dd992d;
   border-bottom: solid 10px #ac741c;
   -webkit-transform: rotateX(20deg);
+  -moz-transform: rotateX(20deg);
+  transform-style: preserve-3d;
+  transform: rotateX(20deg);
+  perspective: 800;
 }
 
 .bento,.plate,.serving,.apple,.pickle,.orange {
   -webkit-transition:  -webkit-transform ease-out .2s;
+  -moz-transition:  -moz-transform ease-out .2s;
 }
 
 .bento,.plate {
@@ -66,6 +72,7 @@ h1, h2, h3, h4, h5 {
   border-bottom: solid 5px #DDD;
   background: white;
   -webkit-border-radius: 100px;
+  border-radius: 100px;
   position: relative;
 }
 
@@ -82,6 +89,7 @@ h1, h2, h3, h4, h5 {
 
 .clean {
   -webkit-transform: translateY(-400px) rotate(800deg);
+  -moz-transform: translateY(-400px) rotate(800deg);
   opacity: .5;
 }
 
@@ -118,7 +126,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .apple,.pickle,.orange {
-
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   opacity: 1;
 }
@@ -135,6 +142,7 @@ h1, h2, h3, h4, h5 {
   height: 50px;
   width: 50px;
   -webkit-border-radius: 50px;
+  border-radius: 50px;
   border-style: solid;
   border-width: 2px 4px 15px 4px;
 }
@@ -150,6 +158,7 @@ h1, h2, h3, h4, h5 {
   background: #179837;
   height: 50px;
   width: 20px;
+  border-radius: 30px;
   -webkit-border-radius: 30px;
   position: absolute;
   border: solid 2px #025a18;
@@ -223,14 +232,13 @@ h1, h2, h3, h4, h5 {
   background: white;
   padding: 10px 15px 12px 15px;
   z-index: 1000;
-  font-size: 15px;
+  font-size: 18px;
+  color: #666;
   border-bottom: solid 2px #BBB;
-
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   display: none;
   -webkit-transform: rotateX(20deg);
 }
-
 
 .markup {
   color: #999;
