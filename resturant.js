@@ -10,8 +10,33 @@ $(document).ready(function(){
       if(rule){
        fireRule(rule);
       }
+      return false;
     }
   })
+
+  $(".table *").mouseover(function(e){
+    $(".hovered").removeClass("hovered");
+    e.stopPropagation();
+    var helper = $(".helper");
+    el = $(this);
+    var pos = $(this).offset();
+    helper.css("top",pos.top - 65);
+    helper.css("left",pos.left + ($(this).width()/2));
+    console.log(pos.left,pos.top);
+    el.attr("data-hovered",true);
+    var helpertext ='class="'+el.attr("class")+'"';
+
+    helper.show();
+    helper.html(helpertext);
+
+  });
+
+  $(".table *").mouseout(function(e){
+    $("[data-hovered]").removeAttr("data-hovered");
+    $(".helper").hide();z
+    e.stopPropagation();
+  });
+
 
   loadLevel();
 
@@ -22,10 +47,9 @@ var currentLevel = 0;
 var levelTimeout = 1000;
 
 function resetTable(){
-  console.log("reset table");
-  $("*").removeClass("clean");
+  $(".clean").removeClass("clean");
   $(".strobe").removeClass("strobe");
-  $("*").each(function(){
+  $(".table *").each(function(){
     $(this).width($(this).width());
   });
 }
@@ -53,7 +77,8 @@ function fireRule(rule) {
   if(win){
     ruleSelected.addClass("clean");
     $(".result").text("Good job!");
-    $("input").val("").css("opacity",.2);
+    $("input").val("");
+    $(".input-wrapper").css("opacity",.2);
     window.setTimeout(function(){
       currentLevel++;
       loadLevel();
@@ -86,12 +111,17 @@ function loadLevel(){
 
   resetTable();
 
-  $("input").css("opacity",1);
+  $(".input-wrapper").css("opacity",1);
   $(".result").text("");
 
   level = levels[currentLevel];
   $(".table " + level.selector).addClass("strobe");
-  $(".level-header").text("Level " + (currentLevel+1));
+
+  window.setTimeout(function(){
+    $(".strobe").removeClass("strobe");
+  },1000);
+
+  $(".level-header").text("Level " + (currentLevel+1) + "/" + levels.length);
   $(".order").text(level.doThis);
   $("input").val("").focus();
 }

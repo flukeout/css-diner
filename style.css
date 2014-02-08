@@ -19,26 +19,6 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
 }
 
-.serving:before {
-  content: '.fuck';
-  position: absolute;
-  padding: 15px;
-  width: 100px;
-  background: white;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -62px;
-  margin-bottom: 10px;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.serving:hover:before {
-  opacity: 1;
-}
-
-
-
 .level-header {
   text-align: center;
   color: #DDD;
@@ -60,7 +40,7 @@ h1, h2, h3, h4, h5 {
   margin: 15px auto 30px auto;
   background: #DDD;
   padding: 20px;
-  width: 900px;
+  width: 800px;
   display: block;
   text-align: center;
   background: #dd992d;
@@ -69,19 +49,25 @@ h1, h2, h3, h4, h5 {
 }
 
 
+.bento,.plate,.serving,.apple,.pickle,.orange {
+  -webkit-transition:  -webkit-transform linear .2s;
+}
+
 .bento,.plate {
   box-shadow: 0px 8px 0px rgba(0,0,0,.1);
+
 }
+
+
 
 .plate {
   display: inline-block;
-  width: 115px;
-  height: 115px;
+  width: 100px;
+  height: 100px;
   margin: 0 10px;
   border-bottom: solid 5px #DDD;
   background: white;
   -webkit-border-radius: 100px;
-  -webkit-transition: all linear .2s;
   position: relative;
 }
 
@@ -91,7 +77,6 @@ h1, h2, h3, h4, h5 {
   height: 100px;
   margin: 0 10px;
   background: brown;
-  -webkit-transition: all linear .2s;
   position: relative;
   border: solid 3px #711c12;
   border-width: 10px 2px;
@@ -107,6 +92,8 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   height: 80px;
   margin-top: 5px;
+  color: #777;
+  font-size: 25px;
 }
 
 .input-wrapper input {
@@ -115,7 +102,7 @@ h1, h2, h3, h4, h5 {
   padding: 16px;
   width: 500px;
   color: #444;
-  /* border-radius: 3px; */
+  margin-left: 5px;
   border: 8px solid #333;
 }
 
@@ -133,11 +120,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .apple,.pickle,.orange {
-  -webkit-transition: linear all .2s;
+
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   opacity: 1;
 }
-
 
 .apple {
   background: #e41919;
@@ -146,9 +132,9 @@ h1, h2, h3, h4, h5 {
 
 .orange, .apple {
   position: absolute;
-  top: calc(50% - 27px);
-  left: calc(50% - 27px);
-  height: 40px;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  height: 50px;
   width: 50px;
   -webkit-border-radius: 50px;
   border-style: solid;
@@ -161,6 +147,7 @@ h1, h2, h3, h4, h5 {
 }
 
 
+
 .pickle {
   background: #179837;
   height: 50px;
@@ -169,8 +156,8 @@ h1, h2, h3, h4, h5 {
   position: absolute;
   border: solid 2px #025a18;
   border-width: 2px 2px 7px 2px;
-  top: 18px;
-  left: 40px;
+  top: calc(50% - 25px);
+  left: calc(50% - 10px);
 }
 
 .shake {
@@ -183,7 +170,6 @@ h1, h2, h3, h4, h5 {
   50% {  -webkit-transform: translateX(0); }
   75% {  -webkit-transform: translateX(5px); }
 }
-
 
 
 .strobe {
@@ -207,6 +193,7 @@ h1, h2, h3, h4, h5 {
   margin-left: 10px;
   position: relative;
   top: -14px;
+  font-size: 16px;
 }
 
 .enterhit {
@@ -219,9 +206,30 @@ h1, h2, h3, h4, h5 {
   100% {  }
 }
 
-
 .plus {
   color: #666;
   padding: 0px 5px 0 15px;
   font-size: 40px;
 }
+
+[data-hovered="true"] {
+  outline: rgba(255,255,255,.3) 5px solid;
+}
+
+.plate [data-hovered="true"] {
+  outline: rgba(0,0,0,.2) 5px solid;
+}
+
+.helper {
+  position: absolute;
+  background: white;
+  padding: 10px 15px 12px 15px;
+  z-index: 1000;
+  font-size: 15px;
+  border-bottom: solid 2px #BBB;
+
+  box-shadow: 0px 5px 0px rgba(0,0,0,.2);
+  display: none;
+  -webkit-transform: rotateX(20deg);
+}
+
