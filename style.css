@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5 {
 /*  -webkit-transform-style: preserve-3d;*/
 /*  transform-style: preserve-3d;*/
   -webkit-transform: rotateX(20deg) translate3d(0,0,0);
-
+ transform: rotateX(20deg) translate3d(0,0,0);
 }
 
 .table {
@@ -262,10 +262,9 @@ pickle,
   75% {  transform: translateX(5px); }
 }
 
-
-
 .strobe {
   -webkit-animation: strobe .2s 5;
+  animation: strobe .2s 5;
 }
 
 @-webkit-keyframes strobe {
@@ -273,6 +272,14 @@ pickle,
   50%   {  opacity:.6;}
   100%  {  opacity: 1;}
 }
+
+@keyframes strobe {
+  0%    {  opacity: 1;}
+  50%   {  opacity:.6;}
+  100%  {  opacity: 1;}
+}
+
+
 
 .enter-button {
   background: #ddd;
