@@ -4,13 +4,22 @@
   -moz-box-sizing: border-box;
 }
 
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  -webkit-transform: translate3d(0,0,0);
+  position: absolute;
   -webkit-perspective: 800px;
   perspective: 800px;
   position: relative;
-  padding-top: 10px;
+  padding-top: 0px;
   text-align: center;
   background: #2e2a23;
+  height: 100%;
 }
 
 body * {
@@ -39,9 +48,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .table-wrapper {
-  margin-top: 20px;
-/*  -webkit-transform-style: preserve-3d;*/
-/*  transform-style: preserve-3d;*/
+  margin-top: 10px;
   -webkit-transform: rotateX(20deg) translate3d(0,0,0);
  transform: rotateX(20deg) translate3d(0,0,0);
 }
@@ -66,7 +73,7 @@ h1, h2, h3, h4, h5 {
   transform: rotateX(-40deg);
   -webkit-transform: rotateX(-40deg);
   position: relative;
-  top: -5px;
+  top: -9px;
   margin: 0 auto;
 
 
@@ -84,7 +91,7 @@ bento, plate {
   display: inline-block;
   width: 100px;
   height: 100px;
-  margin: 0 5px;
+  margin: 0 10px;
   position: relative;
 }
 
@@ -128,7 +135,7 @@ bento:before {
   font-size: 25px;
   display: inline-block;
   position: relative;
-  left: -30px;
+  left: -45px;
 }
 
 .input-wrapper input {
@@ -203,7 +210,6 @@ orange:before,apple:before {
   top: 0px;
   left: calc(50% - 15%);
   border-radius: 100px;
-  opacity: ;
 }
 
 /*FRUITS ON A PLATTER*/
@@ -263,14 +269,24 @@ pickle,
 }
 
 .strobe {
-  -webkit-animation: strobe .2s 5;
+  -webkit-animation: strobe 1s infinite;
+
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
   animation: strobe .2s 5;
 }
 
 @-webkit-keyframes strobe {
-  0%    {  opacity: 1;}
+    0% { -webkit-transform:   skew(4deg,0deg) scaleX(.95); }
+    10% { -webkit-transform:  skew(1deg,0deg) scaleY(.85) ; }
+    50% { -webkit-transform:  skew(-4deg,0deg) scaleX(.95); }
+    60% { -webkit-transform:  skew(-1deg,0deg) scaleY(.85) ; }
+    100% { -webkit-transform: skew(4deg,0deg) scaleX(.95); }
+
+/*  0%    {  opacity: 1;}
   50%   {  opacity:.6;}
   100%  {  opacity: 1;}
+*/
 }
 
 @keyframes strobe {
@@ -289,7 +305,6 @@ pickle,
   color: #666;
   border: solid 3px #999;
   border-width: 3px 3px 20px 3px;
-  margin-left: 10px;
   position: relative;
   top: -10px;
   font-size: 16px;
@@ -307,7 +322,7 @@ pickle,
 
 .plus {
   color: #666;
-  padding: 0px 5px 0 15px;
+  padding: 0px 4px;
   font-size: 40px;
 }
 
@@ -342,9 +357,14 @@ plate [data-hovered="true"],
 }
 
 .help {
-  margin-top: 10px;
+  margin-top: 2px;
   text-align: center;
   color: #666;
+  font-size: 15px;
+}
+
+.help strong {
+  color: #999;
 }
 
 .help a  {
@@ -387,33 +407,65 @@ orange {
 }
 
 .display-help {
-  background: #444;
-  display: inline-block;
+  display: block;
+  border-top: solid 5px #444;
   padding: 20px;
   font-size: 18px;
-  color: #666;
-  margin: 20px auto 0 auto;
+  margin: 30px auto 0 auto;
   color: #BBB;
   text-align: center;
+  overflow: hidden;
+  -webkit-transition: all linear .2s;
+  opacity: 0;
+}
+
+.display-help .title {
+  margin-bottom: 14px;
+  color: #CCC;
+  font-size: 24px;
 }
 
 .display-help .hint {
   margin-bottom: 20px;
+  color: #888;
+  line-height: 150%;
 }
 
 .display-help .hint strong {
   color: #DDD;
+  background: rgba(255,255,255,.1);
+  padding: 1px 8px 3px 8px;
+}
+
+.display-help .selector-wrapper {
+  font-size: 30px;
+  color: #777;
 }
 
 .display-help .selector {
-  background: white;
-  padding: 20px;
+  background: #DDD;
+  margin: 0 5px;
+  padding: 18px 24px 18px 24px;
   font-size: 30px;
   border: solid 1px #DDD;
   font-family: menlo, monospace;
   display: inline-block;
+  margin-top: 20px;
   color: #666;
+  position: relative;
 }
+
+.display-help .selector:before {
+  content: "Try";
+  color: #999;
+  position: absolute;
+  font-size: 16px;
+  font-weight: normal;
+  top: 16px;
+  left: -55px;
+  padding: 10px;
+}
+
 
 board {
   display: none;

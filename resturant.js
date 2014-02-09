@@ -43,8 +43,6 @@ $(document).ready(function(){
     }
 
     helpertext = helpertext + '> </' + elType + '>';
-
-
     helper.show();
     helper.text(helpertext);
 
@@ -85,9 +83,11 @@ function handleInput(text){
 
 //Shows help
 function showHelp() {
-  $(".display-help").show();
+  $(".display-help").css("opacity", "1");
+  var helpTitle = level.helpTitle || "";
   var help = level.help || "";
   var selector = level.selector || "";
+  $(".display-help .title").html(helpTitle);
   $(".display-help .hint").html(help);
   $(".display-help .selector").text(selector);
 }
@@ -127,7 +127,7 @@ function fireRule(rule) {
     $("input").val("");
     $(".input-wrapper").css("opacity",.2);
 
-    $(".display-help").hide();
+    // $(".display-help").hide();
     window.setTimeout(function(){
       currentLevel++;
       loadLevel();
@@ -189,19 +189,23 @@ function loadBoard(){
 //Loads up a level
 function loadLevel(){
 
-  console.log(currentLevel);
 
-  localStorage.setItem("currentLevel",currentLevel);
+
   level = levels[currentLevel];
+  localStorage.setItem("currentLevel",currentLevel);
 
   loadBoard();
   resetTable();
+
 
   $(".level-header").text("Level " + (currentLevel+1) + "/" + levels.length);
   $(".order").text(level.doThis);
   $("input").val("").focus();
 
-  $(".display-help").hide();
+  $(".display-help").css("opacity",0);
+
+
+
   $(".input-wrapper").css("opacity",1);
   $(".result").text("");
 
@@ -209,7 +213,7 @@ function loadLevel(){
   //Strobe what's supposed to be selected
   $(".table " + level.selector).addClass("strobe");
   window.setTimeout(function(){
-    $(".strobe").removeClass("strobe");
+    // $(".strobe").removeClass("strobe");
   },1000);
 
 }

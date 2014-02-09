@@ -14,25 +14,30 @@ var levels = [
   {
     doThis : "Clear the plates",
     selector : "plate",
-    help : "",
+    helpTitle : "Tag Name Selector",
+    help : "Use the tag name to get all elements of that type.<br/> Ex -> <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements.",
     board: "()()"
   },
   {
     doThis : "Clear the bentos",
     selector : "bento",
-    help : "",
+    helpTitle : "Tag Name Selector",
+    help : "Use the tag name to get all elements of that type.<br/> Ex -> <strong>span</strong> will select all <strong>&lt;span&gt;</strong> elements.",
     board: "[]()[]"
   },
   {
     doThis : "Clear the fancy plate",
     selector : "#fancy",
-    help : "",
+    helpTitle: "#id Selector",
+    help : 'Use the #id selector to get an element with that id. <br/> Ex -> <strong>#cool</strong> will select <strong>&lt;p id="cool" &gt;</strong>',
     board: "{)()[]"
   },
   {
     doThis : "Eat the apple on the plate",
+
     selector : "plate apple",
-    help : "",
+    helpTitle: "The Descendant Selector",
+    help : "Ex &rarr; <strong>A&nbsp;&nbsp;B</strong> will get all <strong>B</strong> that are inside of <strong>A</strong>.",
     board: "[](A)A"
   },
   {
@@ -51,7 +56,7 @@ var levels = [
     doThis : "Eat the small oranges",
     selector : "orange.small",
     help : "",
-    board: "Aa(o)(o)(o)"
+    board: "Aa[o](o)(o)"
   },
   {
     doThis : "Eat the small oranges in the bentos",
