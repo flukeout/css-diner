@@ -1,52 +1,79 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS Restaurant</title>
+    <title>CSS Diner</title>
     <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="levels.js" type="text/javascript" charset="utf-8"></script>
     <script src="resturant.js" type="text/javascript" charset="utf-8"></script>
     <link href='http://fonts.googleapis.com/css?family=Exo+2:400,600,400italic,600italic' rel='stylesheet' type='text/css'>
-
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
 
-
     <h1 class="level-header"></h1>
     <h2 class="order"></h2>
 
-    <pre class="markup">
-    </pre>
+    <pre class="markup"></pre>
 
-    <div class="table">
-      <div class="bento serving" />
-        <div class="apple"></div>
+    <div class="table-wrapper">
+      <div class="table"></div>
+      <div class="table-edge"></div>
       </div>
-      <div class="serving plate" /></div>
-      <div class="serving bento" />
-        <div class="pickle"></div>
-      </div>
-      <div class="serving bento" />
-        <div class="pickle"></div>
-      </div>
-      <div class="serving plate" id="fancy" />
-        <div class="orange"></div>
-      </div>
-      <div class="serving plate" />
-        <div class="apple"></div>
-      </div>
-    </div>
 
     <div class="input-wrapper">
       CSS Selector &rarr; <input type="text" /><span class="plus">+</span><div class="enter-button">enter</div>
     </div>
     <div class="help">
-      Type "help" or <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors">Read Up!</a> if you're stuck.
+      Type "help" if you're stuck!
     </div>
 
+    <div class="display-help">
+      <div class="hint"></div>
+      <div class="selector"></div>
+    </div>
 
     <div class="result"></div>
-
     <div class="helper"></div>
+
+    <board class="simple">
+      <bento></bento>
+      <bento>
+        <pickle></pickle>
+      </bento>
+      <bento>
+        <apple></apple>
+      </bento>
+        <orange></orange>
+        <pickle></pickle>
+        <apple></apple>
+      <plate id="fancy">
+        <orange></orange>
+      </plate>
+      <plate>
+        <apple></apple>
+      </plate>
+    </board>
+
+    <board class="standard">
+      <div class="serving bento" />
+      <div class="apple"></div>
+      </div>
+      <div class="serving plate" /></div>
+      <div class="serving bento" />
+        <div class="pickle"></div>
+      </div>
+      <div class="serving bento"/>
+        <div class="pickle big"></div>
+      </div>
+      <div class="orange"></div>
+      <div class="serving plate" id="fancy"/>
+        <div class="orange"></div>
+      </div>
+      <div class="serving plate" />
+        <div class="apple big"></div>
+      </div>
+    </board>
+
 
 
   </body>

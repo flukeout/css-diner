@@ -1,24 +1,23 @@
 $(document).ready(function(){
   $("input").focus();
 
-  $(".markup").text($(".table").html());
-
+  //Handle inputs from the input box on enter
   $("input").on("keypress",function(e){
+    e.stopPropagation();
     if(e.keyCode ==  13){
-      var rule = $(this).val();
+      var value = $(this).val();
       $(".enter-button").removeClass("enterhit");
       $(".enter-button").width($(".enter-button").width());
       $(".enter-button").addClass("enterhit");
-      if(rule){
-       fireRule(rule);
+      if(value){
+        handleInput(value);
       }
       return false;
     }
   })
 
-
   //Add tooltips
-  $(".table *").mouseover(function(e){
+  $(".table").on("mouseover","*",function(e){
     $(".hovered").removeClass("hovered");
     e.stopPropagation();
     var helper = $(".helper");
@@ -26,35 +25,73 @@ $(document).ready(function(){
     var pos = $(this).offset();
     helper.css("top",pos.top - 65);
     helper.css("left",pos.left + ($(this).width()/2));
-    console.log(pos.left,pos.top);
     el.attr("data-hovered",true);
 
-    var helpertext = 'class="' + el.attr("class") + '"';
+    var helpertext;
+
+    var elType = el.get(0).tagName;
+    elType = elType.toLowerCase();
+    helpertext = '<' + elType;
+
+    var elClass = el.attr("class");
+    if(elClass) {
+      helpertext = helpertext + ' class="' + el.attr("class") + '"';
+    }
 
     var id = el.attr("id");
     if(id) {
       helpertext = helpertext + ' id="' + id + '"';
     }
 
+    helpertext = helpertext + '> </' + elType + '>';
+
+
     helper.show();
-    helper.html(helpertext);
+    helper.text(helpertext);
 
   });
 
-  $(".table *").mouseout(function(e){
+  $(".table").on("mouseout","*",function(e){
     $("[data-hovered]").removeAttr("data-hovered");
-    $(".helper").hide();z
+    $(".helper").hide();
     e.stopPropagation();
   });
-
 
   loadLevel();
 
 });
 
 var level;
-var currentLevel = 0;
+var currentLevel = 3;
 var levelTimeout = 1000;
+
+
+//Parses text from the input field
+function handleInput(text){
+
+
+  console.log(parseInt(text),levels.length);
+  if(parseInt(text) > 0 && parseInt(text) < levels.length+1) {
+    currentLevel = parseInt(text) -1;
+    loadLevel();
+    return;
+  }
+
+  if(text == "help") {
+    showHelp();
+  } else {
+    fireRule(text);
+  }
+}
+
+//Shows help
+function showHelp() {
+  $(".display-help").show();
+  var help = level.help || "";
+  var selector = level.selector || "";
+  $(".display-help .hint").html(help);
+  $(".display-help .selector").text(selector);
+}
 
 function resetTable(){
   $(".clean").removeClass("clean");
@@ -66,10 +103,9 @@ function resetTable(){
 
 function fireRule(rule) {
 
-  console.log("fire " + rule);
-  $("*").removeClass("shake").removeClass("strobe");
+  $(".shake,.strobe").removeClass("shake").removeClass("strobe");
 
-  $("*").each(function(){
+  $(".strobe,.clean,.shake").each(function(){
     $(this).width($(this).width());
   })
 
@@ -89,15 +125,23 @@ function fireRule(rule) {
     $(".result").text("Good job!");
     $("input").val("");
     $(".input-wrapper").css("opacity",.2);
+
+    $(".display-help").hide();
     window.setTimeout(function(){
       currentLevel++;
       loadLevel();
     },levelTimeout);
   } else {
+
     continueRule();
     ruleSelected.addClass("shake");
+    window.setTimeout(function(){
+      $(".shake").removeClass("shake");
+    },500);
+
     $(".result").text("Wrong! Try again :D");
     $(".result").fadeOut();
+
   }
 
 }
@@ -117,14 +161,25 @@ function continueRule() {
   console.log(new Array(d++).join(decodeURIComponent('3%3D%3D%3DD ')));
 }
 
+
+//Loads up a level
 function loadLevel(){
 
   resetTable();
-
+  $(".display-help").hide();
   $(".input-wrapper").css("opacity",1);
   $(".result").text("");
 
   level = levels[currentLevel];
+
+  //Get the appropriate board
+  var boardType = level.board || "standard";
+  var boardClone = $("board." + boardType);
+  console.log(boardClone);
+  boardClone = boardClone.html();
+  $(".table").html(boardClone);
+
+  //Strobe what's supposed to be selected
   $(".table " + level.selector).addClass("strobe");
 
   window.setTimeout(function(){
@@ -135,58 +190,3 @@ function loadLevel(){
   $(".order").text(level.doThis);
   $("input").val("").focus();
 }
-
-// Hash the array and compare the arrays!
-
-var levels = [
-  {
-    doThis : "Eat the pickles!",
-    selector : ".pickle",
-  },
-  {
-    doThis : "Eat the apple on the plate!",
-    selector : ".plate .apple",
-  },
-
-  {
-    doThis : "Clean all the apples and pickles!",
-    selector : ".apple,.pickle",
-  },
-
-  {
-    doThis : "Every bento that has a plate on the left!",
-    selector : ".plate~.bento",
-  },
-  {
-    doThis : "Clean all the plates!",
-    selector : ".plate",
-  },
-  {
-    doThis : "Clean each plate that has a bento on the left",
-    selector : ".bento + .plate",
-  },
-  {
-    doThis : "Clean all the servings!",
-    selector : ".serving",
-  },
-  {
-    doThis : "Clean the 3rd serving!",
-    selector : ".serving:nth-child(3)",
-  },
-  {
-    doThis : "Clean the first serving!",
-    selector : ".serving:first-child",
-  },
-  {
-    doThis : "Clean the empty plate!",
-    selector : ".plate:empty",
-  },
-  {
-    doThis : "Clean the last serving!",
-    selector : ".plate:last-child",
-  },
-  {
-    doThis : "Clean the last serving!",
-    selector : ".serving:last-child",
-  }
-];

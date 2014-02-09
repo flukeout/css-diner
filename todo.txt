@@ -1,0 +1,25 @@
+- combine # and . selectors
+- combine .className.className selector
+- .plate:not(:empty)
+- figure out the table edge thing with preserve-3d, mkay.
+
+
+for first of type / last of type / only of type, what is the type? is it a tagtype? or a specified selector?
+
+
+Difficulty progression
+
+Easy
+
+Direct
+  el
+  .class
+  id
+  *
+
+
+Nesting
+  #id el   #fancy apple
+  el el    bento orange
+  .class el   dunno about this one
+  el .class   bento .big
