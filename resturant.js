@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  $("input").focus();
 
   //Handle inputs from the input box on enter
   $("input").on("keypress",function(e){
@@ -62,7 +61,8 @@ $(document).ready(function(){
 });
 
 var level;
-var currentLevel = 3;
+var currentLevel = parseInt(localStorage.currentLevel) || 0;
+
 var levelTimeout = 1000;
 
 
@@ -70,7 +70,6 @@ var levelTimeout = 1000;
 function handleInput(text){
 
 
-  console.log(parseInt(text),levels.length);
   if(parseInt(text) > 0 && parseInt(text) < levels.length+1) {
     currentLevel = parseInt(text) -1;
     loadLevel();
@@ -94,11 +93,13 @@ function showHelp() {
 }
 
 function resetTable(){
-  $(".clean").removeClass("clean");
-  $(".strobe").removeClass("strobe");
+  $(".clean,.strobe").removeClass("clean,strobe");
+
   $(".table *").each(function(){
     $(this).width($(this).width());
+    $(this).css("width","");
   });
+  $(".table-edge").width($(".table").outerWidth() + 10);
 }
 
 function fireRule(rule) {
@@ -162,31 +163,53 @@ function continueRule() {
 }
 
 
+function loadBoard(){
+
+  var boardString = level.board;
+  boardMarkup = "";
+  for(var i = 0;i < boardString.length;i++){
+    var c = boardString.charAt(i);
+    if(c == "A") { boardMarkup = boardMarkup + '<apple/>'}
+    if(c == "O") { boardMarkup = boardMarkup + '<orange/>'}
+    if(c == "P") { boardMarkup = boardMarkup + '<pickle/>'}
+    if(c == "a") { boardMarkup = boardMarkup + '<apple class="small" />'}
+    if(c == "o") { boardMarkup = boardMarkup + '<orange class="small" />'}
+    if(c == "p") { boardMarkup = boardMarkup + '<pickle class="small" />'}
+
+    if(c == "{") { boardMarkup = boardMarkup + '<plate id="fancy">'}
+    if(c == "(") { boardMarkup = boardMarkup + '<plate>'}
+    if(c == ")") { boardMarkup = boardMarkup + '</plate>'}
+    if(c == "[") { boardMarkup = boardMarkup + '<bento>'}
+    if(c == "]") { boardMarkup = boardMarkup + '</bento>'}
+  }
+  $(".table").html(boardMarkup);
+}
+
+
 //Loads up a level
 function loadLevel(){
 
-  resetTable();
-  $(".display-help").hide();
-  $(".input-wrapper").css("opacity",1);
-  $(".result").text("");
+  console.log(currentLevel);
 
+  localStorage.setItem("currentLevel",currentLevel);
   level = levels[currentLevel];
 
-  //Get the appropriate board
-  var boardType = level.board || "standard";
-  var boardClone = $("board." + boardType);
-  console.log(boardClone);
-  boardClone = boardClone.html();
-  $(".table").html(boardClone);
-
-  //Strobe what's supposed to be selected
-  $(".table " + level.selector).addClass("strobe");
-
-  window.setTimeout(function(){
-    $(".strobe").removeClass("strobe");
-  },1000);
+  loadBoard();
+  resetTable();
 
   $(".level-header").text("Level " + (currentLevel+1) + "/" + levels.length);
   $(".order").text(level.doThis);
   $("input").val("").focus();
+
+  $(".display-help").hide();
+  $(".input-wrapper").css("opacity",1);
+  $(".result").text("");
+
+
+  //Strobe what's supposed to be selected
+  $(".table " + level.selector).addClass("strobe");
+  window.setTimeout(function(){
+    $(".strobe").removeClass("strobe");
+  },1000);
+
 }

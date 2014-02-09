@@ -11,6 +11,8 @@ Difficulty progression
 
 Easy
 
+oa(a)p
+
 Direct
   el
   .class
