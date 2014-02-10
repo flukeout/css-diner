@@ -15,7 +15,7 @@ var levels = [
     doThis : "Select the plates",
     selector : "plate",
     helpTitle : "Tag Name Selector",
-    help : "Use the tag name to select elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
+    help : "Use the tag name to select all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
     board: "()()"
   },
   {
@@ -28,28 +28,28 @@ var levels = [
   {
     doThis : "Select the fancy plate",
     selector : "#fancy",
-    helpTitle: "#id Selector",
+    helpTitle: "ID Selector",
     help : 'Use the #id selector to select an element with that id. <br/> Ex &rarr; <strong>#cool</strong> will select <strong>&lt;p id="cool" &gt;</strong>',
     board: "{)()[]"
   },
   {
     doThis : "Select the apple on the plate",
     selector : "plate apple",
-    helpTitle: "The Descendant Selector",
+    helpTitle: "Descendant Selector",
     help : "You can use a selector to only look inside of certain elements. <br>Ex &rarr; <strong>A&nbsp;&nbsp;B</strong> will get all <strong>B</strong> that are inside of <strong>A</strong>",
     board: "[](A)A"
   },
   {
     doThis : "Select the pickle on the plate",
     selector : "#fancy pickle",
-    helpTitle: "The Descendant + Id Selector",
+    helpTitle: "Combine the Descendant Selector",
     help : 'You can use any selector inside of a descendent selector. <br> Ex &rarr; <strong>#cool&nbsp;&nbsp;A</strong> will get all <strong>A</strong> elements that are inside of the element with <strong>id="cool"</strong>',
     board: "[O]{P)(P)"
   },
   {
     doThis : "Select the small apples",
     selector : ".small",
-    helpTitle: "The Class Selector",
+    helpTitle: "Class Selector",
     help : 'Use .className to select all elements with that class.<br> Ex &rarr; <strong>.neato</strong> will get all elements with <strong>class="neato"</strong>',
     board: "Aa(a)()"
   },

@@ -279,7 +279,7 @@ function loadLevel(){
   loadBoard();
   resetTable();
 
-  $(".level-header").text("Level " + (currentLevel+1) + "/" + levels.length);
+  $(".level-header").text(".Level {" + (currentLevel+1) + "/" + levels.length + "}");
   $(".order").text(level.doThis);
   $("input").val("").focus();
 
