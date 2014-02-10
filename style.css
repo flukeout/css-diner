@@ -36,6 +36,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .table {
+  box-shadow: 0px 40px 10px rgba(0,0,0,.2);
+  -moz-box-shadow: 0px 40px 10px rgba(0,0,0,.2);
   -webkit-transform-style: preserve-3d;
   outline: solid 1px transparent;
   margin: 0px auto 0px auto;
@@ -127,7 +129,7 @@ bento:before {
 .input-wrapper {
   position: relative;
   display: inline-block;
-  margin: 60px 0 5px 0 ;
+  margin: 55px 0 5px 0 ;
 }
 
 .input-wrapper .input-header {
@@ -550,15 +552,36 @@ plate orange:last-child:not(:only-child) {
   color: rgba(255,255,255,.6);
   font-size: 45px;
   padding: 0;
-  margin: 0 0 50px 0;
+  margin: 0 0 40px 0;
   font-weight: 400;
-
-
-
 }
-
-
 
 .info-wrapper {
   display: none;
+}
+
+.what-is-this {
+  width: 350px;
+  margin-top: 35px;
+  display: inline-block;
+  color: #666;
+  font-size: 15px;
+  border-top: solid 2px #444;
+  font-weight: 200;
+}
+
+.what-is-this h2 {
+  font-weight: 200;
+  font-size: 20px;
+  color: #888;
+}
+
+.what-is-this a {
+  color: white;
+  opacity: .5;
+  text-decoration: none;
+}
+.what-is-this a:hover {
+  opacity: .7;
+
 }

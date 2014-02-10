@@ -65,7 +65,7 @@ var levels = [
     selector : "bento orange.small",
     helpTitle: "You've got the power!",
     help : 'You can do it!',
-    board: "A(o)[o][a][o]"
+    board: "A(o)[o][O][o]"
   },
   {
     doThis : "Select all the plates and bentos",
