@@ -84,6 +84,7 @@ function handleInput(text){
 //Shows help
 function showHelp() {
   $(".display-help").addClass("open-help");
+  $("input").val("");
   var helpTitle = level.helpTitle || "";
   var help = level.help || "";
   var selector = level.selector || "";
