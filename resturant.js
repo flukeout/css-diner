@@ -228,6 +228,7 @@ function loadBoard(){
 
     if(lastTag == "open" && thisTag == "open") {
       boardMarkup = boardMarkup + "\n";
+      indent++;
     }
 
     if(lastTag == "open" && thisTag == "single") {
@@ -236,6 +237,10 @@ function loadBoard(){
 
     if(lastTag == "open" && thisTag == "single") {
       indent++;
+    }
+
+    if(lastTag == "closed" && thisTag == "closed") {
+      indent--;
     }
 
     if(lastTag == "single" && thisTag == "closed") {
