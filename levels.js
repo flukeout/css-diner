@@ -15,14 +15,14 @@ var levels = [
     doThis : "Clear the plates",
     selector : "plate",
     helpTitle : "Tag Name Selector",
-    help : "Use the tag name to get all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
+    help : "Use the tag name to select elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
     board: "()()"
   },
   {
     doThis : "Clear the bentos",
     selector : "bento",
     helpTitle : "Tag Name Selector",
-    help : "Use the tag name to get all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
+    help : "Use the tag name to select all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
     board: "[]()[]"
   },
   {

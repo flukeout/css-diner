@@ -150,12 +150,12 @@ bento:before {
 .input-wrapper .input-header {
   font-size: 15px;
   position: absolute;
-  top: -20px;
+  top: -22px;
   background: #555;
   padding: 4px 0 6px 0;
   color: #DDD;
-  width: 120px;
-  left: calc(50% - 60px);
+  width: 140px;
+  left: calc(50% - 70px);
 }
 
 .input-wrapper input {
@@ -431,7 +431,7 @@ orange {
   background: rgba(255,255,255,.1);
   position: relative;
   -webkit-transition: all linear .1s;
-
+  transition: all linear .1s;
 }
 
 
