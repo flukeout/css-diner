@@ -14,14 +14,14 @@ var levels = [
   {
     doThis : "Select the plates",
     selector : "plate",
-    helpTitle : "Tag Name Selector",
+    helpTitle : "Type Selector",
     help : "Use the tag name to select all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
     board: "()()"
   },
   {
     doThis : "Select the bentos",
     selector : "bento",
-    helpTitle : "Tag Name Selector",
+    helpTitle : "Type Selector",
     help : "Use the tag name to select all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
     board: "[]()[]"
   },
@@ -77,7 +77,7 @@ var levels = [
   {
     doThis : "Select all the things!",
     selector : "*",
-    helpTitle: "The All Selector",
+    helpTitle: "The Universal Selector",
     help : 'You can select everything with the <strong>*</strong> selector! <br> You can also use &rarr; <strong>p *</strong> to select everything inside of all <strong>&lt;p&gt;</strong> tags.',
     board: "A(o)[][a][O]{)"
   },
@@ -87,5 +87,22 @@ var levels = [
     helpTitle: "The All Selector",
     help : 'You can select everything with the <strong>*</strong> selector! <br> You can also use &rarr; <strong>p *</strong> to select everything inside of all <strong>&lt;p&gt;</strong> tags.',
     board: "{o)(P)a(A)"
+  },
+  {
+    doThis : "Select every apple that directly follows a plate",
+    selector : "plate + apple",
+    helpTitle: "Adjacent Sibling Selector",
+    help : "You can select an elements next sibling element. <br>Ex &rarr; <strong>A + B</strong> will select every <strong>B</strong> that  directly follows an <strong>A</strong>",
+        board: "[a]()a()Aaa"
+  },
+  {
+    doThis : "Select every pickle to the right of the bento",
+    selector : "bento ~ pickle",
+    helpTitle: "General Sibling Selector",
+    help : "You can select all siblings that follow an element. <br>Ex &rarr; <strong>A ~ B</strong> will select all <strong>B</strong> that are follow an <strong>A</strong>",
+        board: "P[o]pP(P)(p)"
   }
+
+
+
 ];

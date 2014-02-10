@@ -8,6 +8,23 @@ el el.small
 el.small
 el,el
 *
+plate *     everything on a plate
+
+
+
+el > el  el is direct child
+
+
+
+
+el + el (immediately preceded)
+el ~ el (preceded by)
+
+:first-child
+:only-child
+:last-child
+
+
 
 
 - combine # and . selectors

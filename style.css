@@ -5,7 +5,7 @@
 }
 
 html,body {
-  height: 100%;
+
   margin: 0;
   padding: 0;
 }
@@ -216,7 +216,6 @@ pickle {
   border: solid 2px #025a18;
   border-width: 2px 2px 9px 2px;
   margin: 20px 10px;
-
 }
 
 
@@ -264,7 +263,12 @@ bento > pickle:only-child {
   z-index: 99999;
 }
 
-
+plate > pickle.small:only-child,
+bento > pickle.small:only-child {
+  top: calc(50% - 22px);
+  left: calc(50% - 8px);
+  z-index: 99999;
+}
 
 .shake {
   -webkit-animation: shake .1s 5;
@@ -494,7 +498,6 @@ plate orange:last-child:not(:only-child) {
   border-right: solid 1px rgba(255,255,255,.1);
   right: 0px;
   font-size: 16px;
-  width: 30%;
   position: absolute;
   display: inline-block;
   border-right: solid 1px rgba(255,255,255,.1);
@@ -502,6 +505,7 @@ plate orange:last-child:not(:only-child) {
   font-size: 12px;
   top: 0px;
   bottom: 0px;
+
   text-align: left;
   height: 100%;
   margin: 0;
@@ -556,6 +560,8 @@ plate orange:last-child:not(:only-child) {
   padding: 0;
   margin: 0 0 40px 0;
   font-weight: 400;
+  display: inline-block;
+  padding: 0 100px;
 }
 
 .info-wrapper {
