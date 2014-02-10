@@ -205,34 +205,79 @@ function loadBoard(){
 
   var boardString = level.board;
   boardMarkup = "";
+  var last = "";
+  var indent = 1;
+  var indentChars = "    " ;
+
+  var lastTag;
+  var thisTag;
+  var lastType;
+
   for(var i = 0;i < boardString.length;i++){
+
+
     var c = boardString.charAt(i);
-    if(c == "A") { boardMarkup = boardMarkup + '<apple/>'}
-    if(c == "O") { boardMarkup = boardMarkup + '<orange/>'}
-    if(c == "P") { boardMarkup = boardMarkup + '<pickle/>'}
-    if(c == "a") { boardMarkup = boardMarkup + '<apple class="small" />'}
-    if(c == "o") { boardMarkup = boardMarkup + '<orange class="small" />'}
-    if(c == "p") { boardMarkup = boardMarkup + '<pickle class="small" />'}
+
+    if(c == "(" || c == "[" || c == "{") {
+      thisTag = "open";
+    } else  if(c == ")" || c == "]" || c == "}") {
+      thisTag = "closed";
+    } else {
+      thisTag = "single";
+    }
+
+    if(lastTag == "open" && thisTag == "open") {
+      boardMarkup = boardMarkup + "\n";
+    }
+
+    if(lastTag == "open" && thisTag == "single") {
+      boardMarkup = boardMarkup + "\n";
+    }
+
+    if(lastTag == "open" && thisTag == "single") {
+      indent++;
+    }
+
+    if(lastTag == "single" && thisTag == "closed") {
+      indent--;
+    }
+
+    if(lastTag == "open" && thisTag == "closed") {
+    } else {
+      for(var j = 0; j < indent; j++){
+        boardMarkup = boardMarkup + indentChars;
+      }
+    }
+
+    if(c == "A") { boardMarkup = boardMarkup + '<apple/>\n'}
+    if(c == "O") { boardMarkup = boardMarkup + '<orange/>\n'}
+    if(c == "P") { boardMarkup = boardMarkup + '<pickle/>\n'}
+    if(c == "a") { boardMarkup = boardMarkup + '<apple class="small"/>\n'}
+    if(c == "o") { boardMarkup = boardMarkup + '<orange class="small"/>\n'}
+    if(c == "p") { boardMarkup = boardMarkup + '<pickle class="small"/>\n'}
+
     if(c == "{") { boardMarkup = boardMarkup + '<plate id="fancy">'}
     if(c == "(") { boardMarkup = boardMarkup + '<plate>'}
-    if(c == ")" || c == "}") { boardMarkup = boardMarkup + '</plate>'}
+    if(c == ")" || c == "}") { boardMarkup = boardMarkup + '</plate>\n'}
     if(c == "[") { boardMarkup = boardMarkup + '<bento>'}
-    if(c == "]") { boardMarkup = boardMarkup + '</bento>'}
+    if(c == "]") { boardMarkup = boardMarkup + '</bento>\n'}
+
+    lastTag = thisTag;
+
+    var last = c;
   }
   $(".table").html(boardMarkup);
-
+  console.log($(".table").html());
+  $(".markup").text('<div class="table">\n'+boardMarkup+ '</div>');
 }
 
 //Loads up a level
 function loadLevel(){
-
   level = levels[currentLevel];
-
   localStorage.setItem("currentLevel",currentLevel);
 
   loadBoard();
   resetTable();
-
 
   $(".level-header").text("Level " + (currentLevel+1) + "/" + levels.length);
   $(".order").text(level.doThis);

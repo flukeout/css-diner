@@ -12,12 +12,7 @@ html,body {
 
 body {
   position: absolute;
-  -webkit-perspective: 800px;
-  transform: translate3d(0,0,0);
-  perspective: 800px;
   position: relative;
-  padding-top: 10px;
-  text-align: center;
   background: #2e2a23;
   height: 100%;
 }
@@ -34,8 +29,9 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   color: #DDD;
   font-size: 27px;
-  margin: 15px 0 0 0;
-  padding: 0;
+  margin: 0px 0 0 0;
+
+  padding: 15px 0 0 0;
 }
 
 .order {
@@ -54,7 +50,6 @@ h1, h2, h3, h4, h5 {
   min-height: 142px;
   -webkit-transform-origin: bottom;
   transform-origin: bottom;
-
 }
 
 .table {
@@ -386,13 +381,6 @@ plate [data-hovered="true"] {
   outline: solid 1px transparent;
 }
 
-.markup {
-  color: #999;
-  margin: 0 auto;
-  width: 200px;
-  display: none;
-}
-
 .help {
   margin-top: 2px;
   text-align: center;
@@ -553,4 +541,46 @@ plate orange:first-child:not(:only-child) {
 plate orange:last-child:not(:only-child) {
   top: 25px;
   z-index: 20;
+}
+
+.markup-wrapper {
+  position: absolute;
+  display: inline-block;
+  border-left: solid 1px rgba(255,255,255,.1);
+  padding-left: 20px;
+  font-size: 12px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  text-align: left;
+  height: 100%;
+  margin: 0;
+  padding: 20px 0 20px 20px;
+  background: rgba(0,0,0,.1);
+  color: rgba(255,255,255,.3);
+}
+
+.markup-wrapper .title {
+  color: rgba(255,255,255,.7);
+  padding: 0;
+  margin: 0 0 15px 0;
+  font-weight:200;
+}
+
+.markup {
+  line-height: 175%;
+  margin-right: 75px;
+  font-family: menlo;
+  display: inline-block;
+  z-index: 1;
+}
+
+.game-wrapper {
+  display: inline-block;
+  -webkit-perspective: 300px;
+  transform: translate3d(0,0,0);
+  perspective: 300px;
+  width: calc(100% - 300px);
+  text-align: center;
+
 }
