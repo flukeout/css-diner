@@ -9,13 +9,15 @@ el.small
 el,el
 *
 plate *     everything on a plate
+plate + apple
+bento ~ pickle
+plate > apple
+
+
 
 
 
 el > el  el is direct child
-
-
-
 
 el + el (immediately preceded)
 el ~ el (preceded by)

@@ -117,6 +117,20 @@ bento {
   border-width: 20px 2px;
 }
 
+plate bento {
+  height: 74px;
+  width: 74px;
+  position: absolute;
+  top: -8px;
+  left:4px;
+
+}
+
+plate bento apple,
+plate bento orange {
+  top: -36px !important;
+}
+
 bento:before {
   content:"";
   position: absolute;
@@ -240,8 +254,11 @@ orange:before,apple:before {
 
 /*FRUITS ON A PLATTER*/
 
-plate > :only-child,
-bento > :only-child {
+plate > apple:only-child,
+plate > orange:only-child,
+bento > apple:only-child,
+bento > orange:only-child
+{
   position: absolute;
   top: calc(50% - 35px);
   left: calc(50% - 30px);
@@ -258,8 +275,7 @@ bento > .small:only-child {
 
 plate > pickle:only-child,
 bento > pickle:only-child {
-  top: calc(50% - 40px);
-  left: calc(50% - 12px);
+  top: calc(50% - 60px);
   z-index: 99999;
 }
 
@@ -478,20 +494,27 @@ board {
 
 /* Fancy orange stacking */
 
+plate apple:last-child:not(:only-child),
+plate orange:last-child:not(:only-child){
+  top: -80px;
+  z-index: 300;
+}
+
+plate apple:not(:only-child),
 plate orange:not(:only-child) {
-  top: -5px;
-  z-index: 500;
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  z-index: 100;
 }
 
-plate orange:first-child:not(:only-child) {
-  top: -35px;
-  z-index: 1000;
+plate apple:first-child:not(:only-child),
+plate orange:first-child:not(:only-child)
+{
+  top: 0px;
+  z-index: 100;
 }
 
-plate orange:last-child:not(:only-child) {
-  top: 25px;
-  z-index: 20;
-}
 
 
 .markup-wrapper {
@@ -533,9 +556,9 @@ plate orange:last-child:not(:only-child) {
 
 .game-wrapper {
   display: inline-block;
-  -webkit-perspective: 300px;
+  -webkit-perspective: 400px;
   transform: translate3d(0,0,0);
-  perspective: 300px;
+  perspective: 400px;
   text-align: center;
   position: relative;
   top: 15px;

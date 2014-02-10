@@ -100,9 +100,14 @@ var levels = [
     selector : "bento ~ pickle",
     helpTitle: "General Sibling Selector",
     help : "You can select all siblings that follow an element. <br>Ex &rarr; <strong>A ~ B</strong> will select all <strong>B</strong> that are follow an <strong>A</strong>",
-        board: "P[o]pP(P)(p)"
-  }
-
-
+    board: "P[o]pP(P)(p)"
+  },
+  {
+    doThis : "Select the apple directly on a plate",
+    selector : "plate > apple",
+    helpTitle: "Child Selector",
+    help : "You can select all siblings that are direct children of another element. <br>Ex &rarr; <strong>A > B</strong> will select all <strong>B</strong> that are a direct <strong>A</strong>",
+    board: "([A])(A)()Aa"
+  },
 
 ];
