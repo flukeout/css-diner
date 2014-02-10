@@ -8,13 +8,18 @@ html,body {
 
   margin: 0;
   padding: 0;
+
+  height: 100%;
 }
 
 body {
   position: absolute;
   position: relative;
   background: #2e2a23;
+  background-image: -webkit-radial-gradient(20% 40%,cover circle, #3e392f, #221e17);
+  background-image: -moz-radial-gradient(20% 40%,cover circle, #3e392f, #221e17);
   height: 100%;
+  padding-bottom: 50px;
 }
 
 body * {
