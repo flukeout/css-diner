@@ -110,6 +110,7 @@ function resetTable(){
     $(this).width($(this).width());
     $(this).removeAttr("style");
   });
+  console.log($('.table').outerWidth());
   $(".table-edge").width($(".table").outerWidth());
 }
 
@@ -127,11 +128,14 @@ function fireRule(rule) {
 
   var win = false;
 
+  //If nothing is selected
+  if(ruleSelected.length == 0) {
+    $(".input-wrapper").addClass("shake");
+  }
+
   if(ruleSelected.length == levelSelected.length && ruleSelected.length > 0){
     win = checkResults(ruleSelected,levelSelected);
   }
-
-  $(".result").show();
 
   if(win){
     ruleSelected.removeClass("strobe");
@@ -142,19 +146,15 @@ function fireRule(rule) {
     currentLevel++;
     if(currentLevel >= levels.length) {
       winGame();
-
       window.setTimeout(function(){
         currentLevel = 0;
         loadLevel();
       },levelTimeout);
-
-
     } else {
       window.setTimeout(function(){
         loadLevel();
       },levelTimeout);
     }
-
 
   } else {
 
