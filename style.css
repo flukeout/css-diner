@@ -33,12 +33,14 @@ h1, h2, h3, h4, h5 {
   min-height: 142px;
   -webkit-transform-origin: bottom;
   transform-origin: bottom;
+  -transform-style: preserve-3d;
 }
 
 .table {
   box-shadow: 0px 40px 10px rgba(0,0,0,.2);
   -moz-box-shadow: 0px 40px 10px rgba(0,0,0,.2);
   -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   outline: solid 1px transparent;
   margin: 0px auto 0px auto;
   background: #DDD;
@@ -81,13 +83,18 @@ h1, h2, h3, h4, h5 {
 }
 orange,apple,pickle,bento,plate{
   -webkit-transition:  -webkit-transform ease-out .2s;
-  transition:  -moz-transform ease-out .2s;
+  transition:  transform ease-out .2s;
 }
+
+.clean {
+  -webkit-transform: translateY(-600px);
+  transform: translateY(-600px) rotate3d(0,0,0,0deg);
+  opacity: .6;
+}
+
 
 bento, plate {
   box-shadow: 0px 8px 0px rgba(0,0,0,.1);
-  display: inline-block;
-  display: inline-block;
   display: inline-block;
   width: 100px;
   height: 100px;
@@ -120,11 +127,6 @@ bento:before {
   border-width: 10px 0 0 0px;
 }
 
-.clean {
-  -webkit-transform: translateY(-400px);
-  -moz-transform: translateY(-400px);
-  opacity: .5;
-}
 
 .input-wrapper {
   position: relative;
