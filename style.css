@@ -49,6 +49,7 @@ h1, h2, h3, h4, h5 {
 .table-wrapper {
   margin-top: 20px;
   -webkit-transform: rotateX(20deg);
+  transform: rotateX(20deg);
 }
 
 .table {
@@ -155,7 +156,6 @@ bento:before {
   color: #DDD;
   width: 120px;
   left: calc(50% - 60px);
-
 }
 
 .input-wrapper input {
@@ -290,10 +290,9 @@ pickle,
 
 .strobe {
   -webkit-animation: strobe 1s infinite;
-
   -webkit-transform-origin: bottom;
   transform-origin: bottom;
-  animation: strobe .2s 5;
+  animation: strobe 1s infinite;
 }
 
 @-webkit-keyframes strobe {
@@ -302,12 +301,14 @@ pickle,
     50% { -webkit-transform:  skew(-4deg,0deg) scaleX(1); }
     60% { -webkit-transform:  skew(-1deg,0deg) scaleY(.9) ; }
     100% { -webkit-transform: skew(4deg,0deg) scaleX(1); }
-  }
+}
 
 @keyframes strobe {
-  0%    {  opacity: 1;}
-  50%   {  opacity:.6;}
-  100%  {  opacity: 1;}
+  0% { transform:   skew(4deg,0deg) scaleX(1); }
+  10% { transform:  skew(1deg,0deg) scaleY(.9) ; }
+  50% { transform:  skew(-4deg,0deg) scaleX(1); }
+  60% { transform:  skew(-1deg,0deg) scaleY(.9) ; }
+  100% {transform: skew(4deg,0deg) scaleX(1); }
 }
 
 .enter-button {
@@ -321,7 +322,7 @@ pickle,
   position: absolute;
   bottom: 15px;
   right: 13px;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .enterhit {
@@ -360,6 +361,7 @@ plate [data-hovered="true"],
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   display: none;
   -webkit-transform: rotateX(20deg);
+  transform: rotateX(20deg);
 }
 
 .markup {
@@ -373,7 +375,7 @@ plate [data-hovered="true"],
   margin-top: 2px;
   text-align: center;
   color: #666;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .help strong {
@@ -420,50 +422,79 @@ orange {
 }
 
 .display-help {
-  display: block;
-  border-top: solid 5px #444;
-  padding: 20px;
+  padding: 20px 30px 25px 30px;
   font-size: 18px;
   margin: 30px auto 0 auto;
   color: #BBB;
   text-align: center;
-  overflow: hidden;
-  -webkit-transition: all linear .2s;
-  opacity: 0;
+  display: inline-block;
+  background: rgba(255,255,255,.1);
+  position: relative;
+  -webkit-transition: all linear .1s;
+
 }
 
+
+.display-help .flap {
+  background-color: #2e2a23;
+  transition: all ease-out .2s;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+
+}
+
+.display-help .flap-left {
+  left: 0;
+}
+
+.display-help .flap-right {
+  right: 0;
+}
+
+.open-help .flap-left {
+  width: 0;
+}
+
+.open-help .flap-right {
+  width: 0;
+}
+
+
 .display-help .title {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   color: #CCC;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .display-help .hint {
-  margin-bottom: 20px;
   color: #888;
-  line-height: 150%;
+  line-height: 165%;
+  font-size: 16px;
 }
 
 .display-help .hint strong {
   color: #DDD;
   background: rgba(255,255,255,.1);
   padding: 1px 8px 3px 8px;
+  font-weight: normal;
 }
 
 .display-help .selector-wrapper {
-  font-size: 30px;
   color: #777;
 }
 
 .display-help .selector {
+  display: none;
   background: #DDD;
-  margin: 0 5px;
-  padding: 18px 24px 18px 24px;
-  font-size: 30px;
+  margin: 5px 0 10px 0;
+  padding: 14px 20px 14px 20px;
+  font-size: 24px;
   border: solid 1px #DDD;
   font-family: menlo, monospace;
   display: inline-block;
-  margin-top: 20px;
+  display: none;
   color: #666;
   position: relative;
 }
@@ -474,9 +505,10 @@ orange {
   position: absolute;
   font-size: 16px;
   font-weight: normal;
-  top: 16px;
+  top: 8px;
   left: -55px;
   padding: 10px;
+
 }
 
 board {

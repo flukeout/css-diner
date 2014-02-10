@@ -83,7 +83,7 @@ function handleInput(text){
 
 //Shows help
 function showHelp() {
-  $(".display-help").css("opacity", "1");
+  $(".display-help").addClass("open-help");
   var helpTitle = level.helpTitle || "";
   var help = level.help || "";
   var selector = level.selector || "";
@@ -93,6 +93,7 @@ function showHelp() {
 }
 
 function resetTable(){
+  $(".display-help").removeClass("open-help");
   $(".clean,.strobe").removeClass("clean,strobe");
   $(".table *").each(function(){
     $(this).width($(this).width());
@@ -129,7 +130,7 @@ function fireRule(rule) {
     $("input").val("");
     $(".input-wrapper").css("opacity",.2);
 
-    // $(".display-help").hide();
+
     window.setTimeout(function(){
       currentLevel++;
       loadLevel();
@@ -138,9 +139,13 @@ function fireRule(rule) {
 
     continueRule();
 
+    ruleSelected.removeClass("strobe");
     ruleSelected.addClass("shake");
+
     window.setTimeout(function(){
       $(".shake").removeClass("shake");
+      $(".strobe").removeClass("strobe");
+      levelSelected.addClass("strobe");
     },500);
 
     // $(".result").text("Wrong! Try again :D");
@@ -178,10 +183,9 @@ function loadBoard(){
     if(c == "a") { boardMarkup = boardMarkup + '<apple class="small" />'}
     if(c == "o") { boardMarkup = boardMarkup + '<orange class="small" />'}
     if(c == "p") { boardMarkup = boardMarkup + '<pickle class="small" />'}
-
     if(c == "{") { boardMarkup = boardMarkup + '<plate id="fancy">'}
     if(c == "(") { boardMarkup = boardMarkup + '<plate>'}
-    if(c == ")") { boardMarkup = boardMarkup + '</plate>'}
+    if(c == ")" || c == "}") { boardMarkup = boardMarkup + '</plate>'}
     if(c == "[") { boardMarkup = boardMarkup + '<bento>'}
     if(c == "]") { boardMarkup = boardMarkup + '</bento>'}
   }
@@ -201,14 +205,10 @@ function loadLevel(){
   $(".order").text(level.doThis);
   $("input").val("").focus();
 
-  $(".display-help").css("opacity",0);
   $(".input-wrapper").css("opacity",1);
   $(".result").text("");
 
   //Strobe what's supposed to be selected
   $(".table " + level.selector).addClass("strobe");
-  window.setTimeout(function(){
-    // $(".strobe").removeClass("strobe");
-  },1000);
 
 }
