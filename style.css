@@ -225,6 +225,26 @@ apple.small {
 }
 
 
+pickle {
+  background: #179837;
+  width: 25px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  display: inline-block;
+  position: relative;
+  border: solid 2px #025a18;
+  border-width: 2px 2px 9px 2px;
+  margin: 20px 10px;
+
+}
+
+
+pickle.small {
+  height: 40px;
+  width: 18px;
+  border-width: 1px 2px 6px 2px;
+  margin: 30px 10px;
+}
 
 orange:before,apple:before {
   content: "";
@@ -263,17 +283,7 @@ bento > pickle:only-child {
   z-index: 99999;
 }
 
-pickle,
-.pickle {
-  background: #179837;
-  width: 25px;
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
-  display: inline-block;
-  position: relative;
-  border: solid 2px #025a18;
-  border-width: 2px 2px 9px 2px;
-}
+
 
 .shake {
   -webkit-animation: shake .1s 5;

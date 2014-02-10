@@ -78,7 +78,6 @@ var levelTimeout = 1000;
 //Parses text from the input field
 function handleInput(text){
 
-
   if(parseInt(text) > 0 && parseInt(text) < levels.length+1) {
     currentLevel = parseInt(text) -1;
     loadLevel();
@@ -141,11 +140,16 @@ function fireRule(rule) {
     $("input").val("");
     $(".input-wrapper").css("opacity",.2);
 
+    if(currentLevel >= levels.length) {
+      window.setTimeout(function(){
+        currentLevel++;
+        loadLevel();
+      },levelTimeout);
+    } else {
+      winGame();
+    }
 
-    window.setTimeout(function(){
-      currentLevel++;
-      loadLevel();
-    },levelTimeout);
+
   } else {
 
     continueRule();
@@ -164,6 +168,10 @@ function fireRule(rule) {
 
   }
 
+}
+
+function winGame(){
+  $(".table").text("WINNER!")
 }
 
 function checkResults(ruleSelected,levelSelected){
@@ -207,6 +215,7 @@ function loadBoard(){
 function loadLevel(){
 
   level = levels[currentLevel];
+
   localStorage.setItem("currentLevel",currentLevel);
 
   loadBoard();

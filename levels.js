@@ -29,45 +29,57 @@ var levels = [
     doThis : "Clear the fancy plate",
     selector : "#fancy",
     helpTitle: "#id Selector",
-    help : 'Use the #id selector to get an element with that id. <br/> Ex -> <strong>#cool</strong> will select <strong>&lt;p id="cool" &gt;</strong>',
+    help : 'Use the #id selector to select an element with that id. <br/> Ex &rarr; <strong>#cool</strong> will select <strong>&lt;p id="cool" &gt;</strong>',
     board: "{)()[]"
   },
   {
     doThis : "Eat the apple on the plate",
-
     selector : "plate apple",
     helpTitle: "The Descendant Selector",
-    help : "Ex &rarr; <strong>A&nbsp;&nbsp;B</strong> will get all <strong>B</strong> that are inside of <strong>A</strong>.",
+    help : "You can use a selector to only look inside of certain elements. <br>Ex &rarr; <strong>A&nbsp;&nbsp;B</strong> will get all <strong>B</strong> that are inside of <strong>A</strong>",
     board: "[](A)A"
   },
   {
     doThis : "Eat the pickle on the fancy plate",
     selector : "#fancy pickle",
-    help : "",
+    helpTitle: "The Descendant + Id Selector",
+    help : 'You can use any selector inside of a descendent selector. <br> Ex &rarr; <strong>#cool&nbsp;&nbsp;A</strong> will get all <strong>A</strong> elements that are inside of the element with <strong>id="cool"</strong>',
     board: "[O]{P)(P)"
   },
   {
     doThis : "Eat the small apples",
     selector : ".small",
-    help : "",
+    helpTitle: "The Class Selector",
+    help : 'Use .className to select all elements with that class.<br> Ex &rarr; <strong>.neato</strong> will get all elements with <strong>class="neato"</strong>',
     board: "Aa(a)()"
   },
   {
-    doThis : "Eat the small oranges",
+    doThis : "Eat the small oranges!",
     selector : "orange.small",
-    help : "",
+    helpTitle: "Combine the Class Selector",
+    help : 'You can combine a .className with a tag name selector.<br> Ex &rarr; <strong>ul.important</strong> will select all <strong>&lt;ul&gt;</strong> elements that have <strong>class="important"</strong>',
     board: "Aa[o](o)(o)"
   },
   {
-    doThis : "Eat the small oranges in the bentos",
+    doThis : "Eat the small oranges in the bentos!",
     selector : "bento orange.small",
-    help : "",
+    helpTitle: "You've got the power!",
+    help : 'You can do it!',
     board: "A(o)[o][a][o]"
   },
   {
+    doThis : "Clear all the plates and bentos!",
+    selector : "plate,bento",
+    helpTitle: "Combine, selectors, with... commas!",
+    help : 'Thanks to Shatner technology, we can combine selectors with commas.<br> Ex &rarr; <strong>p , .fun</strong> will select all <strong>&lt;p&gt;</strong> elements as well as all elements with <strong>class="fun"</strong> ',
+    board: "pP(P)[P](P)Pp"
+  },
+
+  {
     doThis : "Clear everything",
     selector : "*",
-    help : "",
+    helpTitle: "The All Selector",
+    help : 'You can select everything with the <strong>*</strong> selector! <br> You can also use &rarr; <strong>p *</strong> to select everything inside of all <strong>&lt;p&gt;</strong> tags.',
     board: "A(o)[][a][O]{)"
   },
 
