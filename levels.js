@@ -99,7 +99,7 @@ var levels = [
     doThis : "Select every pickle to the right of the bento",
     selector : "bento ~ pickle",
     helpTitle: "General Sibling Selector",
-    help : "You can select all siblings that follow an element. <br>Ex &rarr; <strong>A ~ B</strong> will select all <strong>B</strong> that are follow an <strong>A</strong>",
+    help : "You can select all siblings that follow an element. <br>Ex &rarr; <strong>A ~ B</strong> will select all <strong>B</strong> that follow an <strong>A</strong>",
     board: "P[o]pP(P)(p)"
   },
   {

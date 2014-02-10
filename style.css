@@ -460,10 +460,12 @@ orange {
 }
 
 .display-help .hint strong {
-  color: #DDD;
+  color: #CCC;
   background: rgba(255,255,255,.1);
-  padding: 1px 8px 3px 8px;
+  padding: 2px 8px 1px 8px;
   font-weight: normal;
+  font-size: 15px;
+  font-family: menlo,monospace;
 }
 
 .display-help .selector-wrapper {
