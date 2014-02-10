@@ -12,63 +12,63 @@
 
 var levels = [
   {
-    doThis : "Clear the plates",
+    doThis : "Select the plates",
     selector : "plate",
     helpTitle : "Tag Name Selector",
     help : "Use the tag name to select elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
     board: "()()"
   },
   {
-    doThis : "Clear the bentos",
+    doThis : "Select the bentos",
     selector : "bento",
     helpTitle : "Tag Name Selector",
     help : "Use the tag name to select all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
     board: "[]()[]"
   },
   {
-    doThis : "Clear the fancy plate",
+    doThis : "Select the fancy plate",
     selector : "#fancy",
     helpTitle: "#id Selector",
     help : 'Use the #id selector to select an element with that id. <br/> Ex &rarr; <strong>#cool</strong> will select <strong>&lt;p id="cool" &gt;</strong>',
     board: "{)()[]"
   },
   {
-    doThis : "Eat the apple on the plate",
+    doThis : "Select the apple on the plate",
     selector : "plate apple",
     helpTitle: "The Descendant Selector",
     help : "You can use a selector to only look inside of certain elements. <br>Ex &rarr; <strong>A&nbsp;&nbsp;B</strong> will get all <strong>B</strong> that are inside of <strong>A</strong>",
     board: "[](A)A"
   },
   {
-    doThis : "Eat the pickle on the fancy plate",
+    doThis : "Select the pickle on the plate",
     selector : "#fancy pickle",
     helpTitle: "The Descendant + Id Selector",
     help : 'You can use any selector inside of a descendent selector. <br> Ex &rarr; <strong>#cool&nbsp;&nbsp;A</strong> will get all <strong>A</strong> elements that are inside of the element with <strong>id="cool"</strong>',
     board: "[O]{P)(P)"
   },
   {
-    doThis : "Eat the small apples",
+    doThis : "Select the small apples",
     selector : ".small",
     helpTitle: "The Class Selector",
     help : 'Use .className to select all elements with that class.<br> Ex &rarr; <strong>.neato</strong> will get all elements with <strong>class="neato"</strong>',
     board: "Aa(a)()"
   },
   {
-    doThis : "Eat the small oranges!",
+    doThis : "Select the small oranges",
     selector : "orange.small",
     helpTitle: "Combine the Class Selector",
     help : 'You can combine a .className with a tag name selector.<br> Ex &rarr; <strong>ul.important</strong> will select all <strong>&lt;ul&gt;</strong> elements that have <strong>class="important"</strong>',
-    board: "Aa[o](o)(o)"
+    board: "Aa[o](O)(o)"
   },
   {
-    doThis : "Eat the small oranges in the bentos!",
+    doThis : "Select the small oranges in the bentos",
     selector : "bento orange.small",
     helpTitle: "You've got the power!",
     help : 'You can do it!',
     board: "A(o)[o][a][o]"
   },
   {
-    doThis : "Clear all the plates and bentos!",
+    doThis : "Select all the plates and bentos",
     selector : "plate,bento",
     helpTitle: "Combine, selectors, with... commas!",
     help : 'Thanks to Shatner technology, we can combine selectors with commas.<br> Ex &rarr; <strong>p , .fun</strong> will select all <strong>&lt;p&gt;</strong> elements as well as all elements with <strong>class="fun"</strong> ',
@@ -76,7 +76,7 @@ var levels = [
   },
 
   {
-    doThis : "Clear everything",
+    doThis : "Select all the things!",
     selector : "*",
     helpTitle: "The All Selector",
     help : 'You can select everything with the <strong>*</strong> selector! <br> You can also use &rarr; <strong>p *</strong> to select everything inside of all <strong>&lt;p&gt;</strong> tags.',

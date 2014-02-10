@@ -140,7 +140,6 @@ function fireRule(rule) {
     $("input").val("");
     $(".input-wrapper").css("opacity",.2);
     currentLevel++;
-    console.log(currentLevel,levels.length);
     if(currentLevel >= levels.length) {
       winGame();
 
