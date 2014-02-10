@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 10px;
   -webkit-transform: rotateX(20deg) translate3d(0,0,0);
   transform: rotateX(20deg) translate3d(0,0,0);
-
+  min-height: 142px;
   -webkit-transform-origin: bottom;
   transform-origin: bottom;
 

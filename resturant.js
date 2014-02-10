@@ -1,3 +1,7 @@
+var level;
+var currentLevel = parseInt(localStorage.currentLevel) || 0;
+var levelTimeout = 1000;
+
 $(document).ready(function(){
 
   //Handle inputs from the input box on enter
@@ -65,14 +69,16 @@ $(document).ready(function(){
     e.stopPropagation();
   });
 
-  loadLevel();
+  $(".table-wrapper,.table-edge").css("opacity",0);
+
+  window.setTimeout(function(){
+    loadLevel();
+    $(".table-wrapper,.table-edge").css("opacity",1);
+  },50);
+
 
 });
 
-var level;
-var currentLevel = parseInt(localStorage.currentLevel) || 0;
-
-var levelTimeout = 1000;
 
 
 //Parses text from the input field
@@ -110,7 +116,6 @@ function resetTable(){
     $(this).width($(this).width());
     $(this).removeAttr("style");
   });
-  console.log($('.table').outerWidth());
   $(".table-edge").width($(".table").outerWidth());
 }
 
@@ -215,6 +220,7 @@ function loadBoard(){
     if(c == "]") { boardMarkup = boardMarkup + '</bento>'}
   }
   $(".table").html(boardMarkup);
+
 }
 
 //Loads up a level
@@ -226,6 +232,7 @@ function loadLevel(){
 
   loadBoard();
   resetTable();
+
 
   $(".level-header").text("Level " + (currentLevel+1) + "/" + levels.length);
   $(".order").text(level.doThis);
