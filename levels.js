@@ -79,7 +79,7 @@ var levels = [
     selector : "*",
     helpTitle: "The Universal Selector",
     help : 'You can select everything with the <strong>*</strong> selector! <br> You can also use &rarr; <strong>p *</strong> to select everything inside of all <strong>&lt;p&gt;</strong> tags.',
-    board: "A(o)[][a][O]{)"
+    board: "A(o)[][O]{)"
   },
   {
     doThis : "Select everything on a plate",

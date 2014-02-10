@@ -275,8 +275,11 @@ bento > .small:only-child {
 
 plate > pickle:only-child,
 bento > pickle:only-child {
-  top: calc(50% - 60px);
+  top: calc(50% - 40px);
+  left: calc(50% - 10px);
   z-index: 99999;
+  margin: 0;
+  position: absolute;
 }
 
 plate > pickle.small:only-child,
