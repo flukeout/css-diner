@@ -17,14 +17,16 @@ $(document).ready(function(){
 
   //Add tooltips
   $(".table").on("mouseover","*",function(e){
-    $(".hovered").removeClass("hovered");
     e.stopPropagation();
-    var helper = $(".helper");
     el = $(this);
-    var pos = $(this).offset();
-    helper.css("top",pos.top - 65);
-    helper.css("left",pos.left + ($(this).width()/2));
+
     el.attr("data-hovered",true);
+
+    var helper = $(".helper");
+
+    var pos = el.offset();
+    helper.css("top",pos.top - 65);
+    helper.css("left",pos.left + (el.width()/2));
 
     var helpertext;
 
@@ -33,8 +35,17 @@ $(document).ready(function(){
     helpertext = '<' + elType;
 
     var elClass = el.attr("class");
+
     if(elClass) {
-      helpertext = helpertext + ' class="' + el.attr("class") + '"';
+
+      if(elClass.indexOf("strobe") > -1){
+        elClass = elClass.replace("strobe","");
+      }
+
+    }
+
+    if(elClass) {
+      helpertext = helpertext + ' class="' + elClass + '"';
     }
 
     var id = el.attr("id");
@@ -42,7 +53,7 @@ $(document).ready(function(){
       helpertext = helpertext + ' id="' + id + '"';
     }
 
-    helpertext = helpertext + '> </' + elType + '>';
+    helpertext = helpertext + '></' + elType + '>';
     helper.show();
     helper.text(helpertext);
 
@@ -100,8 +111,7 @@ function resetTable(){
     $(this).width($(this).width());
     $(this).removeAttr("style");
   });
-  $(".table-edge").width($(".table").outerWidth() + 10);
-
+  $(".table-edge").width($(".table").outerWidth());
 }
 
 function fireRule(rule) {
@@ -111,7 +121,7 @@ function fireRule(rule) {
   $(".strobe,.clean,.shake").each(function(){
     $(this).width($(this).width());
     $(this).removeAttr("style");
-  })
+  });
 
   var ruleSelected = $(".table " + rule);
   var levelSelected = $(".table " + level.selector);

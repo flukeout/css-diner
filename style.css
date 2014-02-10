@@ -13,6 +13,7 @@ html,body {
 body {
   position: absolute;
   -webkit-perspective: 800px;
+  transform: translate3d(0,0,0);
   perspective: 800px;
   position: relative;
   padding-top: 10px;
@@ -47,35 +48,40 @@ h1, h2, h3, h4, h5 {
 }
 
 .table-wrapper {
-  margin-top: 20px;
-  -webkit-transform: rotateX(20deg);
-  transform: rotateX(20deg);
+  margin-top: 10px;
+  -webkit-transform: rotateX(20deg) translate3d(0,0,0);
+  transform: rotateX(20deg) translate3d(0,0,0);
+
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+
 }
 
 .table {
   -webkit-transform-style: preserve-3d;
+  outline: solid 1px transparent;
   margin: 0px auto 0px auto;
   background: #DDD;
   height: 142px;
   padding: 15px 15px 22px 15px;
   display: inline-block;
   background: #dd992d;
-  border: solid 2px #fdb26c;
-  border-width: 2px 2px 0px 2px;
+  background: -webkit-linear-gradient(#dd992d,#cd8c26);
   z-index: 999;
   position:relative;
 }
 
 .table-edge  {
+  outline: solid 1px transparent;
   display: none;
   display: block;
-  margin:0 auto;
+  margin:0 auto 10px auto;
   background: #ac741c;
   height: 15px;
   transform: rotateX(-40deg);
   -webkit-transform: rotateX(-40deg);
-  position:relative;
-  top: -10px;
+  -webkit-transform-origin: top;
+  transform-origin: top;
 }
 
 .table-leg {
@@ -95,7 +101,7 @@ h1, h2, h3, h4, h5 {
 }
 orange,apple,pickle,bento,plate{
   -webkit-transition:  -webkit-transform ease-out .2s;
-  -moz-transition:  -moz-transform ease-out .2s;
+  transition:  -moz-transform ease-out .2s;
 }
 
 bento, plate {
@@ -154,8 +160,8 @@ bento:before {
   background: #555;
   padding: 4px 0 6px 0;
   color: #DDD;
-  width: 140px;
-  left: calc(50% - 70px);
+  width: 144px;
+  left: calc(50% - 72px);
 }
 
 .input-wrapper input {
@@ -250,13 +256,12 @@ bento > .small:only-child {
   margin: 0;
 }
 
-
 plate > pickle:only-child,
 bento > pickle:only-child {
   top: calc(50% - 40px);
   left: calc(50% - 12px);
+  z-index: 99999;
 }
-
 
 pickle,
 .pickle {
@@ -281,6 +286,7 @@ pickle,
   50% {  -webkit-transform: translateX(0); }
   75% {  -webkit-transform: translateX(5px); }
 }
+
 @keyframes shake {
   0%   { transform: translateX(0); }
   25% {  transform: translateX(-5px); }
@@ -291,6 +297,7 @@ pickle,
 .strobe {
   -webkit-animation: strobe 1s infinite;
   -webkit-transform-origin: bottom;
+
   transform-origin: bottom;
   animation: strobe 1s infinite;
 }
@@ -327,9 +334,14 @@ pickle,
 
 .enterhit {
   -webkit-animation: enterhit .1s 1;
+  animation: enterhit .1s 1;
 }
 
+
 @-webkit-keyframes enterhit {
+  50% { border-width: 2px 2px 8px 2px;}
+}
+@-keyframes enterhit {
   50% { border-width: 2px 2px 8px 2px;}
 }
 
@@ -341,13 +353,12 @@ pickle,
 }
 
 [data-hovered="true"] {
-  outline: rgba(255,255,255,.3) 5px solid;
+  box-shadow: 0 0 0 6px rgba(255,255,255,.4);
 }
 
 
-plate [data-hovered="true"],
-.plate [data-hovered="true"] {
-  outline: rgba(0,0,0,.2) 5px solid;
+plate [data-hovered="true"] {
+  box-shadow: 0 0 0 6px rgba(0,0,0,.3);
 }
 
 .helper {
@@ -362,6 +373,7 @@ plate [data-hovered="true"],
   display: none;
   -webkit-transform: rotateX(20deg);
   transform: rotateX(20deg);
+  outline: solid 1px transparent;
 }
 
 .markup {
@@ -402,6 +414,7 @@ plate:before {
   border-radius: 60px;
   border-top: solid 6px #CCC;
   opacity: .4;
+    background: rgba(255,255,255,1);
 }
 
 #fancy:after {
