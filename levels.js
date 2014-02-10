@@ -7,7 +7,7 @@
 // p = small pickle, .small
 // P = pickle
 // () = plate open / close
-// {) = fancy plate open / close
+// {} = fancy plate open / close
 // [] = bento open close tags
 
 var levels = [

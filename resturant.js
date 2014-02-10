@@ -99,7 +99,7 @@ function handleInput(text){
 
 //Shows help
 function showHelp() {
-  $(".display-help").addClass("open-help");
+  // $(".display-help").addClass("open-help");
   $("input").val("");
   var helpTitle = level.helpTitle || "";
   var help = level.help || "";
@@ -208,7 +208,7 @@ function loadBoard(){
   var last = "";
   var indent = 1;
   var indentChars = "    " ;
-
+    showHelp();
   var lastTag;
   var thisTag;
   var lastType;

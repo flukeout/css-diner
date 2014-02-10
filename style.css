@@ -25,23 +25,6 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
 }
 
-.level-header {
-  text-align: center;
-  color: #DDD;
-  font-size: 27px;
-  margin: 0px 0 0 0;
-
-  padding: 15px 0 0 0;
-}
-
-.order {
-  text-align: center;
-  color: #777;
-  font-size: 45px;
-  padding: 0;
-  margin: 0 0 0px 0;
-  font-weight: 400;
-}
 
 .table-wrapper {
   margin-top: 10px;
@@ -142,10 +125,9 @@ bento:before {
 }
 
 .input-wrapper {
-  margin-top: 15px;
   position: relative;
   display: inline-block;
-  margin: 35px 0 5px 0 ;
+  margin: 60px 0 5px 0 ;
 }
 
 .input-wrapper .input-header {
@@ -433,56 +415,16 @@ orange {
 }
 
 .display-help {
-  padding: 20px 30px 25px 30px;
-  font-size: 18px;
+  font-size: 16px;
   margin: 30px auto 0 auto;
-  color: #BBB;
-  text-align: center;
-  display: inline-block;
-  background: rgba(255,255,255,.1);
-  position: relative;
-  -webkit-transition: all linear .1s;
-  transition: all linear .1s;
-}
-
-
-.display-help .flap {
-  background-color: #2e2a23;
-  transition: all ease-out .2s;
-  width: 50%;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-
-}
-
-.display-help .flap-left {
-  left: 0;
-}
-
-.display-help .flap-right {
-  right: 0;
-}
-
-.open-help .flap-left {
-  width: 0;
-}
-
-.open-help .flap-right {
-  width: 0;
-}
-
-
-.display-help .title {
-  margin-bottom: 10px;
-  color: #CCC;
-  font-size: 22px;
+  color: rgba(255,255,255,.6);
 }
 
 .display-help .hint {
   color: #888;
   line-height: 165%;
   font-size: 16px;
+  margin-bottom: 35px;
 }
 
 .display-help .hint strong {
@@ -543,19 +485,24 @@ plate orange:last-child:not(:only-child) {
   z-index: 20;
 }
 
+
 .markup-wrapper {
+  border-right: solid 1px rgba(255,255,255,.1);
+  right: 0px;
+  font-size: 16px;
+  width: 30%;
   position: absolute;
   display: inline-block;
+  border-right: solid 1px rgba(255,255,255,.1);
   border-left: solid 1px rgba(255,255,255,.1);
-  padding-left: 20px;
   font-size: 12px;
   top: 0px;
   bottom: 0px;
-  right: 0px;
   text-align: left;
   height: 100%;
   margin: 0;
-  padding: 20px 0 20px 20px;
+  width: 400px;
+  padding: 27px 20px 20px 20px;
   background: rgba(0,0,0,.1);
   color: rgba(255,255,255,.3);
 }
@@ -565,22 +512,53 @@ plate orange:last-child:not(:only-child) {
   padding: 0;
   margin: 0 0 15px 0;
   font-weight:200;
+  font-size: 18px;
 }
 
 .markup {
-  line-height: 175%;
-  margin-right: 75px;
+  line-height: 150%;
   font-family: menlo;
-  display: inline-block;
   z-index: 1;
+  font-size: 13px;
 }
+
 
 .game-wrapper {
   display: inline-block;
   -webkit-perspective: 300px;
   transform: translate3d(0,0,0);
   perspective: 300px;
-  width: calc(100% - 300px);
   text-align: center;
+  position: relative;
+  top: 20px;
+  width: 70%;
+  margin-right:30%;
+}
 
+.level-header {
+  font-size: 25px;
+  margin: 0;
+  border-bottom: solid 2px rgba(255,255,255,.15);
+
+  padding: 0 0 10px 0;
+  color: #777;
+}
+
+
+
+.order {
+  color: rgba(255,255,255,.6);
+  font-size: 45px;
+  padding: 0;
+  margin: 0 0 50px 0;
+  font-weight: 400;
+
+
+
+}
+
+
+
+.info-wrapper {
+  display: none;
 }
