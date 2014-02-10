@@ -530,7 +530,7 @@ plate orange:last-child:not(:only-child) {
   perspective: 300px;
   text-align: center;
   position: relative;
-  top: 20px;
+  top: 15px;
   width: 70%;
   margin-right:30%;
 }
