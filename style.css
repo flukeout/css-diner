@@ -11,12 +11,11 @@ html,body {
 }
 
 body {
-  -webkit-transform: translate3d(0,0,0);
   position: absolute;
   -webkit-perspective: 800px;
   perspective: 800px;
   position: relative;
-  padding-top: 0px;
+  padding-top: 10px;
   text-align: center;
   background: #2e2a23;
   height: 100%;
@@ -48,37 +47,51 @@ h1, h2, h3, h4, h5 {
 }
 
 .table-wrapper {
-  margin-top: 10px;
-  -webkit-transform: rotateX(20deg) translate3d(0,0,0);
- transform: rotateX(20deg) translate3d(0,0,0);
+  margin-top: 20px;
+  -webkit-transform: rotateX(20deg);
 }
 
 .table {
+  -webkit-transform-style: preserve-3d;
   margin: 0px auto 0px auto;
   background: #DDD;
   height: 142px;
-  padding: 15px 20px 22px 20px;
-  display:inline-block;
-  text-align: center;
+  padding: 15px 15px 22px 15px;
+  display: inline-block;
   background: #dd992d;
   border: solid 2px #fdb26c;
   border-width: 2px 2px 0px 2px;
-  min-height: 100px;
+  z-index: 999;
+  position:relative;
 }
 
 .table-edge  {
+  display: none;
   display: block;
+  margin:0 auto;
   background: #ac741c;
   height: 15px;
   transform: rotateX(-40deg);
   -webkit-transform: rotateX(-40deg);
-  position: relative;
-  top: -9px;
-  margin: 0 auto;
-
-
+  position:relative;
+  top: -10px;
 }
 
+.table-leg {
+  width: 24px;
+  height: 10px;
+  background: #84570f;
+  position: absolute;
+  top: 15px;
+}
+
+.table-leg:first-child {
+  left: 20px;
+}
+
+.table-leg:last-child {
+  right: 20px;
+}
 orange,apple,pickle,bento,plate{
   -webkit-transition:  -webkit-transform ease-out .2s;
   -moz-transition:  -moz-transform ease-out .2s;
@@ -127,21 +140,28 @@ bento:before {
 }
 
 .input-wrapper {
-  margin: 0 auto;
-  text-align: center;
-  height: 80px;
   margin-top: 15px;
-  color: #777;
-  font-size: 25px;
-  display: inline-block;
   position: relative;
-  left: -45px;
+  display: inline-block;
+  margin: 35px 0 5px 0 ;
+}
+
+.input-wrapper .input-header {
+  font-size: 15px;
+  position: absolute;
+  top: -20px;
+  background: #555;
+  padding: 4px 0 6px 0;
+  color: #DDD;
+  width: 120px;
+  left: calc(50% - 60px);
+
 }
 
 .input-wrapper input {
   font-family: menlo, monospace;
   font-size: 22px;
-  padding: 16px 8px;
+  padding: 18px 8px 16px 8px;
   width: 500px;
   color: #444;
   margin-left: 5px;
@@ -277,17 +297,12 @@ pickle,
 }
 
 @-webkit-keyframes strobe {
-    0% { -webkit-transform:   skew(4deg,0deg) scaleX(.95); }
-    10% { -webkit-transform:  skew(1deg,0deg) scaleY(.85) ; }
-    50% { -webkit-transform:  skew(-4deg,0deg) scaleX(.95); }
-    60% { -webkit-transform:  skew(-1deg,0deg) scaleY(.85) ; }
-    100% { -webkit-transform: skew(4deg,0deg) scaleX(.95); }
-
-/*  0%    {  opacity: 1;}
-  50%   {  opacity:.6;}
-  100%  {  opacity: 1;}
-*/
-}
+    0% { -webkit-transform:   skew(4deg,0deg) scaleX(1); }
+    10% { -webkit-transform:  skew(1deg,0deg) scaleY(.9) ; }
+    50% { -webkit-transform:  skew(-4deg,0deg) scaleX(1); }
+    60% { -webkit-transform:  skew(-1deg,0deg) scaleY(.9) ; }
+    100% { -webkit-transform: skew(4deg,0deg) scaleX(1); }
+  }
 
 @keyframes strobe {
   0%    {  opacity: 1;}
@@ -295,35 +310,33 @@ pickle,
   100%  {  opacity: 1;}
 }
 
-
-
 .enter-button {
   background: #ddd;
   display: inline-block;
   border-radius: 3px;
-  padding: 12px 10px 8px 10px;
+  padding: 8px 10px 7px 10px;
   color: #666;
   border: solid 3px #999;
-  border-width: 3px 3px 20px 3px;
-  position: relative;
-  top: -10px;
-  font-size: 16px;
+  border-width: 2px 2px 16px 2px;
+  position: absolute;
+  bottom: 15px;
+  right: 13px;
+  font-size: 12px;
 }
 
 .enterhit {
-  -webkit-animation: enterhit .2s 1;
+  -webkit-animation: enterhit .1s 1;
 }
 
 @-webkit-keyframes enterhit {
-  0%   {  }
-  50% { border-width: 3px 3px 10px 3px; top: 0px;}
-  100% {  }
+  50% { border-width: 2px 2px 8px 2px;}
 }
 
 .plus {
   color: #666;
   padding: 0px 4px;
   font-size: 40px;
+  display: none;
 }
 
 [data-hovered="true"] {
@@ -465,7 +478,6 @@ orange {
   left: -55px;
   padding: 10px;
 }
-
 
 board {
   display: none;

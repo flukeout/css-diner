@@ -94,20 +94,21 @@ function showHelp() {
 
 function resetTable(){
   $(".clean,.strobe").removeClass("clean,strobe");
-
   $(".table *").each(function(){
     $(this).width($(this).width());
-    $(this).css("width","");
+    $(this).removeAttr("style");
   });
   $(".table-edge").width($(".table").outerWidth() + 10);
+
 }
 
 function fireRule(rule) {
 
-  $(".shake,.strobe").removeClass("shake").removeClass("strobe");
+  $(".shake").removeClass("shake");
 
   $(".strobe,.clean,.shake").each(function(){
     $(this).width($(this).width());
+    $(this).removeAttr("style");
   })
 
   var ruleSelected = $(".table " + rule);
@@ -122,8 +123,9 @@ function fireRule(rule) {
   $(".result").show();
 
   if(win){
+    ruleSelected.removeClass("strobe");
     ruleSelected.addClass("clean");
-    $(".result").text("Good job!");
+    // $(".result").text("Good job!");
     $("input").val("");
     $(".input-wrapper").css("opacity",.2);
 
@@ -135,12 +137,13 @@ function fireRule(rule) {
   } else {
 
     continueRule();
+
     ruleSelected.addClass("shake");
     window.setTimeout(function(){
       $(".shake").removeClass("shake");
     },500);
 
-    $(".result").text("Wrong! Try again :D");
+    // $(".result").text("Wrong! Try again :D");
     $(".result").fadeOut();
 
   }
@@ -185,11 +188,8 @@ function loadBoard(){
   $(".table").html(boardMarkup);
 }
 
-
 //Loads up a level
 function loadLevel(){
-
-
 
   level = levels[currentLevel];
   localStorage.setItem("currentLevel",currentLevel);
@@ -197,18 +197,13 @@ function loadLevel(){
   loadBoard();
   resetTable();
 
-
   $(".level-header").text("Level " + (currentLevel+1) + "/" + levels.length);
   $(".order").text(level.doThis);
   $("input").val("").focus();
 
   $(".display-help").css("opacity",0);
-
-
-
   $(".input-wrapper").css("opacity",1);
   $(".result").text("");
-
 
   //Strobe what's supposed to be selected
   $(".table " + level.selector).addClass("strobe");
