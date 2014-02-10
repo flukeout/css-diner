@@ -139,14 +139,21 @@ function fireRule(rule) {
     // $(".result").text("Good job!");
     $("input").val("");
     $(".input-wrapper").css("opacity",.2);
-
+    currentLevel++;
+    console.log(currentLevel,levels.length);
     if(currentLevel >= levels.length) {
+      winGame();
+
       window.setTimeout(function(){
-        currentLevel++;
+        currentLevel = 0;
         loadLevel();
       },levelTimeout);
+
+
     } else {
-      winGame();
+      window.setTimeout(function(){
+        loadLevel();
+      },levelTimeout);
     }
 
 
@@ -171,7 +178,7 @@ function fireRule(rule) {
 }
 
 function winGame(){
-  $(".table").text("WINNER!")
+  $(".table").text("YOU ARE CSS MASTER!")
 }
 
 function checkResults(ruleSelected,levelSelected){
