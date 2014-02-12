@@ -123,13 +123,11 @@ var levels = [
     help : "Using <strong>:only-child</strong> selects any element that is the only element inside of another one.",
     board: "[A](OO)P([])p"
   },
-
   {
-    doThis : "Select bottom orange, apple and pickle",
+    doThis : "Select the apple, bottom orange and the pickle",
     selector : ":last-child",
     helpTitle: "Last Child Selector",
     help : "You can select the last child element in any other element with the <strong>:last-child</strong> selector.",
     board: "{A)(OO)()p"
   }
-
 ];
