@@ -5,21 +5,17 @@
 }
 
 html,body {
-
   margin: 0;
   padding: 0;
 
-  height: 100%;
 }
 
 body {
-  position: absolute;
-  position: relative;
   background: #2e2a23;
   background-image: -webkit-radial-gradient(20% 40%,cover circle, #3e392f, #221e17);
-  background-image: -moz-radial-gradient(20% 40%,cover circle, #3e392f, #221e17);
-  height: 100%;
-  padding-bottom: 50px;
+  background-image: -moz-radial-gradient(20% 40%,contain circle, #3e392f, #221e17);
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 body * {
@@ -259,15 +255,22 @@ orange:before,apple:before {
 
 /*FRUITS ON A PLATTER*/
 
-plate > apple:only-child,
-plate > orange:only-child,
-bento > apple:only-child,
-bento > orange:only-child
-{
-  position: absolute;
-  top: calc(50% - 35px);
+bento orange,
+bento apple,
+plate orange,
+plate apple
+ {
   left: calc(50% - 30px);
   margin: 0;
+  position: absolute;
+}
+
+plate > apple:last-child,
+plate > orange:last-child,
+bento > apple:last-child,
+bento > orange:last-child
+{
+  top: calc(50% - 35px);
 }
 
 plate > .small:only-child,
@@ -504,32 +507,40 @@ board {
 
 /* Fancy orange stacking */
 
-plate apple:last-child:not(:only-child),
-plate orange:last-child:not(:only-child){
-  top: -80px;
+plate apple,
+plate orange {
+  position: absolute;
+}
+
+plate apple:last-child,
+plate orange:last-child {
   z-index: 300;
 }
 
-plate apple:not(:only-child),
-plate orange:not(:only-child) {
-  position: absolute;
-  top: -40px;
-  left: 10px;
-  z-index: 100;
+plate apple:nth-last-child(2),
+plate orange:nth-last-child(2) {
+  top: -25px;
+  z-index: 400;
 }
 
-plate apple:first-child:not(:only-child),
-plate orange:first-child:not(:only-child)
+plate apple:nth-last-child(3),
+plate orange:nth-last-child(3)
 {
-  top: 0px;
-  z-index: 100;
+  top: -65px;
+  z-index: 500;
 }
 
+plate apple:nth-last-child(4),
+plate orange:nth-last-child(4)
+{
+  top: -105px;
+  z-index: 600;
+}
 
 
 .markup-wrapper {
   border-right: solid 1px rgba(255,255,255,.1);
-  right: 0px;
+
   font-size: 16px;
   position: absolute;
   display: inline-block;
@@ -537,10 +548,11 @@ plate orange:first-child:not(:only-child)
   border-left: solid 1px rgba(255,255,255,.1);
   font-size: 12px;
   top: 0px;
+  right: 0px;
   bottom: 0px;
 
   text-align: left;
-  height: 100%;
+
   margin: 0;
   width: 400px;
   padding: 27px 20px 20px 20px;
@@ -571,7 +583,7 @@ plate orange:first-child:not(:only-child)
   perspective: 400px;
   text-align: center;
   position: relative;
-  top: 15px;
+  padding-top: 15px;
   width: 70%;
   margin-right:30%;
 }
@@ -622,7 +634,63 @@ plate orange:first-child:not(:only-child)
   opacity: .5;
   text-decoration: none;
 }
+
 .what-is-this a:hover {
   opacity: .7;
+}
 
+.logo {
+  width: 100px;
+  height: 100px;
+  cursor: default;
+  -webkit-transform-origin: middle;
+  -webkit-transform: scale(.5);
+  z-index: 9999999;
+  position: relative;
+  left: 123px;
+  top: -10px;
+}
+
+.logo plate {
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  opacity: .5;
+  -webkit-transition: all linear .1s;
+}
+
+.logo .css {
+  z-index: 9999;
+  font-size: 50px;
+  font-weight: 600;
+  color: #555;
+  position: absolute;
+  width: 100%;
+  top: 18px;
+  left: 0px;
+  text-align: center;
+}
+
+.logo .diner {
+  width: 0px;
+  overflow: hidden;
+  color: #777;
+  font-family: "Exo 2";
+  text-align: left;
+  position: absolute;
+  top: 19px;
+  left: 108px;
+  z-index: 600;
+  font-size: 48px;
+  -webkit-transition: all linear .1s;
+}
+
+.logo:hover .diner {
+  width: 120px;
+}
+
+.logo:hover plate {
+  opacity: .75;
 }

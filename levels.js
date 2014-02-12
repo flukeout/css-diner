@@ -109,5 +109,27 @@ var levels = [
     help : "You can select all siblings that are direct children of another element. <br>Ex &rarr; <strong>A > B</strong> will select all <strong>B</strong> that are a direct <strong>A</strong>",
     board: "([A])(A)()Aa"
   },
+  {
+    doThis : "Select the bento and first orange",
+    selector : ":first-child",
+    helpTitle: "First Child Selector",
+    help : "You can select the first child element in any other element with the <strong>:first-child</strong> selector.",
+    board: "[]()(OOO)p"
+  },
+  {
+    doThis : "Select apple and the small bento on the plate",
+    selector : ":only-child",
+    helpTitle: "Only Child Selector",
+    help : "Using <strong>:only-child</strong> selects any element that is the only element inside of another one.",
+    board: "[A](OO)P([])p"
+  },
+
+  {
+    doThis : "Select bottom orange, apple and pickle",
+    selector : ":last-child",
+    helpTitle: "Last Child Selector",
+    help : "You can select the last child element in any other element with the <strong>:last-child</strong> selector.",
+    board: "{A)(OO)()p"
+  }
 
 ];

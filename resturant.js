@@ -8,13 +8,7 @@ $(document).ready(function(){
   $("input").on("keypress",function(e){
     e.stopPropagation();
     if(e.keyCode ==  13){
-      var value = $(this).val();
-      $(".enter-button").removeClass("enterhit");
-      $(".enter-button").width($(".enter-button").width());
-      $(".enter-button").addClass("enterhit");
-      if(value){
-        handleInput(value);
-      }
+      enterHit();
       return false;
     }
   })
@@ -63,6 +57,10 @@ $(document).ready(function(){
 
   });
 
+  $(".enter-button").on("click",function(){
+    enterHit();
+  })
+
   $(".table").on("mouseout","*",function(e){
     $("[data-hovered]").removeAttr("data-hovered");
     $(".helper").hide();
@@ -79,6 +77,19 @@ $(document).ready(function(){
 
 });
 
+
+//Animate the enter button
+function enterHit(){
+  $(".enter-button").removeClass("enterhit");
+  $(".enter-button").width($(".enter-button").width());
+  $(".enter-button").addClass("enterhit");
+
+  var value = $("input").val();
+  if(value){
+    handleInput(value);
+  }
+
+}
 
 
 //Parses text from the input field
