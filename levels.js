@@ -11,6 +11,13 @@
 // [] = bento open close tags
 
 var levels = [
+{
+  doThis : "Select the plates",
+  selector : "plate",
+  helpTitle : "Type Selector",
+  help : "Use the tag name to select all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
+  board: "AO"
+},
   {
     doThis : "Select the plates",
     selector : "plate",

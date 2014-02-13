@@ -20,6 +20,14 @@ $(document).ready(function(){
 
     el.attr("data-hovered",true);
 
+    var tableElements = $(".table *");
+    var index = tableElements.index($(this));
+
+    var that = $(this);
+
+
+    $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
+
     var helper = $(".helper");
 
     var pos = el.offset();
@@ -57,15 +65,19 @@ $(document).ready(function(){
 
   });
 
-  $(".enter-button").on("click",function(){
-    enterHit();
-  })
-
   $(".table").on("mouseout","*",function(e){
+    $(".enhance").removeClass("enhance");
     $("[data-hovered]").removeAttr("data-hovered");
     $(".helper").hide();
     e.stopPropagation();
   });
+
+
+
+  $(".enter-button").on("click",function(){
+    enterHit();
+  })
+
 
   $(".table-wrapper,.table-edge").css("opacity",0);
 
@@ -216,75 +228,66 @@ function loadBoard(){
 
   var boardString = level.board;
   boardMarkup = "";
-  var last = "";
-  var indent = 1;
-  var indentChars = "    " ;
-    showHelp();
-  var lastTag;
-  var thisTag;
-  var lastType;
+  var tableMarkup = "";
+  var markup = "";
+  showHelp();
 
   for(var i = 0;i < boardString.length;i++){
 
-
     var c = boardString.charAt(i);
 
-    if(c == "(" || c == "[" || c == "{") {
-      thisTag = "open";
-    } else  if(c == ")" || c == "]" || c == "}") {
-      thisTag = "closed";
-    } else {
-      thisTag = "single";
+    if(c == "C") {
+      boardMarkup = boardMarkup + '<carrot/>\n'
+      markup = markup + "<div>&ltcarrot/&gt</div>";
+    }
+    if(c == "A") {
+      boardMarkup = boardMarkup + '<apple/>\n'
+      markup = markup + "<div>&ltapple/&gt</div>";
+    }
+    if(c == "O") {
+      boardMarkup = boardMarkup + '<orange/>\n'
+      markup = markup + "<div>&ltorange/&gt</div>";
+    }
+    if(c == "P") {
+      boardMarkup = boardMarkup + '<pickle/>\n'
+      markup = markup + '<div>&ltpickle/&gt</div>';
+    }
+    if(c == "a") {
+      boardMarkup = boardMarkup + '<apple class="small"/>\n'
+      markup = markup + '<div>&ltapple class="small"/&gt</div>';
+    }
+    if(c == "o") {
+      boardMarkup = boardMarkup + '<orange class="small"/>\n'
+      markup = markup + '<div>&ltorange class="small"/&gt</div>';
+    }
+    if(c == "p") {
+      boardMarkup = boardMarkup + '<pickle class="small"/>\n'
+      markup = markup + '<div>&ltpickle class="small"/&gt</div>';
+    }
+    if(c == "{") {
+      boardMarkup = boardMarkup + '<plate id="fancy">'
+      markup = markup + '<div>&ltplate id="fancy"/&gt';
+    }
+    if(c == "(") {
+      boardMarkup = boardMarkup + '<plate>'
+      markup = markup + '<div>&ltplate&gt'
+    }
+    if(c == ")" || c == "}") {
+      boardMarkup = boardMarkup + '</plate>\n'
+      markup = markup + '&lt/plate&gt</div>'
+    }
+    if(c == "[") {
+      boardMarkup = boardMarkup + '<bento>'
+      markup = markup + '<div>&ltbento&gt'
+    }
+    if(c == "]") {
+      boardMarkup = boardMarkup + '</bento>\n'
+      markup = markup + '&lt/bento&gt</div>'
     }
 
-    if(lastTag == "open" && thisTag == "open") {
-      boardMarkup = boardMarkup + "\n";
-      indent++;
-    }
-
-    if(lastTag == "open" && thisTag == "single") {
-      boardMarkup = boardMarkup + "\n";
-    }
-
-    if(lastTag == "open" && thisTag == "single") {
-      indent++;
-    }
-
-    if(lastTag == "closed" && thisTag == "closed") {
-      indent--;
-    }
-
-    if(lastTag == "single" && thisTag == "closed") {
-      indent--;
-    }
-
-    if(lastTag == "open" && thisTag == "closed") {
-    } else {
-      for(var j = 0; j < indent; j++){
-        boardMarkup = boardMarkup + indentChars;
-      }
-    }
-
-    if(c == "A") { boardMarkup = boardMarkup + '<apple/>\n'}
-    if(c == "O") { boardMarkup = boardMarkup + '<orange/>\n'}
-    if(c == "P") { boardMarkup = boardMarkup + '<pickle/>\n'}
-    if(c == "a") { boardMarkup = boardMarkup + '<apple class="small"/>\n'}
-    if(c == "o") { boardMarkup = boardMarkup + '<orange class="small"/>\n'}
-    if(c == "p") { boardMarkup = boardMarkup + '<pickle class="small"/>\n'}
-
-    if(c == "{") { boardMarkup = boardMarkup + '<plate id="fancy">'}
-    if(c == "(") { boardMarkup = boardMarkup + '<plate>'}
-    if(c == ")" || c == "}") { boardMarkup = boardMarkup + '</plate>\n'}
-    if(c == "[") { boardMarkup = boardMarkup + '<bento>'}
-    if(c == "]") { boardMarkup = boardMarkup + '</bento>\n'}
-
-    lastTag = thisTag;
-
-    var last = c;
   }
   $(".table").html(boardMarkup);
-  console.log($(".table").html());
-  $(".markup").text('<div class="table">\n'+boardMarkup+ '</div>');
+  $(".markup").html('<div>&ltdiv class="table"&gt' + markup + '&lt/div&gt</div>');
 }
 
 //Loads up a level

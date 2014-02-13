@@ -45,7 +45,8 @@ h1, h2, h3, h4, h5 {
   outline: solid 1px transparent;
   margin: 0px auto 0px auto;
   background: #DDD;
-  height: 142px;
+  min-height: 142px;
+
   padding: 15px 15px 22px 15px;
   display: inline-block;
   background: #dd992d;
@@ -198,6 +199,25 @@ orange,apple,pickle {
   display: inline-block;
   margin: 0 10px;
   height: 60px;
+}
+
+
+
+carrot {
+  background: orange;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  box-shadow: 0px 5px 0px rgba(0,0,0,.15);
+
+  background: #f9e4ac;
+  border-style: solid;
+  border-color: #88611e;
+  border-width: 2px 2px 12px 2px;
+  -webkit-border-radius: 15px 15px 6px 6px;
+  margin: 20px 10px;
+
+
 }
 
 
@@ -572,6 +592,10 @@ plate orange:nth-last-child(4)
   line-height: 150%;
   font-family: menlo;
   z-index: 1;
+}
+
+.markup * {
+  font-family: menlo;
   font-size: 13px;
 }
 
@@ -693,4 +717,20 @@ plate orange:nth-last-child(4)
 
 .logo:hover plate {
   opacity: .75;
+}
+
+.markup * {
+    color: rgba(255,255,255,.3);
+}
+
+.markup .enhance {
+    color: rgba(255,255,255,.7);
+}
+
+.markup div {
+  padding-left: 20px;
+}
+
+.markup > div {
+  padding-left: 0px;
 }
