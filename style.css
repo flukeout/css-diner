@@ -144,6 +144,16 @@ bento:before {
 }
 
 
+
+.editor {
+  position: relative;
+  text-align: left;
+  width: 525px;
+  margin: 0 auto;
+  border: solid 10px #282420;
+  -webkit-border-radius: 10px;
+}
+
 .editor * {
   font-family: menlo;
   font-size: 14px;
@@ -152,14 +162,6 @@ bento:before {
   margin: 0;
 }
 
-.editor {
-  position: relative;
-  text-align: left;
-  width: 600px;
-  margin: 0 auto;
-  border: solid 10px #282420;
-  -webkit-border-radius: 10px;
-}
 
 .editor .input-header {
   text-align: left;
@@ -615,6 +617,16 @@ plate orange:nth-last-child(4)
   line-height: 150%;
   font-family: menlo;
   z-index: 1;
+  position: absolute;
+  left: 580px;
+  top: -230px;
+  width: 200px;
+  background: #282420;
+  padding: 20px;
+  -webkit-border-radius: 0 10px 10px 0;
+
+
+
 }
 
 .markup * {
@@ -648,6 +660,7 @@ plate orange:nth-last-child(4)
 header {
   height: 80px;
   background: rgba(0,0,0,.3);
+  display: none;
 }
 
 .order {
@@ -666,9 +679,10 @@ header {
 }
 
 .what-is-this {
-  display: none;
-  width: 350px;
+
+
   margin-top: 35px;
+  padding: 20px;
 
   color: #666;
   font-size: 15px;
@@ -786,5 +800,4 @@ header {
   height: 100%;
   right: 0;
 }
-
 
