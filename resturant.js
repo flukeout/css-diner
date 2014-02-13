@@ -158,7 +158,7 @@ function fireRule(rule) {
 
   //If nothing is selected
   if(ruleSelected.length == 0) {
-    $(".input-wrapper").addClass("shake");
+    $(".editor").addClass("shake");
   }
 
   if(ruleSelected.length == levelSelected.length && ruleSelected.length > 0){

@@ -11,64 +11,107 @@
   </head>
   <body>
 
-    <div class="game-wrapper">
-
-    <!-- <h1 class="level-header"></h1> -->
-    <h2 class="order"></h2>
-
-    <div class="table-wrapper">
-      <div class="table"></div>
-    </div>
-
-    <div class="table-edge">
-      <div class="table-leg"></div>
-      <div class="table-leg"></div>
-    </div>
-
-    <div class="input-wrapper">
-      <div class="input-header">Try a CSS Selector</div>
-      <input type="text" /><span class="plus">+</span><div class="enter-button">enter</div>
-    </div>
-    <div class="help">
-      Type a number to skip to a level. Ex &rarr; <strong>"5"</strong> for level 5
-    </div>
-
-    <div class="what-is-this">
-      <h2>What is this?</h2>
-      <p>
-        It's a little game to help you learn CSS selectors.
-        Type in the correct selector to complete each level. Get help on the right.
-      </p>
-      <p>
-        It's a work in progress, so please give me feedback!
-      </p>
-
-      <p>Made by <a href="http://www.twitter.com/flukeout">@flukeout</a></p>
-
+    <!--
+    <header>
       <div class="logo">
         <plate></plate>
         <div class="css">CSS</div>
         <div class="diner">Diner</div>
       </div>
+    </header>
+    -->
 
+
+
+
+  </div>
+
+
+    <div>
+      <div class="what-is-this">
+        <h2>What is this?</h2>
+        <p>
+          It's a little game to help you learn CSS selectors.
+          Type in the correct selector to complete each level. Get help on the right.
+        </p>
+        <p>
+          It's a work in progress, so please give me feedback!
+        </p>
+
+        <p>Made by <a href="http://www.twitter.com/flukeout">@flukeout</a></p>
+
+      </div>
 
     </div>
 
-</div>
-    <div class="helper"></div>
-    <div class="markup-wrapper">
-      <h1 class="level-header"></h1>
-      <div class="display-help">
-        <h2 class="title"></h2>
-        <div class="hint"></div>
-        <div class="selector"></div>
-      </div>
-      <h2 class="title">Level Markup</h2>
-      <div class="markup">
+    <div class="col-wrapper bottom-half">
+      <div class="left-col">
+  <h2 class="order"></h2>
+        <div class="game-wrapper">
+          <div class="table-wrapper">
+            <div class="table"></div>
+          </div>
+          <div class="table-edge">
+            <div class="table-leg"></div>
+            <div class="table-leg"></div>
+          </div>
+        </div>
+
+        <div class="editor">
+
+          <div class="input-header">
+            <div class="file-name">style.css</div>
+            CSS Editor
+          </div>
+          <div class="file-window">
+
+          <div class="line-numbers">
+            1<br/>
+            2<br/>
+            3<br/>
+            4<br/>
+            5<br/>
+            6<br/>
+            7<br/>
+            8<br/>
+            9<br/>
+          </div>
+            <input type="text" placeholder="Type in a CSS selector"/><span class="plus">+</span><div class="enter-button">enter</div>
+            <div>
+            {<br/>
+            &nbsp;&nbsp;/* Styles would go here. */<br/>
+            }
+            </div>
+            <div class="help">
+              <br/>
+              /* <br/>
+              &nbsp;&nbsp;Type a number to skip to a level.
+              Ex &rarr; "5" for level 5 <br/>*/
+            </div>
+          </div>
+        </div>
 
       </div>
+
+      <div class="right-col">
+
+
+      <div class="markup"></div>
     </div>
+  </div>
 
+
+  <div class="teach-wrapper">
+    <h1 class="level-header"></h1>
+    <div class="display-help">
+      <h2 class="title"></h2>
+      <div class="hint"></div>
+      <div class="selector"></div>
+    </div>
+  </div>
+
+
+  <div class="helper"></div>
   </body>
 
 </html>
