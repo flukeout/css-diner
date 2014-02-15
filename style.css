@@ -146,11 +146,11 @@ bento:before {
 .editor {
   position: relative;
   text-align: left;
-  width: 650px;
+  width: 675px;
   margin: 0 auto;
   border: solid 10px #282420;
   -webkit-border-radius: 10px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .editor-pane {
@@ -181,10 +181,6 @@ bento:before {
   color: rgba(255,255,255,.6);
 }
 
-.html-view .input-header {
-
-}
-
 .markup {
   line-height: 150%;
   font-family: menlo;
@@ -194,7 +190,7 @@ bento:before {
 .editor .file-window {
   padding: 10px 10px 10px 40px;
   position: relative;
-  min-height: 350px;
+  min-height: 348px;
 }
 
 .editor .css-view {
@@ -236,6 +232,10 @@ bento:before {
   color: #333;
   border: none;
   width: 100%;
+  background: none  ;
+}
+
+.editor input.input-strobe {
   background: rgba(62,203,255,.2);
   -webkit-animation: input .45s infinite;
 }
@@ -244,10 +244,6 @@ bento:before {
   50% { background:none ; }
 }
 
-.editor input:focus {
-  background: none;
-  -webkit-animation: none;
-}
 
 .editor input:focus {
   outline: none;
@@ -417,7 +413,6 @@ bento > pickle.small:only-child {
 .strobe {
   -webkit-animation: strobe 1s infinite;
   -webkit-transform-origin: bottom;
-
   transform-origin: bottom;
   animation: strobe 1s infinite;
 }
@@ -798,15 +793,14 @@ header {
 }
 
 .left-col {
-  width: calc(100% - 350px);
+  width: calc(100% - 375px);
   text-align: center;
-
 }
 
 .right-col {
 
   position: absolute;
-  width: 350px;
+  width: 375px;
   padding: 20px;
   background: rgba(0,0,0,.1);
   height: 100%;

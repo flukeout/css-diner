@@ -5,13 +5,27 @@ var levelTimeout = 1000;
 $(document).ready(function(){
 
   //Handle inputs from the input box on enter
-  $("input").on("keypress",function(e){
+  $("input").on("keyup",function(e){
     e.stopPropagation();
     if(e.keyCode ==  13){
       enterHit();
       return false;
     }
-  })
+    var length = $(this).val().length;
+    console.log(length);
+
+    if(length > 0) {
+      $("input").removeClass("input-strobe");
+    } else {
+      $("input").addClass("input-strobe");
+    }
+
+  });
+
+
+  $(".editor").on("click",function(){
+    $("input").focus();
+  });
 
   //Add tooltips
   $(".table").on("mouseover","*",function(e){
@@ -72,16 +86,13 @@ $(document).ready(function(){
     e.stopPropagation();
   });
 
-
-
   $(".enter-button").on("click",function(){
     enterHit();
   })
 
-
   $(".table-wrapper,.table-edge").css("opacity",0);
 
-  window.setTimeout(function(){
+  setTimeout(function(){
     loadLevel();
     $(".table-wrapper,.table-edge").css("opacity",1);
   },50);
@@ -174,12 +185,12 @@ function fireRule(rule) {
     currentLevel++;
     if(currentLevel >= levels.length) {
       winGame();
-      window.setTimeout(function(){
+      setTimeout(function(){
         currentLevel = 0;
         loadLevel();
       },levelTimeout);
     } else {
-      window.setTimeout(function(){
+      setTimeout(function(){
         loadLevel();
       },levelTimeout);
     }
@@ -191,7 +202,7 @@ function fireRule(rule) {
     ruleSelected.removeClass("strobe");
     ruleSelected.addClass("shake");
 
-    window.setTimeout(function(){
+    setTimeout(function(){
       $(".shake").removeClass("shake");
       $(".strobe").removeClass("strobe");
       levelSelected.addClass("strobe");
