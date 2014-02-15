@@ -151,19 +151,16 @@ bento:before {
   border: solid 10px #282420;
   -webkit-border-radius: 10px;
   overflow: auto;
-  height: 600px;
 }
 
 .editor-pane {
-  width: 50%;
   float: left;
-  height: 100%;
-
-/*  height: 500px;*/
+  width: 50%;
 }
 
 .editor-pane:last-child {
-  float: right;
+  border-right: solid 1px rgba(255,255,255,.05);
+  border-bottom: solid 1px rgba(255,255,255,.05);
 }
 
 .editor * {
@@ -185,7 +182,7 @@ bento:before {
 }
 
 .html-view .input-header {
-  opacity: .5;
+
 }
 
 .markup {
@@ -197,6 +194,7 @@ bento:before {
 .editor .file-window {
   padding: 10px 10px 10px 40px;
   position: relative;
+  min-height: 350px;
 }
 
 .editor .css-view {
@@ -695,13 +693,13 @@ header {
 
 .what-is-this {
 
-
+  text-align: center;
   margin-top: 35px;
   padding: 20px;
-
+  width: 500px;
   color: #666;
   font-size: 15px;
-  border-top: solid 2px #444;
+  margin: 0 auto;
   font-weight: 200;
 }
 
