@@ -684,7 +684,6 @@ header {
   font-weight: 400;
   text-align: center;
   padding: 20px 0;
-
 }
 
 .info-wrapper {
@@ -692,7 +691,6 @@ header {
 }
 
 .what-is-this {
-
   text-align: center;
   margin-top: 35px;
   padding: 20px;
@@ -800,18 +798,19 @@ header {
 }
 
 .left-col {
-/*  float: left;*/
+  width: calc(100% - 350px);
   text-align: center;
-/*  width: 800px;*/
+
 }
 
 .right-col {
-  display: none;
+
   position: absolute;
-  width: calc(100% - 800px);
-  padding: 135px 20px 20px 20px;
+  width: 350px;
+  padding: 20px;
   background: rgba(0,0,0,.1);
   height: 100%;
   right: 0;
+  top: 0px;
 }
 
