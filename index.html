@@ -42,24 +42,18 @@
 
         <div class="editor">
 
-          <div class="input-header">
-            <div class="file-name">style.css</div>
-            CSS Editor
-          </div>
-          <div class="file-window">
 
-          <div class="line-numbers">
-            1<br/>
-            2<br/>
-            3<br/>
-            4<br/>
-            5<br/>
-            6<br/>
-            7<br/>
-            8<br/>
-            9<br/>
-          </div>
-            <input type="text" placeholder="Type in a CSS selector"/><span class="plus">+</span><div class="enter-button">enter</div>
+          <div class="editor-pane">
+            <div class="input-header">
+              <div class="file-name">style.css</div>
+              CSS Editor
+            </div>
+
+          <div class="file-window css-view">
+            <div class="line-numbers">
+              1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>
+            </div>
+              <input type="text" placeholder="Type in a CSS selector"/><span class="plus">+</span><div class="enter-button">enter</div>
             <div>
             {<br/>
             &nbsp;&nbsp;/* Styles would go here. */<br/>
@@ -72,15 +66,36 @@
               Ex &rarr; "5" for level 5 <br/>*/
             </div>
           </div>
+        </div>
 
-              <div class="markup"></div>
+          <div class="editor-pane html-view">
+            <div class="input-header">
+              <div class="file-name">table.html</div>
+              HTML Viewer
+            </div>
+
+            <div class="file-window">
+              <div class="line-numbers">
+                1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>
+              </div>
+              <div class="markup">
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
         </div>
 
       </div>
 
       <div class="right-col">
 
-          <h1 class="level-header"></h1>
+
+          <!-- <h1 class="level-header"></h1> -->
           <div class="display-help">
             <h2 class="title"></h2>
             <div class="hint"></div>
