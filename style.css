@@ -295,7 +295,7 @@ bento:before {
   font-family: menlo, monospace;
   color: #333;
   border: none;
-  width: 100%;
+  width: calc(100% - 44px);
   background: none  ;
 }
 
@@ -499,17 +499,20 @@ bento > pickle.small:only-child {
 
 .enter-button {
   background: #ddd;
-  display: inline-block;
-  border-radius: 3px;
-  padding: 8px 10px 7px 10px;
+  display: block;
+  -webkit-border-radius: 2px;
+  padding: 2px 7px 2px 7px;
   color: #666;
   border: solid 3px #999;
-  border-width: 2px 2px 16px 2px;
+  border-width: 1px 1px 6px 1px;
   position: absolute;
-  bottom: 15px;
   right: 13px;
-  font-size: 13px;
-  display: none;
+  font-size: 9px;
+  position: absolute;
+  cursor: pointer;
+  top: 7px;
+  right: 7px;
+  z-index: 999999;
 }
 
 .enterhit {
@@ -519,10 +522,13 @@ bento > pickle.small:only-child {
 
 
 @-webkit-keyframes enterhit {
-  50% { border-width: 2px 2px 8px 2px;}
+  50% {
+    border-width: 1px 1px 2px 1px;
+    top: 12px;
+  }
 }
 @-keyframes enterhit {
-  50% { border-width: 2px 2px 8px 2px;}
+  50% { border-width: 1px 1px 2px 1px;}
 }
 
 .plus {
