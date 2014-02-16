@@ -203,7 +203,19 @@ var levels = [
       '<strong>span:last-child</strong> selects all last-child <strong>&lt;span&gt;</strong> elements.',
       '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elements inside of any <strong>&lt;ul&gt;</strong>.'
     ],
-
     board: "{a)(OO)()p"
+  },
+  {
+    doThis : "Select the big apples",
+    selector : "apple:not(.small)",
+    syntax: ":not(X)",
+    helpTitle: "Negation Pseudo-class",
+    help : "You can use this to select all elements that don't match selector <strong>X</strong> in the parentheses.",
+    examples : [
+      '<strong>:not(#fancy)</strong> selects all elements that do not have <strong>id="fancy"</strong>.',
+      '<strong>:not(div)</strong> selects all elements that are not a <strong>&lt;div&gt;</strong> elements.',
+      '<strong>:not(.big, .medium)</strong> selects all elements that do not have <strong>class="big"</strong> or <strong>class="medium"</strong>.'
+    ],
+    board: "{a)(A)A(o)p"
   }
 ];
