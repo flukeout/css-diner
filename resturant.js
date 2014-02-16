@@ -12,14 +12,12 @@ $(document).ready(function(){
       return false;
     }
     var length = $(this).val().length;
-    console.log(length);
 
     if(length > 0) {
       $("input").removeClass("input-strobe");
     } else {
       $("input").addClass("input-strobe");
     }
-
   });
 
 
@@ -108,15 +106,20 @@ function enterHit(){
   $(".enter-button").addClass("enterhit");
 
   var value = $("input").val();
-  if(value){
-    handleInput(value);
-  }
+  handleInput(value);
+
 
 }
 
 
 //Parses text from the input field
 function handleInput(text){
+
+
+
+  if(text == ""){
+    text = "blammojammo";
+  }
 
   if(parseInt(text) > 0 && parseInt(text) < levels.length+1) {
     currentLevel = parseInt(text) -1;
