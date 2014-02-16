@@ -16,7 +16,7 @@ var levels = [
     selector : "plate",
     syntax : "A",
     helpTitle : "Type Selector",
-    help : "Use the tag name to select all elements of that type.",
+    help : "Selects elements of that type.",
     examples : [
       '<strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements.',
       '<strong>p</strong> will select all <strong>&lt;p&gt;</strong> elements.',
@@ -28,7 +28,7 @@ var levels = [
     selector : "bento",
     syntax : "A",
     helpTitle : "Type Selector",
-    help : "Use the tag name to select all elements of that type.",
+    help : "Selects elements of that type.",
     examples : [
       '<strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements.',
       '<strong>p</strong> will select all <strong>&lt;p&gt;</strong> elements.',
@@ -40,9 +40,9 @@ var levels = [
     selector : "#fancy",
     helpTitle: "ID Selector",
     syntax: "#id",
-    help : 'Use the #id selector to select an element with that id. You can also combine the ID selector with the type selector.',
+    help : 'Selects an element with that id. You can also combine the ID selector with the type selector.',
     examples : [
-      '<strong>#cool</strong> will select the element with <strong>id="cool"</strong>',
+      '<strong>#cool</strong> will select any element with <strong>id="cool"</strong>',
       '<strong>ul#long</strong> will select <strong>&lt;ul id="long"&gt;</strong>'
     ],
     board: "{)()[]"
@@ -52,9 +52,10 @@ var levels = [
     selector : "plate apple",
     syntax: "A&nbsp;&nbsp;B",
     helpTitle: "Descendant Selector",
-    help : "You can find elements that are descendents of another element. A descendant is any element that is inside of another element.",
+    help : "Selects descendents of other another selector. A descendant is any element that is inside of another element.",
     examples : [
-      '<strong>p&nbsp;&nbsp;strong</strong> will select all <strong>&lt;strong&gt;</strong> that are inside of any <strong>&lt;p&gt;</strong>',
+      '<strong>p&nbsp;&nbsp;strong</strong> will select all <strong>&lt;strong&gt;</strong> that are descendants of any <strong>&lt;p&gt;</strong>',
+      '<strong>#fancy&nbsp;&nbsp;span</strong> will select any <strong>&lt;span&gt;</strong> that is a descendant of any element with  <strong>id="fancy"</strong>',
     ],
     board: "[](A)A"
   },
@@ -65,8 +66,7 @@ var levels = [
     syntax: "A&nbsp;&nbsp;#id",
     help : 'You can combine any selector with the descendent selector.',
     examples : [
-      '<strong>#cool&nbsp;&nbsp;&lt;span&gt;</strong> will get all <strong>&lt;span&gt;</strong> elements that are inside of elements with <strong>id="cool"</strong>',
-      '<strong>.cool&nbsp;&nbsp;&lt;p&gt;</strong> will get all <strong>&lt;p&gt;</strong> elements that are inside of elements with with <strong>class="cool"</strong>',
+      '<strong>#cool&nbsp;span</strong> will select all <strong>&lt;span&gt;</strong> elements that are inside of elements with <strong>id="cool"</strong>'
 
     ],
     board: "[O]{P)(P)"
@@ -205,15 +205,28 @@ var levels = [
     ],
     board: "{a)(OO)()p"
   },
+
+  {
+    doThis : "Select the 3rd plate",
+    selector : ":nth-child(3)",
+    syntax: ":nth-child(n)",
+    helpTitle: "Nth Child Selector",
+    help : "Selects the <strong>nth</strong> (Ex: 1st, 3rd, 12th etc.) child element in another element.",
+    examples : [
+      '<strong>:nth-child(8)</strong> selects every element that is the 8th child of another element.',
+      '<strong>div p:nth-child(2)</strong> selects the second <strong>p</strong> in every <strong>div</strong>',
+    ],
+    board: "()()(){}"
+  },
   {
     doThis : "Select the big apples",
     selector : "apple:not(.small)",
     syntax: ":not(X)",
     helpTitle: "Negation Pseudo-class",
-    help : "You can use this to select all elements that don't match selector <strong>X</strong> in the parentheses.",
+    help : 'You can use this to select all elements that do not match selector <strong>"X"</strong>.',
     examples : [
       '<strong>:not(#fancy)</strong> selects all elements that do not have <strong>id="fancy"</strong>.',
-      '<strong>:not(div)</strong> selects all elements that are not a <strong>&lt;div&gt;</strong> elements.',
+      '<strong>div:not(:first-child)</strong> selects every <strong>&lt;div&gt;</strong> that is not a first child.',
       '<strong>:not(.big, .medium)</strong> selects all elements that do not have <strong>class="big"</strong> or <strong>class="medium"</strong>.'
     ],
     board: "{a)(A)A(o)p"
