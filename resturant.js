@@ -31,58 +31,30 @@ $(document).ready(function(){
   $(".table").on("mouseover","*",function(e){
     e.stopPropagation();
     el = $(this);
-
-    el.attr("data-hovered",true);
-
-    var tableElements = $(".table *");
-    var index = tableElements.index($(this));
-
-    var that = $(this);
+    showTooltip(el);
+  });
 
 
-    $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
+  //Shows the tooltip on the table
+  $(".markup").on("mouseover","div *",function(e){
 
-    var helper = $(".helper");
+    el = $(this);
+    console.log(el);
+    var markupElements = $(".markup *");
+    var index = markupElements.index(el) -1;
 
-    var pos = el.offset();
-    helper.css("top",pos.top - 65);
-    helper.css("left",pos.left + (el.width()/2));
+    showTooltip($(".table *").eq(index));
+    e.stopPropagation();
+  });
 
-    var helpertext;
-
-    var elType = el.get(0).tagName;
-    elType = elType.toLowerCase();
-    helpertext = '<' + elType;
-
-    var elClass = el.attr("class");
-
-    if(elClass) {
-
-      if(elClass.indexOf("strobe") > -1){
-        elClass = elClass.replace("strobe","");
-      }
-
-    }
-
-    if(elClass) {
-      helpertext = helpertext + ' class="' + elClass + '"';
-    }
-
-    var id = el.attr("id");
-    if(id) {
-      helpertext = helpertext + ' id="' + id + '"';
-    }
-
-    helpertext = helpertext + '></' + elType + '>';
-    helper.show();
-    helper.text(helpertext);
-
+  //Shows the tooltip on the table
+  $(".markup").on("mouseout","*",function(e){
+    e.stopPropagation();
+    hideTooltip();
   });
 
   $(".table").on("mouseout","*",function(e){
-    $(".enhance").removeClass("enhance");
-    $("[data-hovered]").removeAttr("data-hovered");
-    $(".helper").hide();
+    hideTooltip();
     e.stopPropagation();
   });
 
@@ -100,6 +72,56 @@ $(document).ready(function(){
 
 });
 
+function hideTooltip(){
+  $(".enhance").removeClass("enhance");
+  $("[data-hovered]").removeAttr("data-hovered");
+  $(".helper").hide();
+
+}
+
+function showTooltip(el){
+
+  el.attr("data-hovered",true);
+  var tableElements = $(".table *");
+  var index = tableElements.index(el);
+  var that = el;
+
+  $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
+
+  var helper = $(".helper");
+
+  var pos = el.offset();
+  helper.css("top",pos.top - 65);
+  helper.css("left",pos.left + (el.width()/2));
+
+  var helpertext;
+
+  var elType = el.get(0).tagName;
+  elType = elType.toLowerCase();
+  helpertext = '<' + elType;
+
+  var elClass = el.attr("class");
+
+  if(elClass) {
+    if(elClass.indexOf("strobe") > -1){
+      elClass = elClass.replace("strobe","");
+    }
+  }
+
+  if(elClass) {
+    helpertext = helpertext + ' class="' + elClass + '"';
+  }
+
+  var id = el.attr("id");
+  if(id) {
+    helpertext = helpertext + ' id="' + id + '"';
+  }
+
+  helpertext = helpertext + '></' + elType + '>';
+  helper.show();
+  helper.text(helpertext);
+
+}
 
 //Animate the enter button
 function enterHit(){

@@ -97,8 +97,8 @@ var levels = [
   {
     doThis : "Select the small oranges in the bentos",
     selector : "bento orange.small",
-    helpTitle: "Use your skills!  ",
-    help : 'You can do it!',
+    helpTitle: "You can do it!  ",
+    help : 'Combine what you learned in the last few levels to solve this one!',
     board: "A(o)[o][a][o]"
   },
   {
