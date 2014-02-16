@@ -7,7 +7,6 @@
 html,body {
   margin: 0;
   padding: 0;
-
 }
 
 body {
@@ -25,6 +24,70 @@ body * {
 h1, h2, h3, h4, h5 {
   font-weight: 600;
 }
+
+
+header {
+  padding: 10px 20px 10px 35px;
+  background: rgba(0,0,0,.5);
+  color:   rgba(255,255,255,.3);
+
+
+}
+
+.logo {
+  cursor: default;
+  -webkit-transform-origin: middle;
+  -webkit-transform: scale(.2);
+  z-index: 9999999;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.logo plate {
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  opacity: .5;
+  -webkit-transition: all linear .1s;
+}
+
+.logo .css {
+  z-index: 9999;
+  font-size: 50px;
+  font-weight: 600;
+  color: #555;
+  position: absolute;
+  width: 100%;
+  top: 18px;
+  left: 0px;
+  text-align: center;
+}
+
+.logo .diner {
+  width: 0px;
+  overflow: hidden;
+  color: #777;
+  font-family: "Exo 2";
+  text-align: left;
+  position: absolute;
+  top: 19px;
+  left: 108px;
+  z-index: 600;
+  font-size: 48px;
+  -webkit-transition: all linear .1s;
+}
+
+.logo:hover .diner {
+  width: 120px;
+}
+
+.logo:hover plate {
+  opacity: .75;
+}
+
 
 
 .table-wrapper {
@@ -146,7 +209,7 @@ bento:before {
 .editor {
   position: relative;
   text-align: left;
-  width: 675px;
+  width: 750px;
   margin: 0 auto;
   border: solid 10px #282420;
   -webkit-border-radius: 10px;
@@ -188,7 +251,7 @@ bento:before {
 }
 
 .editor .file-window {
-  padding: 10px 10px 10px 40px;
+  padding: 10px 10px 10px 46px;
   position: relative;
   min-height: 348px;
 }
@@ -211,6 +274,7 @@ bento:before {
   padding: 10px 10px;
   height: 100%;
   line-height: 150%;
+  text-align: right;
 }
 
 .css-view .line-numbers {
@@ -524,25 +588,63 @@ orange {
 }
 
 .display-help {
-  font-size: 16px;
+  font-size: 15px;
   margin: 30px auto 0 auto;
   color: rgba(255,255,255,.6);
 }
 
-.display-help .hint {
-  color: #888;
-  line-height: 165%;
-  font-size: 16px;
-  margin-bottom: 35px;
+.display-help .title {
+  font-size: 18px;
+  margin-bottom: 8px;
+
 }
 
-.display-help .hint strong {
-  color: #CCC;
-  background: rgba(255,255,255,.1);
-  padding: 2px 8px 1px 8px;
-  font-weight: normal;
+.display-help .syntax {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  font-weight: 200;
+  opacity: .6;
+  margin-bottom: 25px;
+  background: rgba(255,255,255,.05);
+  display: inline-block;
+  padding: 5px 8px;
+  border-bottom: solid 2px rgba(255,255,255,.1);
+
+}
+
+.display-help .hint {
+  margin-bottom: 20px;
+  line-height: 140%;
+}
+
+.display-help .hint,
+.display-help .example {
+  color: #888;
   font-size: 15px;
+}
+
+.display-help .example {
+  border-bottom: solid 1px rgba(255,255,255,.05);
+  padding: 10px 0 12px 0;
+  line-height: 170%;
+}
+
+.display-help .example:last-child {
+  border: none;
+}
+
+.display-help .example strong {
+  color: #AAA;
+  background: rgba(255,255,255,.1);
+  padding: 3px 6px 3px 6px;
+  margin: 0px 2px;
+  font-size: 13px;
   font-family: menlo,monospace;
+}
+
+.display-help .example strong:first-of-type {
+  margin-left: 0px;
 }
 
 .display-help .selector-wrapper {
@@ -567,7 +669,7 @@ orange {
   content: "Try";
   color: #999;
   position: absolute;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: normal;
   top: 8px;
   left: -55px;
@@ -632,12 +734,6 @@ plate orange:nth-last-child(4)
   color: rgba(255,255,255,.3);
 }
 
-.markup-wrapper .title {
-  color: rgba(255,255,255,.7);
-  padding: 0;
-  font-weight:200;
-  font-size: 18px;
-}
 
 
 .markup * {
@@ -662,23 +758,15 @@ plate orange:nth-last-child(4)
   border-bottom: solid 2px rgba(255,255,255,.15);
   padding: 0 0 10px 0;
   color: #777;
-
-}
-
-header {
-  height: 80px;
-  background: rgba(0,0,0,.3);
-  display: none;
 }
 
 .order {
   color: rgba(255,255,255,.3);
   font-size: 45px;
-  padding: 0;
-  margin: 0 0 0px 0;
+  margin: 0;
   font-weight: 400;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 30px;
 }
 
 .info-wrapper {
@@ -697,7 +785,7 @@ header {
 }
 
 .what-is-this h2 {
-  font-weight: 200;
+  font-weight: 400;
   font-size: 20px;
   color: #888;
 }
@@ -713,61 +801,6 @@ header {
 }
 
 
-.logo {
-  width: 100px;
-  height: 100px;
-  cursor: default;
-  -webkit-transform-origin: middle;
-  -webkit-transform: scale(.5);
-  z-index: 9999999;
-  position: relative;
-
-  top: -10px;
-}
-
-.logo plate {
-  z-index: 500;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  opacity: .5;
-  -webkit-transition: all linear .1s;
-}
-
-.logo .css {
-  z-index: 9999;
-  font-size: 50px;
-  font-weight: 600;
-  color: #555;
-  position: absolute;
-  width: 100%;
-  top: 18px;
-  left: 0px;
-  text-align: center;
-}
-
-.logo .diner {
-  width: 0px;
-  overflow: hidden;
-  color: #777;
-  font-family: "Exo 2";
-  text-align: left;
-  position: absolute;
-  top: 19px;
-  left: 108px;
-  z-index: 600;
-  font-size: 48px;
-  -webkit-transition: all linear .1s;
-}
-
-.logo:hover .diner {
-  width: 120px;
-}
-
-.logo:hover plate {
-  opacity: .75;
-}
 
 .markup * {
     color: rgba(255,255,255,.3);

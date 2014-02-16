@@ -6,30 +6,23 @@
     <script src="levels.js" type="text/javascript" charset="utf-8"></script>
     <script src="resturant.js" type="text/javascript" charset="utf-8"></script>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,600,400italic,600italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:200,400,600,400italic,600italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
 
     <header>
+      CSS Diner
       <div class="logo">
-        <plate></plate>
-        <div class="css">CSS</div>
-        <div class="diner">Diner</div>
+        <plate>
+          <apple />
+        </plate>
       </div>
     </header>
 
-
-  </div>
-
-
-    <div>
-
-    </div>
-
     <div class="col-wrapper bottom-half">
       <div class="left-col">
-  <h2 class="order"></h2>
+        <h2 class="order"></h2>
         <div class="game-wrapper">
           <div class="table-wrapper">
             <div class="table"></div>
@@ -47,7 +40,6 @@
               <div class="file-name">style.css</div>
               CSS Editor
             </div>
-
           <div class="file-window css-view">
             <div class="line-numbers">
               1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20
@@ -55,66 +47,57 @@
               <input class="input-strobe" type="text" placeholder="Type in a CSS selector"/><span class="plus">+</span><div class="enter-button">enter</div>
             <div>
             {<br/>
-            &nbsp;&nbsp;/* Styles would go here. */<br/>
+            /* Styles would go here. */<br/>
             }
             </div>
             <div class="help">
               <br/>
               /* <br/>
-              &nbsp;&nbsp;Type a number to skip to a level.
+              Type a number to skip to a level.<br/>
               Ex &rarr; "5" for level 5 <br/>*/
             </div>
           </div>
         </div>
 
-          <div class="editor-pane html-view">
-            <div class="input-header">
-              <div class="file-name">table.html</div>
-              HTML Viewer
+        <div class="editor-pane html-view">
+          <div class="input-header">
+            <div class="file-name">table.html</div>
+            HTML Viewer
+          </div>
+          <div class="file-window">
+            <div class="line-numbers">
+              1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20              </div>
+            <div class="markup">
             </div>
-
-            <div class="file-window">
-              <div class="line-numbers">
-                1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20              </div>
-              <div class="markup">
-              </div>
-            </div>
-
           </div>
         </div>
 
-
-        <div class="what-is-this">
-          <h2>What is this?</h2>
-          <p>
-            It's a little game to help you learn CSS selectors. Type in the correct selector to complete each level. Get help on the right.
-          </p>
-          <p>It's a work in progress, so please give me feedback!</p>
-          <p>Made by <a href="http://www.twitter.com/flukeout">@flukeout</a></p>
-        </div>
-
       </div>
+
+      <div class="what-is-this">
+        <h2>What is this?</h2>
+        <p>It's a little game to help you learn CSS selectors. Type in the correct selector to complete each level. Get help on the right.</p>
+        <p>It's a work in progress, so please give me feedback!</p>
+        <p>Made by <a href="http://www.twitter.com/flukeout">@flukeout</a></p>
+      </div>
+
+      </div><!-- /leftcol -->
 
       <div class="right-col">
           <h1 class="level-header"></h1>
           <div class="display-help">
             <h2 class="title"></h2>
+            <h3 class="syntax"></h3>
             <div class="hint"></div>
+            <div class="examples"></div>
             <div class="selector"></div>
           </div>
       </div>
 
-
-
   </div>
 
-
-
-
+  <!-- This is the popup that floats over table elemetns -->
   <div class="helper"></div>
-
-
-
 
   </body>
 

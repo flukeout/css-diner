@@ -133,12 +133,23 @@ function handleInput(text){
 
 //Shows help
 function showHelp() {
-  // $(".display-help").addClass("open-help");
+
   $("input").val("");
   var helpTitle = level.helpTitle || "";
   var help = level.help || "";
+  var examples = level.examples ||[];
   var selector = level.selector || "";
+  var syntax = level.syntax || "";
+
+  $(".display-help .syntax").html(syntax);
   $(".display-help .title").html(helpTitle);
+
+  $(".display-help .examples").html("");
+
+  for(var i = 0; i < examples.length; i++){
+    var example = $("<div class='example'>" + examples[i] + "</div>");
+    $(".display-help .examples").append(example);
+  }
   $(".display-help .hint").html(help);
   $(".display-help .selector").text(selector);
 }
@@ -146,6 +157,8 @@ function showHelp() {
 function resetTable(){
   $(".display-help").removeClass("open-help");
   $(".clean,.strobe").removeClass("clean,strobe");
+  $(".clean,.strobe").removeClass("clean,strobe");
+  $("input").addClass("input-strobe");
   $(".table *").each(function(){
     $(this).width($(this).width());
     $(this).removeAttr("style");
@@ -309,7 +322,7 @@ function loadLevel(){
   loadBoard();
   resetTable();
 
-  $(".level-header").text(".Level {" + (currentLevel+1) + "/" + levels.length + "}");
+  $(".level-header").text("Level " + (currentLevel+1) + "/" + levels.length);
   $(".order").text(level.doThis);
   $("input").val("").focus();
 

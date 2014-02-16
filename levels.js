@@ -14,56 +14,90 @@ var levels = [
   {
     doThis : "Select the plates",
     selector : "plate",
+    syntax : "element",
     helpTitle : "Type Selector",
-    help : "Use the tag name to select all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
+    help : "Use the tag name to select all elements of that type.",
+    examples : [
+      '<strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements.',
+      '<strong>p</strong> will select all <strong>&lt;p&gt;</strong> elements.',
+      ],
     board: "()()"
   },
   {
     doThis : "Select the bentos",
     selector : "bento",
+    syntax : "element",
     helpTitle : "Type Selector",
-    help : "Use the tag name to select all elements of that type.<br/> Ex. &rarr; <strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements",
+    help : "Use the tag name to select all elements of that type.",
+    examples : [
+      '<strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements.',
+      '<strong>p</strong> will select all <strong>&lt;p&gt;</strong> elements.',
+      ],
     board: "[]()[]"
   },
   {
     doThis : "Select the fancy plate",
     selector : "#fancy",
     helpTitle: "ID Selector",
-    help : 'Use the #id selector to select an element with that id. <br/> Ex &rarr; <strong>#cool</strong> will select <strong>&lt;p id="cool" &gt;</strong>',
+    syntax: "#id",
+    help : 'Use the #id selector to select an element with that id. You can also combine the ID selector with the type selector.',
+    examples : [
+      '<strong>#cool</strong> will select the element with <strong>id="cool"</strong>',
+      '<strong>ul#long</strong> will select <strong>&lt;ul id="long"&gt;</strong>'
+    ],
     board: "{)()[]"
   },
   {
     doThis : "Select the apple on the plate",
     selector : "plate apple",
     helpTitle: "Descendant Selector",
-    help : "You can use a selector to only look inside of certain elements. <br>Ex &rarr; <strong>A&nbsp;&nbsp;B</strong> will get all <strong>B</strong> that are inside of <strong>A</strong>",
+    syntax: "A&nbsp;&nbsp;B",
+    help : "You can find elements that are descendents of another element. A descendant is any element that is inside of another element.",
+    examples : [
+      '<strong>p&nbsp;&nbsp;strong</strong> will select all <strong>&lt;strong&gt;</strong> that are inside of any <strong>&lt;p&gt;</strong>',
+    ],
     board: "[](A)A"
   },
   {
     doThis : "Select the pickle on the fancy plate",
     selector : "#fancy pickle",
-    helpTitle: "Combine the Descendant Selector",
-    help : 'You can use any selector inside of a descendent selector. <br> Ex &rarr; <strong>#cool&nbsp;&nbsp;A</strong> will get all <strong>A</strong> elements that are inside of the element with <strong>id="cool"</strong>',
+    helpTitle: "Combine the Descendant & ID Selectors",
+    syntax: "element&nbsp;&nbsp;#id",
+    help : 'You can combine any selector with the descendent selector.',
+    examples : [
+      '<strong>#cool&nbsp;&nbsp;&lt;span&gt;</strong> will get all <strong>&lt;span&gt;</strong> elements that are inside of elements with <strong>id="cool"</strong>',
+      '<strong>.cool&nbsp;&nbsp;&lt;p&gt;</strong> will get all <strong>&lt;p&gt;</strong> elements that are inside of elements with with <strong>class="cool"</strong>',
+
+    ],
     board: "[O]{P)(P)"
   },
   {
     doThis : "Select the small apples",
     selector : ".small",
     helpTitle: "Class Selector",
-    help : 'Use .className to select all elements with that class.<br> Ex &rarr; <strong>.neato</strong> will get all elements with <strong>class="neato"</strong>',
+    syntax: ".classname",
+    help : 'The Class selector selects all elements with that class.',
+    examples : [
+    '<strong>.neato</strong> will get all elements with <strong>class="neato"</strong>',
+    ],
+
     board: "Aa(a)()"
   },
   {
     doThis : "Select the small oranges",
     selector : "orange.small",
     helpTitle: "Combine the Class Selector",
-    help : 'You can combine a .className with a tag name selector.<br> Ex &rarr; <strong>ul.important</strong> will select all <strong>&lt;ul&gt;</strong> elements that have <strong>class="important"</strong>',
+    syntax: "element.classname",
+    help : 'You can combine the Class Selector with other selectors.',
+    examples : [
+      '<strong>ul.important</strong> will select all <strong>&lt;ul&gt;</strong> elements that have <strong>class="important"</strong>',
+    ],
     board: "Aa[o](O)(o)"
   },
   {
     doThis : "Select the small oranges in the bentos",
     selector : "bento orange.small",
-    helpTitle: "You've got the power!",
+    helpTitle: "Use your skills!  ",
     help : 'You can do it!',
     board: "A(o)[o][a][o]"
   },
@@ -71,63 +105,105 @@ var levels = [
     doThis : "Select all the plates and bentos",
     selector : "plate,bento",
     helpTitle: "Combine, selectors, with... commas!",
-    help : 'Thanks to Shatner technology, we can combine selectors with commas.<br> Ex &rarr; <strong>p , .fun</strong> will select all <strong>&lt;p&gt;</strong> elements as well as all elements with <strong>class="fun"</strong> ',
+    syntax : "element, element",
+    help : 'Thanks to Shatner technology, we can combine selectors with commas.',
+    examples: ['<strong>p, .fun</strong> will select all <strong>&lt;p&gt;</strong> elements as well as all elements with <strong>class="fun"</strong> '],
     board: "pP(P)[P](P)Pp"
   },
   {
     doThis : "Select all the things!",
     selector : "*",
     helpTitle: "The Universal Selector",
-    help : 'You can select everything with the <strong>*</strong> selector! <br> You can also use &rarr; <strong>p *</strong> to select everything inside of all <strong>&lt;p&gt;</strong> tags.',
+    syntax : "*",
+    help : 'You can select all elements with the universal selector! ',
+    examples : [
+      '<strong>p *</strong> will select every element inside all <strong>&lt;p&gt;</strong> elements.'
+    ],
     board: "A(o)[][O]{)"
   },
   {
     doThis : "Select everything on a plate",
     selector : "plate *",
-    helpTitle: "The All Selector",
-    help : 'You can select everything with the <strong>*</strong> selector! <br> You can also use &rarr; <strong>p *</strong> to select everything inside of all <strong>&lt;p&gt;</strong> tags.',
+    syntax : "el&nbsp;&nbsp;*",
+    helpTitle: "Combine the Universal Selector",
+    help : 'You can select all elements within other elements wth the universal selector! ',
+    examples : [
+      '<strong>p *</strong> will select every element inside all <strong>&lt;p&gt;</strong> elements.',
+      '<strong>ul.fancy *</strong> will select every element inside all <strong>&lt;ul class="fancy"&gt;</strong> elements.'
+    ],
     board: "{o)(P)a(A)"
   },
   {
     doThis : "Select every apple that directly follows a plate",
     selector : "plate + apple",
     helpTitle: "Adjacent Sibling Selector",
-    help : "You can select an elements next sibling element. <br>Ex &rarr; <strong>A + B</strong> will select every <strong>B</strong> that  directly follows an <strong>A</strong>",
-        board: "[a]()a()Aaa"
+    syntax : "el + el",
+    help : "You can select an element's next sibling element. A sibling element is an element that is on the same level, or depth, as the current element. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
+    examples : [
+      '<strong>A + B</strong> will select every <strong>B</strong> that directly follows an <strong>A</strong>'
+    ],
+    board: "[a]()a()Aaa"
   },
   {
     doThis : "Select every pickle to the right of the bento",
     selector : "bento ~ pickle",
+    syntax: "A ~ B",
     helpTitle: "General Sibling Selector",
-    help : "You can select all siblings that follow an element. <br>Ex &rarr; <strong>A ~ B</strong> will select all <strong>B</strong> that follow an <strong>A</strong>",
+    help : "You can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elements instead of one.",
+    examples : [
+      '<strong>A ~ B</strong> will select all <strong>B</strong> that follow an <strong>A</strong>'
+    ],
     board: "P[o]pP(P)(p)"
   },
   {
     doThis : "Select the apple directly on a plate",
     selector : "plate > apple",
     helpTitle: "Child Selector",
-    help : "You can select all siblings that are direct children of another element. <br>Ex &rarr; <strong>A > B</strong> will select all <strong>B</strong> that are a direct <strong>A</strong>",
+    syntax: "A > B",
+    help : "You can select elements that are direct children of other elements. A child element is any element that is nested direclty in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
+    examples : [
+      '<strong>A > B</strong> will select all <strong>B</strong> that are a direct children <strong>A</strong>'
+    ],
     board: "([A])(A)()Aa"
   },
   {
-    doThis : "Select the bento and first orange",
-    selector : ":first-child",
-    helpTitle: "First Child Selector",
-    help : "You can select the first child element in any other element with the <strong>:first-child</strong> selector.",
+    doThis : "Select the top orange",
+    selector : "plate :first-child",
+    syntax: ":first-child",
+    helpTitle: "First Child Pseudo-selector",
+    help : "You can select the first child element in any other element. You can combine this pseudo-selector with other selectors. A child element is any element that is directly nested in another element.",
+    examples : [
+      '<strong>:first-child</strong> selects all first-child elements.',
+      '<strong>p:first-child</strong> selects all first-child <strong>&lt;p&gt;</strong> elements.',
+      '<strong>div p:first-child</strong> selects all first-child <strong>&lt;p&gt;</strong> elements that are in a <strong>&lt;div&gt;</strong>.'
+    ],
     board: "[]()(OOO)p"
   },
   {
-    doThis : "Select apple and the small bento on the plate",
-    selector : ":only-child",
-    helpTitle: "Only Child Selector",
-    help : "Using <strong>:only-child</strong> selects any element that is the only element inside of another one.",
-    board: "[A](OO)P([])p"
+    doThis : "Select apple and the pickle in the bentos",
+    selector : "bento :only-child",
+    syntax: ":only-child",
+    helpTitle: "Only Child Pseudo-selector",
+    help : "You can selects any element that is the only element inside of another one.",
+    examples : [
+      '<strong>:last-child</strong> selects all last-child elements.',
+      '<strong>span:first-child</strong> selects all first-child <strong>&lt;span&gt;</strong> elements.',
+      '<strong>ul li:first-child</strong> selects all first-child <strong>&lt;li&gt;</strong> elements that are in a <strong>&lt;ul&gt;</strong>.'
+    ],
+    board: "[A][p](AO)P([])p"
   },
   {
-    doThis : "Select the apple, bottom orange and the pickle",
-    selector : ":last-child",
-    helpTitle: "Last Child Selector",
-    help : "You can select the last child element in any other element with the <strong>:last-child</strong> selector.",
-    board: "{A)(OO)()p"
+    doThis : "Select the small apple and the pickle",
+    selector : ".small:last-child",
+    syntax: ":last-child",
+    helpTitle: "Last Child Pseudo-selector",
+    help : "You can use this selector to select an element that is the last child element inside of another element. <br><br>Pro Tip &rarr; In cases where there is only one element, that element counts as the first-child, only-child and last-child!",
+    examples : [
+      '<strong>:last-child</strong> selects all last-child elements.',
+      '<strong>span:last-child</strong> selects all last-child <strong>&lt;span&gt;</strong> elements.',
+      '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elements inside of any <strong>&lt;ul&gt;</strong>.'
+    ],
+
+    board: "{a)(OO)()p"
   }
 ];
