@@ -5,21 +5,23 @@ var levelTimeout = 1000;
 $(document).ready(function(){
 
   //Handle inputs from the input box on enter
-  $("input").on("keyup",function(e){
+  $("input").on("keypress",function(e){
     e.stopPropagation();
     if(e.keyCode ==  13){
       enterHit();
       return false;
     }
-    var length = $(this).val().length;
+  });
 
+  $("input").on("keyup",function(e){
+    e.stopPropagation();
+    var length = $(this).val().length;
     if(length > 0) {
       $("input").removeClass("input-strobe");
     } else {
       $("input").addClass("input-strobe");
     }
   });
-
 
   $(".editor").on("click",function(){
     $("input").focus();
@@ -104,11 +106,8 @@ function enterHit(){
   $(".enter-button").removeClass("enterhit");
   $(".enter-button").width($(".enter-button").width());
   $(".enter-button").addClass("enterhit");
-
   var value = $("input").val();
   handleInput(value);
-
-
 }
 
 
