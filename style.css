@@ -775,7 +775,20 @@ plate orange:nth-last-child(4)
   background: rgba(255,255,255,.2);
   width: 10%;
   height: 2px;
-  border-right: solid 2px rgba(255,255,255,.3);
+  position: relative;
+/*  border-right: solid 2px rgba(255,255,255,.3);*/
+}
+
+.level-progress .progress:after {
+  content:"";
+  position: absolute;
+  right: -6px;
+  top: -3px;
+  height: 4px;
+  width: 4px;
+  border: solid 2px #2a231d;
+  background: rgba(255,255,255,.5);
+  -webkit-border-radius: 5px;
 }
 
 .order {
