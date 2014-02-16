@@ -14,7 +14,7 @@ var levels = [
   {
     doThis : "Select the plates",
     selector : "plate",
-    syntax : "element",
+    syntax : "A",
     helpTitle : "Type Selector",
     help : "Use the tag name to select all elements of that type.",
     examples : [
@@ -26,7 +26,7 @@ var levels = [
   {
     doThis : "Select the bentos",
     selector : "bento",
-    syntax : "element",
+    syntax : "A",
     helpTitle : "Type Selector",
     help : "Use the tag name to select all elements of that type.",
     examples : [
@@ -50,8 +50,8 @@ var levels = [
   {
     doThis : "Select the apple on the plate",
     selector : "plate apple",
-    helpTitle: "Descendant Selector",
     syntax: "A&nbsp;&nbsp;B",
+    helpTitle: "Descendant Selector",
     help : "You can find elements that are descendents of another element. A descendant is any element that is inside of another element.",
     examples : [
       '<strong>p&nbsp;&nbsp;strong</strong> will select all <strong>&lt;strong&gt;</strong> that are inside of any <strong>&lt;p&gt;</strong>',
@@ -62,7 +62,7 @@ var levels = [
     doThis : "Select the pickle on the fancy plate",
     selector : "#fancy pickle",
     helpTitle: "Combine the Descendant & ID Selectors",
-    syntax: "element&nbsp;&nbsp;#id",
+    syntax: "A&nbsp;&nbsp;#id",
     help : 'You can combine any selector with the descendent selector.',
     examples : [
       '<strong>#cool&nbsp;&nbsp;&lt;span&gt;</strong> will get all <strong>&lt;span&gt;</strong> elements that are inside of elements with <strong>id="cool"</strong>',
@@ -87,7 +87,7 @@ var levels = [
     doThis : "Select the small oranges",
     selector : "orange.small",
     helpTitle: "Combine the Class Selector",
-    syntax: "element.classname",
+    syntax: "A.classname",
     help : 'You can combine the Class Selector with other selectors.',
     examples : [
       '<strong>ul.important</strong> will select all <strong>&lt;ul&gt;</strong> elements that have <strong>class="important"</strong>',
@@ -105,7 +105,7 @@ var levels = [
     doThis : "Select all the plates and bentos",
     selector : "plate,bento",
     helpTitle: "Combine, selectors, with... commas!",
-    syntax : "element, element",
+    syntax : "A, B",
     help : 'Thanks to Shatner technology, we can combine selectors with commas.',
     examples: ['<strong>p, .fun</strong> will select all <strong>&lt;p&gt;</strong> elements as well as all elements with <strong>class="fun"</strong> '],
     board: "pP(P)[P](P)Pp"
@@ -124,7 +124,7 @@ var levels = [
   {
     doThis : "Select everything on a plate",
     selector : "plate *",
-    syntax : "el&nbsp;&nbsp;*",
+    syntax : "A&nbsp;&nbsp;*",
     helpTitle: "Combine the Universal Selector",
     help : 'You can select all elements within other elements wth the universal selector! ',
     examples : [
@@ -137,7 +137,7 @@ var levels = [
     doThis : "Select every apple that directly follows a plate",
     selector : "plate + apple",
     helpTitle: "Adjacent Sibling Selector",
-    syntax : "el + el",
+    syntax : "A + B",
     help : "You can select an element's next sibling element. A sibling element is an element that is on the same level, or depth, as the current element. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
     examples : [
       '<strong>A + B</strong> will select every <strong>B</strong> that directly follows an <strong>A</strong>'

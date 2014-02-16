@@ -4,6 +4,10 @@ var levelTimeout = 1000;
 
 $(document).ready(function(){
 
+
+  $(".level-menu-toggle-wrapper").on("click",function(){
+    $(".level-menu").toggleClass("open");
+  });
   //Handle inputs from the input box on enter
   $("input").on("keypress",function(e){
     e.stopPropagation();
@@ -64,28 +68,42 @@ $(document).ready(function(){
 
   $(".table-wrapper,.table-edge").css("opacity",0);
 
+  buildLevelmenu();
+
+
   setTimeout(function(){
     loadLevel();
     $(".table-wrapper,.table-edge").css("opacity",1);
   },50);
 
 
+
 });
+
+function buildLevelmenu(){
+  for(var i = 0; i < levels.length; i++){
+    var level = levels[i];
+    var item = document.createElement("a");
+    $(item).html(level.syntax);
+    $(".level-menu .levels").append(item);
+    $(item).on("click",function(){
+      currentLevel = $(this).index();
+      loadLevel();
+    });
+  }
+}
 
 function hideTooltip(){
   $(".enhance").removeClass("enhance");
   $("[data-hovered]").removeAttr("data-hovered");
   $(".helper").hide();
-
 }
 
 function showTooltip(el){
-
   el.attr("data-hovered",true);
   var tableElements = $(".table *");
   var index = tableElements.index(el);
   var that = el;
-
   $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
 
   var helper = $(".helper");
@@ -135,8 +153,6 @@ function enterHit(){
 
 //Parses text from the input field
 function handleInput(text){
-
-
 
   if(text == ""){
     text = "blammojammo";
@@ -341,14 +357,26 @@ function loadBoard(){
 //Loads up a level
 function loadLevel(){
   level = levels[currentLevel];
+
+
+
+  console.log($(".level-menu div a").eq(currentLevel));
+  $(".level-menu .current").removeClass("current");
+  $(".level-menu div a").eq(currentLevel).addClass("current");
+
+
+  var percent = (currentLevel+1)/levels.length * 100;
+  $(".progress").css("width",percent + "%");
+
   localStorage.setItem("currentLevel",currentLevel);
 
   loadBoard();
   resetTable();
 
-  $(".level-header").text("Level " + (currentLevel+1) + "/" + levels.length);
+  $(".level-header").html("Level " + (currentLevel+1) + " of " + levels.length);
   $(".order").text(level.doThis);
   $("input").val("").focus();
+
 
   $(".input-wrapper").css("opacity",1);
   $(".result").text("");

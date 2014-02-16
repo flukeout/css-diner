@@ -762,9 +762,20 @@ plate orange:nth-last-child(4)
 .level-header {
   font-size: 25px;
   margin: 0;
-  border-bottom: solid 2px rgba(255,255,255,.15);
   padding: 0 0 10px 0;
   color: #777;
+}
+
+.level-progress {
+  width: 100%;
+  background: rgba(0,0,0,.4);
+}
+
+.level-progress .progress {
+  background: rgba(255,255,255,.2);
+  width: 10%;
+  height: 2px;
+  border-right: solid 2px rgba(255,255,255,.3);
 }
 
 .order {
@@ -838,13 +849,87 @@ plate orange:nth-last-child(4)
 }
 
 .right-col {
-
   position: absolute;
   width: 375px;
-  padding: 20px;
-  background: rgba(0,0,0,.1);
   height: 100%;
   right: 0;
   top: 0px;
 }
 
+.level-menu {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: linear all .1s;
+  background: rgba(0,0,0,.9);
+  right: -300px;
+  padding: 10px;
+}
+
+.level-menu.open {
+  right: 0px;
+}
+
+.right-col:hover .level-menu {
+
+}
+
+.right-col {
+  -webkit-perspective: 1000px;
+}
+
+.right-col .help-wrapper {
+  padding: 20px;
+  height: 100%;
+  background: rgba(0,0,0,.2);
+}
+
+.level-menu a {
+  display: block;
+  cursor: pointer;
+  padding: 5px 30px 5px 12px;
+  color: #777;
+}
+
+.level-menu a:hover {
+  color: #999;
+}
+
+.level-menu a.current {
+  font-weight: bold;
+  color: #AAA;
+  background: rgba(255,255,255,.1);
+}
+
+.level-menu-toggle-wrapper {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  padding: 4px 2px;
+  opacity: .7;
+  -webkit-transition: linear all .05s;
+  transition: linear all .05s;
+}
+
+.level-menu-toggle-wrapper:hover {
+  opacity: 1;
+}
+
+.level-menu-toggle {
+  height: 20px;
+  width: 27px;
+  border-top: solid 2px #666;
+  border-bottom: solid 2px #666;
+  cursor: pointer;
+  position: relative;
+}
+
+.level-menu-toggle:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  top: 7px;
+  background: #666;
+}
