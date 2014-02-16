@@ -38,6 +38,9 @@ header {
   cursor: default;
   -webkit-transform-origin: middle;
   -webkit-transform: scale(.2);
+  transform-origin: middle;
+  transform: scale(.2);
+
   z-index: 9999999;
   position: absolute;
   top: 10px;
@@ -211,8 +214,10 @@ bento:before {
   text-align: left;
   width: 750px;
   margin: 0 auto;
-  border: solid 10px #282420;
+
+  border: solid 10px rgba(0,0,0,.35);
   -webkit-border-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -300,11 +305,16 @@ bento:before {
 }
 
 .editor input.input-strobe {
-  background: rgba(62,203,255,.2);
+  background: rgba(62,203,255,.3);
   -webkit-animation: input .45s infinite;
+  -moz-animation: input .45s infinite;
+
 }
 
 @-webkit-keyframes input {
+  50% { background:none ; }
+}
+@-moz-keyframes input {
   50% { background:none ; }
 }
 
@@ -353,9 +363,8 @@ carrot {
   border-color: #88611e;
   border-width: 2px 2px 12px 2px;
   -webkit-border-radius: 15px 15px 6px 6px;
+  border-radius: 15px 15px 6px 6px;
   margin: 20px 10px;
-
-
 }
 
 
@@ -384,6 +393,7 @@ pickle {
   width: 25px;
   border-radius: 30px;
   -webkit-border-radius: 30px;
+  border-radius: 30px;
   display: inline-block;
   position: relative;
   border: solid 2px #025a18;
@@ -501,6 +511,7 @@ bento > pickle.small:only-child {
   background: #ddd;
   display: block;
   -webkit-border-radius: 2px;
+  border-radius: 2px;
   padding: 2px 7px 2px 7px;
   color: #666;
   border: solid 3px #999;
@@ -520,15 +531,17 @@ bento > pickle.small:only-child {
   animation: enterhit .1s 1;
 }
 
-
 @-webkit-keyframes enterhit {
   50% {
     border-width: 1px 1px 2px 1px;
     top: 12px;
   }
 }
-@-keyframes enterhit {
-  50% { border-width: 1px 1px 2px 1px;}
+@keyframes enterhit {
+  50% {
+    border-width: 1px 1px 2px 1px;
+    top: 12px;
+  }
 }
 
 .plus {
@@ -812,7 +825,7 @@ plate orange:nth-last-child(4)
   color: #666;
   font-size: 15px;
   margin: 0 auto;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .what-is-this h2 {
@@ -875,6 +888,7 @@ plate orange:nth-last-child(4)
   height: 100%;
   overflow: hidden;
   -webkit-transition: linear all .1s;
+  transition: linear all .1s;
   background: rgba(0,0,0,.9);
   right: -300px;
   padding: 10px;
