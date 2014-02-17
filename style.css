@@ -950,7 +950,7 @@ plate orange:nth-last-child(4)
 
 .note {
   padding: 20px;
-  width: 500px;
+  width: 600px;
   color: #777;
   background: rgba(255,255,255,.9);
   text-align: left;
@@ -968,20 +968,25 @@ plate orange:nth-last-child(4)
 .note a {
   color: #1b6f9b;
   background: rgba(27,111,155,.1);
+ font-weight: bold;
+}
+
+.note .note-toggle:hover {
+  color: #1b6f9b;
+  background: rgba(27,111,155,.15);
 }
 
 .note-toggle {
   background: rgba(0,0,0,.2);
-
   color: rgba(255,255,255,.3);
   padding: 8px 15px 10px 15px;
   -webkit-border-radius: 20px;
   text-decoration: none;
   display: inline-block;
-   display: none;
 }
 
 .note-toggle:hover {
   text-decoration: underline;
   color: rgba(255,255,255,.4);
 }
+

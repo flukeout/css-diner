@@ -4,6 +4,10 @@ var levelTimeout = 1000;
 
 $(document).ready(function(){
 
+  $(".note-toggle").on("click", function(){
+    $(this).hide();
+    $(".note").slideToggle();
+  });
 
   $(".level-menu-toggle-wrapper").on("click",function(){
     $(".level-menu").toggleClass("open");
@@ -34,10 +38,8 @@ $(document).ready(function(){
   //Add tooltips
   $(".table").on("mouseover","*",function(e){
     e.stopPropagation();
-    el = $(this);
-    showTooltip(el);
+    showTooltip($(this));
   });
-
 
   //Shows the tooltip on the table
   $(".markup").on("mouseover","div *",function(e){
@@ -358,12 +360,15 @@ function loadBoard(){
 function loadLevel(){
   level = levels[currentLevel];
 
+  // Show the help link only for the first three levels
+  if(currentLevel < 3) {
+    $(".note-toggle").show();
+  } else {
+    $(".note-toggle").hide();
+  }
 
-
-  console.log($(".level-menu div a").eq(currentLevel));
   $(".level-menu .current").removeClass("current");
   $(".level-menu div a").eq(currentLevel).addClass("current");
-
 
   var percent = (currentLevel+1)/levels.length * 100;
   $(".progress").css("width",percent + "%");

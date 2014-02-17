@@ -24,7 +24,7 @@ var levels = [
     board: "()()"
   },
   {
-    doThis : "Select the bentos",
+    doThis : "Select the bento boxes",
     selector : "bento",
     syntax : "A",
     helpTitle : "Type Selector",
