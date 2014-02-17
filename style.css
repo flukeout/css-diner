@@ -648,7 +648,7 @@ orange {
   border: none;
 }
 
-.display-help .example strong {
+.display-help strong {
   color: #AAA;
   background: rgba(255,255,255,.1);
   padding: 3px 6px 3px 6px;

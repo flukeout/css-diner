@@ -52,7 +52,7 @@ var levels = [
     selector : "plate apple",
     syntax: "A&nbsp;&nbsp;B",
     helpTitle: "Descendant Selector",
-    help : "Selects descendents of other another selector. A descendant is any element that is inside of another element.",
+    help : "Selects all <strong>B</strong> inside of <strong>A</strong>. Here <strong>B</strong> is the descendant element, meaning an element that is inside of another element.",
     examples : [
       '<strong>p&nbsp;&nbsp;strong</strong> will select all <strong>&lt;strong&gt;</strong> that are descendants of any <strong>&lt;p&gt;</strong>',
       '<strong>#fancy&nbsp;&nbsp;span</strong> will select any <strong>&lt;span&gt;</strong> that is a descendant of any element with  <strong>id="fancy"</strong>',
