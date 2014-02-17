@@ -25,13 +25,10 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
 }
 
-
 header {
   padding: 10px 20px 10px 35px;
   background: rgba(0,0,0,.5);
-  color:   rgba(255,255,255,.3);
-
-
+  color: rgba(255,255,255,.3);
 }
 
 .logo {
@@ -40,7 +37,6 @@ header {
   -webkit-transform: scale(.2);
   transform-origin: middle;
   transform: scale(.2);
-
   z-index: 9999999;
   position: absolute;
   top: 10px;
@@ -305,18 +301,18 @@ bento:before {
 
 .editor input.input-strobe {
   background: rgba(62,203,255,.3);
-  -webkit-animation: input .45s infinite;
-  -moz-animation: input .45s infinite;
+  -webkit-animation: input .5s infinite;
+  -moz-animation: input .5s infinite;
 
 }
 
 @-webkit-keyframes input {
   50% { background:none ; }
 }
+
 @-moz-keyframes input {
   50% { background:none ; }
 }
-
 
 .editor input:focus {
   outline: none;
@@ -950,4 +946,42 @@ plate orange:nth-last-child(4)
   height: 2px;
   top: 7px;
   background: #666;
+}
+
+.note {
+  padding: 20px;
+  width: 500px;
+  color: #777;
+  background: rgba(255,255,255,.9);
+  text-align: left;
+  margin: 20px auto 20px auto;
+  box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+  display: none;
+}
+
+.note h3 {
+  color: #444;
+  margin: 0px 0px 5px 0px;
+  padding: 0px;
+}
+
+.note a {
+  color: #1b6f9b;
+  background: rgba(27,111,155,.1);
+}
+
+.note-toggle {
+  background: rgba(0,0,0,.2);
+
+  color: rgba(255,255,255,.3);
+  padding: 8px 15px 10px 15px;
+  -webkit-border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+   display: none;
+}
+
+.note-toggle:hover {
+  text-decoration: underline;
+  color: rgba(255,255,255,.4);
 }

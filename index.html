@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS Diner</title>
+    <title>CSS Diner - Where we learn CSS Selectors!</title>
     <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="levels.js" type="text/javascript" charset="utf-8"></script>
     <script src="resturant.js" type="text/javascript" charset="utf-8"></script>
@@ -9,20 +9,38 @@
     <link href='http://fonts.googleapis.com/css?family=Exo+2:200,400,600,400italic,600italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
   </head>
+
   <body>
 
     <header>
       CSS Diner
       <div class="logo">
-        <plate>
-          <apple />
-        </plate>
+        <plate><apple /></plate>
       </div>
     </header>
 
     <div class="col-wrapper bottom-half">
+
       <div class="left-col">
+
+        <div class="note">
+          <h3>What's going on here?</h3>
+          <p>
+            You're about to learn CSS Selectors! <a href="#">What, now?</a>
+          </p>
+          <p>
+          To play, type in a CSS selector in the editor below to select the specified items on the table.
+          If you get it right, you'll advance to the next level. Look in the right column for help.
+          </p>
+
+          <a href="#">Ok, got it!</a>
+        </div>
+
+
         <h2 class="order"></h2>
+
+        <a class="note-toggle" href="#">Help, I'm stuck!</a>
+
         <div class="game-wrapper">
           <div class="table-wrapper">
             <div class="table"></div>
@@ -33,13 +51,15 @@
           </div>
         </div>
 
+
+
         <div class="editor">
 
           <div class="editor-pane">
             <div class="input-header">
-              <div class="file-name">style.css</div>
-              CSS Editor
+              <div class="file-name">style.css</div> CSS Editor
             </div>
+
           <div class="file-window css-view">
             <div class="line-numbers">
               1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20
@@ -81,20 +101,11 @@
         <p>Made by <a href="http://www.twitter.com/flukeout">@flukeout</a></p>
       </div>
 
-      </div><!-- /leftcol -->
+      </div><!-- /left col -->
 
       <div class="right-col">
 
-        <div class="level-menu">
-          <div class="levels"></div>
-        </div>
-
         <div class="help-wrapper">
-          <div class="level-menu-toggle-wrapper">
-            <div class="level-menu-toggle"></div>
-          </div>
-
-
           <h1 class="level-header"></h1>
           <div class="level-progress"><div class="progress"></div></div>
           <div class="display-help">
@@ -106,15 +117,19 @@
           </div>
         </div>
 
+        <div class="level-menu">
+          <div class="levels"></div>
+        </div>
 
+        <div class="level-menu-toggle-wrapper">
+          <div class="level-menu-toggle"></div>
+        </div>
 
-      </div>
-
+      </div><!-- /right col -->
   </div>
 
   <!-- This is the popup that floats over table elemetns -->
   <div class="helper"></div>
 
   </body>
-
 </html>
