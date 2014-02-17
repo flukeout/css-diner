@@ -877,12 +877,13 @@ plate orange:nth-last-child(4)
   -webkit-transition: linear all .1s;
   transition: linear all .1s;
   background: rgba(0,0,0,.9);
-  right: -300px;
+  left: 500px;
   padding: 10px;
+  width: 100%;
 }
 
 .level-menu.open {
-  right: 0px;
+  left: 0px;
 }
 
 .right-col:hover .level-menu {
@@ -968,7 +969,7 @@ plate orange:nth-last-child(4)
 .note a {
   color: #1b6f9b;
   background: rgba(27,111,155,.1);
- font-weight: bold;
+  font-weight: bold;
 }
 
 .note .note-toggle:hover {
@@ -990,3 +991,16 @@ plate orange:nth-last-child(4)
   color: rgba(255,255,255,.4);
 }
 
+.note pre {
+  background: #DDD;
+  padding: 10px;
+  font-family: menlo, monospace;
+  margin: 0;
+  font-size: 14px;
+}
+
+.note h4 {
+  font-size: 15px;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
