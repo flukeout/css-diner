@@ -67,7 +67,6 @@ var levels = [
     help : 'You can combine any selector with the descendent selector.',
     examples : [
       '<strong>#cool&nbsp;span</strong> will select all <strong>&lt;span&gt;</strong> elements that are inside of elements with <strong>id="cool"</strong>'
-
     ],
     board: "[O]{P)(P)"
   },
@@ -97,7 +96,8 @@ var levels = [
   {
     doThis : "Select the small oranges in the bentos",
     selector : "bento orange.small",
-    helpTitle: "You can do it!  ",
+    syntax: "Put your back into it!",
+    helpTitle: "You can do it...",
     help : 'Combine what you learned in the last few levels to solve this one!',
     board: "A(o)[o][a][o]"
   },
