@@ -218,16 +218,52 @@ var levels = [
     board: "()()(){}"
   },
   {
+    helpTitle: "Nth-Last Child Selector",
     doThis : "Select the 1st bento",
     selector : "bento:nth-last-child(4)",
     syntax: ":nth-last-child(n)",
-    helpTitle: "Nth-Last Child Selector",
     help : "Selects the children from the bottom of the parent. This is like nth-child, but counting from the back!",
     examples : [
       '<strong>:nth-last-child(2)</strong> selects all second-to-last child elements.'
     ],
     board: "()[]a(OOO)[]"
   },
+
+  {
+    helpTitle: "First of Type Selector",
+    doThis : "Select first apple",
+    selector : "apple:first-of-type",
+    syntax: ":first-of-type",
+    help : "Selects the first element of that type within another element.",
+    examples : [
+      '<strong>span:first-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in any element.'
+    ],
+    board: "Aaaa(oO)"
+  },
+  {
+    helpTitle: "Only of Type Selector",
+    selector : ":only-of-type",
+    syntax: ":only-of-type",
+    doThis : "Select everything except the oranges",
+    help : "Selects the only element of its kind within another element.",
+    examples : [
+      '<strong>p span:only-of-type</strong> selects a <strong>&lt;span&gt;</strong> within a <strong>&lt;p&gt;</strong> if it is the only &lt;span&gt; in there.'
+    ],
+    board: "()[]paOo"
+  },
+  {
+    helpTitle: "Last of Type Selector",
+    doThis : "Select the last apple and orange",
+    selector : ".small:last-of-type",
+    syntax: ":last-of-type",
+    help : "Selects each last element of that type within another element. Remember type refers the kind of tag, so &ltp&gt; and &ltspan&gt; are different types. <br><br> I wonder if this is how the last dinosaur was selected before it went extinct.",
+    examples : [
+      '<strong>div:last-of-type</strong> selects the last <strong>&lt;div&gt;</strong> in every element.',
+      '<strong>p span:last-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in every <strong>&lt;p&gt;</strong>.'
+    ],
+    board: "ooPPaa"
+  },
+
   {
     doThis : "Select the big apples",
     selector : "apple:not(.small)",

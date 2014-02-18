@@ -180,6 +180,8 @@ bento {
   border-width: 20px 2px;
 }
 
+
+
 plate bento {
   height: 74px;
   width: 74px;
@@ -587,7 +589,7 @@ plate:before {
   border-radius: 60px;
   border-top: solid 6px #CCC;
   opacity: .4;
-    background: rgba(255,255,255,1);
+  background: rgba(255,255,255,1);
 }
 
 #fancy:after {
