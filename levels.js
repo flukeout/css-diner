@@ -203,7 +203,7 @@ var levels = [
       '<strong>span:last-child</strong> selects all last-child <strong>&lt;span&gt;</strong> elements.',
       '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elements inside of any <strong>&lt;ul&gt;</strong>.'
     ],
-    board: "{a)(OO)()p"
+    board: "{a)o(OO)()p"
   },
   {
     doThis : "Select the 3rd plate",
@@ -218,15 +218,15 @@ var levels = [
     board: "()()(){}"
   },
   {
-    doThis : "Select the 2nd bento",
-    selector : "bento:nth-last-child(3)",
+    doThis : "Select the 1st bento",
+    selector : "bento:nth-last-child(4)",
     syntax: ":nth-last-child(n)",
     helpTitle: "Nth-Last Child Selector",
     help : "Selects the <strong>nth-last</strong> (Ex: 1st, 3rd, 12th etc.) child element in another element. This is like nth-child, but counting from the back!",
     examples : [
       '<strong>:nth-last-child(2)</strong> selects all second-to0last child elements.'
     ],
-    board: "()[](OOO)[]"
+    board: "()[]a(OOO)[]"
   },
   {
     doThis : "Select the big apples",
