@@ -1,6 +1,7 @@
 var level;
 var currentLevel = parseInt(localStorage.currentLevel) || 0;
 var levelTimeout = 1000;
+var fails = 0;
 
 $(document).ready(function(){
 
@@ -286,7 +287,7 @@ function checkResults(ruleSelected,levelSelected){
 
 var d = 2;
 function continueRule() {
-  console.log(new Array(d++).join(decodeURIComponent('3%3D%3D%3DD ')));
+  console.log("Fails thus far: " + ++fails)
 }
 
 
