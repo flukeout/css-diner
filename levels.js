@@ -208,7 +208,7 @@ var levels = [
   {
     doThis : "Select the 3rd plate",
     selector : ":nth-child(3)",
-    syntax: ":nth-child(n)",
+    syntax: ":nth-child(A)",
     helpTitle: "Nth Child Selector",
     help : "Selects the <strong>nth</strong> (Ex: 1st, 3rd, 12th etc.) child element in another element.",
     examples : [
@@ -221,14 +221,13 @@ var levels = [
     helpTitle: "Nth-Last Child Selector",
     doThis : "Select the 1st bento",
     selector : "bento:nth-last-child(4)",
-    syntax: ":nth-last-child(n)",
+    syntax: ":nth-last-child(A)",
     help : "Selects the children from the bottom of the parent. This is like nth-child, but counting from the back!",
     examples : [
       '<strong>:nth-last-child(2)</strong> selects all second-to-last child elements.'
     ],
     board: "()[]a(OOO)[]"
   },
-
   {
     helpTitle: "First of Type Selector",
     doThis : "Select first apple",
@@ -239,6 +238,18 @@ var levels = [
       '<strong>span:first-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in any element.'
     ],
     board: "Aaaa(oO)"
+  },
+  {
+    helpTitle: "Nth-of-type Selector",
+    doThis: "Select all even plates",
+    selector: "plate:nth-of-type(even)",
+    syntax: ":nth-of-type(A)",
+    help: "Selects a specified number, or even/odd instances",
+    examples: [
+      '<strong>div:nth-of-type(2)</strong> selects the second instance of a div.',
+      '<strong>.example:nth-of-type(odd)</strong> selects all odd instances of a the example class.'
+    ],
+    board: "()(){}()(){}"
   },
   {
     helpTitle: "Only of Type Selector",
@@ -263,6 +274,17 @@ var levels = [
       '<strong>p span:last-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in every <strong>&lt;p&gt;</strong>.'
     ],
     board: "ooPPaa"
+  },
+  {
+    helpTitle: "Nth-of-type Selector with formula",
+    doThis: "Select every plate from the 5th",
+    selector: "plate:nth-of-type(1n+5)",
+    syntax: ":nth-of-type(An+B)",
+    help: "The nth-of-type formula indicates a cycle size and offset from which to start counting.",
+    examples: [
+      '<strong>span:nth-of-type(6n+2)</strong> selects every 6th instance of a span, starting from the second instance.'
+    ],
+    board: "()(){}()(){}(){}()"
   },
   {
     helpTitle: "Empty Selector",
