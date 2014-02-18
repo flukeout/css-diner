@@ -287,8 +287,7 @@ function checkResults(ruleSelected,levelSelected){
 
 var d = 2;
 function continueRule() {
-  fails++;
-  console.log("Fails thus far: "+fails)
+  console.log("Fails thus far: " + ++fails)
 }
 
 
