@@ -73,13 +73,10 @@ $(document).ready(function(){
 
   buildLevelmenu();
 
-
   setTimeout(function(){
     loadLevel();
     $(".table-wrapper,.table-edge").css("opacity",1);
   },50);
-
-
 
 });
 
@@ -241,10 +238,6 @@ function fireRule(rule) {
     currentLevel++;
     if(currentLevel >= levels.length) {
       winGame();
-      setTimeout(function(){
-        currentLevel = 0;
-        loadLevel();
-      },levelTimeout);
     } else {
       setTimeout(function(){
         loadLevel();
@@ -272,7 +265,9 @@ function fireRule(rule) {
 }
 
 function winGame(){
-  $(".table").text("YOU ARE CSS MASTER!")
+  $(".table").html('<span class="winner"><strong>You did it!</strong><br>You are a CSS God.</span>');
+  resetTable();
+
 }
 
 function checkResults(ruleSelected,levelSelected){
