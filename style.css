@@ -436,12 +436,18 @@ bento > orange:last-child
   top: calc(50% - 35px);
 }
 
+plate .small,
+bento .small {
+  left: calc(50% - 15px);
+  margin-left:0;
+  margin-right:0;
+}
+
 plate > .small:only-child,
 bento > .small:only-child {
   position: absolute;
   top: calc(50% - 15px);
-  left: calc(50% - 15px);
-  margin: 0;
+  margin:0;
 }
 
 plate > pickle:only-child,
