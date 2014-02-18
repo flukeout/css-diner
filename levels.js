@@ -222,9 +222,9 @@ var levels = [
     selector : "bento:nth-last-child(3)",
     syntax: ":nth-last-child(n)",
     helpTitle: "Nth-Last Child Selector",
-    help : "Selects the <strong>nth-last</strong> (Ex: 1st, 3rd, 12th etc.) child element in another element. This is like nth-child, but counting from the back!",
+    help : "Selects the children from the bottom of the parent. This is like nth-child, but counting from the back!",
     examples : [
-      '<strong>:nth-last-child(2)</strong> selects all second-to0last child elements.'
+      '<strong>:nth-last-child(2)</strong> selects all second-to-last child elements.'
     ],
     board: "()[](OOO)[]"
   },
