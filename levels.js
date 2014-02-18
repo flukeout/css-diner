@@ -180,8 +180,8 @@ var levels = [
     board: "[]()(OOO)p"
   },
   {
-    doThis : "Select apple and the pickle on the plates",
-    selector : "plate :only-child",
+    doThis : "Select apple and the pickle in the bentos",
+    selector : "bento :only-child",
     syntax: ":only-child",
     helpTitle: "Only Child Pseudo-selector",
     help : "You can selects any element that is the only element inside of another one.",
@@ -190,7 +190,7 @@ var levels = [
       '<strong>span:first-child</strong> selects all first-child <strong>&lt;span&gt;</strong> elements.',
       '<strong>ul li:first-child</strong> selects all first-child <strong>&lt;li&gt;</strong> elements that are in a <strong>&lt;ul&gt;</strong>.'
     ],
-    board: "(A)(p)[]P(oO)p"
+    board: "[A][p](AO)P([])p"
   },
   {
     doThis : "Select the small apple and the pickle",
@@ -203,7 +203,7 @@ var levels = [
       '<strong>span:last-child</strong> selects all last-child <strong>&lt;span&gt;</strong> elements.',
       '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elements inside of any <strong>&lt;ul&gt;</strong>.'
     ],
-    board: "{a)()(oO)p"
+    board: "{a)(OO)(oO)p"
   },
   {
     doThis : "Select the 3rd plate",
@@ -242,18 +242,18 @@ var levels = [
   },
   {
     helpTitle: "Only of Type Selector",
-    selector : ":only-of-type",
+    selector : "apple:only-of-type",
     syntax: ":only-of-type",
-    doThis : "Select everything except the oranges",
+    doThis : "Select the apple on the middle plate.",
     help : "Selects the only element of its kind within another element.",
     examples : [
       '<strong>p span:only-of-type</strong> selects a <strong>&lt;span&gt;</strong> within a <strong>&lt;p&gt;</strong> if it is the only &lt;span&gt; in there.'
     ],
-    board: "()[]paOo"
+    board: "(aA)(a)(p)"
   },
   {
     helpTitle: "Last of Type Selector",
-    doThis : "Select the last apple and orange",
+    doThis : "Select the second apple and orange",
     selector : ".small:last-of-type",
     syntax: ":last-of-type",
     help : "Selects each last element of that type within another element. Remember type refers the kind of tag, so &ltp&gt; and &ltspan&gt; are different types. <br><br> I wonder if this is how the last dinosaur was selected before it went extinct.",
