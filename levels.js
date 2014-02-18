@@ -203,7 +203,7 @@ var levels = [
       '<strong>span:last-child</strong> selects all last-child <strong>&lt;span&gt;</strong> elements.',
       '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elements inside of any <strong>&lt;ul&gt;</strong>.'
     ],
-    board: "{a)o(OO)()p"
+    board: "{a)(OO)(oO)p"
   },
   {
     doThis : "Select the 3rd plate",
