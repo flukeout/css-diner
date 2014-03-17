@@ -144,15 +144,32 @@ header {
 .table-leg:last-child {
   right: 20px;
 }
+
 orange,apple,pickle,bento,plate{
-  -webkit-transition:  -webkit-transform ease-out .2s;
-  transition:  transform ease-out .2s;
+  -webkit-transition: all -webkit-transform ease-out .2s;
+/*  transition:  transform ease-out .2s;*/
 }
 
 .clean {
-  -webkit-transform: translateY(-600px);
-  transform: translateY(-600px) rotate3d(0,0,0,0deg);
-  opacity: .6;
+  -webkit-animation: cleanme .2s 1;
+  -webkit-transform: translateY(-600px) rotate3d(0,0,0,0deg);
+
+  -moz-animation: cleanme .2s 1;
+  -moz-transform: translateY(-600px);
+
+/*  transform: translateY(-100px) rotate3d(0,0,0,0deg);*/
+/*  opacity: .6;*/
+}
+
+
+@-webkit-keyframes cleanme {
+  0% {   -webkit-transform: translateY(0px) rotate3d(0,0,0,0deg); }
+  100% { -webkit-transform: translateY(-600px) rotate3d(0,0,0,0deg);}
+}
+
+@-moz-keyframes cleanme {
+  0% {   transform: translateY(0px) rotate3d(0,0,0,0deg) ; }
+  100% { transform: translateY(-600px) rotate3d(0,0,0,0deg);}
 }
 
 

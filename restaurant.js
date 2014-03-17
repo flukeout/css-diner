@@ -180,10 +180,13 @@ function showHelp() {
   var examples = level.examples ||[];
   var selector = level.selector || "";
   var syntax = level.syntax || "";
+  var syntaxExample = level.syntaxExample || "";
+  var selectorName = level.selectorName || "";
 
   $(".display-help .syntax").html(syntax);
+  $(".display-help .syntax-example").html(syntaxExample);
+  $(".display-help .selector-name").html(selectorName);
   $(".display-help .title").html(helpTitle);
-
   $(".display-help .examples").html("");
 
   for(var i = 0; i < examples.length; i++){
