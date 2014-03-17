@@ -48,7 +48,7 @@ var levels = [
       '<strong>#cool</strong> will select any element with <strong>id="cool"</strong>',
       '<strong>ul#long</strong> will select <strong>&lt;ul id="long"&gt;</strong>'
     ],
-    board: "{)()[]"
+    board: "{}()[]"
   },
   {
     helpTitle: "Select an element inside another element",
@@ -73,7 +73,7 @@ var levels = [
     examples : [
       '<strong>#cool&nbsp;span</strong> will select all <strong>&lt;span&gt;</strong> elements that are inside of elements with <strong>id="cool"</strong>'
     ],
-    board: "[O]{P)(P)"
+    board: "[O]{P}(P)"
   },
   {
     doThis : "Select the small apples",
@@ -145,7 +145,7 @@ var levels = [
       '<strong>p *</strong> will select every element inside all <strong>&lt;p&gt;</strong> elements.',
       '<strong>ul.fancy *</strong> will select every element inside all <strong>&lt;ul class="fancy"&gt;</strong> elements.'
     ],
-    board: "{o)(P)a(A)"
+    board: "{o}(P)a(A)"
   },
   {
     doThis : "Select every apple that's next to a plate",
@@ -324,6 +324,6 @@ var levels = [
       '<strong>div:not(:first-child)</strong> selects every <strong>&lt;div&gt;</strong> that is not a first child.',
       '<strong>:not(.big, .medium)</strong> selects all elements that do not have <strong>class="big"</strong> or <strong>class="medium"</strong>.'
     ],
-    board: "{a)(A)A(o)p"
+    board: "{a}(A)A(o)p"
   }
 ];
