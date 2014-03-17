@@ -218,8 +218,8 @@ function fireRule(rule) {
     $(this).removeAttr("style");
   });
 
-  var ruleSelected = $(".table " + rule);
-  var levelSelected = $(".table " + level.selector);
+  var ruleSelected = $(".table").find(rule);
+  var levelSelected = $(".table").find(level.selector);
 
   var win = false;
 
@@ -274,13 +274,49 @@ function winGame(){
 }
 
 function checkResults(ruleSelected,levelSelected){
-  for(var i = 0; i < ruleSelected.length; i++) {
-    if(ruleSelected[i] == levelSelected[i]){
-    } else {
-      return false;
+
+  /*
+  * Sean Nessworthy <sean@nessworthy.me>
+  * On 03/17/14
+  *
+  * Rewritten to match based on elements present, not elements ordered.
+  * NOTE: Will fail if a user's selector chooses the same element twice.
+  * You may change this by removing :
+  * $element.removeData(dataName)
+  */
+ 
+  var allMatched = true, // Have faith!
+      dataName = 'matched';
+
+  levelSelected.data(dataName, 1);
+
+  ruleSelected.each(function(ind, element) {
+
+    var $element;
+
+    if(allMatched === true) {
+
+      $element = $(element);
+
+      if($element.data(dataName) === 1) {
+
+        $element.removeData(dataName);
+        return;
+
+      } else {
+
+        allMatched = false;
+
+      }
+
     }
-  }
-  return true;
+
+  });
+
+  levelSelected.removeData(dataName);
+
+  return allMatched;
+
 }
 
 var d = 2;
