@@ -903,6 +903,10 @@ plate orange:nth-last-child(4)
   left: 0px;
 }
 
+.levels {
+  margin-right: 63px;
+}
+
 .right-col:hover .level-menu {
 
 }
