@@ -211,6 +211,11 @@ function resetTable(){
 
 function fireRule(rule) {
 
+  // prevent cheating
+  if(rule === ".strobe") {
+    rule = null;
+  }
+
   $(".shake").removeClass("shake");
 
   $(".strobe,.clean,.shake").each(function(){
@@ -223,9 +228,9 @@ function fireRule(rule) {
   * On 03/17/14
   *
   * Allow [div][.table] to preceed the answer.
-  * Makes sense if div.table is going to be included in the HTML viewer 
+  * Makes sense if div.table is going to be included in the HTML viewer
   * and users want to try and use it in their selectors.
-  * 
+  *
   * However, if it is included as a specific match, filter it out.
   * This resolves the  "Match all the things!" level from beheading the table too.
   * Relatedly, watching that happen made me nearly spill my drink.
