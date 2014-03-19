@@ -218,8 +218,23 @@ function fireRule(rule) {
     $(this).removeAttr("style");
   });
 
-  var ruleSelected = $(".table").find(rule);
-  var levelSelected = $(".table").find(level.selector);
+  /*
+  * Sean Nessworthy <sean@nessworthy.me>
+  * On 03/17/14
+  *
+  * Allow [div][.table] to preceed the answer.
+  * Makes sense if div.table is going to be included in the HTML viewer 
+  * and users want to try and use it in their selectors.
+  * 
+  * However, if it is included as a specific match, filter it out.
+  * This resolves the  "Match all the things!" level from beheading the table too.
+  * Relatedly, watching that happen made me nearly spill my drink.
+  */
+
+  var baseTable = $('.table-wrapper > .table');
+
+  var ruleSelected = $(".table-wrapper").find(rule).not(baseTable);
+  var levelSelected = $(".table-wrapper").find(level.selector).not(baseTable);
 
   var win = false;
 
