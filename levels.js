@@ -287,7 +287,7 @@ var levels = [
     help : "Selects each last element of that type within another element. Remember type refers the kind of tag, so &ltp&gt; and &ltspan&gt; are different types. <br><br> I wonder if this is how the last dinosaur was selected before it went extinct.",
     examples : [
       '<strong>div:last-of-type</strong> selects the last <strong>&lt;div&gt;</strong> in every element.',
-      '<strong>p span:last-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in every <strong>&lt;p&gt;</strong>.'
+      '<strong>p span:last-of-type</strong> selects the last <strong>&lt;span&gt;</strong> in every <strong>&lt;p&gt;</strong>.'
     ],
     board: "ooPPaa"
   },
