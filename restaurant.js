@@ -233,8 +233,8 @@ function fireRule(rule) {
 
   var baseTable = $('.table-wrapper > .table');
 
-  var ruleSelected = $(".table-wrapper " + rule).not(baseTable);
-  var levelSelected = $(".table-wrapper " + level.selector).not(baseTable);
+  var ruleSelected = $(rule, ".table-wrapper").not(baseTable);
+  var levelSelected = $(level.selector, ".table-wrapper").not(baseTable);
 
   var win = false;
 
