@@ -173,9 +173,9 @@ var levels = [
     board: "P[o]pP(P)(p)"
   },
   {
+    selectorName: "Child Selector",
     doThis : "Select the apple directly on a plate",
     selector : "plate > apple",
-    selectorName: "Child Selector",
     helpTitle: "Select direct children of an element",
     syntax: "A > B",
     help : "You can select elements that are direct children of other elements. A child element is any element that is nested direclty in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
