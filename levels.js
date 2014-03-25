@@ -228,7 +228,7 @@ var levels = [
   },
   {
     selectorName: "Nth Child Pseudo-selector",
-    helpTitle: "Select an element by it's order in another element",
+    helpTitle: "Select an element by its order in another element",
     doThis : "Select the 3rd plate",
     selector : ":nth-child(3)",
     syntax: ":nth-child(A)",
@@ -242,7 +242,7 @@ var levels = [
   },
   {
     selectorName: "Nth Last Child Selector",
-    helpTitle: "Select an element by it's order in another element, counting from the back",
+    helpTitle: "Select an element by its order in another element, counting from the back",
     doThis : "Select the 1st bento",
     selector : "bento:nth-last-child(4)",
     syntax: ":nth-last-child(A)",
