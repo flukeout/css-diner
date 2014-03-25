@@ -174,10 +174,10 @@ var levels = [
   },
   {
     selectorName: "Child Selector",
+    syntax: "A > B&nbsp;",
     doThis : "Select the apple directly on a plate",
     selector : "plate > apple",
     helpTitle: "Select direct children of an element",
-    syntax: "A > B",
     help : "You can select elements that are direct children of other elements. A child element is any element that is nested direclty in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
     examples : [
       '<strong>A > B</strong> will select all <strong>B</strong> that are a direct children <strong>A</strong>'
@@ -185,7 +185,6 @@ var levels = [
     board: "([A])(A)()Aa"
   },
   {
-
     selectorName: "First Child Pseudo-selector",
     helpTitle: "Select a first child element inside of another element",
     doThis : "Select the top orange",
