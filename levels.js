@@ -32,8 +32,8 @@ var levels = [
     selectorName : "Type Selector",
     help : "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
     examples : [
-      '<strong>div</strong> will select all <strong>&lt;div&gt;</strong> elements.',
-      '<strong>p</strong> will select all <strong>&lt;p&gt;</strong> elements.',
+      '<strong>div</strong> will select all <tag>div</tag> elements.',
+      '<strong>p</strong> will select all <tag>p</tag> elements.',
       ],
     board: "[]()[]"
   },
@@ -155,26 +155,28 @@ var levels = [
     syntax : "A + B",
     help : "This selects all <strong>B</strong> elements that directly follow <strong>A</strong>. Elements that follow one another are called siblings. They're on the same same level, or depth. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
     examples : [
-      '<strong>p + .intro</strong> will select every element with <strong>class="intro"</strong> that directly follows an <tag>p</tag>',
-      '<strong>div + a</strong> will select every <tag>a</tag> element that directly follows an <tag>div</tag>'
+      '<strong>p + .intro</strong> will select every element with <strong>class="intro"</strong> that directly follows a <tag>p</tag>',
+      '<strong>div + a</strong> will select every <tag>a</tag> element that directly follows a <tag>div</tag>'
     ],
     board: "[a]()a()Aaa"
   },
   {
+    selectorName: "General Sibling Selector",
+    helpTitle: "Select elements that follows another element",
+    syntax: "A ~ B",
     doThis : "Select every pickle to the right of the bento",
     selector : "bento ~ pickle",
-    syntax: "A ~ B",
-    helpTitle: "General Sibling Selector",
     help : "You can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elements instead of one.",
     examples : [
-      '<strong>A ~ B</strong> will select all <strong>B</strong> that follow an <strong>A</strong>'
+      '<strong>A ~ B</strong> will select all <strong>B</strong> that follow a <strong>A</strong>'
     ],
     board: "P[o]pP(P)(p)"
   },
   {
     doThis : "Select the apple directly on a plate",
     selector : "plate > apple",
-    helpTitle: "Child Selector",
+    selectorName: "Child Selector",
+    helpTitle: "Select direct children of an element",
     syntax: "A > B",
     help : "You can select elements that are direct children of other elements. A child element is any element that is nested direclty in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
     examples : [
@@ -183,23 +185,27 @@ var levels = [
     board: "([A])(A)()Aa"
   },
   {
+
+    selectorName: "First Child Pseudo-selector",
+    helpTitle: "Select a first child element inside of another element",
     doThis : "Select the top orange",
     selector : "plate :first-child",
     syntax: ":first-child",
-    helpTitle: "First Child Pseudo-selector",
-    help : "You can select the first child element in any other element. You can combine this pseudo-selector with other selectors. A child element is any element that is directly nested in another element.",
+
+    help : "You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-selector with other selectors.",
     examples : [
-      '<strong>:first-child</strong> selects all first-child elements.',
-      '<strong>p:first-child</strong> selects all first-child <strong>&lt;p&gt;</strong> elements.',
-      '<strong>div p:first-child</strong> selects all first-child <strong>&lt;p&gt;</strong> elements that are in a <strong>&lt;div&gt;</strong>.'
+      '<strong>:first-child</strong> selects all first child elements.',
+      '<strong>p:first-child</strong> selects all first child <strong>&lt;p&gt;</strong> elements.',
+      '<strong>div p:first-child</strong> selects all first child <strong>&lt;p&gt;</strong> elements that are in a <strong>&lt;div&gt;</strong>.'
     ],
     board: "[]()(OOO)p"
   },
   {
+    selectorName: "Only Child Pseudo-selector",
+    helpTitle: "Select an element that are the only element inside of another one.",
     doThis : "Select apple and the pickle on the plates",
     selector : "plate :only-child",
     syntax: ":only-child",
-    helpTitle: "Only Child Pseudo-selector",
     help : "You can select any element that is the only element inside of another one.",
     examples : [
       '<strong>span:only-child</strong> selects the <strong>&lt;span&gt;</strong> elements that are the only child of some other element.',
@@ -208,10 +214,11 @@ var levels = [
     board: "(A)(p)[]P(oO)p"
   },
   {
+    selectorName: "Last Child Pseudo-selector",
+    helpTitle: "Select the last element inside of another element",
     doThis : "Select the small apple and the pickle",
     selector : ".small:last-child",
     syntax: ":last-child",
-    helpTitle: "Last Child Pseudo-selector",
     help : "You can use this selector to select an element that is the last child element inside of another element. <br><br>Pro Tip &rarr; In cases where there is only one element, that element counts as the first-child, only-child and last-child!",
     examples : [
       '<strong>:last-child</strong> selects all last-child elements.',
@@ -221,10 +228,12 @@ var levels = [
     board: "{a)()(oO)p"
   },
   {
+    selectorName: "Nth Child Pseudo-selector",
+    helpTitle: "Select an element by it's order in another element",
     doThis : "Select the 3rd plate",
     selector : ":nth-child(3)",
     syntax: ":nth-child(A)",
-    helpTitle: "Nth Child Selector",
+
     help : "Selects the <strong>nth</strong> (Ex: 1st, 3rd, 12th etc.) child element in another element.",
     examples : [
       '<strong>:nth-child(8)</strong> selects every element that is the 8th child of another element.',
@@ -233,7 +242,8 @@ var levels = [
     board: "()()(){}"
   },
   {
-    helpTitle: "Nth-Last Child Selector",
+    selectorName: "Nth Last Child Selector",
+    helpTitle: "Select an element by it's order in another element, counting from the back",
     doThis : "Select the 1st bento",
     selector : "bento:nth-last-child(4)",
     syntax: ":nth-last-child(A)",
@@ -244,7 +254,8 @@ var levels = [
     board: "()[]a(OOO)[]"
   },
   {
-    helpTitle: "First of Type Selector",
+    selectorName: "First of Type Selector",
+    helpTitle: "Select the first element of a specific type",
     doThis : "Select first apple",
     selector : "apple:first-of-type",
     syntax: ":first-of-type",
@@ -255,11 +266,12 @@ var levels = [
     board: "Aaaa(oO)"
   },
   {
-    helpTitle: "Nth-of-type Selector",
+    selectorName: "Nth of Type Selector",
+    // helpTitle: "Nth of Type Selector",
     doThis: "Select all even plates",
     selector: "plate:nth-of-type(even)",
     syntax: ":nth-of-type(A)",
-    help: "Selects a specified number, or even/odd instances",
+    help: "Selects a specific element based on its type and order in another element - or even or odd instances of that element.",
     examples: [
       '<strong>div:nth-of-type(2)</strong> selects the second instance of a div.',
       '<strong>.example:nth-of-type(odd)</strong> selects all odd instances of a the example class.'
@@ -267,23 +279,38 @@ var levels = [
     board: "()()()(){}()"
   },
   {
-    helpTitle: "Only of Type Selector",
+    selectorName: "Nth-of-type Selector with Formula",
+    // helpTitle: "Nth-of-type Selector with formula",
+    doThis: "Select every 2nd plate, starting from the 3rd",
+    selector: "plate:nth-of-type(2n+3)",
+    syntax: ":nth-of-type(An+B)",
+    help: "The nth-of-type formula selects every nth element, starting the count at a specific instance of that element.",
+    examples: [
+      '<strong>span:nth-of-type(6n+2)</strong> selects every 6th instance of a <tag>span</tag>, starting from (and including) the second instance.'
+    ],
+    board: "()(p)(a)()(A)()"
+  },
+
+  {
+    selectorName: "Only of Type Selector",
+    helpTitle: "Select elements that are the only ones of their type",
     selector : "apple:only-of-type",
     syntax: ":only-of-type",
     doThis : "Select the apple on the middle plate.",
-    help : "Selects the only element of its kind within another element.",
+    help : "Selects the only element of its type within another element.",
     examples : [
-      '<strong>p span:only-of-type</strong> selects a <strong>&lt;span&gt;</strong> within a <strong>&lt;p&gt;</strong> if it is the only &lt;span&gt; in there.'
+      '<strong>p span:only-of-type</strong> selects a <tag>span</tag> within any <tag>p</tag> if it is the only <tag>span</tag> in there.'
     ],
     board: "(aA)(a)(p)"
   },
 
   {
-    helpTitle: "Last of Type Selector",
+    selectorName: "Last of Type Selector",
+    helpTitle: "Select the last element of a specific type",
     doThis : "Select the second apple and orange",
     selector : ".small:last-of-type",
     syntax: ":last-of-type",
-    help : "Selects each last element of that type within another element. Remember type refers the kind of tag, so &ltp&gt; and &ltspan&gt; are different types. <br><br> I wonder if this is how the last dinosaur was selected before it went extinct.",
+    help : "Selects each last element of that type within another element. Remember type refers the kind of tag, so <tag>p</tag> and <tag>span</tag> are different types. <br><br> I wonder if this is how the last dinosaur was selected before it went extinct.",
     examples : [
       '<strong>div:last-of-type</strong> selects the last <strong>&lt;div&gt;</strong> in every element.',
       '<strong>p span:last-of-type</strong> selects the last <strong>&lt;span&gt;</strong> in every <strong>&lt;p&gt;</strong>.'
@@ -291,18 +318,8 @@ var levels = [
     board: "ooPPaa"
   },
   {
-    helpTitle: "Nth-of-type Selector with formula",
-    doThis: "Select every plate from the 5th",
-    selector: "plate:nth-of-type(1n+5)",
-    syntax: ":nth-of-type(An+B)",
-    help: "The nth-of-type formula indicates a cycle size and offset from which to start counting.",
-    examples: [
-      '<strong>span:nth-of-type(6n+2)</strong> selects every 6th instance of a span, starting from the second instance.'
-    ],
-    board: "()(){}()(){}(){}()"
-  },
-  {
-    helpTitle: "Empty Selector",
+    selectorName: "Empty Selector",
+    helpTitle: "Select elements that don't have children",
     doThis : "Select the empty bentos",
     selector : "bento:empty",
     syntax: ":empty",
@@ -313,14 +330,16 @@ var levels = [
     board: "[][p][][]"
   },
   {
+    selectorName: "Negation Pseudo-class",
+    helpTitle: "Select all elements that don't match the negation selector",
+
     doThis : "Select the big apples",
     selector : "apple:not(.small)",
     syntax: ":not(X)",
-    helpTitle: "Negation Pseudo-class",
     help : 'You can use this to select all elements that do not match selector <strong>"X"</strong>.',
     examples : [
       '<strong>:not(#fancy)</strong> selects all elements that do not have <strong>id="fancy"</strong>.',
-      '<strong>div:not(:first-child)</strong> selects every <strong>&lt;div&gt;</strong> that is not a first child.',
+      '<strong>div:not(:first-child)</strong> selects every <tag>div</tag> that is not a first child.',
       '<strong>:not(.big, .medium)</strong> selects all elements that do not have <strong>class="big"</strong> or <strong>class="medium"</strong>.'
     ],
     board: "{a}(A)A(o)p"

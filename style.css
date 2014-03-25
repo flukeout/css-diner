@@ -625,18 +625,26 @@ orange {
   color: rgba(255,255,255,.6);
 }
 
-.display-help .title {
+.display-help .selector-name {
   font-size: 18px;
-  margin-bottom: 8px;
+  margin: 0 0 4px 0 ;
 
 }
 
-.display-help .syntax {
+
+.display-help .title {
   font-size: 18px;
+  margin: 0 0 15px 0;
+  font-weight: 300;
+  opacity: .7;
+}
+
+.display-help .syntax {
+  font-size: 24px;
   margin: 0;
   padding: 0;
   font-weight: 200;
-  opacity: .6;
+  opacity: .8;
   margin-bottom: 25px;
   background: rgba(255,255,255,.05);
   display: inline-block;
@@ -647,7 +655,7 @@ orange {
 
 .display-help .hint {
   margin-bottom: 20px;
-  line-height: 140%;
+  line-height: 150%;
 }
 
 .display-help .hint,
@@ -666,7 +674,8 @@ orange {
   border: none;
 }
 
-.display-help strong {
+.display-help strong,
+.display-help tag {
   color: #AAA;
   background: rgba(255,255,255,.1);
   padding: 3px 6px 3px 6px;
@@ -1045,4 +1054,19 @@ plate orange:nth-last-child(4)
   position: relative;
   left: -150px;
   display: none;
+}
+
+tag {
+  padding: 0 3px;
+  color: #AAA;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+tag:before {
+  content: "<";
+}
+
+tag:after {
+  content: ">";
 }
