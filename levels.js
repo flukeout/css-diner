@@ -209,7 +209,7 @@ var levels = [
     help : "You can select any element that is the only element inside of another one.",
     examples : [
       '<strong>span:only-child</strong> selects the <strong>&lt;span&gt;</strong> elements that are the only child of some other element.',
-      '<strong>ul li:first-child</strong> selects the only <strong>&lt;li&gt;</strong> element that are in a <strong>&lt;ul&gt;</strong>.'
+      '<strong>ul li:only-child</strong> selects the only <strong>&lt;li&gt;</strong> element that are in a <strong>&lt;ul&gt;</strong>.'
     ],
     board: "(A)(p)[]P(oO)p"
   },
