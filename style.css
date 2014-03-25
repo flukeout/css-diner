@@ -1078,3 +1078,8 @@ tag:after {
 .tweet-result {
   margin-top: 30px;
 }
+.final-stats {
+  font-size: 22px;
+  color: #FFF;
+  margin-top: 30px;
+}

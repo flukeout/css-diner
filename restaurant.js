@@ -2,6 +2,9 @@ var level;
 var currentLevel = parseInt(localStorage.currentLevel,10) || 0;
 var levelTimeout = 1000;
 var fails = 0;
+var testsTaken = {};
+var testsPassed = {};
+var totalTests = 26;
 
 $(document).ready(function(){
 
@@ -256,7 +259,18 @@ function fireRule(rule) {
     win = checkResults(ruleSelected,levelSelected,rule);
   }
 
+  /* 
+   * Arindam Chakraborty <arismart99@gmail.com>
+   * On 25 Mar, 2014.
+   *
+   * Capture the test number taken and the result as win.
+   * Making this an object, as a test can be taken multiple times
+   * via the menu item. The latest value should be used.
+   */
+   testsTaken[currentLevel] = true;
+
   if(win){
+    testsPassed[currentLevel] = true;
     ruleSelected.removeClass("strobe");
     ruleSelected.addClass("clean");
     // $(".result").text("Good job!");
@@ -270,9 +284,8 @@ function fireRule(rule) {
         loadLevel();
       },levelTimeout);
     }
-
   } else {
-
+    testsPassed[currentLevel] = false;
     continueRule();
 
     ruleSelected.removeClass("strobe");
@@ -296,6 +309,22 @@ function winGame(){
 }
 
 function showTweet() {
+  var totalTestsTaken = 0;
+  var totalTestsPassed = 0;
+  for(var key in testsTaken) {
+    if(testsTaken.hasOwnProperty(key)) totalTestsTaken++;
+  }
+  for(var key in testsPassed) {
+    if(testsPassed.hasOwnProperty(key)) {
+      if(testsPassed[key]) totalTestsPassed++;
+    }
+  }
+
+  var stats = $('.final-stats');
+  stats.find('.tests-taken .user-test-score').text(totalTestsTaken);
+  stats.find('.tests-passed .user-test-score').text(totalTestsPassed);
+  stats.find('.total-tests').text(totalTests);
+  stats.removeClass('hidden');
   $('.tweet-result').removeClass('hidden');
 }
 
