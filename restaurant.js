@@ -1,5 +1,5 @@
 var level;
-var currentLevel = parseInt(localStorage.currentLevel) || 0;
+var currentLevel = parseInt(localStorage.currentLevel,10) || 0;
 var levelTimeout = 1000;
 var fails = 0;
 
@@ -158,8 +158,8 @@ function handleInput(text){
     text = "blammojammo";
   }
 
-  if(parseInt(text) > 0 && parseInt(text) < levels.length+1) {
-    currentLevel = parseInt(text) -1;
+  if(parseInt(text,10) > 0 && parseInt(text,10) < levels.length+1) {
+    currentLevel = parseInt(text,10) - 1;
     loadLevel();
     return;
   }
