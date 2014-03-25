@@ -43,7 +43,7 @@ var levels = [
     selectorName: "ID Selector",
     helpTitle: "Select elements with an ID",
     syntax: "#id",
-    help : 'Selects the element with that <strong>id</strong> attribute. You can also combine the ID selector with the type selector.',
+    help : 'Selects the element with the <strong>id</strong> attribute. You can also combine the ID selector with the type selector.',
     examples : [
       '<strong>#cool</strong> will select any element with <strong>id="cool"</strong>',
       '<strong>ul#long</strong> will select <strong>&lt;ul id="long"&gt;</strong>'
