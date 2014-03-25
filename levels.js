@@ -200,11 +200,10 @@ var levels = [
     selector : "plate :only-child",
     syntax: ":only-child",
     helpTitle: "Only Child Pseudo-selector",
-    help : "You can selects any element that is the only element inside of another one.",
+    help : "You can select any element that is the only element inside of another one.",
     examples : [
-      '<strong>:last-child</strong> selects all last-child elements.',
-      '<strong>span:first-child</strong> selects all first-child <strong>&lt;span&gt;</strong> elements.',
-      '<strong>ul li:first-child</strong> selects all first-child <strong>&lt;li&gt;</strong> elements that are in a <strong>&lt;ul&gt;</strong>.'
+      '<strong>span:only-child</strong> selects the <strong>&lt;span&gt;</strong> elements that are the only child of some other element.',
+      '<strong>ul li:first-child</strong> selects the only <strong>&lt;li&gt;</strong> element that are in a <strong>&lt;ul&gt;</strong>.'
     ],
     board: "(A)(p)[]P(oO)p"
   },
