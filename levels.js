@@ -265,7 +265,7 @@ var levels = [
       '<strong>div:nth-of-type(2)</strong> selects the second instance of a div.',
       '<strong>.example:nth-of-type(odd)</strong> selects all odd instances of a the example class.'
     ],
-    board: "()(){}()(){}"
+    board: "()()()(){}()"
   },
   {
     helpTitle: "Only of Type Selector",
