@@ -68,7 +68,7 @@ var levels = [
     doThis : "Select the pickle on the fancy plate",
     selector : "#fancy pickle",
     helpTitle: "Combine the Descendant & ID Selectors",
-    syntax: "A&nbsp;&nbsp;#id",
+    syntax: "#id&nbsp;&nbsp;A",
     help : 'You can combine any selector with the descendent selector.',
     examples : [
       '<strong>#cool&nbsp;span</strong> will select all <strong>&lt;span&gt;</strong> elements that are inside of elements with <strong>id="cool"</strong>'
