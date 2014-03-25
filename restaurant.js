@@ -46,7 +46,7 @@ $(document).ready(function(){
   $(".markup").on("mouseover","div *",function(e){
 
     el = $(this);
-    console.log(el);
+
     var markupElements = $(".markup *");
     var index = markupElements.index(el) -1;
 
@@ -238,8 +238,12 @@ function fireRule(rule) {
 
   var baseTable = $('.table-wrapper > .table');
 
-  var ruleSelected = $(".table-wrapper " + rule).not(baseTable);
-  var levelSelected = $(".table-wrapper " + level.selector).not(baseTable);
+  // var ruleSelected = $(".table-wrapper " + rule).not(baseTable);
+  // var levelSelected = $(".table-wrapper " + level.selector).not(baseTable);
+
+  var ruleSelected = $(".table-wrapper").find(rule).not(baseTable);
+  var levelSelected = $(".table-wrapper").find(level.selector).not(baseTable);
+
 
   var win = false;
 
@@ -249,7 +253,7 @@ function fireRule(rule) {
   }
 
   if(ruleSelected.length == levelSelected.length && ruleSelected.length > 0){
-    win = checkResults(ruleSelected,levelSelected);
+    win = checkResults(ruleSelected,levelSelected,rule);
   }
 
   if(win){
@@ -280,9 +284,7 @@ function fireRule(rule) {
       levelSelected.addClass("strobe");
     },500);
 
-    // $(".result").text("Wrong! Try again :D");
     $(".result").fadeOut();
-
   }
 
 }
@@ -290,17 +292,13 @@ function fireRule(rule) {
 function winGame(){
   $(".table").html('<span class="winner"><strong>You did it!</strong><br>You are a CSS God.</span>');
   resetTable();
-
 }
 
-function checkResults(ruleSelected,levelSelected){
-  for(var i = 0; i < ruleSelected.length; i++) {
-    if(ruleSelected[i] == levelSelected[i]){
-    } else {
-      return false;
-    }
-  }
-  return true;
+function checkResults(ruleSelected,levelSelected,rule){
+  var ruleTable = $(".table").clone();
+  ruleTable.find(".strobe").removeClass("strobe");
+  ruleTable.find(rule).addClass("strobe");
+  return($(".table").html() == ruleTable.html());
 }
 
 var d = 2;
