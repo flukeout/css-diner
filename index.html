@@ -60,6 +60,9 @@ p {
             <div class="table-leg"></div>
             <div class="table-leg"></div>
           </div>
+          <div class="hidden tweet-result">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://flukeout.github.io/" data-text="I just became a 'CSS GOD'. Test your level" data-via="flukeout" data-hashtags="CSSGame">Tweet</a>
+          </div>
         </div>
 
 
@@ -158,6 +161,17 @@ p {
 
   <!-- This is the popup that floats over table elemetns -->
   <div class="helper"></div>
+  <script>
+    !function(d,s,id){
+      var js,fjs=d.getElementsByTagName(s)[0],
+        p=/^http:/.test(d.location)?'http':'https';
+        if(!d.getElementById(id)){
+          js=d.createElement(s);js.id=id;
+          js.src=p+'://platform.twitter.com/widgets.js';
+          fjs.parentNode.insertBefore(js,fjs);
+        }
+      }(document, 'script', 'twitter-wjs');
+    </script>
 
   </body>
 </html>

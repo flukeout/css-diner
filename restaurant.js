@@ -291,7 +291,12 @@ function fireRule(rule) {
 
 function winGame(){
   $(".table").html('<span class="winner"><strong>You did it!</strong><br>You are a CSS God.</span>');
+  showTweet();
   resetTable();
+}
+
+function showTweet() {
+  $('.tweet-result').removeClass('hidden');
 }
 
 function checkResults(ruleSelected,levelSelected,rule){

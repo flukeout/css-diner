@@ -1070,3 +1070,11 @@ tag:before {
 tag:after {
   content: ">";
 }
+
+/* i-arindam styles*/
+.hidden {
+  display: none;
+}
+.tweet-result {
+  margin-top: 30px;
+}
