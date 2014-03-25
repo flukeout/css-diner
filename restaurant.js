@@ -182,12 +182,18 @@ function showHelp() {
   var syntax = level.syntax || "";
   var syntaxExample = level.syntaxExample || "";
   var selectorName = level.selectorName || "";
+  var compatability = level.browserCompatability || null,
+      compatabilityLink = compatability ?
+                          '<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/' +
+                            compatability + '#Browser_compatibility">Browser Compatability</a>' :
+                          "";
 
   $(".display-help .syntax").html(syntax);
   $(".display-help .syntax-example").html(syntaxExample);
   $(".display-help .selector-name").html(selectorName);
   $(".display-help .title").html(helpTitle);
   $(".display-help .examples").html("");
+  $(".display-help .compatability").html(compatabilityLink);
 
   for(var i = 0; i < examples.length; i++){
     var example = $("<div class='example'>" + examples[i] + "</div>");

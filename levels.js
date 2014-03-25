@@ -158,7 +158,8 @@ var levels = [
       '<strong>p + .intro</strong> will select every element with <strong>class="intro"</strong> that directly follows a <tag>p</tag>',
       '<strong>div + a</strong> will select every <tag>a</tag> element that directly follows a <tag>div</tag>'
     ],
-    board: "[a]()a()Aaa"
+    board: "[a]()a()Aaa",
+    browserCompatability: "Adjacent_sibling_selectors"
   },
   {
     selectorName: "General Sibling Selector",
@@ -170,7 +171,8 @@ var levels = [
     examples : [
       '<strong>A ~ B</strong> will select all <strong>B</strong> that follow a <strong>A</strong>'
     ],
-    board: "P[o]pP(P)(p)"
+    board: "P[o]pP(P)(p)",
+    browserCompatability: "General_sibling_selectors"
   },
   {
     selectorName: "Child Selector",
@@ -182,7 +184,8 @@ var levels = [
     examples : [
       '<strong>A > B</strong> will select all <strong>B</strong> that are a direct children <strong>A</strong>'
     ],
-    board: "([A])(A)()Aa"
+    board: "([A])(A)()Aa",
+    browserCompatability: "Child_selectors"
   },
   {
     selectorName: "First Child Pseudo-selector",
@@ -197,7 +200,8 @@ var levels = [
       '<strong>p:first-child</strong> selects all first child <strong>&lt;p&gt;</strong> elements.',
       '<strong>div p:first-child</strong> selects all first child <strong>&lt;p&gt;</strong> elements that are in a <strong>&lt;div&gt;</strong>.'
     ],
-    board: "[]()(OOO)p"
+    board: "[]()(OOO)p",
+    browserCompatability: ":first-child"
   },
   {
     selectorName: "Only Child Pseudo-selector",
@@ -210,7 +214,8 @@ var levels = [
       '<strong>span:only-child</strong> selects the <strong>&lt;span&gt;</strong> elements that are the only child of some other element.',
       '<strong>ul li:only-child</strong> selects the only <strong>&lt;li&gt;</strong> element that are in a <strong>&lt;ul&gt;</strong>.'
     ],
-    board: "(A)(p)[]P(oO)p"
+    board: "(A)(p)[]P(oO)p",
+    browserCompatability: ":only-child"
   },
   {
     selectorName: "Last Child Pseudo-selector",
@@ -224,7 +229,8 @@ var levels = [
       '<strong>span:last-child</strong> selects all last-child <strong>&lt;span&gt;</strong> elements.',
       '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elements inside of any <strong>&lt;ul&gt;</strong>.'
     ],
-    board: "{a)()(oO)p"
+    board: "{a)()(oO)p",
+    browserCompatability: ":last-child"
   },
   {
     selectorName: "Nth Child Pseudo-selector",
@@ -238,7 +244,8 @@ var levels = [
       '<strong>:nth-child(8)</strong> selects every element that is the 8th child of another element.',
       '<strong>div p:nth-child(2)</strong> selects the second <strong>p</strong> in every <strong>div</strong>',
     ],
-    board: "()()(){}"
+    board: "()()(){}",
+    browserCompatability: ":nth-child"
   },
   {
     selectorName: "Nth Last Child Selector",
@@ -250,7 +257,8 @@ var levels = [
     examples : [
       '<strong>:nth-last-child(2)</strong> selects all second-to-last child elements.'
     ],
-    board: "()[]a(OOO)[]"
+    board: "()[]a(OOO)[]",
+    browserCompatability: ":nth-last-child"
   },
   {
     selectorName: "First of Type Selector",
@@ -262,7 +270,8 @@ var levels = [
     examples : [
       '<strong>span:first-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in any element.'
     ],
-    board: "Aaaa(oO)"
+    board: "Aaaa(oO)",
+    browserCompatability: ":first-of-type"
   },
   {
     selectorName: "Nth of Type Selector",
@@ -275,7 +284,8 @@ var levels = [
       '<strong>div:nth-of-type(2)</strong> selects the second instance of a div.',
       '<strong>.example:nth-of-type(odd)</strong> selects all odd instances of a the example class.'
     ],
-    board: "()()()(){}()"
+    board: "()()()(){}()",
+    browserCompatability: ":nth-of-type"
   },
   {
     selectorName: "Nth-of-type Selector with Formula",
@@ -287,7 +297,8 @@ var levels = [
     examples: [
       '<strong>span:nth-of-type(6n+2)</strong> selects every 6th instance of a <tag>span</tag>, starting from (and including) the second instance.'
     ],
-    board: "()(p)(a)()(A)()"
+    board: "()(p)(a)()(A)()",
+    browserCompatability: ":nth-of-type"
   },
 
   {
@@ -300,7 +311,8 @@ var levels = [
     examples : [
       '<strong>p span:only-of-type</strong> selects a <tag>span</tag> within any <tag>p</tag> if it is the only <tag>span</tag> in there.'
     ],
-    board: "(aA)(a)(p)"
+    board: "(aA)(a)(p)",
+    browserCompatability: ":only-of-type"
   },
 
   {
@@ -314,7 +326,8 @@ var levels = [
       '<strong>div:last-of-type</strong> selects the last <strong>&lt;div&gt;</strong> in every element.',
       '<strong>p span:last-of-type</strong> selects the last <strong>&lt;span&gt;</strong> in every <strong>&lt;p&gt;</strong>.'
     ],
-    board: "ooPPaa"
+    board: "ooPPaa",
+    browserCompatability: ":last-of-type"
   },
   {
     selectorName: "Empty Selector",
@@ -326,7 +339,8 @@ var levels = [
     examples : [
       '<strong>div:empty</strong> selects all empty <strong>&lt;div&gt;</strong> elements.'
     ],
-    board: "[][p][][]"
+    board: "[][p][][]",
+    browserCompatability: ":empty"
   },
   {
     selectorName: "Negation Pseudo-class",
@@ -341,6 +355,7 @@ var levels = [
       '<strong>div:not(:first-child)</strong> selects every <tag>div</tag> that is not a first child.',
       '<strong>:not(.big, .medium)</strong> selects all elements that do not have <strong>class="big"</strong> or <strong>class="medium"</strong>.'
     ],
-    board: "{a}(A)A(o)p"
+    board: "{a}(A)A(o)p",
+    browserCompatability: ":not"
   }
 ];
