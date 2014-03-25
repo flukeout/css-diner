@@ -10,7 +10,19 @@
 // {} = fancy plate open / close
 // [] = bento open close tags
 
-var levels = [
+strings['en'] = {
+  'table'  : 'table',
+  'apple'  : 'apple',
+  'orange' : 'orange',
+  'pickle' : 'pickle',
+  'plate'  : 'plate',
+  'bento'  : 'bento',
+  'fancy'  : 'fancy',
+  'small'  : 'small',
+  
+}
+
+levels['en'] = [
   {
     helpTitle : "Select elements by their type",
     selectorName : "Type Selector",

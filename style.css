@@ -88,6 +88,42 @@ header {
 }
 
 
+.lang {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 999999;
+  width: 5em;
+}
+#lang-select { 
+  color: #CCC;
+  background-color: rgba(27, 111, 155, 0.5);
+  font-weight: bold;
+  padding: 4px 15px 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+#lang-select:hover { color: #fff; }
+
+.lang > ul {
+  position: relative;
+  list-style: none;
+  padding: 0; margin: 0;
+  background-color:  rgba(27, 111, 155, 0.5);
+  display: none;
+}
+.lang > ul a {
+  color: #FFF;
+  padding: 2px 15px 2px;
+  text-decoration: none;
+  display: inline-block; 
+  border-left: 2px solid transparent;
+}
+.lang > ul a:hover {
+   border-left: 2px solid #fff;
+}
+.lang:hover > ul { display: block; }
+
 
 .table-wrapper {
   margin-top: 10px;

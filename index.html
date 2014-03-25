@@ -2,8 +2,10 @@
 <html>
   <head>
     <title>CSS Diner - Where we feast on CSS Selectors!</title>
+    <script>var levels={}; var strings={};</script>
     <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
-    <script src="levels.js" type="text/javascript" charset="utf-8"></script>
+    <script src="levels_en.js" type="text/javascript" charset="utf-8"></script>
+    <script src="levels_it.js" type="text/javascript" charset="utf-8"></script>
     <script src="restaurant.js" type="text/javascript" charset="utf-8"></script>
     <link rel="icon" type="image/png" href="favicon.png">
     <link href='http://fonts.googleapis.com/css?family=Exo+2:200,400,600,400italic,600italic' rel='stylesheet' type='text/css'>
@@ -16,6 +18,11 @@
       <div class="logo">
         <plate><apple /></plate>
       </div>
+      <div class="lang">
+        <span id="lang-select"></span>
+          <ul>
+          </ul>
+      </div>
     </header>
 
     <div class="col-wrapper bottom-half">
@@ -25,13 +32,13 @@
         <h2 class="order"></h2>
 
         <div class="note">
-          <h3>No worries, you've got this!</h3>
-          <p>
+          <h3 data-lang-id="1">No worries, you've got this!</h3>
+          <p data-lang-id="2">
             You're about to learn CSS Selectors!
             Selectors are how you pick which element to apply styles to.
           </p>
 
-          <h4>Exhibit 1 - A CSS Rule</h4>
+          <h4 data-lang-id="3">Exhibit 1 - A CSS Rule</h4>
 
 <pre>
 p {
@@ -40,17 +47,17 @@ p {
 </pre>
 
 
-          <p>Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.</p>
-          <p>
+          <p data-lang-id="4">Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.</p>
+          <p data-lang-id="5">
             To play, type in a CSS selector in the editor below to select the correct items on the table.
             If you get it right, you'll advance to the next level.
           </p>
-          <p>Hover over the items on the table to see their HTML markup.</p>
-          <p>Get help with selectors on the right! &rarr;</p>
-          <a class="note-toggle" href="#">Ok, got it!</a>
+          <p data-lang-id="6">Hover over the items on the table to see their HTML markup.</p>
+          <p data-lang-id="7">Get help with selectors on the right! &rarr;</p>
+          <a class="note-toggle" href="#" data-lang-id="8">Ok, got it!</a>
         </div>
 
-        <a class="note-toggle" href="#">Help, I'm stuck!</a>
+        <a class="note-toggle" href="#" data-lang-id="9">Help, I'm stuck!</a>
 
         <div class="game-wrapper">
           <div class="table-wrapper">
@@ -67,7 +74,7 @@ p {
         <div class="editor">
 
           <div class="editor-pane">
-            <div class="input-header">
+            <div class="input-header" data-lang-id="10">
               <div class="file-name">style.css</div> CSS Editor
             </div>
 
@@ -75,13 +82,13 @@ p {
             <div class="line-numbers">
               1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20
             </div>
-              <input class="input-strobe" type="text" placeholder="Type in a CSS selector"/><span class="plus">+</span><div class="enter-button">enter</div>
-            <div>
+              <input class="input-strobe" type="text" placeholder="Type in a CSS selector"  data-lang-id="11"/><span class="plus">+</span><div class="enter-button" data-lang-id="12">enter</div>
+            <div data-lang-id="13">
             {<br/>
             /* Styles would go here. */<br/>
             }
             </div>
-            <div class="help">
+            <div class="help" data-lang-id="14">
               <br/>
               /* <br/>
               Type a number to skip to a level.<br/>
@@ -91,7 +98,7 @@ p {
         </div>
 
         <div class="editor-pane html-view">
-          <div class="input-header">
+          <div class="input-header" data-lang-id="15">
             <div class="file-name">table.html</div>
             HTML Viewer
           </div>
@@ -106,8 +113,8 @@ p {
       </div>
 
       <div class="what-is-this">
-        <h2>What is this?</h2>
-        <p>It's a little game to help you learn CSS selectors. Type in the correct selector to complete each level. Get help on the right.</p>
+        <h2 data-lang-id="16">What is this?</h2>
+        <p data-lang-id="17">It's a little game to help you learn CSS selectors. Type in the correct selector to complete each level. Get help on the right.</p>
         <p>It's a work in progress, so please give me feedback!</p>
         <p>
           Made by <a href="http://www.twitter.com/flukeout">@flukeout</a> with special thanks to...
