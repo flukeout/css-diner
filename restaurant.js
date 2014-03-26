@@ -349,7 +349,7 @@ function loadBoard(){
     }
     if(c == "{") {
       boardMarkup = boardMarkup + '<plate id="fancy">'
-      markup = markup + '<div>&ltplate id="fancy"/&gt';
+      markup = markup + '<div>&ltplate id="fancy"&gt';
     }
     if(c == "(") {
       boardMarkup = boardMarkup + '<plate>'
