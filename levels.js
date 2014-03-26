@@ -153,7 +153,7 @@ var levels = [
     helpTitle: "Select an element that directly follows another element",
     selectorName: "Adjacent Sibling Selector",
     syntax : "A + B",
-    help : "This selects all <strong>B</strong> elements that directly follow <strong>A</strong>. Elements that follow one another are called siblings. They're on the same same level, or depth. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
+    help : "This selects all <strong>B</strong> elements that directly follow <strong>A</strong>. Elements that follow one another are called siblings. They're on the same level, or depth. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
     examples : [
       '<strong>p + .intro</strong> will select every element with <strong>class="intro"</strong> that directly follows a <tag>p</tag>',
       '<strong>div + a</strong> will select every <tag>a</tag> element that directly follows a <tag>div</tag>'
