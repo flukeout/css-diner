@@ -284,27 +284,27 @@ levels['it'] = [
     board: "()[]a(OOO)[]"
   },
   {
-    selectorName: "First of Type Selector",
-    helpTitle: "Select the first element of a specific type",
-    doThis : "Select first apple",
+    selectorName: "Selettore Primo di un tipo",
+    helpTitle: "Seleziona il primo elemento di un tipo specifico",
+    doThis : "Seleziona la prima mela",
     selector : "apple:first-of-type",
     syntax: ":first-of-type",
-    help : "Selects the first element of that type within another element.",
+    help : "Seleziona il primo elemento di quel tipo che si trova all'interno di un'altro elemento",
     examples : [
-      '<strong>span:first-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in any element.'
+      '<strong>span:first-of-type</strong> seleziona il primo <strong>&lt;span&gt;</strong> in qualsiasi elemento.'
     ],
     board: "Aaaa(oO)"
   },
   {
-    selectorName: "Nth of Type Selector",
+    selectorName: "Selettore n-esimo di un tipo",
     // helpTitle: "Nth of Type Selector",
-    doThis: "Select all even plates",
+    doThis: "Seleziona tutti i piatti pari",
     selector: "plate:nth-of-type(even)",
     syntax: ":nth-of-type(A)",
-    help: "Selects a specific element based on its type and order in another element - or even or odd instances of that element.",
+    help: "Seleziona uno specifico elemento basato sul suo tipo e il suo ordine all'interno di un'altro elemento - o le ricorrenze pari o dispari di quell'elemento",
     examples: [
-      '<strong>div:nth-of-type(2)</strong> selects the second instance of a div.',
-      '<strong>.example:nth-of-type(odd)</strong> selects all odd instances of a the example class.'
+      '<strong>div:nth-of-type(2)</strong> seleziona il secondo <tag>div</tag>.',
+      '<strong>.example:nth-of-type(odd)</strong> seleziona le ricorrenze dispari della classe example.'
     ],
     board: "()()()(){}()"
   },

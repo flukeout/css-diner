@@ -20,6 +20,26 @@ strings['en'] = {
   'fancy'  : 'fancy',
   'small'  : 'small',
   
+  /* ui */
+  
+  "Level {0} of {1}" : 'Level {0} of {1}',
+  'str1' : "No worries, you've got this!",
+  'str2' : "You're about to learn CSS Selectors!\nSelectors are how you pick which element to apply styles to.",
+  'str3' :  "AlExhibit 1 - A CSS Rule",
+  'str4' : 'Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.',
+  'str5' : "To play, type in a CSS selector in the editor below to select the correct items on the table. If you get it right, you'll advance to the next level.",
+  'str6': "Hover over the items on the table to see their HTML markup.",
+  'str7': "Get help with selectors on the right! &rarr;",
+  'str8': "Ok, got it!",
+  'str9': "Help, I'm stuck!",
+  'str10': "<div class='file-name'>style.css</div> CSS Editor",
+  'str11': "Type in a CSS selector",
+  'str12': "enter",
+  'str13': "{<br/>/* Styles would go here. */<br/>}",
+  'str14': '<br/>/* <br/>Type a number to skip to a level.<br/>Ex &rarr; "5" for level 5 <br/>*/',
+  'str15': "<div class='file-name'>table.html</div> HTML Viewer",
+  'str16': "What is this?",
+  'str17': "It's a little game to help you learn CSS selectors. Type in the correct selector to complete each level. Get help on the right."
 }
 
 levels['en'] = [
