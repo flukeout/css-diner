@@ -416,7 +416,7 @@ function loadBoard(){
     }
     if(c == "{") {
       boardMarkup = boardMarkup + '<plate id="fancy">'
-      markup = markup + '<div>&lt'+s['plate']+' id="'+s['fancy']+'"/&gt';
+      markup = markup + '<div>&lt'+s['plate']+' id="'+s['fancy']+'"&gt';
     }
     if(c == "(") {
       boardMarkup = boardMarkup + '<plate>'
@@ -481,7 +481,7 @@ function loadLevel(){
 
 }
 
-                                              // string format
+// string format
 String.prototype.format = function(){
     var s = this,  
         i = arguments.length;

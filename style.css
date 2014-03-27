@@ -1,5 +1,5 @@
 * {
-  box-sixing: border-box;
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
@@ -274,7 +274,7 @@ bento:before {
 }
 
 .editor * {
-  font-family: menlo;
+  font-family: menlo,monospace;
   font-size: 14px;
   line-height: 150%;
   padding: 0;
@@ -807,7 +807,7 @@ plate orange:nth-last-child(4)
 }
 
 .markup * {
-  font-family: menlo;
+  font-family: menlo,monospace;
   cursor: default;
 }
 

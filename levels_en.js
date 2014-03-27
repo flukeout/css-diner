@@ -185,7 +185,7 @@ levels['en'] = [
     helpTitle: "Select an element that directly follows another element",
     selectorName: "Adjacent Sibling Selector",
     syntax : "A + B",
-    help : "This selects all <strong>B</strong> elements that directly follow <strong>A</strong>. Elements that follow one another are called siblings. They're on the same same level, or depth. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
+    help : "This selects all <strong>B</strong> elements that directly follow <strong>A</strong>. Elements that follow one another are called siblings. They're on the same level, or depth. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
     examples : [
       '<strong>p + .intro</strong> will select every element with <strong>class="intro"</strong> that directly follows a <tag>p</tag>',
       '<strong>div + a</strong> will select every <tag>a</tag> element that directly follows a <tag>div</tag>'
@@ -260,7 +260,7 @@ levels['en'] = [
   },
   {
     selectorName: "Nth Child Pseudo-selector",
-    helpTitle: "Select an element by it's order in another element",
+    helpTitle: "Select an element by its order in another element",
     doThis : "Select the 3rd plate",
     selector : ":nth-child(3)",
     syntax: ":nth-child(A)",
@@ -274,7 +274,7 @@ levels['en'] = [
   },
   {
     selectorName: "Nth Last Child Selector",
-    helpTitle: "Select an element by it's order in another element, counting from the back",
+    helpTitle: "Select an element by its order in another element, counting from the back",
     doThis : "Select the 1st bento",
     selector : "bento:nth-last-child(4)",
     syntax: ":nth-last-child(A)",
