@@ -13,6 +13,13 @@ $(document).ready(function(){
   $(".level-menu-toggle-wrapper").on("click",function(){
     $(".level-menu").toggleClass("open");
   });
+
+  $(".navigator-prev").on("click",function(){
+    navigateLevel(-1);
+  });
+  $(".navigator-next").on("click",function(){
+    navigateLevel(1);
+  });
   //Handle inputs from the input box on enter
   $("input").on("keypress",function(e){
     e.stopPropagation();
@@ -139,6 +146,15 @@ function showTooltip(el){
   helper.show();
   helper.text(helpertext);
 
+}
+
+//Direct Navigation with the buttons
+function navigateLevel(step){
+  newLevel = currentLevel + parseInt(step,10)
+  if(newLevel >= 0 && newLevel < levels.length) {
+    currentLevel = newLevel;
+    loadLevel();
+  }
 }
 
 //Animate the enter button
@@ -405,5 +421,16 @@ function loadLevel(){
 
   //Strobe what's supposed to be selected
   $(".table " + level.selector).addClass("strobe");
+
+  if (currentLevel<=0) {
+    $(".navigator-prev").css("color","rgba(255,255,255,.2)");
+  } else {
+    $(".navigator-prev").css("color","rgba(255,255,255,.5)");
+  }
+  if (currentLevel>=levels.length - 1) {
+    $(".navigator-next").css("color","rgba(255,255,255,.2)");
+  } else {
+    $(".navigator-next").css("color","rgba(255,255,255,.5)");
+  }
 
 }

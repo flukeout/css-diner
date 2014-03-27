@@ -828,13 +828,15 @@ plate orange:nth-last-child(4)
   position: absolute;
   left: 0;
   top: 0;
-  color: rgba(255,255,255,.2)
+  cursor: pointer;
+  color: rgba(255,255,255,.5)
 }
 
 .level-navigator .navigator-next {
   position: absolute;
   right: 0;
   top: 0;
+  cursor: pointer;
   color: rgba(255,255,255,.5)
 }
 
