@@ -812,8 +812,30 @@ plate orange:nth-last-child(4)
   height: 4px;
   width: 4px;
   border: solid 2px #2a231d;
-  background: rgba(255,255,255,.5);
+  background: ;
   -webkit-border-radius: 5px;
+}
+
+.level-navigator {
+  position:relative;
+  width: 100%;
+  font-size: 25px;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+.level-navigator .navigator-prev {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(255,255,255,.2)
+}
+
+.level-navigator .navigator-next {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: rgba(255,255,255,.5)
 }
 
 .order {
