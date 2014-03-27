@@ -1,5 +1,5 @@
 var level;
-var currentLevel = parseInt(localStorage.currentLevel) || 0;
+var currentLevel = parseInt(localStorage.currentLevel,10) || 0;
 var levelTimeout = 1000;
 var fails = 0;
 
@@ -46,7 +46,7 @@ $(document).ready(function(){
   $(".markup").on("mouseover","div *",function(e){
 
     el = $(this);
-    console.log(el);
+
     var markupElements = $(".markup *");
     var index = markupElements.index(el) -1;
 
@@ -158,8 +158,8 @@ function handleInput(text){
     text = "blammojammo";
   }
 
-  if(parseInt(text) > 0 && parseInt(text) < levels.length+1) {
-    currentLevel = parseInt(text) -1;
+  if(parseInt(text,10) > 0 && parseInt(text,10) < levels.length+1) {
+    currentLevel = parseInt(text,10) - 1;
     loadLevel();
     return;
   }
@@ -211,6 +211,11 @@ function resetTable(){
 
 function fireRule(rule) {
 
+  // prevent cheating
+  if(rule === ".strobe") {
+    rule = null;
+  }
+
   $(".shake").removeClass("shake");
 
   $(".strobe,.clean,.shake").each(function(){
@@ -223,9 +228,9 @@ function fireRule(rule) {
   * On 03/17/14
   *
   * Allow [div][.table] to preceed the answer.
-  * Makes sense if div.table is going to be included in the HTML viewer 
+  * Makes sense if div.table is going to be included in the HTML viewer
   * and users want to try and use it in their selectors.
-  * 
+  *
   * However, if it is included as a specific match, filter it out.
   * This resolves the  "Match all the things!" level from beheading the table too.
   * Relatedly, watching that happen made me nearly spill my drink.
@@ -233,8 +238,12 @@ function fireRule(rule) {
 
   var baseTable = $('.table-wrapper > .table');
 
-  var ruleSelected = $(".table-wrapper " + rule).not(baseTable);
-  var levelSelected = $(".table-wrapper " + level.selector).not(baseTable);
+  // var ruleSelected = $(".table-wrapper " + rule).not(baseTable);
+  // var levelSelected = $(".table-wrapper " + level.selector).not(baseTable);
+
+  var ruleSelected = $(".table-wrapper").find(rule).not(baseTable);
+  var levelSelected = $(".table-wrapper").find(level.selector).not(baseTable);
+
 
   var win = false;
 
@@ -244,7 +253,7 @@ function fireRule(rule) {
   }
 
   if(ruleSelected.length == levelSelected.length && ruleSelected.length > 0){
-    win = checkResults(ruleSelected,levelSelected);
+    win = checkResults(ruleSelected,levelSelected,rule);
   }
 
   if(win){
@@ -275,9 +284,7 @@ function fireRule(rule) {
       levelSelected.addClass("strobe");
     },500);
 
-    // $(".result").text("Wrong! Try again :D");
     $(".result").fadeOut();
-
   }
 
 }
@@ -285,17 +292,13 @@ function fireRule(rule) {
 function winGame(){
   $(".table").html('<span class="winner"><strong>You did it!</strong><br>You are a CSS God.</span>');
   resetTable();
-
 }
 
-function checkResults(ruleSelected,levelSelected){
-  for(var i = 0; i < ruleSelected.length; i++) {
-    if(ruleSelected[i] == levelSelected[i]){
-    } else {
-      return false;
-    }
-  }
-  return true;
+function checkResults(ruleSelected,levelSelected,rule){
+  var ruleTable = $(".table").clone();
+  ruleTable.find(".strobe").removeClass("strobe");
+  ruleTable.find(rule).addClass("strobe");
+  return($(".table").html() == ruleTable.html());
 }
 
 var d = 2;
@@ -346,7 +349,7 @@ function loadBoard(){
     }
     if(c == "{") {
       boardMarkup = boardMarkup + '<plate id="fancy">'
-      markup = markup + '<div>&ltplate id="fancy"/&gt';
+      markup = markup + '<div>&ltplate id="fancy"&gt';
     }
     if(c == "(") {
       boardMarkup = boardMarkup + '<plate>'
