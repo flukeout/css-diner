@@ -196,8 +196,8 @@ var levels = [
     board: "[]()(OOO)p"
   },
   {
-    doThis : "Select apple and the pickle on the plates",
-    selector : "plate :only-child",
+    doThis : "Select the single apples on the plates",
+    selector : "apple:only-child",
     syntax: ":only-child",
     helpTitle: "Only Child Pseudo-selector",
     help : "You can selects any element that is the only element inside of another one.",
@@ -206,7 +206,7 @@ var levels = [
       '<strong>span:first-child</strong> selects all first-child <strong>&lt;span&gt;</strong> elements.',
       '<strong>ul li:first-child</strong> selects all first-child <strong>&lt;li&gt;</strong> elements that are in a <strong>&lt;ul&gt;</strong>.'
     ],
-    board: "(A)(p)[]P(oO)p"
+    board: "(A)(a)(P)A(aA)a"
   },
   {
     doThis : "Select the small apple and the pickle",
