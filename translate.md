@@ -1,7 +1,7 @@
 How to translate
 ----------------
 
-Create a copy of `levels_en.js`, and change `en` with your language.
+Create a copy of `levels.js`, and rename `levels_nn`, where `nn` is your language code.
 
 Open `index.html` and add your script on top.
 
