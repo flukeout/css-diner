@@ -178,7 +178,7 @@ var levels = [
     doThis : "Select the apple directly on a plate",
     selector : "plate > apple",
     helpTitle: "Select direct children of an element",
-    help : "You can select elements that are direct children of other elements. A child element is any element that is nested direclty in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
+    help : "You can select elements that are direct children of other elements. A child element is any element that is nested directly in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
     examples : [
       '<strong>A > B</strong> will select all <strong>B</strong> that are a direct children <strong>A</strong>'
     ],
