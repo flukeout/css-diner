@@ -187,7 +187,7 @@ var levels = [
   {
     selectorName: "First Child Pseudo-selector",
     helpTitle: "Select a first child element inside of another element",
-    doThis : "Select the top orange",
+    doThis : "Select the first orange on the plate",
     selector : "plate :first-child",
     syntax: ":first-child",
 
@@ -210,13 +210,13 @@ var levels = [
       '<strong>span:only-child</strong> selects the <strong>&lt;span&gt;</strong> elements that are the only child of some other element.',
       '<strong>ul li:only-child</strong> selects the only <strong>&lt;li&gt;</strong> element that are in a <strong>&lt;ul&gt;</strong>.'
     ],
-    board: "(A)(p)[]P(oO)p"
+    board: "(A)(p)[]P(Oo)p"
   },
   {
     selectorName: "Last Child Pseudo-selector",
     helpTitle: "Select the last element inside of another element",
-    doThis : "Select the small apple and the pickle",
-    selector : ".small:last-child",
+    doThis : "Select the first and last orange on the table",
+    selector : "orange:last-child",
     syntax: ":last-child",
     help : "You can use this selector to select an element that is the last child element inside of another element. <br><br>Pro Tip &rarr; In cases where there is only one element, that element counts as the first-child, only-child and last-child!",
     examples : [
@@ -224,7 +224,7 @@ var levels = [
       '<strong>span:last-child</strong> selects all last-child <strong>&lt;span&gt;</strong> elements.',
       '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elements inside of any <strong>&lt;ul&gt;</strong>.'
     ],
-    board: "{a)()(oO)p"
+    board: "{O)[](Oa)O"
   },
   {
     selectorName: "Nth Child Pseudo-selector",
@@ -262,7 +262,7 @@ var levels = [
     examples : [
       '<strong>span:first-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in any element.'
     ],
-    board: "Aaaa(oO)"
+    board: "Aaaa(Oo)"
   },
   {
     selectorName: "Nth of Type Selector",
@@ -300,7 +300,7 @@ var levels = [
     examples : [
       '<strong>p span:only-of-type</strong> selects a <tag>span</tag> within any <tag>p</tag> if it is the only <tag>span</tag> in there.'
     ],
-    board: "(aA)(a)(p)"
+    board: "(Aa)(a)(p)"
   },
 
   {

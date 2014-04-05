@@ -440,10 +440,10 @@ plate apple
   position: absolute;
 }
 
-plate > apple:last-child,
-plate > orange:last-child,
-bento > apple:last-child,
-bento > orange:last-child
+plate > apple:first-child,
+plate > orange:first-child,
+bento > apple:first-child,
+bento > orange:first-child
 {
   top: calc(50% - 35px);
 }
@@ -729,26 +729,26 @@ plate orange {
   position: absolute;
 }
 
-plate apple:last-child,
-plate orange:last-child {
+plate apple:first-child,
+plate orange:first-child {
   z-index: 300;
 }
 
-plate apple:nth-last-child(2),
-plate orange:nth-last-child(2) {
+plate apple:nth-child(2),
+plate orange:nth-child(2) {
   top: -25px;
   z-index: 400;
 }
 
-plate apple:nth-last-child(3),
-plate orange:nth-last-child(3)
+plate apple:nth-child(3),
+plate orange:nth-child(3)
 {
   top: -65px;
   z-index: 500;
 }
 
-plate apple:nth-last-child(4),
-plate orange:nth-last-child(4)
+plate apple:nth-child(4),
+plate orange:nth-child(4)
 {
   top: -105px;
   z-index: 600;
