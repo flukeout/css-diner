@@ -207,7 +207,7 @@ var levels = [
   {
     selectorName: "Only Child Pseudo-selector",
     helpTitle: "Select an element that are the only element inside of another one.",
-    doThis : "Select apple and the pickle on the plates",
+    doThis : "Select the apple and the pickle on the plates",
     selector : "plate :only-child",
     syntax: ":only-child",
     help : "You can select any element that is the only element inside of another one.",
