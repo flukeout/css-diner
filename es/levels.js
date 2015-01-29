@@ -232,16 +232,16 @@ var levels = [
     board: "{a)()(oO)p"
   },
   {
-    selectorName: "Nth Child Pseudo-selector",
-    helpTitle: "Select an element by its order in another element",
-    doThis : "Select the 3rd plate",
+    selectorName: "Pseudo-selector del Nsimo hijo",
+    helpTitle: "Selecciona un elemento por su orden dentro de otro elemento",
+    doThis : "Selecciona el 3er plato",
     selector : ":nth-child(3)",
     syntax: ":nth-child(A)",
 
-    help : "Selects the <strong>nth</strong> (Ex: 1st, 3rd, 12th etc.) child element in another element.",
+    help : "Selecciona el <strong>nsimo</strong> (Ejm: 1ro, 3ro, 12vo etc.) elemento hijo dentro de otro elemento.",
     examples : [
-      '<strong>:nth-child(8)</strong> selects every element that is the 8th child of another element.',
-      '<strong>div p:nth-child(2)</strong> selects the second <strong>p</strong> in every <strong>div</strong>',
+      '<strong>:nth-child(8)</strong> selecciona cada elemento que es el 8bo hijo de otro elemento.',
+      '<strong>div p:nth-child(2)</strong> selecciona el segundo <strong>p</strong> en cada <strong>div</strong>',
     ],
     board: "()()(){}"
   },
