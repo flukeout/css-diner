@@ -58,7 +58,7 @@ var levels = [
   {
     helpTitle: "Selecciona un elemento dentro de otro elemento",
     selectorName : "Selector Descendiente",
-    doThis : "Seleciona la manza en el plato",
+    doThis : "Seleciona la manzana en el plato",
     selector : "plate apple",
     syntax: "A&nbsp;&nbsp;B",
 
@@ -101,7 +101,7 @@ var levels = [
     syntax: "A.className",
     help : 'Puedes combiar el selector de clase con otros selectores, como el selector de tipo.',
     examples : [
-      '<strong>ul.important</strong> seleccionará <strong>&lt;ul&gt;</strong> elementos que tienen <strong>class="important"</strong>',
+      '<strong>ul.important</strong> seleccionará elementos <strong>&lt;ul&gt;</strong> que tienen <strong>class="important"</strong>',
       '<strong>#big.wide</strong> seleccionará elementos con <strong>id="big"</strong> que también tienen  <strong>class="wide"</strong>'
     ],
     board: "Aa[o](O)(o)"
@@ -121,7 +121,7 @@ var levels = [
     selectorName : "Combinador de Coma",
     helpTitle: "Combina, selectores, con... ¡comas!",
     syntax : "A, B",
-    help : 'Gracias a la tecnología Shatner, este seleccionará elementos <strong>A</strong> y <strong>B</strong>. Puedes combinar cualquier selector de esta manera, y puedes especificar más que dos.',
+    help : 'Gracias a la tecnología Shatner, éste seleccionará elementos <strong>A</strong> y <strong>B</strong>. Puedes combinar cualquier selector de esta manera, y puedes especificar más que dos.',
     examples: [
     '<strong>p, .fun</strong> seleccionará elementos <tag>p</tag> también como todos los elementos con <strong>class="fun"</strong>',
     '<strong>a, p, div</strong> seleccionará elementos <tag>a</tag>, <tag>p</tag> y <tag>div</tag>'
@@ -166,14 +166,14 @@ var levels = [
     board: "[a]()a()Aaa"
   },
   {
-    selectorName: "General Sibling Selector",
-    helpTitle: "Select elementos that follows another element",
+    selectorName: "Selector de Hermano",
+    helpTitle: "Selecciona elementos que siguen a otro elemento",
     syntax: "A ~ B",
-    doThis : "Select every pickle to the right of the bento",
+    doThis : "Selecciona todos los pepinos a la derecha de un bento",
     selector : "bento ~ pickle",
-    help : "You can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elementos instead of one.",
+    help : "Puedes seleccionar todos los hermanos de un elemento que le sigue. Esto es como el Selector Adyacete (A + B) excepto que obtiene todos los elementos siguientes en lugar de uno solo.",
     examples : [
-      '<strong>A ~ B</strong> seleccionará <strong>B</strong> that follow a <strong>A</strong>'
+      '<strong>A ~ B</strong> seleccionará elementos <strong>B</strong> que sigan a un <strong>A</strong>'
     ],
     board: "P[o]pP(P)(p)"
   },
