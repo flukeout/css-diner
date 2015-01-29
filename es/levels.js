@@ -322,29 +322,28 @@ var levels = [
     board: "ooPPaa"
   },
   {
-    selectorName: "Empty Selector",
-    helpTitle: "Select elementos that don't have children",
-    doThis : "Select the empty bentos",
+    selectorName: "Selector para elementos Vacíos",
+    helpTitle: "Selecciona los elementos que no tienen hijos",
+    doThis : "Selecciona los bentos vacíos",
     selector : "bento:empty",
     syntax: ":empty",
-    help : "Selects elementos that don't have any other elementos inside of them.",
+    help : "Selecciona los elementos que no tienen otros elementos dentro de ellos.",
     examples : [
-      '<strong>div:empty</strong> seleccionará empty <strong>&lt;div&gt;</strong> elementos.'
+      '<strong>div:empty</strong> seleccionará todos los elementos <strong>&lt;div&gt;</strong> que estén vacíos.'
     ],
     board: "[][p][][]"
   },
   {
-    selectorName: "Negation Pseudo-class",
-    helpTitle: "Select all elementos that don't match the negation selector",
-
-    doThis : "Select the big apples",
+    selectorName: "Pseudo-clase de Negación",
+    helpTitle: "Selecciona todos los elementos que no concuerden con el selector de negación",
+    doThis : "Selecciona las manzanas grandes",
     selector : "apple:not(.small)",
     syntax: ":not(X)",
-    help : 'You can use this to select all elementos that do not match selector <strong>"X"</strong>.',
+    help : 'Puedes usar esto para seleccionar todos los elementos que no concuerden con el selector <strong>"X"</strong>.',
     examples : [
-      '<strong>:not(#fancy)</strong> seleccionará elementos that do not have <strong>id="fancy"</strong>.',
-      '<strong>div:not(:first-child)</strong> selects every <tag>div</tag> that is not a first child.',
-      '<strong>:not(.big, .medium)</strong> seleccionará elementos that do not have <strong>class="big"</strong> or <strong>class="medium"</strong>.'
+      '<strong>:not(#fancy)</strong> seleccionará elementos que no tengan <strong>id="fancy"</strong>.',
+      '<strong>div:not(:first-child)</strong> seleccionará cada <tag>div</tag> que no sea un primer elemento hijo.',
+      '<strong>:not(.big, .medium)</strong> seleccionará elementos que no tengan <strong>class="big"</strong> o <strong>class="medium"</strong>.'
     ],
     board: "{a}(A)A(o)p"
   }
