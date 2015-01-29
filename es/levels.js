@@ -283,27 +283,27 @@ var levels = [
     board: "()()()(){}()"
   },
   {
-    selectorName: "Nth-of-type Selector with Formula",
-    // helpTitle: "Nth-of-type Selector with formula",
-    doThis: "Select every 2nd plate, starting from the 3rd",
+    selectorName: "Selector para el Nsimo-del-tipo con Fórmula",
+    // helpTitle: "Selector para el Nsimo-del-tipo con Fórmula",
+    doThis: "Selecciona cada 2ndo plato, empezando desde el 3ro",
     selector: "plate:nth-of-type(2n+3)",
     syntax: ":nth-of-type(An+B)",
-    help: "The nth-of-type formula selects every nth element, starting the count at a specific instance of that element.",
+    help: "La fórmula nsimo-del-tipo selecciona cada enésimo elemento, empezando la cuenta desde una instancia específica dentro de ese elemento.",
     examples: [
-      '<strong>span:nth-of-type(6n+2)</strong> selects every 6th instance of a <tag>span</tag>, starting from (and including) the second instance.'
+      '<strong>span:nth-of-type(6n+2)</strong> selecciona cada 6ta instancia de un <tag>span</tag>, comenzando desde (e incluyendo) la segunda instancia.'
     ],
     board: "()(p)(a)()(A)()"
   },
 
   {
-    selectorName: "Only of Type Selector",
-    helpTitle: "Select elementos that are the only ones of their type",
+    selectorName: "Selector Solo de un Tipo",
+    helpTitle: "Selecciona elementos que son los únicos de su tipo",
     selector : "apple:only-of-type",
     syntax: ":only-of-type",
-    doThis : "Select the apple on the middle plate.",
-    help : "Selects the only element of its type within another element.",
+    doThis : "Selecciona la manzana en el plato del centro.",
+    help : "Selecciona el único elemento de su tipo dentro de otro elemento.",
     examples : [
-      '<strong>p span:only-of-type</strong> selects a <tag>span</tag> within any <tag>p</tag> if it is the only <tag>span</tag> in there.'
+      '<strong>p span:only-of-type</strong> selecciona un <tag>span</tag> dentro de cualquier <tag>p</tag> si es el único <tag>span</tag> ahí dentro.'
     ],
     board: "(aA)(a)(p)"
   },
