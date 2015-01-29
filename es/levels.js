@@ -270,15 +270,15 @@ var levels = [
     board: "Aaaa(oO)"
   },
   {
-    selectorName: "Nth of Type Selector",
+    selectorName: "Selector del Nsimo del tipo",
     // helpTitle: "Nth of Type Selector",
-    doThis: "Select all even plates",
+    doThis: "Selecciona todos los platos pares",
     selector: "plate:nth-of-type(even)",
     syntax: ":nth-of-type(A)",
-    help: "Selects a specific element based on its type and order in another element - or even or odd instances of that element.",
+    help: "Selecciona un elemento específico basado en su tipo y el orden dentro de otro elemento - incluso instancias pares o impares de ese elemento.",
     examples: [
-      '<strong>div:nth-of-type(2)</strong> selects the second instance of a div.',
-      '<strong>.example:nth-of-type(odd)</strong> seleccionará odd instances of a the example class.'
+      '<strong>div:nth-of-type(2)</strong> selecciona la segunda instancia de un <strong>&lt;div&gt;</strong>.',
+      '<strong>.example:nth-of-type(odd)</strong> seleccionará las instancias impares de la clase example.'
     ],
     board: "()()()(){}()"
   },
