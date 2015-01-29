@@ -251,7 +251,7 @@ var levels = [
     doThis : "Selecciona el 1er bento",
     selector : "bento:nth-last-child(4)",
     syntax: ":nth-last-child(A)",
-    help : "Selecciona los elementos hijos desde abajo. Esto es como el Nsimo hijo, pero contando desde el final!",
+    help : "Selecciona los elementos hijos desde abajo. Esto es como el Nsimo hijo, ¡pero contando desde el final!",
     examples : [
       '<strong>:nth-last-child(2)</strong> seleccionará el penúltimo elemento hijo.'
     ],
