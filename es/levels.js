@@ -218,133 +218,132 @@ var levels = [
     board: "(A)(p)[]P(oO)p"
   },
   {
-    selectorName: "Last Child Pseudo-selector",
-    helpTitle: "Select the last element inside of another element",
-    doThis : "Select the small apple and the pickle",
+    selectorName: "Pseudo-selector del último hijo",
+    helpTitle: "Selecciona el último elemento dentro de otro elemento=",
+    doThis : "Selecciona la manzana pequeña y el pepinillo",
     selector : ".small:last-child",
     syntax: ":last-child",
-    help : "You can use this selector to select an element that is the last child element inside of another element. <br><br>Pro Tip &rarr; In cases where there is only one element, that element counts as the first-child, only-child and last-child!",
+    help : "Puedes usar este selector para seleccionar un elemento que sea el último elemento hijo dentro de de otro elemento. <br><br>Pro Tip &rarr; En los casos donde solo hay un elemento, ése elemento cuenta como el primer hijo, único hijo and último hijo!",
     examples : [
-      '<strong>:last-child</strong> seleccionará last-child elementos.',
-      '<strong>span:last-child</strong> seleccionará last-child <strong>&lt;span&gt;</strong> elementos.',
-      '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elementos inside of any <strong>&lt;ul&gt;</strong>.'
+      '<strong>:last-child</strong> seleccionará los últimos elementos hijos.',
+      '<strong>span:last-child</strong> seleccionará los <strong>&lt;span&gt;</strong> que sean los últimos hijos.',
+      '<strong>ul li:last-child</strong> selecciona el último <strong>&lt;li&gt;</strong> dentro de cada <strong>&lt;ul&gt;</strong>.'
     ],
     board: "{a)()(oO)p"
   },
   {
-    selectorName: "Nth Child Pseudo-selector",
-    helpTitle: "Select an element by its order in another element",
-    doThis : "Select the 3rd plate",
+    selectorName: "Pseudo-selector del Nsimo hijo",
+    helpTitle: "Selecciona un elemento por su orden dentro de otro elemento",
+    doThis : "Selecciona el 3er plato",
     selector : ":nth-child(3)",
     syntax: ":nth-child(A)",
 
-    help : "Selects the <strong>nth</strong> (Ex: 1st, 3rd, 12th etc.) child element in another element.",
+    help : "Selecciona el <strong>nsimo</strong> (Ejm: 1ro, 3ro, 12vo etc.) elemento hijo dentro de otro elemento.",
     examples : [
-      '<strong>:nth-child(8)</strong> selects every element that is the 8th child of another element.',
-      '<strong>div p:nth-child(2)</strong> selects the second <strong>p</strong> in every <strong>div</strong>',
+      '<strong>:nth-child(8)</strong> selecciona cada elemento que es el 8bo hijo de otro elemento.',
+      '<strong>div p:nth-child(2)</strong> selecciona el segundo <strong>p</strong> en cada <strong>div</strong>',
     ],
     board: "()()(){}"
   },
   {
-    selectorName: "Nth Last Child Selector",
-    helpTitle: "Select an element by its order in another element, counting from the back",
-    doThis : "Select the 1st bento",
+    selectorName: "Selector para el Nsimo último hijo",
+    helpTitle: "Selecciona un elemento por orden dentro de otro elemento, contando desde el final",
+    doThis : "Selecciona el 1er bento",
     selector : "bento:nth-last-child(4)",
     syntax: ":nth-last-child(A)",
-    help : "Selects the children from the bottom of the parent. This is like nth-child, but counting from the back!",
+    help : "Selecciona los elementos hijos desde abajo. Esto es como el Nsimo hijo, pero contando desde el final!",
     examples : [
-      '<strong>:nth-last-child(2)</strong> seleccionará second-to-last child elementos.'
+      '<strong>:nth-last-child(2)</strong> seleccionará el penúltimo elemento hijo.'
     ],
     board: "()[]a(OOO)[]"
   },
   {
-    selectorName: "First of Type Selector",
-    helpTitle: "Select the first element of a specific type",
-    doThis : "Select first apple",
+    selectorName: "Selector del Primero de un tipo",
+    helpTitle: "Selecciona el primer elemento de un tipo específico",
+    doThis : "Selecciona la primera manzana",
     selector : "apple:first-of-type",
     syntax: ":first-of-type",
-    help : "Selects the first element of that type within another element.",
+    help : "Selecciona el primer elemento de ese tipo dentro de otro elemento.",
     examples : [
-      '<strong>span:first-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in any element.'
+      '<strong>span:first-of-type</strong> selecciona el primer <strong>&lt;span&gt;</strong> en cualquier elemento.'
     ],
     board: "Aaaa(oO)"
   },
   {
-    selectorName: "Nth of Type Selector",
-    // helpTitle: "Nth of Type Selector",
-    doThis: "Select all even plates",
+    selectorName: "Selector del Nsimo de un tipo",
+    // helpTitle: "Selector del Nsimo de un tipo",
+    doThis: "Selecciona todos los platos pares",
     selector: "plate:nth-of-type(even)",
     syntax: ":nth-of-type(A)",
-    help: "Selects a specific element based on its type and order in another element - or even or odd instances of that element.",
+    help: "Selecciona un elemento específico basado en su tipo y el orden dentro de otro elemento - incluso instancias pares o impares de ese elemento.",
     examples: [
-      '<strong>div:nth-of-type(2)</strong> selects the second instance of a div.',
-      '<strong>.example:nth-of-type(odd)</strong> seleccionará odd instances of a the example class.'
+      '<strong>div:nth-of-type(2)</strong> selecciona la segunda instancia de un <strong>&lt;div&gt;</strong>.',
+      '<strong>.example:nth-of-type(odd)</strong> seleccionará las instancias impares de la clase example.'
     ],
     board: "()()()(){}()"
   },
   {
-    selectorName: "Nth-of-type Selector with Formula",
-    // helpTitle: "Nth-of-type Selector with formula",
-    doThis: "Select every 2nd plate, starting from the 3rd",
+    selectorName: "Selector para el Nsimo-de-un-tipo con Fórmula",
+    // helpTitle: "Selector para el Nsimo-de-un-tipo con Fórmula",
+    doThis: "Selecciona cada 2ndo plato, empezando desde el 3ro",
     selector: "plate:nth-of-type(2n+3)",
     syntax: ":nth-of-type(An+B)",
-    help: "The nth-of-type formula selects every nth element, starting the count at a specific instance of that element.",
+    help: "La fórmula nsimo-del-tipo selecciona cada enésimo elemento, empezando la cuenta desde una instancia específica dentro de ese elemento.",
     examples: [
-      '<strong>span:nth-of-type(6n+2)</strong> selects every 6th instance of a <tag>span</tag>, starting from (and including) the second instance.'
+      '<strong>span:nth-of-type(6n+2)</strong> selecciona cada 6ta instancia de un <tag>span</tag>, comenzando desde (e incluyendo) la segunda instancia.'
     ],
     board: "()(p)(a)()(A)()"
   },
 
   {
-    selectorName: "Only of Type Selector",
-    helpTitle: "Select elementos that are the only ones of their type",
+    selectorName: "Selector Solo de un Tipo",
+    helpTitle: "Selecciona elementos que son los únicos de su tipo",
     selector : "apple:only-of-type",
     syntax: ":only-of-type",
-    doThis : "Select the apple on the middle plate.",
-    help : "Selects the only element of its type within another element.",
+    doThis : "Selecciona la manzana en el plato del centro.",
+    help : "Selecciona el único elemento de su tipo dentro de otro elemento.",
     examples : [
-      '<strong>p span:only-of-type</strong> selects a <tag>span</tag> within any <tag>p</tag> if it is the only <tag>span</tag> in there.'
+      '<strong>p span:only-of-type</strong> selecciona un <tag>span</tag> dentro de cualquier <tag>p</tag> si es el único <tag>span</tag> ahí dentro.'
     ],
     board: "(aA)(a)(p)"
   },
 
   {
-    selectorName: "Last of Type Selector",
-    helpTitle: "Select the last element of a specific type",
-    doThis : "Select the second apple and orange",
+    selectorName: "Selector para el Último de un Tipo",
+    helpTitle: "Selecciona el último elemento de un tipo específico",
+    doThis : "Selecciona la segunda manzana y naranja",
     selector : ".small:last-of-type",
     syntax: ":last-of-type",
-    help : "Selects each last element of that type within another element. Remember type refers the kind of tag, so <tag>p</tag> and <tag>span</tag> are different types. <br><br> I wonder if this is how the last dinosaur was selected before it went extinct.",
+    help : "Selecciona cada último elemento de su tipo dentro de otro elemento. Recuerda que tipo se refiere al tipo de tag, así que <tag>p</tag> y <tag>span</tag> son diferentes tipos. <br><br> Me pregunto si así es como el último dinosaurio fue seleccionado antes de pasar a la extinción.",
     examples : [
-      '<strong>div:last-of-type</strong> selects the last <strong>&lt;div&gt;</strong> in every element.',
-      '<strong>p span:last-of-type</strong> selects the last <strong>&lt;span&gt;</strong> in every <strong>&lt;p&gt;</strong>.'
+      '<strong>div:last-of-type</strong> selecciona el último <strong>&lt;div&gt;</strong> en cada elemento.',
+      '<strong>p span:last-of-type</strong> selecciona el último <strong>&lt;span&gt;</strong> en cada <strong>&lt;p&gt;</strong>.'
     ],
     board: "ooPPaa"
   },
   {
-    selectorName: "Empty Selector",
-    helpTitle: "Select elementos that don't have children",
-    doThis : "Select the empty bentos",
+    selectorName: "Selector para elementos Vacíos",
+    helpTitle: "Selecciona los elementos que no tienen hijos",
+    doThis : "Selecciona los bentos vacíos",
     selector : "bento:empty",
     syntax: ":empty",
-    help : "Selects elementos that don't have any other elementos inside of them.",
+    help : "Selecciona los elementos que no tienen otros elementos dentro de ellos.",
     examples : [
-      '<strong>div:empty</strong> seleccionará empty <strong>&lt;div&gt;</strong> elementos.'
+      '<strong>div:empty</strong> seleccionará todos los elementos <strong>&lt;div&gt;</strong> que estén vacíos.'
     ],
     board: "[][p][][]"
   },
   {
-    selectorName: "Negation Pseudo-class",
-    helpTitle: "Select all elementos that don't match the negation selector",
-
-    doThis : "Select the big apples",
+    selectorName: "Pseudo-clase de Negación",
+    helpTitle: "Selecciona todos los elementos que no concuerden con el selector de negación",
+    doThis : "Selecciona las manzanas grandes",
     selector : "apple:not(.small)",
     syntax: ":not(X)",
-    help : 'You can use this to select all elementos that do not match selector <strong>"X"</strong>.',
+    help : 'Puedes usar esto para seleccionar todos los elementos que no concuerden con el selector <strong>"X"</strong>.',
     examples : [
-      '<strong>:not(#fancy)</strong> seleccionará elementos that do not have <strong>id="fancy"</strong>.',
-      '<strong>div:not(:first-child)</strong> selects every <tag>div</tag> that is not a first child.',
-      '<strong>:not(.big, .medium)</strong> seleccionará elementos that do not have <strong>class="big"</strong> or <strong>class="medium"</strong>.'
+      '<strong>:not(#fancy)</strong> seleccionará elementos que no tengan <strong>id="fancy"</strong>.',
+      '<strong>div:not(:first-child)</strong> seleccionará cada <tag>div</tag> que no sea un primer elemento hijo.',
+      '<strong>:not(.big, .medium)</strong> seleccionará elementos que no tengan <strong>class="big"</strong> o <strong>class="medium"</strong>.'
     ],
     board: "{a}(A)A(o)p"
   }
