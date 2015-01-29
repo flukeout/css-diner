@@ -246,14 +246,14 @@ var levels = [
     board: "()()(){}"
   },
   {
-    selectorName: "Nth Last Child Selector",
-    helpTitle: "Select an element by its order in another element, counting from the back",
-    doThis : "Select the 1st bento",
+    selectorName: "Selector para el Nsimo último hijo",
+    helpTitle: "Selecciona un elemento por orden dentro de otro elemento, contando desde el final",
+    doThis : "Selecciona el 1er bento",
     selector : "bento:nth-last-child(4)",
     syntax: ":nth-last-child(A)",
-    help : "Selects the children from the bottom of the parent. This is like nth-child, but counting from the back!",
+    help : "Selecciona los elementos hijos desde abajo. Esto es como el Nsimo hijo, pero contando desde el final!",
     examples : [
-      '<strong>:nth-last-child(2)</strong> seleccionará second-to-last child elementos.'
+      '<strong>:nth-last-child(2)</strong> seleccionará el penúltimo elemento hijo.'
     ],
     board: "()[]a(OOO)[]"
   },
