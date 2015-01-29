@@ -219,11 +219,11 @@ var levels = [
   },
   {
     selectorName: "Pseudo-selector del último hijo",
-    helpTitle: "Selecciona el último elemento dentro de otro elemento=",
+    helpTitle: "Selecciona el último elemento dentro de otro elemento",
     doThis : "Selecciona la manzana pequeña y el pepinillo",
     selector : ".small:last-child",
     syntax: ":last-child",
-    help : "Puedes usar este selector para seleccionar un elemento que sea el último elemento hijo dentro de de otro elemento. <br><br>Pro Tip &rarr; En los casos donde solo hay un elemento, ése elemento cuenta como el primer hijo, único hijo and último hijo!",
+    help : "Puedes usar este selector para seleccionar un elemento que sea el último elemento hijo dentro de otro elemento. <br><br>Consejo Pro &rarr; En los casos donde solo hay un elemento, ése elemento cuenta como el primer hijo, único hijo y último hijo!",
     examples : [
       '<strong>:last-child</strong> seleccionará los últimos elementos hijos.',
       '<strong>span:last-child</strong> seleccionará los <strong>&lt;span&gt;</strong> que sean los últimos hijos.',
@@ -240,7 +240,7 @@ var levels = [
 
     help : "Selecciona el <strong>nsimo</strong> (Ejm: 1ro, 3ro, 12vo etc.) elemento hijo dentro de otro elemento.",
     examples : [
-      '<strong>:nth-child(8)</strong> selecciona cada elemento que es el 8bo hijo de otro elemento.',
+      '<strong>:nth-child(8)</strong> selecciona cada elemento que es el 8vo hijo de otro elemento.',
       '<strong>div p:nth-child(2)</strong> selecciona el segundo <strong>p</strong> en cada <strong>div</strong>',
     ],
     board: "()()(){}"
