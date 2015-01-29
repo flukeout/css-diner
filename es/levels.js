@@ -121,47 +121,47 @@ var levels = [
     selectorName : "Combinador de Coma",
     helpTitle: "Combina, selectores, con... ¡comas!",
     syntax : "A, B",
-    help : 'Gracias a Shatner technology, this seleccionará <strong>A</strong> and <strong>B</strong> elementos. You can combine any selectors this way, and you can specify more than two.',
+    help : 'Gracias a la tecnología Shatner, este seleccionará elementos <strong>A</strong> y <strong>B</strong>. Puedes combinar cualquier selector de esta manera, y puedes especificar más que dos.',
     examples: [
-    '<strong>p, .fun</strong> seleccionará <tag>p</tag> elementos as well as all elementos con <strong>class="fun"</strong>',
-    '<strong>a, p, div</strong> seleccionará <tag>a</tag>, <tag>p</tag> and <tag>div</tag> elementos'
+    '<strong>p, .fun</strong> seleccionará elementos <tag>p</tag> también como todos los elementos con <strong>class="fun"</strong>',
+    '<strong>a, p, div</strong> seleccionará elementos <tag>a</tag>, <tag>p</tag> y <tag>div</tag>'
     ],
     board: "pP(P)[P](P)Pp"
   },
   {
-    doThis : "Select all the things!",
+    doThis : "¡Selecciona todas las cosas!",
     selector : "*",
-    selectorName:  "The Universal Selector",
-    helpTitle: "You can select everything!",
+    selectorName:  "El Selector Universal",
+    helpTitle: "¡Puedes seleccionar todo!",
     syntax : "*",
-    help : 'You can select all elementos con the universal selector! ',
+    help : '¡Puedes seleccionar todos los elementos con el selector universal! ',
     examples : [
-      '<strong>p *</strong> will select every element inside all <strong>&lt;p&gt;</strong> elementos.'
+      '<strong>p *</strong> seleccionará cada elemento dentro de todos los elementos <strong>&lt;p&gt;</strong>.'
     ],
     board: "A(o)[][O]{)"
   },
   {
-    doThis : "Select everything on a plate",
+    doThis : "Selecciona todo en un plato",
     selector : "plate *",
     syntax : "A&nbsp;&nbsp;*",
-    helpTitle: "Combine the Universal Selector",
-    help : 'This seleccionará elementos inside of <strong>A</strong>.',
+    helpTitle: "Combina el Selector Universal",
+    help : 'Este seleccionará elementos dentro de <strong>A</strong>.',
     examples : [
-      '<strong>p *</strong> will select every element inside all <strong>&lt;p&gt;</strong> elementos.',
-      '<strong>ul.fancy *</strong> will select every element inside all <strong>&lt;ul class="fancy"&gt;</strong> elementos.'
+      '<strong>p *</strong> seleccionará cada elemento dentro de todos los elementos <strong>&lt;p&gt;</strong>.',
+      '<strong>ul.fancy *</strong> seleccionará todos los elementos dentro de <strong>&lt;ul class="fancy"&gt;</strong>.'
     ],
     board: "{o}(P)a(A)"
   },
   {
-    doThis : "Select every apple that's next to a plate",
+    doThis : "Selecciona cada manzana que está al lado de un plato",
     selector : "plate + apple",
-    helpTitle: "Select an element that directly follows another element",
-    selectorName: "Adjacent Sibling Selector",
+    helpTitle: "Selecciona un elemento que directamente le sigue a otro elemento",
+    selectorName: "Selector de Hermano Adyacente",
     syntax : "A + B",
-    help : "This seleccionará <strong>B</strong> elementos that directly follow <strong>A</strong>. Elements that follow one another are called siblings. They're on the same level, or depth. <br/><br/>In the HTML markup for this level, elementos that have the same indentation are siblings.",
+    help : "Esto seleccionará elementos <strong>B</strong> que directamente le sigan a <strong>A</strong>. Elementos que siguen a otros son llamados hermanos. Están en el mismo nivel, o profundidad. <br/><br/>En el esquema HTML para este nivel, los elementos que tienen la misma indentación son hermanos.",
     examples : [
-      '<strong>p + .intro</strong> will select every element with <strong>class="intro"</strong> that directly follows a <tag>p</tag>',
-      '<strong>div + a</strong> will select every <tag>a</tag> element that directly follows a <tag>div</tag>'
+      '<strong>p + .intro</strong> seleccionará todos los elementos con <strong>class="intro"</strong> que le sigan directamente a <tag>p</tag>',
+      '<strong>div + a</strong> seleccionará cada elemento <tag>a</tag> que le siga a <tag>div</tag>'
     ],
     board: "[a]()a()Aaa"
   },
@@ -178,42 +178,42 @@ var levels = [
     board: "P[o]pP(P)(p)"
   },
   {
-    selectorName: "Child Selector",
+    selectorName: "Selector Hijo",
     syntax: "A > B&nbsp;",
-    doThis : "Select the apple directly on a plate",
+    doThis : "Selecciona la manzana directamente en un plato",
     selector : "plate > apple",
-    helpTitle: "Select direct children of an element",
-    help : "You can select elementos that are direct children of other elementos. A child element is any element that is nested directly in another element. <br><br>Elements that are nested deeper than that are called descendant elementos.",
+    helpTitle: "Selecciona los hijos directos de un elemento",
+    help : "Puedes seleccionar los elementos que son hijos directos de otros elementos. Un elemento hijo es cualquier elemento que está anidado directamente en otro elemento. <br><br>Elementos que están anidados más profundamente que eso, se les llama elementos descendientes.",
     examples : [
-      '<strong>A > B</strong> seleccionará <strong>B</strong> that are a direct children <strong>A</strong>'
+      '<strong>A > B</strong> seleccionará elementos <strong>B</strong> que son hijos directos de <strong>A</strong>'
     ],
     board: "([A])(A)()Aa"
   },
   {
-    selectorName: "First Child Pseudo-selector",
-    helpTitle: "Select a first child element inside of another element",
-    doThis : "Select the top orange",
+    selectorName: "Seudo-selector de Primer Hijo",
+    helpTitle: "Selecciona un elemento primer hijo dentro de otro elemento",
+    doThis : "Selecciona la naranja de encima",
     selector : "plate :first-child",
     syntax: ":first-child",
 
-    help : "You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-selector with other selectors.",
+    help : "Puedes seleccionar el elemento primer hijo. Un elemento hijo es cualqueir elemento que está directamente anidado dentro de otro elemento. Puedes combinar este seudo-selector con otros selectores.",
     examples : [
-      '<strong>:first-child</strong> seleccionará first child elementos.',
-      '<strong>p:first-child</strong> seleccionará first child <strong>&lt;p&gt;</strong> elementos.',
-      '<strong>div p:first-child</strong> seleccionará first child <strong>&lt;p&gt;</strong> elementos that are in a <strong>&lt;div&gt;</strong>.'
+      '<strong>:first-child</strong> seleccionará elementos primer hijo.',
+      '<strong>p:first-child</strong> seleccionará elementos primer hijo <strong>&lt;p&gt;</strong>.',
+      '<strong>div p:first-child</strong> seleccionará elementos primer hijo <strong>&lt;p&gt;</strong> que están en un  <strong>&lt;div&gt;</strong>.'
     ],
     board: "[]()(OOO)p"
   },
   {
-    selectorName: "Only Child Pseudo-selector",
-    helpTitle: "Select an element that are the only element inside of another one.",
-    doThis : "Select the apple and the pickle on the plates",
+    selectorName: "Seudo-selector de Único Hijo",
+    helpTitle: "Selecciona un elemento que es el único elemento dentro de otro.",
+    doThis : "Selecciona la manzana y el pepino en los platos",
     selector : "plate :only-child",
     syntax: ":only-child",
-    help : "You can select any element that is the only element inside of another one.",
+    help : "Puedes seleccionar cualquier elemento que es el único elemento dentro de otro.",
     examples : [
-      '<strong>span:only-child</strong> selects the <strong>&lt;span&gt;</strong> elementos that are the only child of some other element.',
-      '<strong>ul li:only-child</strong> selects the only <strong>&lt;li&gt;</strong> element that are in a <strong>&lt;ul&gt;</strong>.'
+      '<strong>span:only-child</strong> selecciona los elementos <strong>&lt;span&gt;</strong> que son los hijos únicos de cual otro elemento.',
+      '<strong>ul li:only-child</strong> selecciona el único elemento <strong>&lt;li&gt;</strong> que exist en un <strong>&lt;ul&gt;</strong>.'
     ],
     board: "(A)(p)[]P(oO)p"
   },
