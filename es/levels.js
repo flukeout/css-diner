@@ -258,20 +258,20 @@ var levels = [
     board: "()[]a(OOO)[]"
   },
   {
-    selectorName: "First of Type Selector",
-    helpTitle: "Select the first element of a specific type",
-    doThis : "Select first apple",
+    selectorName: "Selector del Primero de un tipo",
+    helpTitle: "Selecciona el primer elemento de un tipo específico",
+    doThis : "Selecciona la primera manzana",
     selector : "apple:first-of-type",
     syntax: ":first-of-type",
-    help : "Selects the first element of that type within another element.",
+    help : "Selecciona el primer elemento de ese tipo dentro de otro elemento.",
     examples : [
-      '<strong>span:first-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in any element.'
+      '<strong>span:first-of-type</strong> selecciona el primer <strong>&lt;span&gt;</strong> en cualquier elemento.'
     ],
     board: "Aaaa(oO)"
   },
   {
-    selectorName: "Selector del Nsimo del tipo",
-    // helpTitle: "Nth of Type Selector",
+    selectorName: "Selector del Nsimo de un tipo",
+    // helpTitle: "Selector del Nsimo de un tipo",
     doThis: "Selecciona todos los platos pares",
     selector: "plate:nth-of-type(even)",
     syntax: ":nth-of-type(A)",
@@ -283,8 +283,8 @@ var levels = [
     board: "()()()(){}()"
   },
   {
-    selectorName: "Selector para el Nsimo-del-tipo con Fórmula",
-    // helpTitle: "Selector para el Nsimo-del-tipo con Fórmula",
+    selectorName: "Selector para el Nsimo-de-un-tipo con Fórmula",
+    // helpTitle: "Selector para el Nsimo-de-un-tipo con Fórmula",
     doThis: "Selecciona cada 2ndo plato, empezando desde el 3ro",
     selector: "plate:nth-of-type(2n+3)",
     syntax: ":nth-of-type(An+B)",
