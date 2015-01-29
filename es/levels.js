@@ -218,16 +218,16 @@ var levels = [
     board: "(A)(p)[]P(oO)p"
   },
   {
-    selectorName: "Last Child Pseudo-selector",
-    helpTitle: "Select the last element inside of another element",
-    doThis : "Select the small apple and the pickle",
+    selectorName: "Pseudo-selector del último hijo",
+    helpTitle: "Selecciona el último elemento dentro de otro elemento=",
+    doThis : "Selecciona la manzana pequeña y el pepinillo",
     selector : ".small:last-child",
     syntax: ":last-child",
-    help : "You can use this selector to select an element that is the last child element inside of another element. <br><br>Pro Tip &rarr; In cases where there is only one element, that element counts as the first-child, only-child and last-child!",
+    help : "Puedes usar este selector para seleccionar un elemento que sea el último elemento hijo dentro de de otro elemento. <br><br>Pro Tip &rarr; En los casos donde solo hay un elemento, ése elemento cuenta como el primer hijo, único hijo and último hijo!",
     examples : [
-      '<strong>:last-child</strong> seleccionará last-child elementos.',
-      '<strong>span:last-child</strong> seleccionará last-child <strong>&lt;span&gt;</strong> elementos.',
-      '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elementos inside of any <strong>&lt;ul&gt;</strong>.'
+      '<strong>:last-child</strong> seleccionará los últimos elementos hijos.',
+      '<strong>span:last-child</strong> seleccionará los <strong>&lt;span&gt;</strong> que sean los últimos hijos.',
+      '<strong>ul li:last-child</strong> selecciona el último <strong>&lt;li&gt;</strong> dentro de cada <strong>&lt;ul&gt;</strong>.'
     ],
     board: "{a)()(oO)p"
   },
