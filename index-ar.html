@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>مطعم الـ CSS - حيث يكون المنتقي هو طبقنا!</title>
+    <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="levels-ar.js" type="text/javascript" charset="utf-8"></script>
+    <script src="restaurant.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:200,400,600,400italic,600italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style-ar.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+
+    <header>
+مطعم الـ CSS
+      <div class="logo">
+        <plate><apple /></plate>
+      </div>
+    </header>
+
+    <div class="col-wrapper bottom-half">
+
+      <div class="left-col">
+
+        <h2 class="order"></h2>
+
+        <div class="note">
+          <h3>لا تقلق، نحن هنا لمساعدتك!</h3>
+          <p>
+ستقوم بتعلم استخدام المنتقي في الـ CSS
+المنتقي هو الذي يحدد العناصر في الـ HTML التي تريد ان تقوم بالتعديل على شكلها.
+          </p>
+
+          <h4>الفصل الـ 1 - قاعدة الـ CSS</h4>
+
+<pre>
+p {
+   margin-bottom: 12px;
+}
+</pre>
+
+
+          <p>هنا, الـ "p" هو المنتقي (قام بأختيار كل  &lt;p&gt; العناصر) وسيقوم بتطبيق خاصية margin-bottom عليهم.</p>
+          <p>
+لتبدأ في اللعبة، قم بكتابة الـ CSS والمنتقي ضمن المحرر النصوص في الاسفل، وقم بأختيار العنصر الصحيح من الطاولة الطعام.
+اذا كان جوابك صحيح، سيتم نقلك إلى التحدي التالي.
+          </p>
+          <p>قم بتمرير مؤشر الفأرة على العناصر في الطاولة، لتشاهد تخطيطهم في الـ HTML</p>
+
+          <p>بإمكانك الحصول على المساعدة من خلال القائمة الجانبية &rarr;</p>
+          <a class="note-toggle" href="#">رائع، دعنا نبدأ الآن!</a>
+        </div>
+
+        <a class="note-toggle" href="#">دقيقة، احتاج إلى مساعدة!</a>
+
+        <div class="game-wrapper">
+          <div class="table-wrapper">
+            <div class="table"></div>
+          </div>
+          <div class="table-edge">
+            <div class="table-leg"></div>
+            <div class="table-leg"></div>
+          </div>
+        </div>
+
+
+
+        <div class="editor">
+
+          <div class="editor-pane">
+            <div class="input-header">
+              <div class="file-name">style.css</div> CSS محرر
+            </div>
+
+          <div class="file-window css-view">
+            <div class="line-numbers">
+              1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20
+            </div>
+              <input class="input-strobe" type="text" placeholder="قم بكتابة المنتقي الـ CSS هنا"/><span class="plus">+</span><div class="enter-button">تحقق</div>
+            <div>
+            {<br/>
+            /* Styles الـ CSS ستقوم بكتابته هنا. */<br/>
+            }
+            </div>
+            <div class="help">
+              <br/>
+              /* <br/>
+              قم بكتابة رقم ما، لتجاوز هذا التحدي.<br/>
+              مثال &rarr; "5" للتحدي الـ  5 <br/>*/
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-pane html-view">
+          <div class="input-header">
+            <div class="file-name">table.html</div>
+            HTML محرر
+          </div>
+          <div class="file-window">
+            <div class="line-numbers">
+              1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20              </div>
+            <div class="markup">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="what-is-this">
+        <h2>ما هذا?</h2>
+        <p>أنها لعبة صغيرة لتعليمك المنتقي، وكيفية اختيار العناصر في الـ CSS. قم بكتابة الجواب الصحيح لتنتقل إلى التحدي التالي. المساعدة موجودة دائماً على يمين الشاشة.</p>
+        <p>أن اللعبة تحت التطوير, لذلك لاتنس ان تقوم بإرسال ملاحظتك لنا!</p>
+        <p>
+          تم التطوير من قبل <a href="http://www.twitter.com/flukeout">@flukeout</a> مع الشكر إلى...
+        </p>
+        <p>
+          <a href="https://twitter.com/k88hudson">@k88hudson</a>, <a href="http://www.twitter.com/antlam7">@antlam7</a> and <a href="https://twitter.com/smashman2004">@smashman2004</a>.
+        </p>
+        <p>
+          يرجى أرسال المشاكل التقنية، وأمور PRs إلى <a href="https://github.com/flukeout/restaurant">مستودع اللعبة على الـ Githup</a>.
+        </p>
+
+ <p>
+        تم ترجمتها إلى العربية من قبل <a href="http://bit-code.net">BitCode</a>.
+        </p>
+
+      </div>
+
+      </div><!-- /left col -->
+
+      <div class="right-col">
+
+        <div class="help-wrapper">
+          <div class="level-nav">
+            <a href="#">&lt;</a>
+            <a href="#">&gt;</a>
+          </div>
+          <h1 class="level-header"></h1>
+          <div class="level-progress"><div class="progress"></div></div>
+          <div class="display-help">
+
+            <h3 class="selector-name"></h3>
+            <h2 class="title"></h2>
+            <h3 class="syntax"></h3>
+
+            <div class="hint"></div>
+            <div class="examples"></div>
+            <div class="selector"></div>
+          </div>
+        </div>
+
+        <div class="level-menu">
+          <div class="levels"></div>
+        </div>
+
+        <div class="level-menu-toggle-wrapper">
+          <div class="level-menu-toggle"></div>
+        </div>
+
+      </div><!-- /right col -->
+  </div>
+
+  <!-- This is the popup that floats over table elemetns -->
+  <div class="helper"></div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-62998410-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  </body>
+</html>
