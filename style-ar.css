@@ -653,7 +653,7 @@ direction: rtl;
   display: inline-block;
   padding: 5px 8px;
   border-bottom: solid 2px rgba(255,255,255,.1);
-
+  direction: ltr;
 }
 
 .display-help .hint {
@@ -793,6 +793,8 @@ plate orange:nth-last-child(4)
   margin: 0;
   padding: 0 0 10px 0;
   color: #777;
+  direction: rtl;
+  text-align: left;
 }
 
 .level-progress {

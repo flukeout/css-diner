@@ -22,7 +22,7 @@ var levels = [
     doThis : "قم بأختيار الأطباق",
     selector : "plate",
     syntax : "A",
-    help : "قم بأختيار كل العناصر من نوع <strong>A</strong>. وأنواع العناصر تشير إلى الأنواع التالي, لذلك <tag>div</tag>, <tag>p</tag> و <tag>ul</tag> كلهم عناصر من أنواع مختلفة.",
+    help : "قم بأختيار كل العناصر من نوع الـ <strong>A</strong> . حيث نقصد بالأنواع، العناصر الـ HTML، لذلك العناصر والأوسمة التالية: <tag>div</tag> , <tag>p</tag> و <tag>ul</tag> كلهم عناصر لكن من انواع مختلفة.",
     examples : [
       '<strong>div</strong> يقوم بأختيار كل عناصر<tag>div</tag> ',
       '<strong>p</strong> يقوم بأختيار كل عناصر <tag>p</tag> ',
@@ -30,322 +30,323 @@ var levels = [
     board: "()()"
   },
   {
-    doThis : "Select the bento boxes",
+    doThis : "قم بأختيار صندوق الـ bento",
     selector : "bento",
     syntax : "A",
-    helpTitle : "Select elements by their type",
+    helpTitle : "قم بأختيار العناصر من خلال نوعها.",
     selectorName : "Type Selector",
-    help : "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
+    help : "قم بأختيار كل العناصر من نوع الـ <strong>A</strong> . حيث نقصد بالأنواع، العناصر الـ HTML، لذلك العناصر والأوسمة التالية: <tag>div</tag> , <tag>p</tag> و <tag>ul</tag> كلهم عناصر لكن من انواع مختلفة.",
     examples : [
-      '<strong>div</strong> will select all <tag>div</tag> elements.',
-      '<strong>p</strong> will select all <tag>p</tag> elements.',
+      '<strong>div</strong> يقوم بأختيار كل عناصر<tag>div</tag> ',
+      '<strong>p</strong> يقوم بأختيار كل عناصر <tag>p</tag> ',
       ],
     board: "[]()[]"
   },
   {
-    doThis : "Select the fancy plate",
+    doThis : "قم باختيار الطبق الفاخر",
     selector : "#fancy",
-    selectorName: "ID Selector",
-    helpTitle: "Select elements with an ID",
+    selectorName: "ID المنتقي",
+    helpTitle: "قم بأختيار العنصر من خلال الـ ID",
     syntax: "#id",
-    help : 'Selects the element with the <strong>id</strong> attribute. You can also combine the ID selector with the type selector.',
+    help : 'قم بأختيار العنصر الذي يحوي على خاصية الـ  <strong>id</strong>. بإمكانك أختيار العنصر من خلال نوع المنتقي ID أيضاً.',
     examples : [
-      '<strong>#cool</strong> will select any element with <strong>id="cool"</strong>',
-      '<strong>ul#long</strong> will select <strong>&lt;ul id="long"&gt;</strong>'
+      '<strong>#cool</strong> سيقوم بأختيار اي عنصر ضمن المنتقي <strong>id="cool"</strong>',
+      '<strong>ul#long</strong> سيقوم بأختيار العنصر <strong>&lt;ul id="long"&gt;</strong>'
     ],
     board: "{}()[]"
   },
   {
-    helpTitle: "Select an element inside another element",
-    selectorName : "Descendant Selector",
-    doThis : "Select the apple on the plate",
+    helpTitle: "قم بأختيار العنصر الذي داخل عنصر آخر!",
+    selectorName : "أختيار الـ خلفٌ Descendant",
+    doThis : "قم بأختيار التفاحة من الطبق",
     selector : "plate apple",
     syntax: "A&nbsp;&nbsp;B",
 
-    help : "Selects all <strong>B</strong> inside of <strong>A</strong>. Here <strong>B</strong> is the descendant element, meaning an element that is inside of another element.",
+    help : "قم بأختيار كل <strong>B</strong> داخل <strong>A</strong>. هنا <strong>B</strong> هي خلفٌ العنصر descendant element, وهذا يعني ان هنالك عنصر داخل عنصر آخر.",
     examples : [
-      '<strong>p&nbsp;&nbsp;strong</strong> will select all <strong>&lt;strong&gt;</strong> that are descendants of any <strong>&lt;p&gt;</strong>',
-      '<strong>#fancy&nbsp;&nbsp;span</strong> will select any <strong>&lt;span&gt;</strong> that is a descendant of any element with  <strong>id="fancy"</strong>',
+      '<strong>p&nbsp;&nbsp;strong</strong> سيقوم بأختيار <strong>&lt;strong&gt;</strong> والتي ستكون خلفٌ descendant لأي منها <strong>&lt;p&gt;</strong>',
+      '<strong>#fancy&nbsp;&nbsp;span</strong> سيقوم بأختيار <strong>&lt;span&gt;</strong> وهي خلفٌ لأي عنصر من   <strong>id="fancy"</strong>',
     ],
     board: "[](A)A"
   },
   {
-    doThis : "Select the pickle on the fancy plate",
+    doThis : "قم بأختيار المخلل من الطبق الفاخر",
     selector : "#fancy pickle",
-    helpTitle: "Combine the Descendant & ID Selectors",
+    helpTitle: "قم بالدمج بين الـ خلفٌ descendent والـ ID",
     syntax: "#id&nbsp;&nbsp;A",
-    help : 'You can combine any selector with the descendent selector.',
+    help : 'بإمكانك ان تقوم بدمج الأختيار العنصر من خلال اختيار المنتقي الـ خلفُ descendent والـ ID معاً.',
     examples : [
-      '<strong>#cool&nbsp;span</strong> will select all <strong>&lt;span&gt;</strong> elements that are inside of elements with <strong>id="cool"</strong>'
+      '<strong>#cool&nbsp;span</strong> سيقوم بأختيار <strong>&lt;span&gt;</strong> العناصر التي بداخل العناصر مع المنتقي الـ <strong>id="cool"</strong>'
     ],
     board: "[O]{P}(P)"
   },
   {
-    doThis : "Select the small apples",
+    doThis : "قم بأختيار التفاحة الصغيرة",
     selector : ".small",
-    selectorName: "Class Selector",
-    helpTitle: "Select elements by their class",
+    selectorName: "المنتقي الـ Class",
+    helpTitle: "ستقوم بأختيار العناصر من خلال الـ Class الخاص بها.",
 
     syntax: ".classname",
-    help : 'The class selector selects all elements with that class attribute. Elements can only have one ID, but many classes.',
+    help : 'هذا الـ class سيقوم بأختيار كل العناصر التي تكون ضمن هذا الوسم الـ class. العناصر يمكن ان تحصل على العديد من الـ class ولكن يمكن أن تحصل على الـ ID واحد فقط.',
     examples : [
-    '<strong>.neato</strong> selects all elements with <strong>class="neato"</strong>'
+    '<strong>.neato</strong> سيقوم بأختيار كل العناصر ضمن <strong>class="neato"</strong>'
     ],
 
     board: "Aa(a)()"
   },
   {
-    doThis : "Select the small oranges",
+    doThis : "قم بأختيار البرتقالة الصغيرة",
     selector : "orange.small",
-    helpTitle: "Combine the Class Selector",
+    helpTitle: "الدمج ضمن الـ Class",
     syntax: "A.className",
-    help : 'You can combine the class selector with other selectors, like the type selector.',
+    help : 'بإمكانك الدمج بين المنتقي الـ class مع منتقي آخر، كما في هذا المثال.',
     examples : [
-      '<strong>ul.important</strong> will select all <strong>&lt;ul&gt;</strong> elements that have <strong>class="important"</strong>',
-      '<strong>#big.wide</strong> will select all elements with <strong>id="big"</strong> that also have <strong>class="wide"</strong>'
+      '<strong>ul.important</strong> سيقوم بأختيار كل  <strong>&lt;ul&gt;</strong> العناصر التي بداخل المنتقي <strong>class="important"</strong>',
+      '<strong>#big.wide</strong> سيقوم بأختيار كل العناصر مع <strong>id="big"</strong> والتي تحوي على هذا المنتقي <strong>class="wide"</strong>'
     ],
     board: "Aa[o](O)(o)"
   },
   {
-    doThis : "Select the small oranges in the bentos",
+    doThis : "قم بأختيار البرتقالة الصغير الموجود على الـ  bentos",
     selector : "bento orange.small",
     syntax: "Put your back into it!",
-    helpTitle: "You can do it...",
-    help : 'Combine what you learned in the last few levels to solve this one!',
+    helpTitle: "نعم، بإمكانك ان تقوم بذلك..",
+    help : 'قم بأختبار ما تعلمته في التحديات السابقة هنا',
     board: "A(o)[o][a][o]"
   },
   {
-    doThis : "Select all the plates and bentos",
+    doThis : "قم بأختيار كل الأطباق والـ bentos في الطاولة",
 
     selector : "plate,bento",
     selectorName : "Comma Combinator",
-    helpTitle: "Combine, selectors, with... commas!",
+    helpTitle: "دمح المنتقي مع... الفاصلة!",
     syntax : "A, B",
-    help : 'Thanks to Shatner technology, this will select all <strong>A</strong> and <strong>B</strong> elements. You can combine any selectors this way, and you can specify more than two.',
+    help : 'بفضل هذه الميزة, سيكون بإمكانك من أختيار كل عناصر <strong>A</strong> و عناصر <strong>B</strong>. وسيكون بإمكانك دمج أي عنصر مع عناصر أخرى بهذه الطريقة, وبإمكانك أيضاً تحديد أكثر من منتقي.',
     examples: [
-    '<strong>p, .fun</strong> will select all <tag>p</tag> elements as well as all elements with <strong>class="fun"</strong>',
-    '<strong>a, p, div</strong> will select all <tag>a</tag>, <tag>p</tag> and <tag>div</tag> elements'
+    '<strong>p, .fun</strong> سيقوم بأختيار كل عناصر <tag>p</tag> كما سيقوم بأختيار كل عناصر المنتقي <strong>class="fun"</strong>',
+    '<strong>a, p, div</strong> سيقوم بأختيار كل عناصر <tag>a</tag>, <tag>p</tag> وعناصر <tag>div</tag> أيضاً'
     ],
     board: "pP(P)[P](P)Pp"
   },
   {
-    doThis : "Select all the things!",
+    doThis : "قم بأختيار كل العناصر!",
     selector : "*",
     selectorName:  "The Universal Selector",
-    helpTitle: "You can select everything!",
+    helpTitle: "بإمكانك أختيار كل العناصر!",
     syntax : "*",
-    help : 'You can select all elements with the universal selector! ',
+    help : 'بإمكانك اختيار كل العناصر بفضل المنتقي العام Universal Selector! ',
     examples : [
-      '<strong>p *</strong> will select every element inside all <strong>&lt;p&gt;</strong> elements.'
+      '<strong>p *</strong> سيقوم بأختيار كل العناصر التي بداخل المنتقي <strong>&lt;p&gt;</strong>.'
     ],
     board: "A(o)[][O]{)"
   },
   {
-    doThis : "Select everything on a plate",
+    doThis : "قم بأختيار كل العناصر في الطبق",
     selector : "plate *",
     syntax : "A&nbsp;&nbsp;*",
-    helpTitle: "Combine the Universal Selector",
-    help : 'This will select all elements inside of <strong>A</strong>.',
+    helpTitle: "أختيار العناصر من خلال الدمج بين المنتقي العام Universal Selector وغيرها من الطرق السابقة. ",
+    help : 'سيقوم بأختيار كل العناصر التي بداخل المنتقي <strong>A</strong>.',
     examples : [
-      '<strong>p *</strong> will select every element inside all <strong>&lt;p&gt;</strong> elements.',
-      '<strong>ul.fancy *</strong> will select every element inside all <strong>&lt;ul class="fancy"&gt;</strong> elements.'
+      '<strong>p *</strong> سيقوم بأختيار كل العناصر التي بداخل المنتقي <strong>&lt;p&gt;</strong>.',
+      '<strong>ul.fancy *</strong> سيقوم أيضاً بأختيار كل العناصر التي بداخل المنتقي التالي <strong>&lt;ul class="fancy"&gt;</strong>.'
     ],
     board: "{o}(P)a(A)"
   },
   {
-    doThis : "Select every apple that's next to a plate",
+    doThis : "قم بإختيار كل التفاحات التي بجانب الطبق",
     selector : "plate + apple",
-    helpTitle: "Select an element that directly follows another element",
+    helpTitle: "قم بأختيار العناصر التي تكون بجانب العناصر الآخرى!",
     selectorName: "Adjacent Sibling Selector",
     syntax : "A + B",
-    help : "This selects all <strong>B</strong> elements that directly follow <strong>A</strong>. Elements that follow one another are called siblings. They're on the same level, or depth. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
+    help : "هذا سيقوم بأختيار كل العناصر <strong>B</strong> التي تلي هذه العناصر بشكل مباشر <strong>A</strong>. العناصر التي عناصر أخرى بشكل مباشر تسمى siblings شقيقين. وهما يكونوا في نفس العمق والدرجة في ضمن هيكيلة الـ HTML.",
     examples : [
-      '<strong>p + .intro</strong> will select every element with <strong>class="intro"</strong> that directly follows a <tag>p</tag>',
-      '<strong>div + a</strong> will select every <tag>a</tag> element that directly follows a <tag>div</tag>'
+      '<strong>p + .intro</strong> سيقوم بأختيار كل العناصر التي تكون بداخل <strong>class="intro"</strong> والتي تلي بشكل مباشر العنصر <tag>p</tag>',
+      '<strong>div + a</strong> سيقوم بأختيار كل العناصر <tag>a</tag> التي تلي هذا المنتقي <tag>div</tag>'
     ],
     board: "[a]()a()Aaa"
   },
   {
-    selectorName: "General Sibling Selector",
-    helpTitle: "Select elements that follows another element",
+    selectorName: "أختيار العناصر الأشقاء Sibling بشكل عام.",
+    helpTitle: "قم بأختيار العناصر التي العنصر بشكل مباشر",
     syntax: "A ~ B",
-    doThis : "Select every pickle to the right of the bento",
+    doThis : "قم بأختيار كل المخلل الموجود على يمين البينتو",
     selector : "bento ~ pickle",
-    help : "You can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elements instead of one.",
+    help : "بإمكامك اختيار كل العناصر التي عناصر الأشقاء Sibling. كأنك تقوم بأختيار العناصر القريبة (A + B) عدى أنه سيقوم بأختيار كل العناصر التي تلي هذا العنصر، بدلاً من عنصر واحد.",
     examples : [
-      '<strong>A ~ B</strong> will select all <strong>B</strong> that follow a <strong>A</strong>'
+      '<strong>A ~ B</strong> سيقوم بأختيار كل العناصر <strong>B</strong> التي تلي هذا العنصر <strong>A</strong>'
     ],
     board: "P[o]pP(P)(p)"
   },
   {
-    selectorName: "Child Selector",
+    selectorName: "المنتقي الأبن Child",
     syntax: "A > B&nbsp;",
-    doThis : "Select the apple directly on a plate",
+    doThis : "قم بأختيار التفاحلة بشكل مباشر من الطبق",
     selector : "plate > apple",
-    helpTitle: "Select direct children of an element",
-    help : "You can select elements that are direct children of other elements. A child element is any element that is nested directly in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
+    helpTitle: "أختيار ابن لأحد العناصر بشكل مباشر",
+    help : "بإمكانك أختيار عنصر ما في الـ CSS يكون هو ابن لأحد العناصر. المنتقي الأبن هو منتقي(عنصر) مثل أي العناصر الأخرى، ولكن تكون داخل عنصر (منتقي) أخر بشكل مباشر <br><br>أما العناصر التي تكون أعمق من ذلك تسمى الخلف، descendant.",
     examples : [
-      '<strong>A > B</strong> will select all <strong>B</strong> that are a direct children <strong>A</strong>'
+      '<strong>A > B</strong> سيقوم بأختيار كل العناصر  <strong>B</strong> والتي تكون ابن لهذا العنصر <strong>A</strong>'
     ],
     board: "([A])(A)()Aa"
   },
   {
-    selectorName: "First Child Pseudo-selector",
-    helpTitle: "Select a first child element inside of another element",
-    doThis : "Select the top orange",
+    selectorName: "عناصر الأبن، والعناصر الزائفة Pseudo-selector",
+    helpTitle: "قم بأخيتار اول عنصر ابن لعنصر آخر",
+    doThis : "قم بأختيار البرتقالة الأولى من الأعلى",
     selector : "plate :first-child",
     syntax: ":first-child",
 
-    help : "You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-selector with other selectors.",
+    help : "بإمكانك اختيار اول عنصر ابن من عنصر آخر.عنصر الأبن هو أي عنصر يكون بداخل عنصر آخر. علماً أنه يمكنك ان تقوم بدمج العناصر المزيفة pseudo-selector مع المنتقي بشكل مباشر.",
     examples : [
-      '<strong>:first-child</strong> selects all first child elements.',
-      '<strong>p:first-child</strong> selects all first child <strong>&lt;p&gt;</strong> elements.',
-      '<strong>div p:first-child</strong> selects all first child <strong>&lt;p&gt;</strong> elements that are in a <strong>&lt;div&gt;</strong>.'
+      '<strong>:first-child</strong> سيقوم بأختيار كل عناصر الأبن الأول.',
+      '<strong>p:first-child</strong> سيقوم بأختيار كل عناصر الأبن الأول <strong>&lt;p&gt;</strong>.',
+      '<strong>div p:first-child</strong> سيقوم بأختيار كل عناصر الأبن الأول <strong>&lt;p&gt;</strong> والتي تكون بداخل <strong>&lt;div&gt;</strong>.'
     ],
     board: "[]()(OOO)p"
   },
   {
-    selectorName: "Only Child Pseudo-selector",
-    helpTitle: "Select an element that are the only element inside of another one.",
-    doThis : "Select the apple and the pickle on the plates",
+    selectorName: "فقط أبناء العناصر المزيفة Pseudo-selector",
+    helpTitle: "قم بأختيار العناصر التي تكون بداخل عنصر أخر فقط.",
+    doThis : "قم بأختيار التفاحة، والمخلل من الطبق. ",
     selector : "plate :only-child",
     syntax: ":only-child",
-    help : "You can select any element that is the only element inside of another one.",
+    help : "بإمكانك أختيار أي عنصر الذي يكون داخل عنصر آخر.",
     examples : [
-      '<strong>span:only-child</strong> selects the <strong>&lt;span&gt;</strong> elements that are the only child of some other element.',
-      '<strong>ul li:only-child</strong> selects the only <strong>&lt;li&gt;</strong> element that are in a <strong>&lt;ul&gt;</strong>.'
+      '<strong>span:only-child</strong> سيقوم بأختيار عنصر <strong>&lt;span&gt;</strong> والذي هو الأبن الوحيد لعنصر آخر.',
+      '<strong>ul li:only-child</strong> سيقوم بأختيار العنصر  <strong>&lt;li&gt;</strong> فقط. والذي هو بداخل عنصر  <strong>&lt;ul&gt;</strong>.'
     ],
     board: "(A)(p)[]P(oO)p"
   },
   {
-    selectorName: "Last Child Pseudo-selector",
-    helpTitle: "Select the last element inside of another element",
-    doThis : "Select the small apple and the pickle",
+    selectorName: "الأبن الأخير، مع العناصر المزيفة Pseudo-selector",
+    helpTitle: "قم بأختيار العنصر الأخير، والذي يكون بداخل عنصر آخر. ",
+    doThis : "قم بأختيار التفاحة الصغيرة، والمخلل",
     selector : ".small:last-child",
     syntax: ":last-child",
-    help : "You can use this selector to select an element that is the last child element inside of another element. <br><br>Pro Tip &rarr; In cases where there is only one element, that element counts as the first-child, only-child and last-child!",
+    help : "بإمكانك أختيار المنتقي لأختيار عنصر هو عنصر الأبن الأخير والذي يكون بداخل عنصر آخر. <br><br>Pro Tip &rarr; في حالة كان هنالك عنصر واحد فقط, هذا العنصر يعد كـ الأبن الأول، ابن واحد والابن الأخير بالنسبة لـ CSS!",
     examples : [
-      '<strong>:last-child</strong> selects all last-child elements.',
-      '<strong>span:last-child</strong> selects all last-child <strong>&lt;span&gt;</strong> elements.',
-      '<strong>ul li:last-child</strong> selects the last <strong>&lt;li&gt;</strong> elements inside of any <strong>&lt;ul&gt;</strong>.'
+      '<strong>:last-child</strong> يقوم بأختيار كل الأبناء الأخيرين.',
+      '<strong>span:last-child</strong> سيقوم بأختيار عناصر كل الأبناء الأخيرين. <strong>&lt;span&gt;</strong>.',
+      '<strong>ul li:last-child</strong> سيقوم بأختيار أخر عنصر <strong>&lt;li&gt;</strong> الموجود داخل أي عنصر من <strong>&lt;ul&gt;</strong>.'
     ],
     board: "{a)()(oO)p"
   },
   {
-    selectorName: "Nth Child Pseudo-selector",
-    helpTitle: "Select an element by its order in another element",
-    doThis : "Select the 3rd plate",
+    selectorName: "Nth Child و العناصر المزيفة Pseudo-selector",
+    helpTitle: "قم بأختيار العناصر من خلال ترتيبها للعنصر أخر.",
+    doThis : "قم بأختيار الطبق الثالث",
     selector : ":nth-child(3)",
     syntax: ":nth-child(A)",
 
-    help : "Selects the <strong>nth</strong> (Ex: 1st, 3rd, 12th etc.) child element in another element.",
+    help : "قم بأختيار الـ <strong>nth</strong> (مثل: 1st, 3rd, 12th etc.) عنصر اﻷبن، والذي يكون بداخل عنصر آخر.",
     examples : [
-      '<strong>:nth-child(8)</strong> selects every element that is the 8th child of another element.',
-      '<strong>div p:nth-child(2)</strong> selects the second <strong>p</strong> in every <strong>div</strong>',
+      '<strong>:nth-child(8)</strong> سيقوم بأختيار العنصر الأبن ذات الترتيب الـ 8 الموجود بداخل عنصر آخر. .',
+      '<strong>div p:nth-child(2)</strong> سقوم بأختيار العنصر الثاني <strong>p</strong> من كل عنصر موجود في  <strong>div</strong>',
     ],
     board: "()()(){}"
   },
   {
-    selectorName: "Nth Last Child Selector",
-    helpTitle: "Select an element by its order in another element, counting from the back",
-    doThis : "Select the 1st bento",
+    selectorName: "للأبن الأصغر Nth أختيار الـ ",
+    helpTitle: "متابعة للتحدي السابق، قم بأختيار العنصر الأخير بالنسبة للعنصر آخر.",
+    doThis : "قم بأختيار البينتو الأول",
     selector : "bento:nth-last-child(4)",
     syntax: ":nth-last-child(A)",
-    help : "Selects the children from the bottom of the parent. This is like nth-child, but counting from the back!",
+    help : "سنقوم بإختيار الأبناء من الأباء في الأسفل الكود. وهذا يشبه ما قمنا به سابقاً nth-child, لكننا نقوم بتعلم طريقة جديدة لذلك!",
     examples : [
-      '<strong>:nth-last-child(2)</strong> selects all second-to-last child elements.'
+      '<strong>:nth-last-child(2)</strong> سيقوم بأختيار من العنصر إلى أخر عنصر من الأبناء.'
     ],
     board: "()[]a(OOO)[]"
   },
   {
-    selectorName: "First of Type Selector",
-    helpTitle: "Select the first element of a specific type",
-    doThis : "Select first apple",
+    selectorName: "أختيار نوع العنصر الأول من المنتقي",
+    helpTitle: "قم بأختيار أول عنصر، لكن من خلال نوع العنصر نفسه.",
+    doThis : "قم بأختيار التفاحلة الأولى",
     selector : "apple:first-of-type",
     syntax: ":first-of-type",
-    help : "Selects the first element of that type within another element.",
+    help : "قم بأختيار العنصر الأول من نواع هذا العنصر الموجود داخل عنصر آخر",
     examples : [
-      '<strong>span:first-of-type</strong> selects the first <strong>&lt;span&gt;</strong> in any element.'
+      '<strong>span:first-of-type</strong> سيقوم بأختيار العنصر الأول <strong>&lt;span&gt;</strong> من أي نوع.'
     ],
     board: "Aaaa(oO)"
   },
   {
-    selectorName: "Nth of Type Selector",
+    selectorName: "لكن لنوع عنصر محدد Nth أختيار الـ ",
     // helpTitle: "Nth of Type Selector",
-    doThis: "Select all even plates",
+    doThis: "قم بأختيار كل الأطباق",
     selector: "plate:nth-of-type(even)",
     syntax: ":nth-of-type(A)",
-    help: "Selects a specific element based on its type and order in another element - or even or odd instances of that element.",
+    help: "سيكون عليك أختيار عنصر محدد على حسب نوع وترتيب عنصر آخر - وحتى لو كانت هذه العناصر ever or odd بالنسبة للعنصر الآخر نفسه .",
     examples: [
-      '<strong>div:nth-of-type(2)</strong> selects the second instance of a div.',
-      '<strong>.example:nth-of-type(odd)</strong> selects all odd instances of a the example class.'
+      '<strong>div:nth-of-type(2)</strong> سيقوم بأختيار العنصر الثاني من الـ div على سبيل المثال..',
+      '<strong>.example:nth-of-type(odd)</strong> سيقوم بأختيار كل العناصر odd كمثال على عناصر الـ class.'
     ],
     board: "()()()(){}()"
   },
   {
-    selectorName: "Nth-of-type Selector with Formula",
+    selectorName: "اختيار عنصر الـ nth مع نوع معين، ولكن بصيغة!",
     // helpTitle: "Nth-of-type Selector with formula",
-    doThis: "Select every 2nd plate, starting from the 3rd",
+    doThis: "قم بأختيار كل الأطباق في التريبت الثاني, أبتداً من الطبق الثالث",
     selector: "plate:nth-of-type(2n+3)",
     syntax: ":nth-of-type(An+B)",
-    help: "The nth-of-type formula selects every nth element, starting the count at a specific instance of that element.",
+    help: "هذا الـ nth-of-type formula سيقوم بأختيار كل عناصر nth, حيث يبدأ العد بدأ من هذا العنصر تحديداً.",
     examples: [
-      '<strong>span:nth-of-type(6n+2)</strong> selects every 6th instance of a <tag>span</tag>, starting from (and including) the second instance.'
+      '<strong>span:nth-of-type(6n+2)</strong> سيقوم بأختيار الترتيب السادس من الصيغة من المنتقي <tag>span</tag>, لكن بدأً من (وبالإضافة) من الصيغة الثانية.'
     ],
     board: "()(p)(a)()(A)()"
   },
 
   {
-    selectorName: "Only of Type Selector",
-    helpTitle: "Select elements that are the only ones of their type",
+    selectorName: "عنصر واحيد فقط!، لأنواع المنتقي",
+    helpTitle: "قم بأختيار العنصر الذي يكون وحيد من نوعه",
     selector : "apple:only-of-type",
     syntax: ":only-of-type",
-    doThis : "Select the apple on the middle plate.",
-    help : "Selects the only element of its type within another element.",
+    doThis : "قم بأختيار التفاحلة من الطبق في الوسط.",
+    help : "سيكون عليك أختيار العنصر الوحيد من نوعه مقارنة بعنصر آخر. ",
     examples : [
-      '<strong>p span:only-of-type</strong> selects a <tag>span</tag> within any <tag>p</tag> if it is the only <tag>span</tag> in there.'
+      '<strong>p span:only-of-type</strong> سيقوم بأختيار كل <tag>span</tag> داخل أي عنصر من <tag>p</tag> اذا كان هذا النوع الوحيد من العنصر <tag>span</tag>.'
     ],
     board: "(aA)(a)(p)"
   },
 
   {
-    selectorName: "Last of Type Selector",
-    helpTitle: "Select the last element of a specific type",
-    doThis : "Select the second apple and orange",
+    selectorName: "العنصر الأخير، من نوع معين من المنتقي",
+    helpTitle: "قم بأختيار العنصر الأخير من كل نوع معين من العناصر.",
+    doThis : "قم بأختيار التفاحة، والبرتقالة الأخيرة من الطبق",
     selector : ".small:last-of-type",
     syntax: ":last-of-type",
-    help : "Selects each last element of that type within another element. Remember type refers the kind of tag, so <tag>p</tag> and <tag>span</tag> are different types. <br><br> I wonder if this is how the last dinosaur was selected before it went extinct.",
+    help : "سيكون عليك تحديد العنصر الأخير من نوع المنتقي، الموجود داخل عنصر آخر. تذكر أن نوع العنصر هو نفس نوع الوسم الـ HTML، لذلك مثل <tag>p</tag> و <tag>span</tag> هما أنواع مختلفة. <br><br> أتسائل، كيف سيكون بإمكانني معرفة واختيار الديناصور الأخير قبل أنقراضه؟!",
     examples : [
-      '<strong>div:last-of-type</strong> selects the last <strong>&lt;div&gt;</strong> in every element.',
-      '<strong>p span:last-of-type</strong> selects the last <strong>&lt;span&gt;</strong> in every <strong>&lt;p&gt;</strong>.'
+      '<strong>div:last-of-type</strong> سيقوم بأختيار آخر عنصر من كل عنصر <strong>&lt;div&gt;</strong>.',
+      '<strong>p span:last-of-type</strong> سيقوم بأختيار آخر عنصر <strong>&lt;span&gt;</strong> من كل عنصر <strong>&lt;p&gt;</strong>.'
     ],
     board: "ooPPaa"
   },
   {
-    selectorName: "Empty Selector",
-    helpTitle: "Select elements that don't have children",
-    doThis : "Select the empty bentos",
+    selectorName: "المنتقي الفارغ!",
+    helpTitle: "قم بأختيار العنصر الذي لا يملك أبن",
+    doThis : "قم بأخيتار البينتو الفارغ",
     selector : "bento:empty",
     syntax: ":empty",
-    help : "Selects elements that don't have any other elements inside of them.",
+    help : "قم بأختيار كل العناصر التي لاتحوي على عناصر آخر بداخلها.",
     examples : [
-      '<strong>div:empty</strong> selects all empty <strong>&lt;div&gt;</strong> elements.'
+      '<strong>div:empty</strong> سيقوم بأختيار كل العناصر الفارغة <strong>&lt;div&gt;</strong>.'
     ],
     board: "[][p][][]"
   },
   {
-    selectorName: "Negation Pseudo-class",
-    helpTitle: "Select all elements that don't match the negation selector",
+    selectorName: "نفي العناصر المزيفة Pseudo-class",
+    helpTitle: "قم بأختيار كل العناصر التي لا تتاطبق مع عنصر النفي. ",
 
-    doThis : "Select the big apples",
+    doThis : "قم بأختيار التفاحة الكبيرة",
     selector : "apple:not(.small)",
     syntax: ":not(X)",
-    help : 'You can use this to select all elements that do not match selector <strong>"X"</strong>.',
+    help : 'بإمكانك اختيار كل العناصر التي لا تتاطبق مع العنصر <strong>"X"</strong>.',
     examples : [
-      '<strong>:not(#fancy)</strong> selects all elements that do not have <strong>id="fancy"</strong>.',
-      '<strong>div:not(:first-child)</strong> selects every <tag>div</tag> that is not a first child.',
-      '<strong>:not(.big, .medium)</strong> selects all elements that do not have <strong>class="big"</strong> or <strong>class="medium"</strong>.'
+      '<strong>:not(#fancy)</strong> سيقوم بأختيار كل العناصر التي لا تحوي على <strong>id="fancy"</strong>.',
+      '<strong>div:not(:first-child)</strong> سيقوم بأختيار كل العناصر <tag>div</tag>  التي لا تكون الأبن الأول.',
+      '<strong>:not(.big, .medium)</strong> سيقوم بأختيار كل العناصر التي لا تحويل على <strong>class="big"</strong> أو <strong>class="medium"</strong>.'
     ],
     board: "{a}(A)A(o)p"
   }
 ];
+
