@@ -1070,3 +1070,10 @@ tag:before {
 tag:after {
   content: ">";
 }
+
+#select-language{
+  float: right;
+  color: #AAA;
+  font-family: 'Exo 2';
+  background-color: #14120E;
+}
