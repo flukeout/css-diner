@@ -1072,9 +1072,9 @@ tag:after {
 }
 
 #select-language{
-  float: right;
-  color: #AAA;
   border: 0;
+  color: #AAA;
+  float: right;
   font-family: 'Exo 2';
   background-color: #14120E;
 }
