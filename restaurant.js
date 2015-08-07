@@ -294,7 +294,7 @@ function fireRule(rule) {
 }
 
 function winGame(){
-  $(".table").html('<span class="winner"><strong>You did it!</strong><br>You are a CSS God.</span>');
+  $(".table").html('<span class="winner"><strong>You did it!</strong><br>You rock at CSS.</span>');
   resetTable();
 }
 
