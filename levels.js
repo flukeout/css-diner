@@ -129,7 +129,7 @@ var levels = [
     board: "pP(P)[P](P)Pp"
   },
   {
-    doThis : "Select all the things except the table!",
+    doThis : "Select all the things on the table!",
     selector : "div.table *",
     selectorName:  "The Universal Selector",
     helpTitle: "You can select everything!",
