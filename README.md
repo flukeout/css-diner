@@ -35,6 +35,8 @@ My main goal in the coming weeks is to review all of the outstanding issues and 
 
 Some of these are accounted for in Pull Requests already, which I'll review, but here are some ideas...
 
+* [ ] Block attempts to use comma between selectors
+* [ ] Only pass each level if that level's selector is used
 * [ ] Make it easier to navigate between levels
 * [ ] Number all of the levels in the menu
 * [ ] Keep track per user (via localstorage) which levels they've completed and show a completion percentage
