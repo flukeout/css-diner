@@ -6,6 +6,7 @@ var level;
 var currentLevel = parseInt(localStorage.currentLevel,10) || 0;
 var levelTimeout = 1000;
 var fails = 0;
+var finished = false;
 
 $(document).ready(function(){
 
@@ -48,12 +49,9 @@ $(document).ready(function(){
 
   //Shows the tooltip on the table
   $(".markup").on("mouseover","div *",function(e){
-
     el = $(this);
-
     var markupElements = $(".markup *");
     var index = markupElements.index(el) -1;
-
     showTooltip($(".table *").eq(index));
     e.stopPropagation();
   });
@@ -91,6 +89,7 @@ function buildLevelmenu(){
     $(item).html(level.syntax);
     $(".level-menu .levels").append(item);
     $(item).on("click",function(){
+      finished = false;
       currentLevel = $(this).index();
       loadLevel();
     });
@@ -104,6 +103,10 @@ function hideTooltip(){
 }
 
 function showTooltip(el){
+  if(finished){
+    return;
+  }
+
   el.attr("data-hovered",true);
   var tableElements = $(".table *");
   var index = tableElements.index(el);
@@ -295,6 +298,7 @@ function fireRule(rule) {
 
 function winGame(){
   $(".table").html('<span class="winner"><strong>You did it!</strong><br>You rock at CSS.</span>');
+  finished = true;
   resetTable();
 }
 
