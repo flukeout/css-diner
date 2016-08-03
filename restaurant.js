@@ -210,6 +210,10 @@ function resetTable(){
     $(this).width($(this).width());
     $(this).removeAttr("style");
   });
+  
+  // remove on mouseover event
+  $(".table").off("mouseover");
+  
   $(".table-edge").width($(".table").outerWidth());
 }
 
