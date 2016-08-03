@@ -35,6 +35,7 @@ My main goal in the coming weeks is to review all of the outstanding issues and 
 
 Some of these are accounted for in Pull Requests already, which I'll review, but here are some ideas...
 
+* [ ] Lots of people have trouble with level 19, how should I adress this?
 * [ ] Create levels for attribute selectors
   * Will probably add attributes like ``customer='bob'`` and place a little nametag by those dishes
 * [ ] Figure out how to tackle the ``.table`` element
