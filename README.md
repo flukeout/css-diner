@@ -35,6 +35,11 @@ My main goal in the coming weeks is to review all of the outstanding issues and 
 
 Some of these are accounted for in Pull Requests already, which I'll review, but here are some ideas...
 
+* [ ] Create levels for attribute selectors
+  * Will probably add attributes like ``customer='bob'`` and place a little nametag by those dishes
+* [ ] Figure out how to tackle the ``.table`` element
+  * Including it in the selector string makes the selectors invalid, but it shouldn't
+* [ ] Investigate the order of stacked oranges in the markup, some users think it's counter intuitive
 * [ ] Block attempts to use comma between selectors
 * [ ] Only pass each level if that level's selector is used
 * [ ] Make it easier to navigate between levels
