@@ -38,6 +38,7 @@ Some of these are accounted for in Pull Requests already, which I'll review, but
 * [ ] Lots of people have trouble with level 19, how should I adress this?
 * [ ] Create levels for attribute selectors
   * Will probably add attributes like ``customer='bob'`` and place a little nametag by those dishes
+  * Also some great ideas in [this issue](https://github.com/flukeout/css-diner/issues/91)
 * [ ] Figure out how to tackle the ``.table`` element
   * Including it in the selector string makes the selectors invalid, but it shouldn't
 * [ ] Investigate the order of stacked oranges in the markup, some users think it's counter intuitive
