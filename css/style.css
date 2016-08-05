@@ -829,9 +829,9 @@ plate orange:nth-last-child(4)
 .what-is-this {
   text-align: center;
   margin-top: 35px;
-  padding: 20px;
-  width: 500px;
-  color: #666;
+  padding: 20px 0;
+  width: 725px;
+  color: rgba(255,255,255,.3);
   font-size: 15px;
   margin: 0 auto;
   font-weight: 400;
@@ -928,6 +928,29 @@ plate orange:nth-last-child(4)
   cursor: pointer;
   padding: 5px 30px 5px 12px;
   color: #777;
+}
+
+.level-menu .level-syntax {
+  position: relative;
+  display: inline-block;
+}
+
+.level-menu a.completed .checkmark {
+  opacity: .5;
+}
+
+.level-menu a .checkmark {
+  position: relative;
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  opacity: .2;
+
+  border: solid 2px white;
+  border-width: 0 2px 2px 0;
+  left: 10px;
+  top: -1px;
+  transform: rotate(37deg);
 }
 
 .level-menu a:hover {

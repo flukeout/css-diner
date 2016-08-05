@@ -1,3 +1,7 @@
+##Where I left off
+
+* Adding a 'level-complete' indicator to the right-hand-side menu
+
 ## Random Notes
 
 For example, I'd like to keep track of progress, can I update it every time there is an increase?

@@ -18,6 +18,8 @@ var blankProgress = {
 
 var progress = JSON.parse(localStorage.getItem("progress")) || blankProgress;
 
+console.log(progress);
+
 $(document).ready(function(){
 
   $(".note-toggle").on("click", function(){
@@ -93,19 +95,39 @@ $(document).ready(function(){
 
 });
 
+function checkCompleted(levelNumber){
+  if(progress.guessHistory[levelNumber]){
+    if(progress.guessHistory[levelNumber].correct){
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
+}
+
 function buildLevelmenu(){
   for(var i = 0; i < levels.length; i++){
     var level = levels[i];
     var item = document.createElement("a");
-    $(item).html("<span class='level-number'>" + (i+1) + "</span> " + level.syntax);
+    $(item).html("<span class='level-number'>" + (i+1) + "</span>" + level.syntax + "<span class='checkmark'></span>");
     $(".level-menu .levels").append(item);
+
+    if(checkCompleted(i)){
+      $(item).addClass("completed");
+    }
+
     $(item).on("click",function(){
       finished = false;
       currentLevel = $(this).index();
       loadLevel();
+      $(".level-menu").toggleClass("open");
     });
   }
 }
+
+
 
 function hideTooltip(){
   $(".enhance").removeClass("enhance");
@@ -303,10 +325,6 @@ function fireRule(rule) {
   if(win){
     trackProgress(currentLevel-1, "correct");
   }
-  //  else if (win == false && rule.length > 0) {
-  //   trackProgress(currentLevel, "incorrect");
-  // }
-
 }
 
 
