@@ -5,8 +5,18 @@
 var level;
 var currentLevel = parseInt(localStorage.currentLevel,10) || 0;
 var levelTimeout = 1000;
-var fails = 0;
 var finished = false;
+
+var blankProgress = {
+  totalCorrect : 0,
+  percentComplete : 0,
+  lastPercentEvent : 0,
+  guessHistory : {}
+}
+
+// Grabs progress from localStorage if available, or sets it to the empty one above
+
+var progress = JSON.parse(localStorage.getItem("progress")) || blankProgress;
 
 $(document).ready(function(){
 
@@ -18,6 +28,7 @@ $(document).ready(function(){
   $(".level-menu-toggle-wrapper").on("click",function(){
     $(".level-menu").toggleClass("open");
   });
+
   //Handle inputs from the input box on enter
   $("input").on("keypress",function(e){
     e.stopPropagation();
@@ -86,7 +97,7 @@ function buildLevelmenu(){
   for(var i = 0; i < levels.length; i++){
     var level = levels[i];
     var item = document.createElement("a");
-    $(item).html(level.syntax);
+    $(item).html("<span class='level-number'>" + (i+1) + "</span> " + level.syntax);
     $(".level-menu .levels").append(item);
     $(item).on("click",function(){
       finished = false;
@@ -160,11 +171,6 @@ function enterHit(){
 
 //Parses text from the input field
 function handleInput(text){
-
-  if(text == ""){
-    text = "blammojammo";
-  }
-
   if(parseInt(text,10) > 0 && parseInt(text,10) < levels.length+1) {
     currentLevel = parseInt(text,10) - 1;
     loadLevel();
@@ -280,8 +286,6 @@ function fireRule(rule) {
 
   } else {
 
-    continueRule();
-
     ruleSelected.removeClass("strobe");
     ruleSelected.addClass("shake");
 
@@ -294,6 +298,66 @@ function fireRule(rule) {
     $(".result").fadeOut();
   }
 
+  // If answer is correct, let's track progress
+
+  if(win){
+    trackProgress(currentLevel-1, "correct");
+  }
+  //  else if (win == false && rule.length > 0) {
+  //   trackProgress(currentLevel, "incorrect");
+  // }
+
+}
+
+
+function trackProgress(levelNumber, type){
+
+  if(!progress.guessHistory[levelNumber]) {
+    progress.guessHistory[levelNumber] = {
+      correct : false,
+      incorrectCount : 0,
+      gaSent : false
+    };
+  }
+
+  var levelStats = progress.guessHistory[levelNumber];
+
+  if(type == "incorrect"){
+    levelStats.incorrectCount++;
+  } else {
+    if(levelStats.correct == false) {
+      levelStats.correct = true;
+      progress.totalCorrect++;
+      progress.percentComplete = progress.totalCorrect / levels.length;
+      levelStats.gaSent = true;
+      sendEvent("guess", "correct", levelNumber + 1); // Send event
+    }
+  }
+
+
+  // Increments the completion percentage by 10%, and sends an event every time
+  var increment = .1;
+  if(progress.percentComplete >= progress.lastPercentEvent + increment) {
+    progress.lastPercentEvent = progress.lastPercentEvent + increment;
+    sendEvent("progress","percent", Math.round(progress.lastPercentEvent * 100));
+  }
+
+  localStorage.setItem("progress",JSON.stringify(progress));
+}
+
+
+// Sends event to Google Analytics
+function sendEvent(category, action, label){
+
+  // Commented out, but will remain for testing
+  // console.log("GA EVENT:" + category, action, label);
+
+  ga('send', {
+    hitType: "event",
+    eventCategory: category,  // guess or progress
+    eventAction: action,      // action (correct vs not..)
+    eventLabel: label         // level number
+  });
 }
 
 function winGame(){
@@ -309,14 +373,7 @@ function checkResults(ruleSelected,levelSelected,rule){
   return($(".table").html() == ruleTable.html());
 }
 
-var d = 2;
-function continueRule() {
-  console.log("Fails thus far: " + ++fails)
-}
-
-
 function loadBoard(){
-
   var boardString = level.board;
   boardMarkup = "";
   var tableMarkup = "";
@@ -324,7 +381,6 @@ function loadBoard(){
   showHelp();
 
   for(var i = 0;i < boardString.length;i++){
-
     var c = boardString.charAt(i);
 
     if(c == "C") {

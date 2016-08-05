@@ -628,9 +628,7 @@ orange {
 .display-help .selector-name {
   font-size: 18px;
   margin: 0 0 4px 0 ;
-
 }
-
 
 .display-help .title {
   font-size: 18px;
@@ -650,7 +648,6 @@ orange {
   display: inline-block;
   padding: 5px 8px;
   border-bottom: solid 2px rgba(255,255,255,.1);
-
 }
 
 .display-help .hint {
@@ -916,10 +913,6 @@ plate orange:nth-last-child(4)
   margin-right: 63px;
 }
 
-.right-col:hover .level-menu {
-
-}
-
 .right-col {
   overflow: hidden;
 }
@@ -945,6 +938,12 @@ plate orange:nth-last-child(4)
   font-weight: bold;
   color: #AAA;
   background: rgba(255,255,255,.1);
+}
+
+.level-menu .level-number {
+  opacity: .6;
+  min-width: 24px;
+  display: inline-block;
 }
 
 .level-menu-toggle-wrapper {
