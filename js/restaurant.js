@@ -2,10 +2,19 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-var level;
-var currentLevel = parseInt(localStorage.currentLevel,10) || 0;
-var levelTimeout = 1000;
-var finished = false;
+/*
+  Function Reference
+  ==================
+  loadLevel() - loads up the level
+  fireRule() - fires the css rule
+  updateProgressUI() - adds a checkmark to the level menu and header when a correct guess is made, removes it if incorrect
+  ..to be continued
+*/
+
+var level;  // Holds current level info
+var currentLevel = parseInt(localStorage.currentLevel,10) || 0; // Keeps track of the current level Number (0 is level 1)
+var levelTimeout = 1000; // Delay between levels after completing
+var finished = false;    // Keeps track if the game is showing the Your Rock! screen (so that tooltips can be disabled)
 
 var blankProgress = {
   totalCorrect : 0,
@@ -14,13 +23,15 @@ var blankProgress = {
   guessHistory : {}
 }
 
-// Grabs progress from localStorage if available, or sets it to the empty one above
-
-var progress = JSON.parse(localStorage.getItem("progress")) || blankProgress;
-
-console.log(progress);
+var progress = JSON.parse(localStorage.getItem("progress")) || blankProgress; // Gets progress from localStorage
 
 $(document).ready(function(){
+
+  $(window).on("keydown",function(e){
+    if(e.keyCode == 27) {
+      $(".menu-open").removeClass("menu-open");
+    }
+  });
 
   $(".note-toggle").on("click", function(){
     $(this).hide();
@@ -28,7 +39,7 @@ $(document).ready(function(){
   });
 
   $(".level-menu-toggle-wrapper").on("click",function(){
-    $(".level-menu").toggleClass("open");
+    $(".right-col").toggleClass("menu-open");
   });
 
   //Handle inputs from the input box on enter
@@ -95,6 +106,8 @@ $(document).ready(function(){
 
 });
 
+//Checks if the level is completed
+
 function checkCompleted(levelNumber){
   if(progress.guessHistory[levelNumber]){
     if(progress.guessHistory[levelNumber].correct){
@@ -111,7 +124,7 @@ function buildLevelmenu(){
   for(var i = 0; i < levels.length; i++){
     var level = levels[i];
     var item = document.createElement("a");
-    $(item).html("<span class='level-number'>" + (i+1) + "</span>" + level.syntax + "<span class='checkmark'></span>");
+    $(item).html("<span class='checkmark'></span><span class='level-number'>" + (i+1) + "</span>" + level.syntax);
     $(".level-menu .levels").append(item);
 
     if(checkCompleted(i)){
@@ -122,12 +135,14 @@ function buildLevelmenu(){
       finished = false;
       currentLevel = $(this).index();
       loadLevel();
-      $(".level-menu").toggleClass("open");
+      closeMenu();
     });
   }
 }
 
-
+function closeMenu(){
+  $(".right-col").removeClass("menu-open");
+}
 
 function hideTooltip(){
   $(".enhance").removeClass("enhance");
@@ -180,6 +195,7 @@ function showTooltip(el){
   helper.text(helpertext);
 
 }
+
 
 //Animate the enter button
 function enterHit(){
@@ -279,7 +295,6 @@ function fireRule(rule) {
   var ruleSelected = $(".table-wrapper").find(rule).not(baseTable);
   var levelSelected = $(".table-wrapper").find(level.selector).not(baseTable);
 
-
   var win = false;
 
   //If nothing is selected
@@ -297,7 +312,9 @@ function fireRule(rule) {
     // $(".result").text("Good job!");
     $("input").val("");
     $(".input-wrapper").css("opacity",.2);
+    updateProgressUI(currentLevel, true);
     currentLevel++;
+
     if(currentLevel >= levels.length) {
       winGame();
     } else {
@@ -305,9 +322,7 @@ function fireRule(rule) {
         loadLevel();
       },levelTimeout);
     }
-
   } else {
-
     ruleSelected.removeClass("strobe");
     ruleSelected.addClass("shake");
 
@@ -324,9 +339,20 @@ function fireRule(rule) {
 
   if(win){
     trackProgress(currentLevel-1, "correct");
+  } else {
+    trackProgress(currentLevel, "incorrect");
   }
 }
 
+
+function updateProgressUI(levelNumber, completed){
+  if(completed) {
+    $(".levels a:nth-child("+ (levelNumber+1) + ")").addClass("completed");
+    $(".level-header").addClass("completed");
+  } else {
+    $(".level-header").removeClass("completed");
+  }
+}
 
 function trackProgress(levelNumber, type){
 
@@ -341,7 +367,9 @@ function trackProgress(levelNumber, type){
   var levelStats = progress.guessHistory[levelNumber];
 
   if(type == "incorrect"){
-    levelStats.incorrectCount++;
+    if(levelStats.correct == false) {
+      levelStats.incorrectCount++; // Only update the incorrect count until it is guessed correctly
+    }
   } else {
     if(levelStats.correct == false) {
       levelStats.correct = true;
@@ -351,7 +379,6 @@ function trackProgress(levelNumber, type){
       sendEvent("guess", "correct", levelNumber + 1); // Send event
     }
   }
-
 
   // Increments the completion percentage by 10%, and sends an event every time
   var increment = .1;
@@ -366,10 +393,6 @@ function trackProgress(levelNumber, type){
 
 // Sends event to Google Analytics
 function sendEvent(category, action, label){
-
-  // Commented out, but will remain for testing
-  // console.log("GA EVENT:" + category, action, label);
-
   ga('send', {
     hitType: "event",
     eventCategory: category,  // guess or progress
@@ -477,7 +500,10 @@ function loadLevel(){
   loadBoard();
   resetTable();
 
-  $(".level-header").html("Level " + (currentLevel+1) + " of " + levels.length);
+  $(".level-header .level-text").html("Level " + (currentLevel+1) + " of " + levels.length);
+
+  updateProgressUI(currentLevel, checkCompleted(currentLevel));
+
   $(".order").text(level.doThis);
   $("input").val("").focus();
 
@@ -487,5 +513,4 @@ function loadLevel(){
 
   //Strobe what's supposed to be selected
   $(".table " + level.selector).addClass("strobe");
-
 }

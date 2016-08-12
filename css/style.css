@@ -789,6 +789,26 @@ plate orange:nth-last-child(4)
   color: #777;
 }
 
+.level-header.completed .checkmark {
+  opacity: .7;
+  border: solid 3px #4cbb4a;
+  border-width: 0 4px 4px 0;
+}
+
+.level-header .checkmark {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px;
+  width: 12px;
+  height: 20px;
+  opacity: 2;
+  border: solid 3px white;
+  border-width: 0 4px 4px 0;
+  opacity: .2;
+  top: -3px;
+  transform: rotate(40deg);
+}
+
 .level-progress {
   width: 100%;
   background: rgba(0,0,0,.4);
@@ -905,7 +925,7 @@ plate orange:nth-last-child(4)
   width: 100%;
 }
 
-.level-menu.open {
+.menu-open .level-menu {
   left: 0px;
 }
 
@@ -926,7 +946,7 @@ plate orange:nth-last-child(4)
 .level-menu a {
   display: block;
   cursor: pointer;
-  padding: 5px 30px 5px 12px;
+  padding: 5px 12px 5px 12px;
   color: #777;
 }
 
@@ -936,21 +956,23 @@ plate orange:nth-last-child(4)
 }
 
 .level-menu a.completed .checkmark {
-  opacity: .5;
+  opacity: .55;
+  border: solid 3px #4cbb4a;
+  border-width: 0 3px 3px 0;
 }
 
 .level-menu a .checkmark {
   position: relative;
   display: inline-block;
-  width: 7px;
+  margin-right: 14px;
+  width: 8px;
   height: 13px;
+  opacity: 2;
+  border: solid 3px white;
+  border-width: 0 3px 3px 0;
   opacity: .2;
-
-  border: solid 2px white;
-  border-width: 0 2px 2px 0;
-  left: 10px;
   top: -1px;
-  transform: rotate(37deg);
+  transform: rotate(40deg);
 }
 
 .level-menu a:hover {
@@ -973,32 +995,59 @@ plate orange:nth-last-child(4)
   position: absolute;
   top: 22px;
   right: 20px;
+  height: 30px;
   padding: 4px 2px;
-  opacity: .7;
+  opacity: .25;
   -webkit-transition: linear all .05s;
   transition: linear all .05s;
+  cursor: pointer;
 }
 
 .level-menu-toggle-wrapper:hover {
-  opacity: 1;
+  opacity: .4;
 }
 
 .level-menu-toggle {
-  height: 20px;
+  height: 2px;
   width: 27px;
-  border-top: solid 2px #666;
-  border-bottom: solid 2px #666;
+  background: rgba(255,255,255,1);
+  transition: all .15s ease-out;
   cursor: pointer;
   position: relative;
+  top: 10px;
 }
 
-.level-menu-toggle:after {
+.menu-open .level-menu-toggle {
+  background: rgba(255,255,255,0);
+}
+
+.level-menu-toggle:before, .level-menu-toggle:after {
   position: absolute;
   content: "";
   width: 100%;
   height: 2px;
-  top: 7px;
-  background: #666;
+  background: rgba(255,255,255,1);
+  transition: all .1s ease-out;
+}
+
+.level-menu-toggle:before {
+  top: -10px;
+  transform-origin: left;
+}
+
+.menu-open .level-menu-toggle:before {
+  top: -9px;
+  transform: rotate(45deg);
+}
+
+.level-menu-toggle:after {
+  top: 10px;
+  transform-origin: left;
+}
+
+.menu-open .level-menu-toggle:after {
+  top: 10px;
+  transform: rotate(-45deg);
 }
 
 .note {
