@@ -297,7 +297,7 @@ var levels = [
 
   {
     selectorName: "Only of Type Selector",
-    helpTitle: "Select elements that are the only ones of their type",
+    helpTitle: "Select elements that are the only ones of their type within of their parent element",
     selector : "apple:only-of-type",
     syntax: ":only-of-type",
     doThis : "Select the apple on the middle plate.",
