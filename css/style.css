@@ -34,6 +34,7 @@ header {
 
 .share-menu {
   float: right;
+  padding-right: 8px;
 }
 
 .share-menu a {
@@ -1192,3 +1193,5 @@ tag:after {
 	background-color: #fff; background-color: rgba(255,255,255,.3);
 	filter: "alpha(opacity=90)"; -ms-filter: "alpha(opacity=90)";
 }
+
+.mCSB_inside > .mCSB_container{ margin-right: 0; }

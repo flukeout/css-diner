@@ -50,11 +50,10 @@ $(document).ready(function(){
     }
   });
 
-   $(".left-col").mCustomScrollbar({
-     scrollInertia: 0,
-     autoHideScrollbar: true
-   });
-   $(".level-menu").mCustomScrollbar();
+  $(".left-col, .level-menu").mCustomScrollbar({
+    scrollInertia: 0,
+    autoHideScrollbar: true
+  });
 
   $(".note-toggle").on("click", function(){
     $(this).hide();

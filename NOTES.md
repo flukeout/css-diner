@@ -2,6 +2,8 @@
 
 **In Progress**
 
+* how to test completion of twitter actions?
+
 * Adding email share
   * Sharetally!? - find a system similar to it
 
