@@ -1,8 +1,26 @@
 #Welcome to CSS Diner
 
-This is a quick game to learn and refresh your knowledge of CSS selectors.
+It's a fun game to learn and pracdtice CSS selectors.
 
 To play, visit [flukeout.github.io](http://flukeout.github.io/) or [cssdiner.com](http://cssdiner.com/)
+
+###Change Log
+
+**Aug 25,2016**
+* Added Twitter, Facebook and Email share actions
+  * Tracking clicks with GA Events
+* Made the level menu and editor area scroll independently
+  * Using custom jQuery scroll library
+
+**Aug 18,2016**
+* Started using ``cssdiner.com`` to redirect to ``flukeout.github.io``
+
+**Aug 12,2016**
+* Added checkmarks to completed levels in level menu and header
+
+**Aug 4,2016**
+* Began tracking progress and correct guesses with GA Events
+
 
 ###Filing issues and PRs
 
