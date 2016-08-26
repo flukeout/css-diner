@@ -61,5 +61,5 @@ This is more of a note to myself in case I forget, to deploy the latest version,
 ###Special Thanks
 
 * [@k88hudson](https://twitter.com/k88hudson)
-* [@antlam7](http://www.twitter.com/antlam7)
+* [@antlam](http://www.twitter.com/antlam)
 * [@smashman2004](https://twitter.com/smashman2004)
