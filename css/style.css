@@ -60,15 +60,15 @@ header {
 }
 
 .share-menu .share-twitter {
-  background-image: url(/images/icon-twitter.svg);
+  background-image: url(../images/icon-twitter.svg);
 }
 
 .share-menu .share-facebook {
-  background-image: url(/images/icon-facebook.svg);
+  background-image: url(../images/icon-facebook.svg);
 }
 
 .share-menu .share-email {
-  background-image: url(/images/icon-email.svg);
+  background-image: url(../images/icon-email.svg);
 }
 
 .share-menu a:hover {
