@@ -27,11 +27,34 @@ var progress = JSON.parse(localStorage.getItem("progress")) || blankProgress; //
 
 $(document).ready(function(){
 
+  $(".share-menu").on("click","a",function(){
+
+    var type = $(this).attr("type");
+
+    if(type == "twitter"){
+      var url = "https://twitter.com/intent/tweet?text=Learning%20CSS?%20Try%20CSS%20Diner,%20the%20fun%20way%20to%20practice%20selectors%20%E2%86%92&hashtags=css,cssdiner,webdev&url=http%3A%2F%2Fcssdiner.com%2F&via=flukeout";
+    } else if (type == "facebook") {
+      var url = "https://www.facebook.com/sharer.php?src=sp&u=http%3A%2F%2Fcssdiner.com";
+    } else if (type == "email") {
+      var url = "mailto:?subject=Check+out+CSS+Diner&body=It's+a+fun+game+to+learn+%26+practice+CSS+selectors.%0D%0A%0D%0AYou+can+try+it+at+http://cssdiner.com";
+    }
+
+    PopupCenter(url, "title", 600, 450);
+    sendEvent("share", type, "");
+    return false;
+  });
+
   $(window).on("keydown",function(e){
     if(e.keyCode == 27) {
-      $(".menu-open").removeClass("menu-open");
+      closeMenu();
     }
   });
+
+   $(".left-col").mCustomScrollbar({
+     scrollInertia: 0,
+     autoHideScrollbar: true
+   });
+   $(".level-menu").mCustomScrollbar();
 
   $(".note-toggle").on("click", function(){
     $(this).hide();
@@ -39,7 +62,11 @@ $(document).ready(function(){
   });
 
   $(".level-menu-toggle-wrapper").on("click",function(){
-    $(".right-col").toggleClass("menu-open");
+    if($(".menu-open").length == 0) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
   });
 
   //Handle inputs from the input box on enter
@@ -142,6 +169,10 @@ function buildLevelmenu(){
 
 function closeMenu(){
   $(".right-col").removeClass("menu-open");
+}
+
+function openMenu(){
+  $(".right-col").addClass("menu-open");
 }
 
 function hideTooltip(){
@@ -513,4 +544,25 @@ function loadLevel(){
 
   //Strobe what's supposed to be selected
   $(".table " + level.selector).addClass("strobe");
+}
+
+
+// http://stackoverflow.com/questions/4068373/center-a-popup-window-on-screen
+
+function PopupCenter(url, title, w, h) {
+    // Fixes dual-screen position                         Most browsers      Firefox
+    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+    var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+    var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+    var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+    var top = ((height / 2) - (h / 2)) + dualScreenTop;
+    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+    // Puts focus on the newWindow
+    if (window.focus) {
+        newWindow.focus();
+    }
 }

@@ -7,6 +7,7 @@
 html,body {
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
 }
 
 body {
@@ -26,20 +27,59 @@ h1, h2, h3, h4, h5 {
 }
 
 header {
-  padding: 10px 20px 10px 35px;
-  background: rgba(0,0,0,.5);
+  padding: 12px 15px 11px 35px;
   color: rgba(255,255,255,.3);
+  text-align: left;
+}
+
+.share-menu {
+  float: right;
+}
+
+.share-menu a {
+  text-decoration: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 12px;
+  display: block;
+  float: right;
+  margin-left: 5px;
+  position: relative;
+  opacity: .5;
+  top: -2px;
+  transition: opacity .1s ease-out;
+}
+
+.share-menu a:last-child {
+  margin-left: 8px;
+}
+
+.share-menu a:hover {
+  opacity: .75;
+}
+
+.share-menu .share-twitter {
+  background-image: url(/images/icon-twitter.svg);
+}
+
+.share-menu .share-facebook {
+  background-image: url(/images/icon-facebook.svg);
+}
+
+.share-menu .share-email {
+  background-image: url(/images/icon-email.svg);
+}
+
+.share-menu a:hover {
+  color: rgba(255,255,255,.5);
 }
 
 .logo {
   cursor: default;
-  -webkit-transform-origin: middle;
-  -webkit-transform: scale(.2);
-  transform-origin: middle;
   transform: scale(.2);
-  z-index: 9999999;
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 10px;
 }
 
@@ -50,44 +90,12 @@ header {
   left: 0;
   margin: 0;
   opacity: .5;
-  -webkit-transition: all linear .1s;
-}
-
-.logo .css {
-  z-index: 9999;
-  font-size: 50px;
-  font-weight: 600;
-  color: #555;
-  position: absolute;
-  width: 100%;
-  top: 18px;
-  left: 0px;
-  text-align: center;
-}
-
-.logo .diner {
-  width: 0px;
-  overflow: hidden;
-  color: #777;
-  font-family: "Exo 2";
-  text-align: left;
-  position: absolute;
-  top: 19px;
-  left: 108px;
-  z-index: 600;
-  font-size: 48px;
-  -webkit-transition: all linear .1s;
-}
-
-.logo:hover .diner {
-  width: 120px;
+  transition: all opacity .1s ease-out;
 }
 
 .logo:hover plate {
   opacity: .75;
 }
-
-
 
 .table-wrapper {
   margin-top: 10px;
@@ -394,12 +402,9 @@ apple.small {
   margin: 30px 10px;
 }
 
-
 pickle {
   background: #179837;
   width: 25px;
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
   border-radius: 30px;
   display: inline-block;
   position: relative;
@@ -407,7 +412,6 @@ pickle {
   border-width: 2px 2px 9px 2px;
   margin: 20px 10px;
 }
-
 
 pickle.small {
   height: 40px;
@@ -583,9 +587,10 @@ plate [data-hovered="true"] {
   border-bottom: solid 2px #BBB;
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   display: none;
-  -webkit-transform: rotateX(20deg);
   transform: rotateX(20deg);
   outline: solid 1px transparent;
+  word-wrap: nowrap;
+
 }
 
 plate:before {
@@ -893,44 +898,57 @@ plate orange:nth-last-child(4)
   padding-left: 0px;
 }
 
-.col-wrapper {
-  overflow: auto;
-  width: 100%;
-  position: relative;
-}
-
 .left-col {
   width: calc(100% - 375px);
   text-align: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }
 
+/**::-webkit-scrollbar { width: 0 !important }*/
+
 .right-col {
-  position: absolute;
+  position: fixed;
   width: 375px;
-  height: 100%;
   right: 0;
-  top: 0px;
+  overflow: auto;
+  top: 40px;
+  top: 0;
+  bottom: 0;
+  background: #221e18;
 }
 
 .level-menu {
   position: absolute;
-  top: 0px;
-  height: 100%;
-  overflow: hidden;
-  -webkit-transition: linear all .1s;
-  transition: linear all .1s;
-  background: rgba(0,0,0,.9);
+  top: 0;
+  bottom: 0;
+  overflow-y: hidden;
+  transition: all .15s ease-in-out;
+  background: rgba(0,0,0,1);
+  background: #1b1813;
   left: 500px;
-  padding: 10px;
+  padding: 0;
   width: 100%;
 }
 
 .menu-open .level-menu {
-  left: 0px;
+  left: 0;
 }
 
 .levels {
-  margin-right: 63px;
+  margin-bottom: 150px;
+}
+
+.level-menu h2 {
+  font-size: 22px;
+  color: white;
+  opacity: .4;
+  font-weight: normal;
+  margin: 0;
+  padding: 23px 0 14px 16px;
 }
 
 .right-col {
@@ -946,7 +964,7 @@ plate orange:nth-last-child(4)
 .level-menu a {
   display: block;
   cursor: pointer;
-  padding: 5px 12px 5px 12px;
+  padding: 5px 12px 5px 22px;
   color: #777;
 }
 
@@ -982,8 +1000,13 @@ plate orange:nth-last-child(4)
 .level-menu a.current {
   font-weight: bold;
   color: #AAA;
-  background: rgba(255,255,255,.1);
+  background: rgba(255,255,255,.07);
 }
+
+.level-menu a:hover {
+  background: rgba(255,255,255,.05);
+}
+
 
 .level-menu .level-number {
   opacity: .6;
@@ -1119,7 +1142,6 @@ plate orange:nth-last-child(4)
   font-size: 40px;
 }
 
-
 .level-nav {
   float: right;
   position: relative;
@@ -1140,4 +1162,33 @@ tag:before {
 
 tag:after {
   content: ">";
+}
+
+/*::-webkit-scrollbar {
+  width: 8px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.15);
+  border-radius: 10px;
+}*/
+
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	background-color: #fff; background-color: rgba(255,255,255,0.15);
+	filter: "alpha(opacity=75)"; -ms-filter: "alpha(opacity=75)";
+}
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+	background-color: #fff; background-color: rgba(255,255,255,0.3);
+	filter: "alpha(opacity=85)"; -ms-filter: "alpha(opacity=85)";
+}
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+	background-color: #fff; background-color: rgba(255,255,255,.3);
+	filter: "alpha(opacity=90)"; -ms-filter: "alpha(opacity=90)";
 }

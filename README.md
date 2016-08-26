@@ -1,12 +1,15 @@
 #Welcome to CSS Diner
+
 This is a quick game to learn and refresh your knowledge of CSS selectors.
 
-To play, visit [flukeout.github.io](http://flukeout.github.io/)
+To play, visit [flukeout.github.io](http://flukeout.github.io/) or [cssdiner.com](http://cssdiner.com/)
 
 ###Filing issues and PRs
+
 Please file issues and PRs in the [css-diner repo](https://github.com/flukeout/css-diner/).
 
 ###Repo structure
+
 Here's the repo structure, it's a bit confusing...
 
 * Currently, all of the working code (including issues, PRs and in-progress branches) is hosted in the [css-diner repo](https://github.com/flukeout/css-diner/)
@@ -19,6 +22,7 @@ Here's the repo structure, it's a bit confusing...
 This is more of a note to myself in case I forget, to deploy the latest version, I'll have to push to the ``master`` branch on the ``flukeout.github.io`` repo from the latest ``develop`` branch.
 
 #Roadmap and Status
+
 Updated August 2, 2016
 
 My main goal in the coming weeks is to review all of the outstanding issues and Pull Requests, improve analytics & add a few features.
@@ -50,3 +54,7 @@ Some of these are accounted for in Pull Requests already, which I'll review, but
 * [ ] Add UI to Tweet about finishing all of the levels
 * [ ] Add additional challenges per Selector
   * Some repetition per level would be good
+
+###Special Thanks
+
+[@k88hudson](https://twitter.com/k88hudson), [@antlam7](http://www.twitter.com/antlam7), & [@smashman2004](https://twitter.com/smashman2004)

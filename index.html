@@ -5,72 +5,84 @@
     <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/levels.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/restaurant.js" type="text/javascript" charset="utf-8"></script>
+<!--    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+
+    <script src="js/jquery.mCustomScrollbar.min.js"></script>
+
     <link rel="icon" type="image/png" href="favicon.png">
     <link href='http://fonts.googleapis.com/css?family=Exo+2:200,400,600,400italic,600italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+    <meta property="og:url"           content="http://cssdiner.com" />
+  	<meta property="og:type"          content="website" />
+  	<meta property="og:title"         content="CSS Diner" />
+  	<meta property="og:description"   content="A fun game to help you learn and practice CSS selectors." />
+  	<meta property="og:image"         content="http://cssdiner.com/images/fb-share.jpg" />
   </head>
+
   <body>
 
-    <header>
-      CSS Diner
-      <div class="logo">
-        <plate><apple /></plate>
-      </div>
-    </header>
+    <div class="left-col">
 
-    <div class="col-wrapper bottom-half">
+      <header>
+        CSS Diner
+        <div class="logo">
+          <plate><apple /></plate>
+        </div>
+        <span class="share-menu">
+          Share
+          <a class="share-twitter" type="twitter" href="#"></a>
+          <a class="share-facebook" type="facebook" href="#"></a>
+          <a class="share-email" type="email" href="#"></a>
+        </span>
+      </header>
 
-      <div class="left-col">
+      <h2 class="order"></h2>
 
-        <h2 class="order"></h2>
+      <div class="note">
+        <h3>No worries, you've got this!</h3>
+        <p>
+          You're about to learn CSS Selectors!
+          Selectors are how you pick which element to apply styles to.
+        </p>
 
-        <div class="note">
-          <h3>No worries, you've got this!</h3>
-          <p>
-            You're about to learn CSS Selectors!
-            Selectors are how you pick which element to apply styles to.
-          </p>
+        <h4>Exhibit 1 - A CSS Rule</h4>
 
-          <h4>Exhibit 1 - A CSS Rule</h4>
-
-<pre>
+        <pre>
 p {
    margin-bottom: 12px;
-}
-</pre>
+}</pre>
 
+        <p>Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.</p>
+        <p>
+          To play, type in a CSS selector in the editor below to select the correct items on the table.
+          If you get it right, you'll advance to the next level.
+        </p>
+        <p>Hover over the items on the table to see their HTML markup.</p>
+        <p>Get help with selectors on the right! &rarr;</p>
+        <a class="note-toggle" href="#">Ok, got it!</a>
+      </div>
 
-          <p>Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.</p>
-          <p>
-            To play, type in a CSS selector in the editor below to select the correct items on the table.
-            If you get it right, you'll advance to the next level.
-          </p>
-          <p>Hover over the items on the table to see their HTML markup.</p>
-          <p>Get help with selectors on the right! &rarr;</p>
-          <a class="note-toggle" href="#">Ok, got it!</a>
+      <a class="note-toggle" href="#">Help, I'm stuck!</a>
+
+      <div class="game-wrapper">
+        <div class="table-wrapper">
+          <div class="table"></div>
         </div>
-
-        <a class="note-toggle" href="#">Help, I'm stuck!</a>
-
-        <div class="game-wrapper">
-          <div class="table-wrapper">
-            <div class="table"></div>
-          </div>
-          <div class="table-edge">
-            <div class="table-leg"></div>
-            <div class="table-leg"></div>
-          </div>
+        <div class="table-edge">
+          <div class="table-leg"></div>
+          <div class="table-leg"></div>
         </div>
+      </div>
 
+      <div class="editor">
 
-
-        <div class="editor">
-
-          <div class="editor-pane">
-            <div class="input-header">
-              <div class="file-name">style.css</div> CSS Editor
-            </div>
-
+        <div class="editor-pane">
+          <div class="input-header">
+            <div class="file-name">style.css</div> CSS Editor
+          </div>
           <div class="file-window css-view">
             <div class="line-numbers">
               1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20
@@ -89,7 +101,6 @@ p {
             </div>
           </div>
         </div>
-
         <div class="editor-pane html-view">
           <div class="input-header">
             <div class="file-name">table.html</div>
@@ -102,62 +113,60 @@ p {
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="what-is-this">
-        <h2>What is this?</h2>
-        <p>It's a little game to help you learn CSS selectors. Type in the correct selector to complete each level. Get help on the right.</p>
-        <p>It's a work in progress, so please give me feedback!</p>
+
         <p>
-          Made by <a href="http://www.twitter.com/flukeout">@flukeout</a> with special thanks to <a href="https://twitter.com/k88hudson">@k88hudson</a>, <a href="http://www.twitter.com/antlam7">@antlam7</a> and <a href="https://twitter.com/smashman2004">@smashman2004</a>.
-        </p>
-        <p>
-          Please submit issues and PRs at <a href="https://github.com/flukeout/restaurant">this Github repo</a>.
+          Made by <a href="http://www.twitter.com/flukeout">@flukeout</a> &mdash; come say hi!
         </p>
 
+        <p>
+          Have feedback? Please file an isssue on <a href="https://github.com/flukeout/css-diner">the Github repo</a>.
+        </p>
 
       </div>
 
-      </div><!-- /left col -->
+      <!-- This is the popup that floats over table elements -->
+      <div class="helper"></div>
 
-      <div class="right-col">
 
-        <div class="help-wrapper">
-          <div class="level-nav">
-            <a href="#">&lt;</a>
-            <a href="#">&gt;</a>
-          </div>
-          <h1 class="level-header">
-            <span class="level-text"></span>
-            <span class="checkmark"></span>
-          </h1>
-          <div class="level-progress"><div class="progress"></div></div>
-          <div class="display-help">
+    </div><!-- /left col -->
 
-            <h3 class="selector-name"></h3>
-            <h2 class="title"></h2>
-            <h3 class="syntax"></h3>
+    <div class="right-col">
 
-            <div class="hint"></div>
-            <div class="examples"></div>
-            <div class="selector"></div>
-          </div>
+      <div class="help-wrapper">
+        <div class="level-nav">
+          <a href="#">&lt;</a>
+          <a href="#">&gt;</a>
         </div>
+        <h1 class="level-header">
+          <span class="level-text"></span>
+          <span class="checkmark"></span>
+        </h1>
+        <div class="level-progress"><div class="progress"></div></div>
+        <div class="display-help">
 
-        <div class="level-menu">
-          <div class="levels"></div>
+          <h3 class="selector-name"></h3>
+          <h2 class="title"></h2>
+          <h3 class="syntax"></h3>
+
+          <div class="hint"></div>
+          <div class="examples"></div>
+          <div class="selector"></div>
         </div>
+      </div>
 
-        <div class="level-menu-toggle-wrapper">
-          <div class="level-menu-toggle"></div>
-        </div>
+      <div class="level-menu">
+        <h2>Choose a level</h2>
+        <div class="levels"></div>
+      </div>
 
-      </div><!-- /right col -->
-  </div>
+      <div class="level-menu-toggle-wrapper">
+        <div class="level-menu-toggle"></div>
+      </div>
 
-  <!-- This is the popup that floats over table elements -->
-  <div class="helper"></div>
+    </div><!-- /right col -->
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -167,7 +176,6 @@ p {
 
     ga('create', 'UA-62998410-1', 'auto');
     ga('send', 'pageview');
-
   </script>
 
   </body>
