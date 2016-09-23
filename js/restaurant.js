@@ -1,14 +1,14 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
 /*
   Function Reference
   ==================
+
   loadLevel() - loads up the level
   fireRule() - fires the css rule
   updateProgressUI() - adds a checkmark to the level menu and header when a correct guess is made, removes it if incorrect
-  ..to be continued
+  hideTooltip() - hides markup tooltip that hovers over the elements
+  showHelp() - Loads help text & examples for each level
+
+  ..to be continued!
 */
 
 var level;  // Holds current level info
@@ -50,6 +50,7 @@ $(document).ready(function(){
     }
   });
 
+  // Custom scrollbar plugin
   $(".left-col, .level-menu").mCustomScrollbar({
     scrollInertia: 0,
     autoHideScrollbar: true
@@ -67,6 +68,37 @@ $(document).ready(function(){
       closeMenu();
     }
   });
+
+  $(".level-nav").on("click","a",function(){
+
+    var direction;
+    if($(this).hasClass("next")) {
+      direction = "next";
+    }
+
+    addAnimation($(this),"link-jiggle");
+
+    if(direction == "next") {
+      currentLevel++;
+      if(currentLevel >= levels.length) {
+        currentLevel = levels.length - 1;
+      }
+    } else {
+      currentLevel--;
+      if(currentLevel < 0) {
+        currentLevel = 0;
+      }
+    }
+
+    loadLevel();
+    return false;
+  });
+
+  // Resets progress and progress indicators
+  $(".reset-progress").on("click",function(){
+    resetProgress();
+    return false;
+  })
 
   //Handle inputs from the input box on enter
   $("input").on("keypress",function(e){
@@ -106,13 +138,13 @@ $(document).ready(function(){
     e.stopPropagation();
   });
 
-  //Shows the tooltip on the table
+  // Shows the tooltip on the table
   $(".markup").on("mouseout","*",function(e){
     e.stopPropagation();
     hideTooltip();
   });
 
-  $(".table").on("mouseout","*",function(e){
+  $(".table").on("mouseout","*", function(e){
     hideTooltip();
     e.stopPropagation();
   });
@@ -129,8 +161,28 @@ $(document).ready(function(){
     loadLevel();
     $(".table-wrapper,.table-edge").css("opacity",1);
   },50);
-
 });
+
+function addAnimation(el, className){
+  el.addClass("link-jiggle");
+  el.one("animationend",function(e){
+    $(e.target).removeClass("link-jiggle");
+  })
+}
+
+// Reset all progress!
+// Should also scroll the menu to the top...
+function resetProgress(){
+  currentLevel = 0;
+  progress = blankProgress;
+  localStorage.setItem("progress",JSON.stringify(progress));
+
+  $(".completed").removeClass("completed");
+  loadLevel();
+  closeMenu(); // what does it do??
+  $("#mCSB_2_container").css("top",0); // weird scroll reset - because of the
+}
+
 
 //Checks if the level is completed
 
@@ -181,6 +233,7 @@ function hideTooltip(){
 }
 
 function showTooltip(el){
+
   if(finished){
     return;
   }
@@ -215,6 +268,12 @@ function showTooltip(el){
     helpertext = helpertext + ' class="' + elClass + '"';
   }
 
+  var elFor = el.attr("for");
+
+  if(elFor) {
+    helpertext = helpertext + ' for="' + elFor + '"';
+  }
+
   var id = el.attr("id");
   if(id) {
     helpertext = helpertext + ' id="' + id + '"';
@@ -223,7 +282,6 @@ function showTooltip(el){
   helpertext = helpertext + '></' + elType + '>';
   helper.show();
   helper.text(helpertext);
-
 }
 
 
@@ -244,18 +302,12 @@ function handleInput(text){
     loadLevel();
     return;
   }
-
-  if(text == "help") {
-    showHelp();
-  } else {
-    fireRule(text);
-  }
+  fireRule(text);
 }
 
-//Shows help
+// Loads up the help text & examples for each level
 function showHelp() {
 
-  $("input").val("");
   var helpTitle = level.helpTitle || "";
   var help = level.help || "";
   var examples = level.examples ||[];
@@ -269,11 +321,14 @@ function showHelp() {
   $(".display-help .selector-name").html(selectorName);
   $(".display-help .title").html(helpTitle);
   $(".display-help .examples").html("");
+  $(".display-help .examples-title").hide(); // Hide the "Examples" heading
 
   for(var i = 0; i < examples.length; i++){
     var example = $("<div class='example'>" + examples[i] + "</div>");
     $(".display-help .examples").append(example);
+    $(".display-help .examples-title").show(); // Show it if there are examples
   }
+
   $(".display-help .hint").html(help);
   $(".display-help .selector").text(selector);
 }
@@ -285,9 +340,12 @@ function resetTable(){
   $("input").addClass("input-strobe");
   $(".table *").each(function(){
     $(this).width($(this).width());
-    $(this).removeAttr("style");
+    // $(this).removeAttr("style");
+    // TODO - needed?? Probably not, everything gets removed anyway
   });
-  $(".table-edge").width($(".table").outerWidth());
+
+  var tableWidth = $(".table").outerWidth();
+  $(".table-wrapper, .table-edge").width(tableWidth);
 }
 
 function fireRule(rule) {
@@ -317,17 +375,24 @@ function fireRule(rule) {
   * Relatedly, watching that happen made me nearly spill my drink.
   */
 
-  var baseTable = $('.table-wrapper > .table');
+  // var baseTable = $('.table-wrapper > .table, .table-wrapper > .nametags, .table-wrapper > .table-surface');
+  var baseTable = $('.table');
 
-  // var ruleSelected = $(".table-wrapper " + rule).not(baseTable);
-  // var levelSelected = $(".table-wrapper " + level.selector).not(baseTable);
+  // Check if jQuery will throw an error trying the mystery rule
+  // If it errors out, change the rule to null so the wrong-guess animation will work
+  try {
+    $(".table").find(rule).not(baseTable);
+  }
+  catch(err) {
+    rule = null;
+  }
 
-  var ruleSelected = $(".table-wrapper").find(rule).not(baseTable);
-  var levelSelected = $(".table-wrapper").find(level.selector).not(baseTable);
+  var ruleSelected = $(".table").find(rule).not(baseTable);            // What the correct rule finds
+  var levelSelected = $(".table").find(level.selector).not(baseTable); // What the person finds
 
   var win = false;
 
-  //If nothing is selected
+  // If nothing is selected
   if(ruleSelected.length == 0) {
     $(".editor").addClass("shake");
   }
@@ -339,7 +404,6 @@ function fireRule(rule) {
   if(win){
     ruleSelected.removeClass("strobe");
     ruleSelected.addClass("clean");
-    // $(".result").text("Good job!");
     $("input").val("");
     $(".input-wrapper").css("opacity",.2);
     updateProgressUI(currentLevel, true);
@@ -374,7 +438,8 @@ function fireRule(rule) {
   }
 }
 
-
+// Marks an individual number as completed or incompleted
+// Just in the level heading though, not the level list
 function updateProgressUI(levelNumber, completed){
   if(completed) {
     $(".levels a:nth-child("+ (levelNumber+1) + ")").addClass("completed");
@@ -385,7 +450,6 @@ function updateProgressUI(levelNumber, completed){
 }
 
 function trackProgress(levelNumber, type){
-
   if(!progress.guessHistory[levelNumber]) {
     progress.guessHistory[levelNumber] = {
       correct : false,
@@ -433,6 +497,7 @@ function sendEvent(category, action, label){
 
 function winGame(){
   $(".table").html('<span class="winner"><strong>You did it!</strong><br>You rock at CSS.</span>');
+  addNametags();
   finished = true;
   resetTable();
 }
@@ -444,72 +509,90 @@ function checkResults(ruleSelected,levelSelected,rule){
   return($(".table").html() == ruleTable.html());
 }
 
-function loadBoard(){
-  var boardString = level.board;
-  boardMarkup = "";
-  var tableMarkup = "";
-  var markup = "";
-  showHelp();
+// Returns all formatted markup within an element...
 
-  for(var i = 0;i < boardString.length;i++){
-    var c = boardString.charAt(i);
-
-    if(c == "C") {
-      boardMarkup = boardMarkup + '<carrot/>\n'
-      markup = markup + "<div>&ltcarrot/&gt</div>";
-    }
-    if(c == "A") {
-      boardMarkup = boardMarkup + '<apple/>\n'
-      markup = markup + "<div>&ltapple/&gt</div>";
-    }
-    if(c == "O") {
-      boardMarkup = boardMarkup + '<orange/>\n'
-      markup = markup + "<div>&ltorange/&gt</div>";
-    }
-    if(c == "P") {
-      boardMarkup = boardMarkup + '<pickle/>\n'
-      markup = markup + '<div>&ltpickle/&gt</div>';
-    }
-    if(c == "a") {
-      boardMarkup = boardMarkup + '<apple class="small"/>\n'
-      markup = markup + '<div>&ltapple class="small"/&gt</div>';
-    }
-    if(c == "o") {
-      boardMarkup = boardMarkup + '<orange class="small"/>\n'
-      markup = markup + '<div>&ltorange class="small"/&gt</div>';
-    }
-    if(c == "p") {
-      boardMarkup = boardMarkup + '<pickle class="small"/>\n'
-      markup = markup + '<div>&ltpickle class="small"/&gt</div>';
-    }
-    if(c == "{") {
-      boardMarkup = boardMarkup + '<plate id="fancy">'
-      markup = markup + '<div>&ltplate id="fancy"&gt';
-    }
-    if(c == "(") {
-      boardMarkup = boardMarkup + '<plate>'
-      markup = markup + '<div>&ltplate&gt'
-    }
-    if(c == ")" || c == "}") {
-      boardMarkup = boardMarkup + '</plate>\n'
-      markup = markup + '&lt/plate&gt</div>'
-    }
-    if(c == "[") {
-      boardMarkup = boardMarkup + '<bento>'
-      markup = markup + '<div>&ltbento&gt'
-    }
-    if(c == "]") {
-      boardMarkup = boardMarkup + '</bento>\n'
-      markup = markup + '&lt/bento&gt</div>'
-    }
-
+function getMarkup(el){
+  var hasChildren = el.children.length > 0 ? true : false;
+  var elName = el.tagName.toLowerCase();
+  var wrapperEl = $("<div/>");
+  var attributeString = "";
+  $.each(el.attributes, function() {
+    if(this.specified) {
+     attributeString = attributeString + ' '  + this.name + '="' + this.value + '"';
+   }
+  });
+  var attributeSpace = "";
+  if(attributeString.length > 0){
+    attributeSpace = " ";
   }
-  $(".table").html(boardMarkup);
-  $(".markup").html('<div>&ltdiv class="table"&gt' + markup + '&lt/div&gt</div>');
+  if(hasChildren) {
+    wrapperEl.text("<" + elName + attributeSpace + attributeString + ">");
+    $(el.children).each(function(i,el){
+      wrapperEl.append(getMarkup(el));
+    });
+    wrapperEl.append("&lt;" + elName +  "/&gt;");
+  } else {
+    wrapperEl.text("<" + elName + attributeSpace + attributeString + "/>");
+  }
+  return wrapperEl;
 }
 
-//Loads up a level
+//new board loader...
+
+function loadBoard(){
+
+  var boardString = level.board;  // just a placeholder to iterate over...
+  boardMarkup = ""; // what is this
+  var tableMarkup = ""; // what is this
+  var editorMarkup = ""; // this is a string that represents the HTML
+  showHelp();
+
+  var markupHolder = $("<div/>")
+
+  $(level.boardMarkup).each(function(i,el){
+    if(el.nodeType == 1){
+      var result = getMarkup(el);
+      markupHolder.append(result);
+    }
+  });
+
+  $(".table").html(level.boardMarkup);
+  addNametags();
+  $(".table *").addClass("pop");
+
+
+  $(".markup").html('<div>&ltdiv class="table"&gt' + markupHolder.html() + '&lt/div&gt</div>');
+}
+
+// Adds nametags to the items on the table
+function addNametags(){
+  $(".nametags *").remove();
+  $(".table-wrapper").css("transform","rotateX(0)");
+  $(".table-wrapper").width($(".table-wrapper").width());
+
+  $(".table *").each(function(){
+    if($(this).attr("for")){
+      var pos = $(this).position();
+      var width = $(this).width();
+      var nameTag = $("<div class='nametag'>" + $(this).attr("for") + "</div>");
+      $(".nametags").append(nameTag);
+      var tagPos = pos.left + (width/2) - nameTag.width()/2 + 12;
+      nameTag.css("left",tagPos);
+    }
+  });
+
+  $(".table-wrapper").css("transform","rotateX(20deg)");
+}
+
+
 function loadLevel(){
+  // Make sure we dont' load something out of range
+  if(currentLevel < 0 || currentLevel > levels.length - 1) {
+    currentLevel = 0;
+  }
+
+  hideTooltip();
+
   level = levels[currentLevel];
 
   // Show the help link only for the first three levels
@@ -537,31 +620,34 @@ function loadLevel(){
   $(".order").text(level.doThis);
   $("input").val("").focus();
 
-
   $(".input-wrapper").css("opacity",1);
   $(".result").text("");
 
   //Strobe what's supposed to be selected
-  $(".table " + level.selector).addClass("strobe");
+  setTimeout(function(){
+    $(".table " + level.selector).addClass("strobe");
+    $(".pop").removeClass("pop");
+  },200);
+
 }
 
-
+// Popup positioning code from...
 // http://stackoverflow.com/questions/4068373/center-a-popup-window-on-screen
 
 function PopupCenter(url, title, w, h) {
-    // Fixes dual-screen position                         Most browsers      Firefox
-    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
-    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+  // Fixes dual-screen position                         Most browsers      Firefox
+  var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+  var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
 
-    var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-    var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+  var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+  var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
 
-    var left = ((width / 2) - (w / 2)) + dualScreenLeft;
-    var top = ((height / 2) - (h / 2)) + dualScreenTop;
-    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+  var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+  var top = ((height / 2) - (h / 2)) + dualScreenTop;
+  var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
 
-    // Puts focus on the newWindow
-    if (window.focus) {
-        newWindow.focus();
-    }
+  // Puts focus on the newWindow
+  if (window.focus) {
+    newWindow.focus();
+  }
 }
