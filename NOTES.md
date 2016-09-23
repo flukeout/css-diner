@@ -1,49 +1,53 @@
-** QA b4 Launch **
+##To-do
+
+**QA b4 Launch**
   * Check to make sure all levels work
   * Check that examples are correct
+  * QA the reset - it's wiggin out yo? is it????
 
-  * QA the reset - it's wiggin out yo
 
-**Possible Level updates?**
 
+
+##Feature Ideas
+
+**Social & Engagemnt**
+
+* Email signup via mailchimp
+* Do more work to figure out who has already been there, treat them a bit differently?
+  * "Welcome back et."
+
+
+**Gameplay**
+
+* Award stars when a level is completed without commas and using the indicated selector
+  * This would be in addition to the checkmark we already do
 * selector: "plate:nth-of-type(2n+3)"
   * Make this level use apples instead of plates? Seems too big..
+* Riddle mode
+  * Difficult selector problems
+  * Add a new one every week
+  * Gives me a reason to bring people back
 
-**Next update**
 
-* Email signup better twitter engagement?
-* Visual enhancements
+**Fun sfuff**
+
+* Some kind of bonus level
+  * Appears randomly and not very often
+  * Can have different food items
+  * Or a special riddle that they get two shots on
 
 
-**Ideas & Future**
+**Aesthetic Cleanup**
 
-* Tip jar / buy me a beer
-* Riddle of the day / week - that would be cool <- gives people a reason for engagement too,
-* Return customers so to speak.
-* Could be dope
+* Color the hover border according to the element hovered and context
+  * Apples have a red border...
+
 
 **Final Attrib Rules**
 * has attribute
 * attribute value = something
 * attribute starts with
 * attribute ends with
-
-**Maybes & Neat-o Improvements **
-
-* css line 591 - highlight border to match the element color?
-  * Commented out for now, but shoudl add again?
-  * I can make them specific to the situation so they always show up nicely
-
-**Attribute types I haven't used**
-
-[attr~=value]
-value is a whitespace-separated list of words, one of which is exactly "value".
-
-[attr|=value]
-Represents an element with an attribute name of attr. Its value can be exactly “value” or can begin with “value” immediately followed by “-” (U+002D). It can be used for language subcode matches.
-
-[attr~=value]
-Represents an element with an attribute name of attr whose value is a whitespace-separated list of words, one of which is exactly "value".
 
 
 **TO-DO**
@@ -59,11 +63,13 @@ Represents an element with an attribute name of attr whose value is a whitespace
   * More selectors
   * More levels per selector
 
+
 **Questions**
 
   * How to test completion of twitter actions?
   * How to track where it's being shared already?
     * Sharetally, or something similar?
+
 
 What kind of new content could I have?
 
@@ -71,6 +77,7 @@ What kind of new content could I have?
 * Create a challenge mode?
 * Sandbox mode
 * New levels
+
 
 **Attribute selectors**
 

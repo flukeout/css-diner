@@ -129,36 +129,37 @@ p {
 
       <div class="helper"><!-- This is the popup that floats over table elements --></div>
 
-    </div><!-- /left col -->
+    </div><!-- /left-col -->
 
     <div class="right-col">
 
       <div class="help-wrapper">
-        <div class="level-nav">
-          <a class="previous" href="#"></a>
-          <a class="next" href="#"></a>
-        </div>
+
         <h1 class="level-header">
           <span class="level-text"></span>
           <span class="checkmark"></span>
         </h1>
-        <div class="level-progress"><div class="progress"></div></div>
-        <div class="display-help">
 
+        <div class="level-nav">
+          <a class="previous" href="#"></a>
+          <a class="next" href="#"></a>
+        </div>
+
+        <div class="level-progress"><div class="progress"></div></div>
+
+        <div class="display-help">
           <h3 class="selector-name"></h3>
           <h2 class="title"></h2>
-
           <h3 class="syntax"></h3>
           <div class="hint"></div>
           <h4 class="examples-title">Examples</h4>
           <div class="examples"></div>
-
         </div>
       </div>
 
       <div class="level-menu">
         <h2>Choose a level</h2>
-        <div class="levels"></div>
+        <div class="levels"><!-- level links are inserted here--></div>
         <a class="reset-progress" href="#">Reset Progress</a>
       </div>
 
@@ -166,16 +167,20 @@ p {
         <div class="level-menu-toggle"></div>
       </div>
 
-    </div><!-- /right col -->
+    </div><!-- /right-col -->
 
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    if(location.hostname != "localhost"){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-62998410-1', 'auto');
-    ga('send', 'pageview');
+      ga('create', 'UA-62998410-1', 'auto');
+      ga('send', 'pageview');
+    } else {
+      var ga = false;
+    }
   </script>
 
   </body>
