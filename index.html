@@ -8,15 +8,16 @@
     <script src="js/jquery.mCustomScrollbar.min.js"></script>
 
     <link rel="icon" type="image/png" href="favicon.png">
-    <link href='https://fonts.googleapis.com/css?family=Exo+2:200,400,600,400italic,600italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Exo+2:200,400,600,400italic,600italic' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
     <meta property="og:url"           content="http://cssdiner.com" />
-  	<meta property="og:type"          content="website" />
-  	<meta property="og:title"         content="CSS Diner" />
-  	<meta property="og:description"   content="A fun game to help you learn and practice CSS selectors." />
-  	<meta property="og:image"         content="https://flukeout.github.io/images/fb-share.jpg" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="CSS Diner" />
+    <meta property="og:description"   content="A fun game to help you learn and practice CSS selectors." />
+    <meta property="og:image"         content="https://flukeout.github.io/images/fb-share.jpg" />
   </head>
 
   <body>
@@ -51,10 +52,18 @@ p {
    margin-bottom: 12px;
 }</pre>
 
-        <p>Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.</p>
-        <p>To play, type in a CSS selector in the editor below to select the correct items on the table.If you get it right, you'll advance to the next level.</p>
-        <p>Hover over the items on the table to see their HTML markup.</p>
-        <p>Get help with selectors on the right! &rarr;</p>
+        <p>
+          Here, the "p" is the selector (selects all &lt;p&gt; elements) and applies the margin-bottom style.
+        </p>
+        <p>
+          To play, type in a CSS selector in the editor below to select the correct items on the table.If you get it right, you'll advance to the next level.
+        </p>
+        <p>
+          Hover over the items on the table to see their HTML markup.
+        </p>
+        <p>
+          Get help with selectors on the right! &rarr;
+        </p>
         <a class="note-toggle" href="#">Ok, got it!</a>
       </div>
 
@@ -62,6 +71,8 @@ p {
 
       <div class="game-wrapper">
         <div class="table-wrapper">
+          <div class="table-surface"></div>
+          <div class="nametags"></div>
           <div class="table"></div>
         </div>
         <div class="table-edge">
@@ -94,6 +105,7 @@ p {
             </div>
           </div>
         </div>
+
         <div class="editor-pane html-view">
           <div class="input-header">
             <div class="file-name">table.html</div>
@@ -107,11 +119,15 @@ p {
       </div>
 
       <div class="what-is-this">
-        <p>Made by <a href="http://www.twitter.com/flukeout">@flukeout</a> &mdash; come say hi!</p>
-        <p>Have feedback? Please file an isssue on <a href="https://github.com/flukeout/css-diner/issues">the Github repo</a>.</p>
+        <p>
+          Made by <a href="http://www.twitter.com/flukeout">@flukeout</a> &mdash; come say hi!
+        </p>
+        <p>
+          Have feedback or questions? Please file an isssue on <a href="https://github.com/flukeout/css-diner/issues">the Github repo</a>.
+        </p>
       </div>
 
-      <div class="helper"></div><!-- This is the popup that floats over table elements -->
+      <div class="helper"><!-- This is the popup that floats over table elements --></div>
 
     </div><!-- /left col -->
 
@@ -119,8 +135,8 @@ p {
 
       <div class="help-wrapper">
         <div class="level-nav">
-          <a href="#">&lt;</a>
-          <a href="#">&gt;</a>
+          <a class="previous" href="#"></a>
+          <a class="next" href="#"></a>
         </div>
         <h1 class="level-header">
           <span class="level-text"></span>
@@ -131,17 +147,19 @@ p {
 
           <h3 class="selector-name"></h3>
           <h2 class="title"></h2>
-          <h3 class="syntax"></h3>
 
+          <h3 class="syntax"></h3>
           <div class="hint"></div>
+          <h4 class="examples-title">Examples</h4>
           <div class="examples"></div>
-          <div class="selector"></div>
+
         </div>
       </div>
 
       <div class="level-menu">
         <h2>Choose a level</h2>
         <div class="levels"></div>
+        <a class="reset-progress" href="#">Reset Progress</a>
       </div>
 
       <div class="level-menu-toggle-wrapper">
