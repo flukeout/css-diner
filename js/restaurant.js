@@ -170,17 +170,21 @@ function addAnimation(el, className){
   })
 }
 
-// Reset all progress!
-// Should also scroll the menu to the top...
+// Reset all progress
+// * Removes checkmarks from level header and list
+// * Scrolls level menu to top
+// * Resets the progress object
+
 function resetProgress(){
   currentLevel = 0;
   progress = blankProgress;
   localStorage.setItem("progress",JSON.stringify(progress));
+  finished = false;
 
   $(".completed").removeClass("completed");
   loadLevel();
-  closeMenu(); // what does it do??
-  $("#mCSB_2_container").css("top",0); // weird scroll reset - because of the
+  closeMenu();
+  $("#mCSB_2_container").css("top",0); // Strange element to reset scroll due to scroll plugin
 }
 
 
@@ -197,6 +201,9 @@ function checkCompleted(levelNumber){
     return false;
   }
 }
+
+
+// Builds the slide-out level menu
 
 function buildLevelmenu(){
   for(var i = 0; i < levels.length; i++){
@@ -226,6 +233,10 @@ function openMenu(){
   $(".right-col").addClass("menu-open");
 }
 
+
+// Hides & shows the tooltip that appears when an eleemnt
+// on the table or the editor is hovered over.
+
 function hideTooltip(){
   $(".enhance").removeClass("enhance");
   $("[data-hovered]").removeAttr("data-hovered");
@@ -233,9 +244,8 @@ function hideTooltip(){
 }
 
 function showTooltip(el){
-
   if(finished){
-    return;
+    return; // Only show tooltip if the game isn't finished yet
   }
 
   el.attr("data-hovered",true);

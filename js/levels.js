@@ -569,10 +569,10 @@ var levels = [
     doThis : "Select the items for someone",
     selector : "[for]",
     syntax: "[attribute]",
-    help : "It does not matter what the value of the attribute is, it can even be blank.",
+    help : 'Attributes appear inside the opening tag of an element, like this: <tag>span attribute="value"</tag>. An attribute does not always have a value, it can be blank!',
     examples : [
       '<strong>a[href]</strong> selects all <tag>a</tag> elements that have a <strong>href="anything"</strong> attribute.',
-      '<strong>[id]</strong> selects all elements that have a <strong>href="anything"</strong>. attribute'
+      '<strong>[type]</strong> selects all elements that have a <strong>type="anything"</strong>. attribute'
     ],
     boardMarkup:`
     <bento><apple class="small"/></bento>
@@ -587,7 +587,7 @@ var levels = [
     doThis : "Select the plates for someone",
     selector : "plate[for]",
     syntax: "A[attribute]",
-    help : "You can combine the attribute selector with other selectors, like the tag name selector.",
+    help : "Combine the attribute selector with another selector (like the tag name selector) by adding it to the end.",
     examples : [
       '<strong>[value]</strong> selects all elements that have a <strong>value="anything"</strong> attribute.',
       '<strong>a[href]</strong> selects all <tag>a</tag> elements that have a <strong>href="anything"</strong> attribute.',
@@ -605,8 +605,8 @@ var levels = [
     helpTitle: "Select all elements that have a specific attribute value",
     doThis : "Select Vitaly's meal",
     selector : "[for=Vitaly]",
-    syntax: "A[attribute=value]",
-    help : "You can combine the attribute selector with other selectors, like the tag name selector.",
+    syntax: "[attribute=value]",
+    help : "Attribute selectors are case sensitive, each character must match exactly.",
     examples : [
       '<strong>input[type=checkbox]</strong> selects all checkbox input elements.'
     ],
@@ -623,9 +623,9 @@ var levels = [
     doThis : "Select the items for names that start with 'Sa'",
     selector : "[for^='Sa']",
     syntax: "[attribute^=value]",
-    help : 'Attribute selectors are case sensitive, each character must match exactly.',
+    help : "You can use quotes around the value in the selector, or not&mdash;it's optional!",
     examples : [
-      '<strong>.toy[category^=Swim]</strong> selects elements with class <strong>toy</strong> and either <strong>category="Swimwear</strong> or <strong>category="Swimming</strong>".'
+      '<strong>.toy[category^=Swim]</strong> selects elements with class <strong>toy</strong> and either <strong>category="Swimwear</strong> or <strong>category="Swimming"</strong>.'
     ],
     boardMarkup: `
     <plate for="Sam"><pickle/></plate>

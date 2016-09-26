@@ -1,12 +1,8 @@
-##To-do
+##Left-off
 
-**QA b4 Launch**
+**QA B4 LAUNCH (Still in progress)**
   * Check to make sure all levels work
   * Check that examples are correct
-  * QA the reset - it's wiggin out yo? is it????
-
-
-
 
 ##Feature Ideas
 
@@ -15,7 +11,6 @@
 * Email signup via mailchimp
 * Do more work to figure out who has already been there, treat them a bit differently?
   * "Welcome back et."
-
 
 **Gameplay**
 
@@ -28,7 +23,6 @@
   * Add a new one every week
   * Gives me a reason to bring people back
 
-
 **Fun sfuff**
 
 * Some kind of bonus level
@@ -36,67 +30,23 @@
   * Can have different food items
   * Or a special riddle that they get two shots on
 
-
 **Aesthetic Cleanup**
 
 * Color the hover border according to the element hovered and context
   * Apples have a red border...
 
+**Branding**
 
-**Final Attrib Rules**
-* has attribute
-* attribute value = something
-* attribute starts with
-* attribute ends with
-
-
-**TO-DO**
-
-* Pull jquery from CDN?
-* Refactor
+* Pull jquery from CDN
 * Figure out CNAME setup for github
   * Would be cool for it to always show up as cssdiner.com
-* Figure out next steps to increase reach and use
-  * Email signup?
-  * Dedicated twitter account?
-* Figure out next steps to improve product
-  * More selectors
-  * More levels per selector
-
 
 **Questions**
 
-  * How to test completion of twitter actions?
-  * How to track where it's being shared already?
-    * Sharetally, or something similar?
+* Is it possible to track where & how the diner is being shared?
+  * Sharetally, or something similar?
 
-
-What kind of new content could I have?
-
-* Special riddle mode?
-* Create a challenge mode?
-* Sandbox mode
-* New levels
-
-
-**Attribute selectors**
-
-* has attribute [for]
-* has an attribute with exact value
-  * ``[for=bob]``
-* has an attribute that starts with
-  * ``[for^=bob]``
-* has an attribute that contains
-  * ``[for*=bob]``
-* has an attribute that ends with
-  * ``[for$=bob]``
-* has this value in a list of space-separated attributes ``for="bob mary"``
-  * ``[for~=bob]``
-* has this value in a list of dash separated attributes ``for="bob-mary"``
-  * ``[for~=bob]``
-
-
-####Figuring out hard levels
+**Tracking where people have trouble**
 
 * Figure out how best to track which levels are the hardest
   * Current proposed method is by tracking incorrect guess counts per level
