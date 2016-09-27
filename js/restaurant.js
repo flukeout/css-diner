@@ -13,15 +13,6 @@
 
 var level;  // Holds current level info
 var currentLevel = parseInt(localStorage.currentLevel,10) || 0; // Keeps track of the current level Number (0 is level 1)
-
-// Check to see if current level is possible
-// We probably shouldn't do this here..
-if(currentLevel < 0) {
-  currentLevel = 0;
-} else if (currentLevel >= levels.length) {
-  currentLevel = levels.length - 1;
-}
-
 var levelTimeout = 1000; // Delay between levels after completing
 var finished = false;    // Keeps track if the game is showing the Your Rock! screen (so that tooltips can be disabled)
 
@@ -32,7 +23,9 @@ var blankProgress = {
   guessHistory : {}
 }
 
-var progress = JSON.parse(localStorage.getItem("progress")) || blankProgress; // Gets progress from localStorage
+// Get progress from localStorage, or start from scratch if we don't have any
+var progress = JSON.parse(localStorage.getItem("progress")) || blankProgress;
+
 
 $(document).ready(function(){
 
@@ -610,8 +603,8 @@ function addNametags(){
 
 
 function loadLevel(){
-  // Make sure we dont' load something out of range
-  if(currentLevel < 0 || currentLevel > levels.length - 1) {
+  // Make sure we don't load a level we don't have
+  if(currentLevel < 0 || currentLevel >= levels.length) {
     currentLevel = 0;
   }
 

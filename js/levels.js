@@ -7,8 +7,8 @@ var levels = [
     syntax : "A",
     help : "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
     examples : [
-      '<strong>div</strong> will select all <tag>div</tag> elements.',
-      '<strong>p</strong> will select all <tag>p</tag> elements.',
+      '<strong>div</strong> selects all <tag>div</tag> elements.',
+      '<strong>p</strong> selects all <tag>p</tag> elements.',
     ],
     boardMarkup: `
     <plate/>
@@ -23,8 +23,8 @@ var levels = [
     selectorName : "Type Selector",
     help : "Selects all elements of type <strong>A</strong>. Type refers to the type of tag, so <tag>div</tag>, <tag>p</tag> and <tag>ul</tag> are all different element types.",
     examples : [
-      '<strong>div</strong> will select all <tag>div</tag> elements.',
-      '<strong>p</strong> will select all <tag>p</tag> elements.',
+      '<strong>div</strong> selects all <tag>div</tag> elements.',
+      '<strong>p</strong> selects all <tag>p</tag> elements.',
     ],
     boardMarkup: `
     <bento/>
@@ -40,8 +40,8 @@ var levels = [
     syntax: "#id",
     help : 'Selects the element with a specific <strong>id</strong>. You can also combine the ID selector with the type selector.',
     examples : [
-      '<strong>#cool</strong> will select any element with <strong>id="cool"</strong>',
-      '<strong>ul#long</strong> will select <tag>ul id="long"</tag>'
+      '<strong>#cool</strong> selects any element with <strong>id="cool"</strong>',
+      '<strong>ul#long</strong> selects <tag>ul id="long"</tag>'
     ],
     boardMarkup : `
     <plate id="fancy"/>
@@ -57,8 +57,8 @@ var levels = [
     syntax: "A&nbsp;&nbsp;B",
     help : "Selects all <strong>B</strong> inside of <strong>A</strong>. <strong>B</strong> is called a descendant because it is inside of another element.",
     examples : [
-      '<strong>p&nbsp;&nbsp;strong</strong> will select all <tag>strong</tag> elements that are inside of any <tag>p</tag>',
-      '<strong>#fancy&nbsp;&nbsp;span</strong> will select any <tag>span</tag> elements that are inside of the element with <strong>id="fancy"</strong>',
+      '<strong>p&nbsp;&nbsp;strong</strong> selects all <tag>strong</tag> elements that are inside of any <tag>p</tag>',
+      '<strong>#fancy&nbsp;&nbsp;span</strong> selects any <tag>span</tag> elements that are inside of the element with <strong>id="fancy"</strong>',
     ],
     boardMarkup : `
     <bento/>
@@ -75,7 +75,7 @@ var levels = [
     syntax: "#id&nbsp;&nbsp;A",
     help : 'You can combine any selector with the descendent selector.',
     examples : [
-      '<strong>#cool&nbsp;span</strong> will select all <tag>span</tag> elements that are inside of elements with <strong>id="cool"</strong>'
+      '<strong>#cool&nbsp;span</strong> selects all <tag>span</tag> elements that are inside of elements with <strong>id="cool"</strong>'
     ],
     boardMarkup : `
     <bento>
@@ -115,8 +115,8 @@ var levels = [
     syntax: "A.className",
     help : 'You can combine the class selector with other selectors, like the type selector.',
     examples : [
-      '<strong>ul.important</strong> will select all <tag>ul</tag> elements that have <strong>class="important"</strong>',
-      '<strong>#big.wide</strong> will select all elements with <strong>id="big"</strong> that also have <strong>class="wide"</strong>'
+      '<strong>ul.important</strong> selects all <tag>ul</tag> elements that have <strong>class="important"</strong>',
+      '<strong>#big.wide</strong> selects all elements with <strong>id="big"</strong> that also have <strong>class="wide"</strong>'
     ],
     boardMarkup :`
     <apple/>
@@ -159,10 +159,10 @@ var levels = [
     selectorName : "Comma Combinator",
     helpTitle: "Combine, selectors, with... commas!",
     syntax : "A, B",
-    help : 'Thanks to Shatner technology, this will select all <strong>A</strong> and <strong>B</strong> elements. You can combine any selectors this way, and you can specify more than two.',
+    help : 'Thanks to Shatner technology, this selects all <strong>A</strong> and <strong>B</strong> elements. You can combine any selectors this way, and you can specify more than two.',
     examples: [
-    '<strong>p, .fun</strong> will select all <tag>p</tag> elements as well as all elements with <strong>class="fun"</strong>',
-    '<strong>a, p, div</strong> will select all <tag>a</tag>, <tag>p</tag> and <tag>div</tag> elements'
+    '<strong>p, .fun</strong> selects all <tag>p</tag> elements as well as all elements with <strong>class="fun"</strong>',
+    '<strong>a, p, div</strong> selects all <tag>a</tag>, <tag>p</tag> and <tag>div</tag> elements'
     ],
     boardMarkup : `
     <pickle class="small"/>
@@ -188,7 +188,7 @@ var levels = [
     syntax : "*",
     help : 'You can select all elements with the universal selector! ',
     examples : [
-      '<strong>p *</strong> will select any element inside all <tag>p</tag> elements.',
+      '<strong>p *</strong> selects any element inside all <tag>p</tag> elements.',
     ],
     boardMarkup : `
     <apple/>
@@ -207,10 +207,10 @@ var levels = [
     selector : "plate *",
     syntax : "A&nbsp;&nbsp;*",
     helpTitle: "Combine the Universal Selector",
-    help : 'This will select all elements inside of <strong>A</strong>.',
+    help : 'This selects all elements inside of <strong>A</strong>.',
     examples : [
-      '<strong>p *</strong> will select every element inside all <tag>p</tag> elements.',
-      '<strong>ul.fancy *</strong> will select every element inside all <tag>ul class="fancy"</tag> elements.'
+      '<strong>p *</strong> selects every element inside all <tag>p</tag> elements.',
+      '<strong>ul.fancy *</strong> selects every element inside all <tag>ul class="fancy"</tag> elements.'
     ],
     boardMarkup: `
     <plate id="fancy">
@@ -232,8 +232,8 @@ var levels = [
     syntax : "A + B",
     help : "This selects all <strong>B</strong> elements that directly follow <strong>A</strong>. Elements that follow one another are called siblings. They're on the same level, or depth. <br/><br/>In the HTML markup for this level, elements that have the same indentation are siblings.",
     examples : [
-      '<strong>p + .intro</strong> will select every element with <strong>class="intro"</strong> that directly follows a <tag>p</tag>',
-      '<strong>div + a</strong> will select every <tag>a</tag> element that directly follows a <tag>div</tag>'
+      '<strong>p + .intro</strong> selects every element with <strong>class="intro"</strong> that directly follows a <tag>p</tag>',
+      '<strong>div + a</strong> selects every <tag>a</tag> element that directly follows a <tag>div</tag>'
     ],
     boardMarkup : `
     <bento>
@@ -255,7 +255,7 @@ var levels = [
     selector : "bento ~ pickle",
     help : "You can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elements instead of one.",
     examples : [
-      '<strong>A ~ B</strong> will select all <strong>B</strong> that follow a <strong>A</strong>'
+      '<strong>A ~ B</strong> selects all <strong>B</strong> that follow a <strong>A</strong>'
     ],
     boardMarkup : `
     <pickle/>
@@ -280,7 +280,7 @@ var levels = [
     helpTitle: "Select direct children of an element",
     help : "You can select elements that are direct children of other elements. A child element is any element that is nested directly in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
     examples : [
-      '<strong>A > B</strong> will select all <strong>B</strong> that are a direct children <strong>A</strong>'
+      '<strong>A > B</strong> selects all <strong>B</strong> that are a direct children <strong>A</strong>'
     ],
     boardMarkup: `
     <plate>
@@ -594,10 +594,10 @@ var levels = [
       '<strong>input[disabled]</strong> selects all <tag>input</tag>strong> elements with the <strong>disabled</strong> attribute'
     ],
     boardMarkup:`
-    <plate for="Steve"><pickle/></plate>
+    <plate for="Sarah"><pickle/></plate>
     <plate for="Luke"><apple/></plate>
     <plate/>
-    <bento for="Sarah"><orange/></bento>
+    <bento for="Steve"><orange/></bento>
     `
   },
   {
@@ -605,10 +605,10 @@ var levels = [
     helpTitle: "Select all elements that have a specific attribute value",
     doThis : "Select Vitaly's meal",
     selector : "[for=Vitaly]",
-    syntax: "[attribute=value]",
+    syntax: '[attribute="value"]',
     help : "Attribute selectors are case sensitive, each character must match exactly.",
     examples : [
-      '<strong>input[type=checkbox]</strong> selects all checkbox input elements.'
+      '<strong>input[type="checkbox"]</strong> selects all checkbox input elements.'
     ],
     boardMarkup:`
     <apple for="Alexei" />
@@ -621,11 +621,11 @@ var levels = [
     selectorName: "Attribute Starts With Selector",
     helpTitle: "Select all elements with an attribute value that starts with specific characters",
     doThis : "Select the items for names that start with 'Sa'",
-    selector : "[for^='Sa']",
-    syntax: "[attribute^=value]",
-    help : "You can use quotes around the value in the selector, or not&mdash;it's optional!",
+    selector : '[for^="Sa"]',
+    syntax: '[attribute^="value"]',
+    // help : "You can use quotes around the value in the selector, or not&mdash;it's optional!",
     examples : [
-      '<strong>.toy[category^=Swim]</strong> selects elements with class <strong>toy</strong> and either <strong>category="Swimwear</strong> or <strong>category="Swimming"</strong>.'
+      '<strong>.toy[category^="Swim"]</strong> selects elements with class <strong>toy</strong> and either <strong>category="Swimwear</strong> or <strong>category="Swimming"</strong>.'
     ],
     boardMarkup: `
     <plate for="Sam"><pickle/></plate>
@@ -637,11 +637,11 @@ var levels = [
     selectorName: "Attribute Ends With Selector",
     helpTitle: "Select all elements with an attribute value that ends with specific characters",
     doThis : "Select the items for names that end with 'ato'",
-    selector : "[for$='ato']",
-    syntax: "[attribute$=value]",
+    selector : '[for$="ato"]',
+    syntax: '[attribute$="value"]',
     help : '',
     examples : [
-      '<strong>img[src$=.jpg]</strong> selects all images display a <strong>.jpg</strong> image.',
+      '<strong>img[src$=".jpg"]</strong> selects all images display a <strong>.jpg</strong> image.',
     ],
     boardMarkup:`
     <apple class="small"/>
@@ -653,13 +653,14 @@ var levels = [
   },
   {
     selectorName: "Attribute Wildcard Selector",
-    helpTitle: "Select all elements with an attribute value that ends contains specific characters",
-    syntax: "[attribute*=value]",
+    helpTitle: "Select all elements with an attribute value that contains specific characters anywhere",
+    syntax: '[attribute*="value"]',
     doThis : "Select the meals for names that contain 'obb'",
-    selector : "[for*='obb']",
-    help : '',
+    selector : '[for*="obb"]',
+    help : 'Useful if you can identify a common pattern in things like <strong>class</strong>, <strong>href</strong> or <strong>src</strong> attributes.',
     examples : [
-      '<strong>:not(#fancy)</strong> selects all elements that do not have <strong>id="fancy"</strong>.'
+      '<strong>img[src*="/thumbnails/"]</strong> selects all image selements that show images from the "thumbnails" folder.',
+      '<strong>[class*="heading"]</strong> selects all elements with "heading" in their class, like <strong>class="main-heading"</strong> and <strong>class="sub-heading"</strong>'
     ],
     boardMarkup:`
     <bento for="Robbie"><apple /></bento>
