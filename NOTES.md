@@ -6,6 +6,16 @@
 
 ##Feature Ideas
 
+**Notes & Thoughts**
+
+* I should present even and odd stuff better
+  * Right now it's in nth-of-type, but would work better in nth-child maybe?
+  * :nth-child(even) is a thing
+* Divide the levels into groups?
+  * Is it daunting? Too many levels?
+
+----- ^ Prioritize this stuff later ------------------------------------------------
+
 **Social & Engagemnt**
 
 * Email signup via mailchimp

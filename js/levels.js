@@ -393,7 +393,7 @@ var levels = [
     selectorName: "Nth Last Child Selector",
     helpTitle: "Select an element by its order in another element, counting from the back",
     doThis : "Select the 1st bento",
-    selector : "bento:nth-last-child(4)",
+    selector : "bento:nth-last-child(3)",
     syntax: ":nth-last-child(A)",
     help : "Selects the children from the bottom of the parent. This is like nth-child, but counting from the back!",
     examples : [
@@ -402,7 +402,6 @@ var levels = [
     boardMarkup: `
     <plate/>
     <bento/>
-    <apple class="small"/>
     <plate>
       <orange/>
       <orange/>
@@ -657,7 +656,7 @@ var levels = [
     syntax: '[attribute*="value"]',
     doThis : "Select the meals for names that contain 'obb'",
     selector : '[for*="obb"]',
-    help : 'Useful if you can identify a common pattern in things like <strong>class</strong>, <strong>href</strong> or <strong>src</strong> attributes.',
+    help : 'A useful selector if you can identify a common pattern in things like <strong>class</strong>, <strong>href</strong> or <strong>src</strong> attributes.',
     examples : [
       '<strong>img[src*="/thumbnails/"]</strong> selects all image selements that show images from the "thumbnails" folder.',
       '<strong>[class*="heading"]</strong> selects all elements with "heading" in their class, like <strong>class="main-heading"</strong> and <strong>class="sub-heading"</strong>'
