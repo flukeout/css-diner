@@ -1,8 +1,10 @@
 ##Left-off
 
-**QA B4 LAUNCH (Still in progress)**
-  * Check to make sure all levels work
-  * Check that examples are correct
+**To-do**
+* Highlight the 'syntax' better? It wasn't really that useful for Sarah
+  * The A + B stuff, not sure if it's relatable enough
+  * The examples are better anyway
+
 
 ##Feature Ideas
 

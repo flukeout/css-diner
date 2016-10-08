@@ -251,7 +251,7 @@ var levels = [
     selectorName: "General Sibling Selector",
     helpTitle: "Select elements that follows another element",
     syntax: "A ~ B",
-    doThis : "Select every pickle to the right of the bento",
+    doThis : "Select the pickles beside the bento",
     selector : "bento ~ pickle",
     help : "You can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elements instead of one.",
     examples : [
