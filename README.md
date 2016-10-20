@@ -1,6 +1,6 @@
 #Welcome to CSS Diner
 
-It's a fun game to learn and pracdtice CSS selectors.
+It's a fun game to learn and practice CSS selectors.
 
 To play, visit [flukeout.github.io](http://flukeout.github.io/) or [cssdiner.com](http://cssdiner.com/)
 
