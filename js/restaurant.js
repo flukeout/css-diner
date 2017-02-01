@@ -547,7 +547,7 @@ function getMarkup(el){
     $(el.children).each(function(i,el){
       wrapperEl.append(getMarkup(el));
     });
-    wrapperEl.append("&lt;" + elName +  "/&gt;");
+    wrapperEl.append("&lt;/" + elName +  "&gt;");
   } else {
     wrapperEl.text("<" + elName + attributeSpace + attributeString + "/>");
   }
