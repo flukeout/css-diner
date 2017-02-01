@@ -300,7 +300,7 @@ bento:before {
 .editor .file-window {
   padding: 10px 10px 10px 46px;
   position: relative;
-  min-height: 432px;
+  min-height: 335px;
 }
 
 .editor .css-view {
