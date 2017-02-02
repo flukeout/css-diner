@@ -590,7 +590,7 @@ var levels = [
     examples : [
       '<strong>[value]</strong> selects all elements that have a <strong>value="anything"</strong> attribute.',
       '<strong>a[href]</strong> selects all <tag>a</tag> elements that have a <strong>href="anything"</strong> attribute.',
-      '<strong>input[disabled]</strong> selects all <tag>input</tag>strong> elements with the <strong>disabled</strong> attribute'
+      '<strong>input[disabled]</strong> selects all <tag>input</tag> elements with the <strong>disabled</strong> attribute'
     ],
     boardMarkup:`
     <plate for="Sarah"><pickle/></plate>
