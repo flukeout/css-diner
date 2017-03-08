@@ -658,7 +658,7 @@ var levels = [
     selector : '[for*="obb"]',
     help : 'A useful selector if you can identify a common pattern in things like <strong>class</strong>, <strong>href</strong> or <strong>src</strong> attributes.',
     examples : [
-      '<strong>img[src*="/thumbnails/"]</strong> selects all image selements that show images from the "thumbnails" folder.',
+      '<strong>img[src*="/thumbnails/"]</strong> selects all image elements that show images from the "thumbnails" folder.',
       '<strong>[class*="heading"]</strong> selects all elements with "heading" in their class, like <strong>class="main-heading"</strong> and <strong>class="sub-heading"</strong>'
     ],
     boardMarkup:`
