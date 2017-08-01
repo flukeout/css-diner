@@ -43,7 +43,7 @@ This is more of a note to myself in case I forget, to deploy the latest version,
 
 **Potential Features & Improvements**
 
-* Lots of people have trouble with level 19, how should I adress this?
+* Lots of people have trouble with level 19, how should I address this?
 * Create levels for attribute selectors
   * Will probably add attributes like ``customer='bob'`` and place a little nametag by those dishes
   * Also some great ideas in [this issue](https://github.com/flukeout/css-diner/issues/91)
