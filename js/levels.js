@@ -51,7 +51,7 @@ var levels = [
   },
   {
     helpTitle: "Select an element inside another element",
-    selectorName : "Descendant Selector",
+    selectorName : "Descendant Combinator",
     doThis : "Select the apple on the plate",
     selector : "plate apple",
     syntax: "A&nbsp;&nbsp;B",
@@ -71,9 +71,9 @@ var levels = [
   {
     doThis : "Select the pickle on the fancy plate",
     selector : "#fancy pickle",
-    helpTitle: "Combine the Descendant & ID Selectors",
+    helpTitle: "Combine the Descendant Combinator & ID Selector",
     syntax: "#id&nbsp;&nbsp;A",
-    help : 'You can combine any selector with the descendent selector.',
+    help : 'You can combine any selector with the descendent combinator.',
     examples : [
       '<strong>#cool&nbsp;span</strong> selects all <tag>span</tag> elements that are inside of elements with <strong>id="cool"</strong>'
     ],
@@ -97,7 +97,7 @@ var levels = [
     syntax: ".classname",
     help : 'The class selector selects all elements with that class attribute. Elements can only have one ID, but many classes.',
     examples : [
-    '<strong>.neato</strong> selects all elements with <strong>class="neato"</strong>'
+    '<strong>.neato</strong> selects all elements with <strong>class="neato"</strong> but also elements with <strong>class="fancy neato hamburger"</strong>'
     ],
     boardMarkup : `
     <apple/>
@@ -188,7 +188,7 @@ var levels = [
     syntax : "*",
     help : 'You can select all elements with the universal selector! ',
     examples : [
-      '<strong>p *</strong> selects any element inside all <tag>p</tag> elements.',
+      '<strong>*</strong> selects all elements on the page'
     ],
     boardMarkup : `
     <apple/>
@@ -297,13 +297,13 @@ var levels = [
     `
   },
   {
-    selectorName: "First Child Pseudo-selector",
+    selectorName: "First Child Pseudo-class",
     helpTitle: "Select a first child element inside of another element",
     doThis : "Select the top orange",
     selector : "plate :first-child",
     syntax: ":first-child",
 
-    help : "You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-selector with other selectors.",
+    help : "You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-class with other selectors.",
     examples : [
       '<strong>:first-child</strong> selects all first child elements.',
       '<strong>p:first-child</strong> selects all first child <tag>p</tag> elements.',
@@ -321,15 +321,15 @@ var levels = [
     `
   },
   {
-    selectorName: "Only Child Pseudo-selector",
-    helpTitle: "Select an element that are the only element inside of another one.",
+    selectorName: "Only Child Pseudo-class",
+    helpTitle: "Select an element that is the only element inside its parent.",
     doThis : "Select the apple and the pickle on the plates",
     selector : "plate :only-child",
     syntax: ":only-child",
-    help : "You can select any element that is the only element inside of another one.",
+    help : "You can select any element that is the only element inside its parent.",
     examples : [
       '<strong>span:only-child</strong> selects the <tag>span</tag> elements that are the only child of some other element.',
-      '<strong>ul li:only-child</strong> selects the only <tag>li</tag> element that are in a <tag>ul</tag>.'
+      '<strong>ul li:only-child</strong> selects the <tag>li</tag> elements in unordered lists with only 1 item.'
     ],
     boardMarkup : `
     <plate>
@@ -349,7 +349,7 @@ var levels = [
     `
   },
   {
-    selectorName: "Last Child Pseudo-selector",
+    selectorName: "Last Child Pseudo-class",
     helpTitle: "Select the last element inside of another element",
     doThis : "Select the small apple and the pickle",
     selector : ".small:last-child",
@@ -372,7 +372,7 @@ var levels = [
     <pickle class="small"/>`
   },
   {
-    selectorName: "Nth Child Pseudo-selector",
+    selectorName: "Nth Child Pseudo-class",
     helpTitle: "Select an element by its order in another element",
     doThis : "Select the 3rd plate",
     selector : ":nth-child(3)",
@@ -390,8 +390,8 @@ var levels = [
     `
   },
   {
-    selectorName: "Nth Last Child Selector",
-    helpTitle: "Select an element by its order in another element, counting from the back",
+    selectorName: "Nth Last Child Pseudo-class",
+    helpTitle: "Select an element by its order in another element, counting from the end",
     doThis : "Select the 1st bento",
     selector : "bento:nth-last-child(3)",
     syntax: ":nth-last-child(A)",
@@ -411,7 +411,7 @@ var levels = [
     `
   },
   {
-    selectorName: "First of Type Selector",
+    selectorName: "First of Type Pseudo-class",
     helpTitle: "Select the first element of a specific type",
     doThis : "Select first apple",
     selector : "apple:first-of-type",
@@ -433,11 +433,11 @@ var levels = [
     `
   },
   {
-    selectorName: "Nth of Type Selector",
+    selectorName: "Nth of Type Pseudo-class",
     doThis: "Select all even plates",
     selector: "plate:nth-of-type(even)",
     syntax: ":nth-of-type(A)",
-    help: "Selects a specific element based on its type and order in another element - or even or odd instances of that element.",
+    help: "Selects a specific element based on its order amongst siblings of the same type - or even or odd instances of that element.",
     examples: [
       '<strong>div:nth-of-type(2)</strong> selects the second instance of a div.',
       '<strong>.example:nth-of-type(odd)</strong> selects all odd instances of a the example class.'
@@ -456,7 +456,7 @@ var levels = [
     doThis: "Select every 2nd plate, starting from the 3rd",
     selector: "plate:nth-of-type(2n+3)",
     syntax: ":nth-of-type(An+B)",
-    help: "The nth-of-type formula selects every nth element, starting the count at a specific instance of that element.",
+    help: "The nth-of-type formula selects every (An+B)th element, where n = 0, 1, 2, 3,...",
     examples: [
       '<strong>span:nth-of-type(6n+2)</strong> selects every 6th instance of a <tag>span</tag>, starting from (and including) the second instance.'
     ],
@@ -476,7 +476,7 @@ var levels = [
     `
   },
   {
-    selectorName: "Only of Type Selector",
+    selectorName: "Only of Type Pseudo-class",
     helpTitle: "Select elements that are the only ones of their type within their parent element",
     selector : "apple:only-of-type",
     syntax: ":only-of-type",
@@ -499,7 +499,7 @@ var levels = [
     `
   },
   {
-    selectorName: "Last of Type Selector",
+    selectorName: "Last of Type Pseudo-class",
     helpTitle: "Select the last element of a specific type",
     doThis : "Select the last apple and orange",
     selector : ".small:last-of-type",
@@ -520,7 +520,7 @@ var levels = [
   },
   {
     selectorName: "Empty Selector",
-    helpTitle: "Select elements that don't have children",
+    helpTitle: "Select elements that are empty (they don’t have any children, not even whitespace or comments)",
     doThis : "Select the empty bentos",
     selector : "bento:empty",
     syntax: ":empty",
@@ -538,7 +538,7 @@ var levels = [
   },
   {
     selectorName: "Negation Pseudo-class",
-    helpTitle: "Select all elements that don't match the negation selector",
+    helpTitle: "Select all elements that don't match the argument",
     doThis : "Select the big apples",
     selector : "apple:not(.small)",
     syntax: ":not(X)",
