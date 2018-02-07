@@ -936,6 +936,7 @@ plate orange:nth-last-child(4)
 .left-col {
   width: calc(100% - 375px);
   text-align: center;
+  transition: width .3s ease-in-out;
   overflow-x: visible;
   position: fixed;
   top: 0;
@@ -948,6 +949,7 @@ plate orange:nth-last-child(4)
 
 .right-col {
   position: fixed;
+  transition: width .3s ease-in-out;
   width: 375px;
   right: 0;
 /*  overflow: auto;*/
@@ -1102,6 +1104,24 @@ plate orange:nth-last-child(4)
 .menu-open .level-menu-toggle:after {
   top: 10px;
   transform: rotate(-45deg);
+}
+
+.button-helper {
+  background: #2e2a23;
+  border-left: 3px solid #1B1813;
+  bottom: 0;
+  color: #1B1813;
+  font-size: 3em;
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.button-helper:hover {
+  background: #30291d;
+  color: #4e483c;
+  cursor: pointer;
 }
 
 .note {
@@ -1327,7 +1347,7 @@ tag:after {
   text-align: center;
   text-decoration: none;
   position: relative;
-  top: -20px;
+  top: -55px;
   border: solid 2px rgba(255,255,255,.2);
   box-sizing: border-box;
   width: calc(100% - 40px);

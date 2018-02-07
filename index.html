@@ -167,6 +167,8 @@ p {
         <div class="level-menu-toggle"></div>
       </div>
 
+      <div class="button-helper active">></div>
+
     </div><!-- /right-col -->
 
   <script>
@@ -181,6 +183,27 @@ p {
     } else {
       var ga = false;
     }
+
+    // Expandable side helper
+    $(".button-helper").click(function() {
+      var hDivs = $(".help-wrapper, .level-menu-toggle-wrapper, .level-menu");
+      var lCol = $(".left-col");
+      var rCol = $(".right-col");
+      var hButton = $(".button-helper");
+
+      if ( $(".button-helper.active").length == "1" ) {
+        rCol.css('width', '4%');
+        hDivs.hide();
+        lCol.css('width', '96%');
+        hButton.text('<');
+      } else {
+        rCol.css('width', '375px');
+        hDivs.show();
+        lCol.css('width', 'calc(100% - 375px)');
+        hButton.text('>');
+      }
+      hButton.toggleClass('active');
+    });
   </script>
 
   </body>
