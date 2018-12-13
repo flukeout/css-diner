@@ -300,7 +300,7 @@ bento:before {
 .editor .file-window {
   padding: 10px 10px 10px 46px;
   position: relative;
-  min-height: 432px;
+  min-height: 335px;
 }
 
 .editor .css-view {
@@ -1192,7 +1192,7 @@ plate orange:nth-last-child(4)
   width: 30px;
   display: inline-block;
   opacity: .25;
-  transition: opacity .2s .ease-out;
+  transition: opacity .2s ease-out;
 }
 
 .level-nav a:hover {

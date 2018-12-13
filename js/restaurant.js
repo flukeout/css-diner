@@ -132,10 +132,10 @@ $(document).ready(function(){
   });
 
   //Shows the tooltip on the table
-  $(".markup").on("mouseover","div *",function(e){
+  $(".markup").on("mouseover","*",function(e){
     el = $(this);
     var markupElements = $(".markup *");
-    var index = markupElements.index(el) -1;
+    var index = markupElements.index(el);
     showTooltip($(".table *").eq(index));
     e.stopPropagation();
   });
@@ -254,7 +254,7 @@ function showTooltip(el){
   var tableElements = $(".table *");
   var index = tableElements.index(el);
   var that = el;
-  $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
+  $(".markup *").eq(index).addClass("enhance").find("*").addClass("enhance");
 
   var helper = $(".helper");
 
@@ -578,7 +578,7 @@ function loadBoard(){
   $(".table *").addClass("pop");
 
 
-  $(".markup").html('<div>&ltdiv class="table"&gt' + markupHolder.html() + '&lt/div&gt</div>');
+  $(".markup").html(markupHolder.html());
 }
 
 // Adds nametags to the items on the table
