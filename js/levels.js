@@ -249,7 +249,7 @@ var levels = [
   },
   {
     selectorName: "General Sibling Selector",
-    helpTitle: "Select elements that follows another element",
+    helpTitle: "Select elements that follow another element",
     syntax: "A ~ B",
     doThis : "Select the pickles beside the bento",
     selector : "bento ~ pickle",
