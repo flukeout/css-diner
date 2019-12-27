@@ -280,7 +280,7 @@ var levels = [
     helpTitle: "Select direct children of an element",
     help : "You can select elements that are direct children of other elements. A child element is any element that is nested directly in another element. <br><br>Elements that are nested deeper than that are called descendant elements.",
     examples : [
-      '<strong>A > B</strong> selects all <strong>B</strong> that are a direct children <strong>A</strong>'
+      '<strong>A > B</strong> selects all <strong>B</strong> that are direct children of <strong>A</strong>'
     ],
     boardMarkup: `
     <plate>
