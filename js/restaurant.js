@@ -16,6 +16,12 @@ var currentLevel = parseInt(localStorage.currentLevel,10) || 0; // Keeps track o
 var levelTimeout = 1000; // Delay between levels after completing
 var finished = false;    // Keeps track if the game is showing the Your Rock! screen (so that tooltips can be disabled)
 
+// cssdiner.com/#14 => '#14' => '14' => 14
+let levelFromUrl = parseInt(location.hash.substring(1));
+if (!isNaN(levelFromUrl)) {
+  currentLevel = levelFromURL;
+}
+
 var blankProgress = {
   totalCorrect : 0,
   percentComplete : 0,
