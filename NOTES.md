@@ -47,4 +47,4 @@ What kind of new content could I have?
   * When the selector isn't blank
   * When the attempted selector isn't the exact same one tried before...
     * Don't want to count 10 attempts if someone just hits enter 10 times in a row
-  * Could just keep track of atttempted selectors and make sure it's unique
+  * Could just keep track of attempted selectors and make sure it's unique

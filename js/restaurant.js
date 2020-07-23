@@ -308,7 +308,7 @@ function fireRule(rule) {
   * Sean Nessworthy <sean@nessworthy.me>
   * On 03/17/14
   *
-  * Allow [div][.table] to preceed the answer.
+  * Allow [div][.table] to precede the answer.
   * Makes sense if div.table is going to be included in the HTML viewer
   * and users want to try and use it in their selectors.
   *

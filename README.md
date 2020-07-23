@@ -1,6 +1,6 @@
 #Welcome to CSS Diner
 
-It's a fun game to learn and pracdtice CSS selectors.
+It's a fun game to learn and practice CSS selectors.
 
 To play, visit [flukeout.github.io](http://flukeout.github.io/) or [cssdiner.com](http://cssdiner.com/)
 
@@ -31,7 +31,7 @@ Please file issues and PRs in the [css-diner repo](https://github.com/flukeout/c
 Here's the repo structure, it's a bit confusing...
 
 * Currently, all of the working code (including issues, PRs and in-progress branches) is hosted in the [css-diner repo](https://github.com/flukeout/css-diner/)
-  * The lastest version of the code is on the ``develop`` branch
+  * The latest version of the code is on the ``develop`` branch
 * The live version is published from the [flukeout.github.io repo](https://github.com/flukeout/flukeout.github.io/issues)
   * Live version lives on the ``master`` branch
 
@@ -43,7 +43,7 @@ This is more of a note to myself in case I forget, to deploy the latest version,
 
 **Potential Features & Improvements**
 
-* Lots of people have trouble with level 19, how should I adress this?
+* Lots of people have trouble with level 19, how should I address this?
 * Create levels for attribute selectors
   * Will probably add attributes like ``customer='bob'`` and place a little nametag by those dishes
   * Also some great ideas in [this issue](https://github.com/flukeout/css-diner/issues/91)
