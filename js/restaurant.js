@@ -262,8 +262,12 @@ function showTooltip(el){
   var tableElements = $(".table *");
   var index = tableElements.index(el);
   var that = el;
-  $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
-
+  if (index === -1) {
+    $(".markup > div").addClass("enhance").find("*").addClass("enhance");
+  } else {
+    $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
+  }
+  
   var helper = $(".helper");
 
   var pos = el.offset();
