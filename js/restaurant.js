@@ -386,7 +386,8 @@ function fireRule(rule) {
   * This resolves the  "Match all the things!" level from beheading the table too.
   * Relatedly, watching that happen made me nearly spill my drink.
   */
-
+  rule = rule.replace('.table', '');
+  
   // var baseTable = $('.table-wrapper > .table, .table-wrapper > .nametags, .table-wrapper > .table-surface');
   var baseTable = $('.table');
 
