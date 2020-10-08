@@ -126,6 +126,10 @@ $(document).ready(function(){
   });
 
   //Add tooltips
+  $(".table").on("mouseover",function(e){
+    e.stopPropagation();
+    showTooltip($(this));
+  });
   $(".table").on("mouseover","*",function(e){
     e.stopPropagation();
     showTooltip($(this));
@@ -146,6 +150,10 @@ $(document).ready(function(){
     hideTooltip();
   });
 
+  $(".table").on("mouseout", function(e){
+    hideTooltip();
+    e.stopPropagation();
+  });
   $(".table").on("mouseout","*", function(e){
     hideTooltip();
     e.stopPropagation();
@@ -254,8 +262,12 @@ function showTooltip(el){
   var tableElements = $(".table *");
   var index = tableElements.index(el);
   var that = el;
-  $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
-
+  if (index === -1) {
+    $(".markup > div").addClass("enhance").find("*").addClass("enhance");
+  } else {
+    $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
+  }
+  
   var helper = $(".helper");
 
   var pos = el.offset();
@@ -386,6 +398,7 @@ function fireRule(rule) {
   * This resolves the  "Match all the things!" level from beheading the table too.
   * Relatedly, watching that happen made me nearly spill my drink.
   */
+  rule = rule.replace('.table', '');
 
   // var baseTable = $('.table-wrapper > .table, .table-wrapper > .nametags, .table-wrapper > .table-surface');
   var baseTable = $('.table');
