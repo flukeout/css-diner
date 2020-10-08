@@ -126,6 +126,10 @@ $(document).ready(function(){
   });
 
   //Add tooltips
+  $(".table").on("mouseover",function(e){
+    e.stopPropagation();
+    showTooltip($(this));
+  });
   $(".table").on("mouseover","*",function(e){
     e.stopPropagation();
     showTooltip($(this));
@@ -146,6 +150,10 @@ $(document).ready(function(){
     hideTooltip();
   });
 
+  $(".table").on("mouseout", function(e){
+    hideTooltip();
+    e.stopPropagation();
+  });
   $(".table").on("mouseout","*", function(e){
     hideTooltip();
     e.stopPropagation();
@@ -387,7 +395,7 @@ function fireRule(rule) {
   * Relatedly, watching that happen made me nearly spill my drink.
   */
   rule = rule.replace('.table', '');
-  
+
   // var baseTable = $('.table-wrapper > .table, .table-wrapper > .nametags, .table-wrapper > .table-surface');
   var baseTable = $('.table');
 
