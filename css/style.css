@@ -177,7 +177,7 @@ header {
   right: 20px;
 }
 
-orange, apple, pickle, tray, plate {
+orange, apple, lemon, pickle, tray, plate {
   transition: transform ease-out .2s;
 }
 
@@ -199,8 +199,6 @@ orange, apple, pickle, tray, plate {
     transform: scale(1);
   }
 }
-
-
 
 
 .clean {
@@ -231,10 +229,11 @@ plate {
 
 tray {
   height: 100px;
-  background: brown;
+  background: #4ac21c;
   position: relative;
-  border: solid 3px #711c12;
-  border-width: 20px 2px;
+  border: solid 3px #166107;
+  border-top-color: #0b3805;
+  border-width: 15px 3px;
 }
 
 
@@ -249,6 +248,7 @@ plate tray {
 }
 
 plate tray apple,
+plate tray lemon,
 plate tray orange {
   top: -36px !important;
 }
@@ -390,38 +390,24 @@ apple {
   border-color: #ab1212;
 }
 
+lemon {
+  background: #ffee0e;
+  border-color: #637c1c;
+}
+
 orange {
   background: orange;
   border-color: #bd6e07;
 }
 
-orange,apple,pickle {
+orange,apple,lemon,pickle {
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   display: inline-block;
   margin: 0 10px;
   height: 60px;
 }
 
-
-
-carrot {
-  background: orange;
-  width: 60px;
-  height: 60px;
-  display: inline-block;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.15);
-
-  background: #f9e4ac;
-  border-style: solid;
-  border-color: #88611e;
-  border-width: 2px 2px 12px 2px;
-  -webkit-border-radius: 15px 15px 6px 6px;
-  border-radius: 15px 15px 6px 6px;
-  margin: 20px 10px;
-}
-
-
-orange,apple {
+orange,apple,lemon {
   -webkit-border-radius: 100px;
   border-radius: 100px;
   border-style: solid;
@@ -432,6 +418,12 @@ orange,apple {
   margin: 20px 10px;
 }
 
+lemon {
+  height: 50px;
+  width: 50px;
+  border-width: 2px 6px 12px 4px;
+}
+
 orange.small,
 apple.small {
   height: 30px;
@@ -439,6 +431,14 @@ apple.small {
   border-width: 2px 4px 8px 4px;
   margin: 30px 10px;
 }
+
+lemon.small {
+  height: 25px;
+  width: 25px;
+  border-width: 2px 4px 6px 3px;
+  margin: 25px 10px;
+}
+
 
 pickle {
   background: #179837;
@@ -458,7 +458,7 @@ pickle.small {
   margin: 30px 10px;
 }
 
-orange:before,apple:before {
+orange:before,apple:before,lemon:before {
   content: "";
   display: block;
   position: absolute;
@@ -473,8 +473,10 @@ orange:before,apple:before {
 /*FRUITS ON A PLATTER*/
 
 tray orange,
+tray lemon,
 tray apple,
 plate orange,
+plate lemon,
 plate apple
  {
   left: calc(50% - 30px);
@@ -482,9 +484,16 @@ plate apple
   position: absolute;
 }
 
+tray lemon,
+plate lemon {
+  margin: 6px;
+}
+
 plate > apple:last-child,
+plate > lemon:last-child,
 plate > orange:last-child,
 tray > apple:last-child,
+tray > lemon:last-child,
 tray > orange:last-child
 {
   top: calc(50% - 35px);
@@ -502,6 +511,11 @@ tray > .small:only-child {
   position: absolute;
   top: calc(50% - 15px);
   margin:0;
+}
+
+plate > lemon.small:only-child,
+tray > lemon.small:only-child {
+  margin:4px;
 }
 
 plate > pickle:only-child,
@@ -772,22 +786,26 @@ board {
 /* Fancy orange stacking */
 
 plate apple,
+plate lemon,
 plate orange {
   position: absolute;
 }
 
 plate apple:last-child,
+plate lemon:last-child,
 plate orange:last-child {
   z-index: 300;
 }
 
 plate apple:nth-last-child(2),
+plate lemon:nth-last-child(2),
 plate orange:nth-last-child(2) {
   top: -25px;
   z-index: 400;
 }
 
 plate apple:nth-last-child(3),
+plate lemon:nth-last-child(3),
 plate orange:nth-last-child(3)
 {
   top: -65px;
@@ -795,6 +813,7 @@ plate orange:nth-last-child(3)
 }
 
 plate apple:nth-last-child(4),
+plate lemon:nth-last-child(4),
 plate orange:nth-last-child(4)
 {
   top: -105px;
