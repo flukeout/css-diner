@@ -33,6 +33,7 @@ $(document).ready(function(){
 
     var type = $(this).attr("type");
 
+    // TODO: Update these values.. then un-hide
     if(type == "twitter"){
       var url = "https://twitter.com/intent/tweet?text=Learning%20CSS?%20Try%20CSS%20Diner,%20the%20fun%20way%20to%20practice%20selectors%20%E2%86%92&hashtags=css,cssdiner,webdev&url=http%3A%2F%2Fcssdiner.com%2F&via=flukeout";
     } else if (type == "facebook") {
@@ -44,7 +45,7 @@ $(document).ready(function(){
     PopupCenter(url, "title", 600, 450);
     sendEvent("share", type, "");
     return false;
-  });
+  }).hide();
 
   $(window).on("keydown",function(e){
     if(e.keyCode == 27) {
