@@ -93,26 +93,6 @@ header {
   animation-delay: 0s, .5s;
 }
 
-/*
-.logo plate {
-  z-index: 500;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  opacity: .5;
-  transition: all opacity .1s ease-out;
-}
-
-.logo:hover plate {
-  opacity: .75;
-  transform-origin: bottom;
-  animation: strobeStart .5s ease-out, strobe 1s infinite;
-  animation-delay: 0s, .5s;
-
-}
-*/
-
 .table-wrapper {
   margin-top: 10px;
   transform: rotateX(20deg);
@@ -236,8 +216,6 @@ tray {
   border-width: 15px 3px;
 }
 
-
-
 plate tray {
   height: 74px;
   width: 74px;
@@ -359,9 +337,14 @@ tray:before {
 
 .editor input.input-strobe {
   background: rgba(62,203,255,.3);
+  animation: input .5s infinite;
   -webkit-animation: input .5s infinite;
   -moz-animation: input .5s infinite;
 
+}
+
+@keyframes input {
+  50% { background:none ; }
 }
 
 @-webkit-keyframes input {
@@ -571,7 +554,6 @@ tray > pickle.small:only-child {
   100% {transform: skew(4deg,0deg) scaleX(1); }
 }
 
-
 .enter-button {
   background: #ddd;
   display: block;
@@ -623,12 +605,6 @@ tray > pickle.small:only-child {
 plate [data-hovered] {
   box-shadow: 0 0 0 6px rgba(0,0,0,.3);
 }
-
-/*
-apple[data-hovered="true"] {
-  box-shadow: 0 0 0 6px rgba(228,25,25,.3);
-}
-*/
 
 .helper {
   position: absolute;
@@ -899,6 +875,7 @@ plate orange:nth-last-child(4)
   width: 4px;
   border: solid 2px #2a231d;
   background: rgba(255,255,255,.5);
+  border-radius: 5px;
   -webkit-border-radius: 5px;
 }
 
@@ -1165,6 +1142,7 @@ plate orange:nth-last-child(4)
   background: rgba(0,0,0,.2);
   color: rgba(255,255,255,.3);
   padding: 8px 15px 10px 15px;
+  border-radius: 20px;
   -webkit-border-radius: 20px;
   text-decoration: none;
   display: inline-block;
@@ -1221,7 +1199,7 @@ plate orange:nth-last-child(4)
   width: 30px;
   display: inline-block;
   opacity: .25;
-  transition: opacity .2s .ease-out;
+  transition: opacity .2s ease-out;
 }
 
 .level-nav a:hover {
