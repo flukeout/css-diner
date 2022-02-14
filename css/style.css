@@ -27,9 +27,10 @@ h1, h2, h3, h4, h5 {
 }
 
 header {
-  padding: 12px 15px 11px 35px;
+  padding: 15px 15px 5px 50px;
   color: rgba(255,255,255,.3);
   text-align: left;
+  font-size: x-large;
 }
 
 .share-menu {
@@ -78,13 +79,21 @@ header {
 
 .logo {
   cursor: default;
-  transform: scale(.2);
+  transform: scale(2.0);
   position: absolute;
   top: 12px;
-  left: 10px;
+  left: 15px;
   color: rgba(255,255,255,.4);
 }
 
+.logo:hover div {
+  opacity: .75;
+  transform-origin: bottom;
+  animation: strobeStart .5s ease-out, strobe 1s infinite;
+  animation-delay: 0s, .5s;
+}
+
+/*
 .logo plate {
   z-index: 500;
   position: absolute;
@@ -102,6 +111,7 @@ header {
   animation-delay: 0s, .5s;
 
 }
+*/
 
 .table-wrapper {
   margin-top: 10px;
