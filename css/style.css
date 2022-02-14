@@ -177,7 +177,7 @@ header {
   right: 20px;
 }
 
-orange, apple, pickle, bento, plate {
+orange, apple, pickle, tray, plate {
   transition: transform ease-out .2s;
 }
 
@@ -213,7 +213,7 @@ orange, apple, pickle, bento, plate {
   100% { transform: translateY(-600px) rotate3d(0,0,0,0deg);}
 }
 
-bento, plate {
+tray, plate {
   box-shadow: 0px 8px 0px rgba(0,0,0,.1);
   display: inline-block;
   width: 100px;
@@ -229,7 +229,7 @@ plate {
   border-radius: 100px;
 }
 
-bento {
+tray {
   height: 100px;
   background: brown;
   position: relative;
@@ -239,7 +239,7 @@ bento {
 
 
 
-plate bento {
+plate tray {
   height: 74px;
   width: 74px;
   position: absolute;
@@ -248,12 +248,12 @@ plate bento {
 
 }
 
-plate bento apple,
-plate bento orange {
+plate tray apple,
+plate tray orange {
   top: -36px !important;
 }
 
-bento:before {
+tray:before {
   content:"";
   position: absolute;
   width: calc(100%);
@@ -472,8 +472,8 @@ orange:before,apple:before {
 
 /*FRUITS ON A PLATTER*/
 
-bento orange,
-bento apple,
+tray orange,
+tray apple,
 plate orange,
 plate apple
  {
@@ -484,28 +484,28 @@ plate apple
 
 plate > apple:last-child,
 plate > orange:last-child,
-bento > apple:last-child,
-bento > orange:last-child
+tray > apple:last-child,
+tray > orange:last-child
 {
   top: calc(50% - 35px);
 }
 
 plate .small,
-bento .small {
+tray .small {
   left: calc(50% - 15px);
   margin-left:0;
   margin-right:0;
 }
 
 plate > .small:only-child,
-bento > .small:only-child {
+tray > .small:only-child {
   position: absolute;
   top: calc(50% - 15px);
   margin:0;
 }
 
 plate > pickle:only-child,
-bento > pickle:only-child {
+tray > pickle:only-child {
   top: calc(50% - 40px);
   left: calc(50% - 10px);
   z-index: 99999;
@@ -514,7 +514,7 @@ bento > pickle:only-child {
 }
 
 plate > pickle.small:only-child,
-bento > pickle.small:only-child {
+tray > pickle.small:only-child {
   top: calc(50% - 22px);
   left: calc(50% - 8px);
   z-index: 99999;
