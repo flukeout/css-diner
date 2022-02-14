@@ -69,8 +69,8 @@ var levels = [
     `
   },
   {
-    doThis : "Select the pickle on the fancy plate",
-    selector : "#fancy pickle",
+    doThis : "Select the lemon on the fancy plate",
+    selector : "#fancy lemon",
     helpTitle: "Combine the Descendant & ID Selectors",
     syntax: "#id&nbsp;&nbsp;A",
     help : 'You can combine any selector with the descendent selector.',
@@ -82,10 +82,10 @@ var levels = [
     <orange/>
     </tray>
     <plate id="fancy">
-      <pickle/>
+      <lemon/>
     </plate>
     <plate>
-      <pickle/>
+      <lemon/>
     </plate>
     `
   },
@@ -165,19 +165,19 @@ var levels = [
     '<strong>a, p, div</strong> selects all <tag>a</tag>, <tag>p</tag> and <tag>div</tag> elements'
     ],
     boardMarkup : `
-    <pickle class="small"/>
-    <pickle/>
+    <lemon class="small"/>
+    <lemon/>
     <plate>
-      <pickle/>
+      <lemon/>
     </plate>
     <tray>
-      <pickle/>
+      <lemon/>
     </tray>
     <plate>
-      <pickle/>
+      <lemon/>
     </plate>
-    <pickle/>
-    <pickle class="small"/>
+    <lemon/>
+    <lemon class="small"/>
     `
   },
   {
@@ -217,7 +217,7 @@ var levels = [
       <orange class="small"/>
     </plate>
     <plate>
-      <pickle/>
+      <lemon/>
     </plate>
     <apple class="small"/>
     <plate>
@@ -251,24 +251,24 @@ var levels = [
     selectorName: "General Sibling Selector",
     helpTitle: "Select elements that follows another element",
     syntax: "A ~ B",
-    doThis : "Select the pickles beside the tray",
-    selector : "tray ~ pickle",
+    doThis : "Select the lemons beside the tray",
+    selector : "tray ~ lemon",
     help : "You can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elements instead of one.",
     examples : [
       '<strong>A ~ B</strong> selects all <strong>B</strong> that follow a <strong>A</strong>'
     ],
     boardMarkup : `
-    <pickle/>
+    <lemon/>
     <tray>
       <orange class="small"/>
     </tray>
-    <pickle class="small"/>
-    <pickle/>
+    <lemon class="small"/>
+    <lemon/>
     <plate>
-      <pickle/>
+      <lemon/>
     </plate>
     <plate>
-      <pickle class="small"/>
+      <lemon class="small"/>
     </plate>
     `
   },
@@ -317,13 +317,13 @@ var levels = [
       <orange />
       <orange />
     </plate>
-    <pickle class="small" />
+    <lemon class="small" />
     `
   },
   {
     selectorName: "Only Child Pseudo-selector",
     helpTitle: "Select an element that are the only element inside of another one.",
-    doThis : "Select the apple and the pickle on the plates",
+    doThis : "Select the apple and the lemon on the plates",
     selector : "plate :only-child",
     syntax: ":only-child",
     help : "You can select any element that is the only element inside of another one.",
@@ -336,22 +336,22 @@ var levels = [
       <apple/>
     </plate>
     <plate>
-      <pickle />
+      <lemon />
     </plate>
     <tray>
-      <pickle />
+      <lemon />
     </tray>
     <plate>
       <orange class="small"/>
       <orange/>
     </plate>
-    <pickle class="small"/>
+    <lemon class="small"/>
     `
   },
   {
     selectorName: "Last Child Pseudo-selector",
     helpTitle: "Select the last element inside of another element",
-    doThis : "Select the small apple and the pickle",
+    doThis : "Select the small apple and the lemon",
     selector : ".small:last-child",
     syntax: ":last-child",
     help : "You can use this selector to select an element that is the last child element inside of another element. <br><br>Pro Tip &rarr; In cases where there is only one element, that element counts as the first-child, only-child and last-child!",
@@ -369,7 +369,7 @@ var levels = [
       <orange class="small"/>
       <orange>
     </plate>
-    <pickle class="small"/>`
+    <lemon class="small"/>`
   },
   {
     selectorName: "Nth Child Pseudo-selector",
@@ -463,7 +463,7 @@ var levels = [
     boardMarkup : `
     <plate/>
     <plate>
-      <pickle class="small" />
+      <lemon class="small" />
     </plate>
     <plate>
       <apple class="small" />
@@ -494,7 +494,7 @@ var levels = [
       <apple class="small" />
     </plate>
     <plate>
-      <pickle />
+      <lemon />
     </plate>
     `
   },
@@ -512,8 +512,8 @@ var levels = [
     boardMarkup : `
     <orange class="small"/>
     <orange class="small" />
-    <pickle />
-    <pickle />
+    <lemon />
+    <lemon />
     <apple class="small" />
     <apple class="small" />
     `
@@ -531,7 +531,7 @@ var levels = [
     boardMarkup:`
     <tray/>
     <tray>
-      <pickle class="small"/>
+      <lemon class="small"/>
     </tray>
     <plate/>
     <tray/>`
@@ -559,7 +559,7 @@ var levels = [
     <plate>
       <orange class="small" />
     </plate>
-    <pickle class="small" />
+    <lemon class="small" />
     `
   },
   {
@@ -576,9 +576,9 @@ var levels = [
     boardMarkup:`
     <tray><apple class="small"/></tray>
     <apple for="Ethan"/>
-    <plate for="Alice"><pickle/></plate>
+    <plate for="Alice"><lemon/></plate>
     <tray for="Clara"><orange/></tray>
-    <pickle/>`
+    <lemon/>`
   },
   {
     selectorName: "Attribute Selector",
@@ -593,7 +593,7 @@ var levels = [
       '<strong>input[disabled]</strong> selects all <tag>input</tag> elements with the <strong>disabled</strong> attribute'
     ],
     boardMarkup:`
-    <plate for="Sarah"><pickle/></plate>
+    <plate for="Sarah"><lemon/></plate>
     <plate for="Luke"><apple/></plate>
     <plate/>
     <tray for="Steve"><orange/></tray>
@@ -613,7 +613,7 @@ var levels = [
     <apple for="Alexei" />
     <tray for="Albina"><apple /></tray>
     <tray for="Vitaly"><orange/></tray>
-    <pickle/>
+    <lemon/>
     `
   },
   {
@@ -627,7 +627,7 @@ var levels = [
       '<strong>.toy[category^="Swim"]</strong> selects elements with class <strong>toy</strong> and either <strong>category="Swimwear"</strong> or <strong>category="Swimming"</strong>.'
     ],
     boardMarkup: `
-    <plate for="Sam"><pickle/></plate>
+    <plate for="Sam"><lemon/></plate>
     <tray for="Sarah"><apple class="small"/></tray>
     <tray for="Mary"><orange/></tray>
     `
@@ -644,10 +644,10 @@ var levels = [
     ],
     boardMarkup:`
     <apple class="small"/>
-    <tray for="Hayato"><pickle/></tray>
+    <tray for="Hayato"><lemon/></tray>
     <apple for="Ryota"></apple>
     <plate for="Minato"><orange/></plate>
-    <pickle class="small"/>
+    <lemon class="small"/>
     `
   },
   {
@@ -663,7 +663,7 @@ var levels = [
     ],
     boardMarkup:`
     <tray for="Robbie"><apple /></tray>
-    <tray for="Timmy"><pickle /></tray>
+    <tray for="Timmy"><lemon /></tray>
     <tray for="Bobby"><orange /></tray>
     `
   }
