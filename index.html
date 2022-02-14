@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS Diner - Where we feast on CSS Selectors!</title>
-    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/levels.js" type="text/javascript" charset="utf-8"></script>
+    <title>CSSoda - Play & Enjoy learning CSS!</title>
+    <!--TODO Evaluate [and test] to upgrade this version -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js" integrity="sha512-h9kKZlwV1xrIcr2LwAPZhjlkx+x62mNwuQK5PAu9d3D+JXMNlGx8akZbqpXvp0vA54rz+DrqYVrzUGDMhwKmwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="locales/en/levels.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/restaurant.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/jquery.mCustomScrollbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js" integrity="sha512-Yk47FuYNtuINE1w+t/KT4BQ7JaycTCcrvlSvdK/jry6Kcxqg5vN7/svVWCxZykVzzJHaxXk5T9jnFemZHSYgnw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:200,400,600,400italic,600italic' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.css" integrity="sha512-fxF1t7b0mpb/ytjBeSu/OpgXxCVcX5/O8AJGYvHaWmNfi/lYLtttitFK17K4iKBva4iU9dcZ+BIV7dyD/nDdSw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
-    <meta property="og:url"           content="http://cssdiner.com" />
+    <meta property="og:url"           content="https://cssoda.github.io/juego/" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="CSS Diner" />
-    <meta property="og:description"   content="A fun game to help you learn and practice CSS selectors." />
-    <meta property="og:image"         content="https://flukeout.github.io/images/fb-share.jpg" />
+    <meta property="og:title"         content="CSSoda" />
+    <meta property="og:description"   content="A very fun game to help you learn and practice CSS Selectors." />
+    <meta property="og:image"         content="https://github.com/cssoda/juego/blob/main/images/fb-share.jpg" />
   </head>
 
   <body>
     <div class="left-col">
 
       <header>
-        CSS Diner
-        <div class="logo">
-          <plate><apple /></plate>
-        </div>
+        CSSoda
+        <div class="logo"><div>&#129380;</div></div>
         <span class="share-menu">
           Share
           <a class="share-twitter" type="twitter" href="#"></a>
@@ -120,10 +120,10 @@ p {
 
       <div class="what-is-this">
         <p>
-          Made by <a href="http://www.twitter.com/flukeout">@flukeout</a> &mdash; come say hi!
+          Enhanced & Continued by <a href="https://github.com/salvatorius">Salvatorius</a>  &mdash; from a fork of <a href="https://github.com/flukeout/css-diner">css-dinner</a>!
         </p>
         <p>
-          Have feedback or questions? Please file an issue on <a href="https://github.com/flukeout/css-diner/issues">the Github repo</a>.
+          Some feedback, questions, suggestions, errors? Please issue a ticket directly to <a href="https://github.com/cssoda/juego/issues">our Github respository</a>.
         </p>
       </div>
 
@@ -168,20 +168,6 @@ p {
       </div>
 
     </div><!-- /right-col -->
-
-  <script>
-    if(location.hostname != "localhost"){
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-62998410-1', 'auto');
-      ga('send', 'pageview');
-    } else {
-      var ga = false;
-    }
-  </script>
 
   </body>
 </html>

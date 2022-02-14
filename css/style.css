@@ -27,9 +27,10 @@ h1, h2, h3, h4, h5 {
 }
 
 header {
-  padding: 12px 15px 11px 35px;
+  padding: 15px 15px 5px 50px;
   color: rgba(255,255,255,.3);
   text-align: left;
+  font-size: x-large;
 }
 
 .share-menu {
@@ -78,29 +79,18 @@ header {
 
 .logo {
   cursor: default;
-  transform: scale(.2);
+  transform: scale(2.0);
   position: absolute;
   top: 12px;
-  left: 10px;
+  left: 15px;
   color: rgba(255,255,255,.4);
 }
 
-.logo plate {
-  z-index: 500;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  opacity: .5;
-  transition: all opacity .1s ease-out;
-}
-
-.logo:hover plate {
+.logo:hover div {
   opacity: .75;
   transform-origin: bottom;
   animation: strobeStart .5s ease-out, strobe 1s infinite;
   animation-delay: 0s, .5s;
-
 }
 
 .table-wrapper {
@@ -167,7 +157,7 @@ header {
   right: 20px;
 }
 
-orange, apple, pickle, bento, plate {
+orange, apple, lemon, pickle, tray, plate {
   transition: transform ease-out .2s;
 }
 
@@ -191,8 +181,6 @@ orange, apple, pickle, bento, plate {
 }
 
 
-
-
 .clean {
   animation: cleanme .2s 1;
   transform: translateY(-600px);
@@ -203,7 +191,7 @@ orange, apple, pickle, bento, plate {
   100% { transform: translateY(-600px) rotate3d(0,0,0,0deg);}
 }
 
-bento, plate {
+tray, plate {
   box-shadow: 0px 8px 0px rgba(0,0,0,.1);
   display: inline-block;
   width: 100px;
@@ -219,17 +207,16 @@ plate {
   border-radius: 100px;
 }
 
-bento {
+tray {
   height: 100px;
-  background: brown;
+  background: #4ac21c;
   position: relative;
-  border: solid 3px #711c12;
-  border-width: 20px 2px;
+  border: solid 3px #166107;
+  border-top-color: #0b3805;
+  border-width: 15px 3px;
 }
 
-
-
-plate bento {
+plate tray {
   height: 74px;
   width: 74px;
   position: absolute;
@@ -238,12 +225,13 @@ plate bento {
 
 }
 
-plate bento apple,
-plate bento orange {
+plate tray apple,
+plate tray lemon,
+plate tray orange {
   top: -36px !important;
 }
 
-bento:before {
+tray:before {
   content:"";
   position: absolute;
   width: calc(100%);
@@ -349,9 +337,14 @@ bento:before {
 
 .editor input.input-strobe {
   background: rgba(62,203,255,.3);
+  animation: input .5s infinite;
   -webkit-animation: input .5s infinite;
   -moz-animation: input .5s infinite;
 
+}
+
+@keyframes input {
+  50% { background:none ; }
 }
 
 @-webkit-keyframes input {
@@ -380,38 +373,24 @@ apple {
   border-color: #ab1212;
 }
 
+lemon {
+  background: #ffee0e;
+  border-color: #637c1c;
+}
+
 orange {
   background: orange;
   border-color: #bd6e07;
 }
 
-orange,apple,pickle {
+orange,apple,lemon,pickle {
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   display: inline-block;
   margin: 0 10px;
   height: 60px;
 }
 
-
-
-carrot {
-  background: orange;
-  width: 60px;
-  height: 60px;
-  display: inline-block;
-  box-shadow: 0px 5px 0px rgba(0,0,0,.15);
-
-  background: #f9e4ac;
-  border-style: solid;
-  border-color: #88611e;
-  border-width: 2px 2px 12px 2px;
-  -webkit-border-radius: 15px 15px 6px 6px;
-  border-radius: 15px 15px 6px 6px;
-  margin: 20px 10px;
-}
-
-
-orange,apple {
+orange,apple,lemon {
   -webkit-border-radius: 100px;
   border-radius: 100px;
   border-style: solid;
@@ -422,6 +401,12 @@ orange,apple {
   margin: 20px 10px;
 }
 
+lemon {
+  height: 50px;
+  width: 50px;
+  border-width: 2px 6px 12px 4px;
+}
+
 orange.small,
 apple.small {
   height: 30px;
@@ -429,6 +414,14 @@ apple.small {
   border-width: 2px 4px 8px 4px;
   margin: 30px 10px;
 }
+
+lemon.small {
+  height: 25px;
+  width: 25px;
+  border-width: 2px 4px 6px 3px;
+  margin: 25px 10px;
+}
+
 
 pickle {
   background: #179837;
@@ -448,7 +441,7 @@ pickle.small {
   margin: 30px 10px;
 }
 
-orange:before,apple:before {
+orange:before,apple:before,lemon:before {
   content: "";
   display: block;
   position: absolute;
@@ -462,9 +455,11 @@ orange:before,apple:before {
 
 /*FRUITS ON A PLATTER*/
 
-bento orange,
-bento apple,
+tray orange,
+tray lemon,
+tray apple,
 plate orange,
+plate lemon,
 plate apple
  {
   left: calc(50% - 30px);
@@ -472,30 +467,42 @@ plate apple
   position: absolute;
 }
 
+tray lemon,
+plate lemon {
+  margin: 6px;
+}
+
 plate > apple:last-child,
+plate > lemon:last-child,
 plate > orange:last-child,
-bento > apple:last-child,
-bento > orange:last-child
+tray > apple:last-child,
+tray > lemon:last-child,
+tray > orange:last-child
 {
   top: calc(50% - 35px);
 }
 
 plate .small,
-bento .small {
+tray .small {
   left: calc(50% - 15px);
   margin-left:0;
   margin-right:0;
 }
 
 plate > .small:only-child,
-bento > .small:only-child {
+tray > .small:only-child {
   position: absolute;
   top: calc(50% - 15px);
   margin:0;
 }
 
+plate > lemon.small:only-child,
+tray > lemon.small:only-child {
+  margin:4px;
+}
+
 plate > pickle:only-child,
-bento > pickle:only-child {
+tray > pickle:only-child {
   top: calc(50% - 40px);
   left: calc(50% - 10px);
   z-index: 99999;
@@ -504,7 +511,7 @@ bento > pickle:only-child {
 }
 
 plate > pickle.small:only-child,
-bento > pickle.small:only-child {
+tray > pickle.small:only-child {
   top: calc(50% - 22px);
   left: calc(50% - 8px);
   z-index: 99999;
@@ -546,7 +553,6 @@ bento > pickle.small:only-child {
   60% { transform:  skew(-1deg,0deg) scaleY(.9) ; }
   100% {transform: skew(4deg,0deg) scaleX(1); }
 }
-
 
 .enter-button {
   background: #ddd;
@@ -599,12 +605,6 @@ bento > pickle.small:only-child {
 plate [data-hovered] {
   box-shadow: 0 0 0 6px rgba(0,0,0,.3);
 }
-
-/*
-apple[data-hovered="true"] {
-  box-shadow: 0 0 0 6px rgba(228,25,25,.3);
-}
-*/
 
 .helper {
   position: absolute;
@@ -762,22 +762,26 @@ board {
 /* Fancy orange stacking */
 
 plate apple,
+plate lemon,
 plate orange {
   position: absolute;
 }
 
 plate apple:last-child,
+plate lemon:last-child,
 plate orange:last-child {
   z-index: 300;
 }
 
 plate apple:nth-last-child(2),
+plate lemon:nth-last-child(2),
 plate orange:nth-last-child(2) {
   top: -25px;
   z-index: 400;
 }
 
 plate apple:nth-last-child(3),
+plate lemon:nth-last-child(3),
 plate orange:nth-last-child(3)
 {
   top: -65px;
@@ -785,6 +789,7 @@ plate orange:nth-last-child(3)
 }
 
 plate apple:nth-last-child(4),
+plate lemon:nth-last-child(4),
 plate orange:nth-last-child(4)
 {
   top: -105px;
@@ -870,6 +875,7 @@ plate orange:nth-last-child(4)
   width: 4px;
   border: solid 2px #2a231d;
   background: rgba(255,255,255,.5);
+  border-radius: 5px;
   -webkit-border-radius: 5px;
 }
 
@@ -1136,6 +1142,7 @@ plate orange:nth-last-child(4)
   background: rgba(0,0,0,.2);
   color: rgba(255,255,255,.3);
   padding: 8px 15px 10px 15px;
+  border-radius: 20px;
   -webkit-border-radius: 20px;
   text-decoration: none;
   display: inline-block;
@@ -1192,7 +1199,7 @@ plate orange:nth-last-child(4)
   width: 30px;
   display: inline-block;
   opacity: .25;
-  transition: opacity .2s .ease-out;
+  transition: opacity .2s ease-out;
 }
 
 .level-nav a:hover {
@@ -1338,4 +1345,60 @@ tag:after {
 
 .reset-progress:hover {
   background: rgba(255,255,255,.05);
+}
+
+/* Inline Translation Tooltips
+    Use:
+    * Enclose in <k> tags the key word(s) to be translated
+    * Insert a <t> tag with the translation inside the related <k> tag
+      (next to the keywords to be translated)
+    e.g.:
+      doThis: "Seleccione la <k>manzana<t>apple</t></k>"
+*/
+
+/* Keyword */
+k {
+  color: #5aaa66ba;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  cursor: help;
+}
+
+/* Translation Tooltip */
+t {
+  visibility: hidden;
+  width: 120px;
+  font-size: x-large;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  line-height: 30px;
+  /* Fade-in - 0% to 100% opac in 1 sec */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/* Tooltip "arrow" */
+t:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+k:hover t {
+  visibility: visible;
+  opacity: 1;
 }
