@@ -635,7 +635,7 @@ function loadLevel(){
 
   updateProgressUI(currentLevel, checkCompleted(currentLevel));
 
-  $(".order").text(level.doThis);
+  $(".order").html(level.doThis);
   $("input").val("").focus();
 
   $(".input-wrapper").css("opacity",1);
