@@ -1346,3 +1346,59 @@ tag:after {
 .reset-progress:hover {
   background: rgba(255,255,255,.05);
 }
+
+/* Inline Translation Tooltips
+    Use:
+    * Enclose in <k> tags the key word(s) to be translated
+    * Insert a <t> tag with the translation inside the related <k> tag
+      (next to the keywords to be translated)
+    e.g.:
+      doThis: "Seleccione la <k>manzana<t>apple</t></k>"
+*/
+
+/* Keyword */
+k {
+  color: #5aaa66ba;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  cursor: help;
+}
+
+/* Translation Tooltip */
+t {
+  visibility: hidden;
+  width: 120px;
+  font-size: x-large;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  line-height: 30px;
+  /* Fade-in - 0% to 100% opac in 1 sec */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/* Tooltip "arrow" */
+t:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+k:hover t {
+  visibility: visible;
+  opacity: 1;
+}
