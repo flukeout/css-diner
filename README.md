@@ -1,5 +1,5 @@
-# Bienvenidos a CSSoda
+# Welcome to CSSoda
 
-Es un divertido juego para aprender y practicar Selectores CSS
+It's a very fun game to help you learn and practice CSS Selectors
 
-Para jugar, visite el [Sitio de CCSoda en github](https://cssoda.github.io/juego/)
+To play it, just simply visit the [CCSoda Site at github Pages](https://cssoda.github.io/juego/)
