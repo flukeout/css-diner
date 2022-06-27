@@ -689,20 +689,34 @@ orange {
   line-height: 150%;
 }
 
-.display-help .examples-title {
+.display-help .examples-title,
+.display-help .solutions-title{
   margin: 45px 0 10px 0;
   padding: 0;
 }
 
 .display-help .hint,
+.display-help solution,
 .display-help .example {
   color: #888;
   font-size: 15px;
 }
 
-.display-help .example {
+.display-help .example,
+.display-help solution {
   border-bottom: solid 1px rgba(255,255,255,.1);
   padding: 10px 0 12px 0;
+  line-height: 170%;
+}
+
+.display-help .solutions:not(empty) {
+  padding: 10px 0 12px 0;
+  line-height: 170%;
+  overflow: hidden;
+}
+
+.display-help .solutions:empty {
+  padding: 0;
   line-height: 170%;
 }
 
@@ -716,6 +730,18 @@ orange {
   background: rgba(255,255,255,.1);
   padding: 3px 6px 3px 6px;
   margin: 0px 2px;
+  font-size: 13px;
+  font-family: menlo,monospace;
+  font-weight: normal;
+}
+
+.display-help solution {
+  display: inline-block;
+  color: #AAA;
+  background: rgba(255,255,255,.1);
+  border: none;
+  padding: 0 6px 0 6px;
+  margin: 2px 4px 2px 0;
   font-size: 13px;
   font-family: menlo,monospace;
   font-weight: normal;
@@ -1254,6 +1280,14 @@ tag:before {
 
 tag:after {
   content: ">";
+}
+
+solution {
+  cursor: pointer;
+  padding: 0 3px;
+  color: #AAA;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .nametags {

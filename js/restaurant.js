@@ -324,6 +324,12 @@ function showHelp() {
   var help = level.help || "";
   var examples = level.examples ||[];
   var selector = level.selector || "";
+  var solutions = []
+  if (progress.guessHistory[currentLevel]) {
+    if (progress.guessHistory[currentLevel].solutions) {
+      solutions = progress.guessHistory[currentLevel].solutions;
+    }
+  }
   var syntax = level.syntax || "";
   var syntaxExample = level.syntaxExample || "";
   var selectorName = level.selectorName || "";
@@ -332,8 +338,19 @@ function showHelp() {
   $(".display-help .syntax-example").html(syntaxExample);
   $(".display-help .selector-name").html(selectorName);
   $(".display-help .title").html(helpTitle);
-  $(".display-help .examples").html("");
+  $(".display-help .solutions-title").hide(); // Hide the "Solutions" heading
+  $(".display-help .solutions").html("");
   $(".display-help .examples-title").hide(); // Hide the "Examples" heading
+  $(".display-help .examples").html("");
+
+  for(var s of solutions){
+    var solution = $("<solution>" + s + "</solution>");
+    solution.click(function(event){
+      $("input").val(event.target.textContent).focus();
+    })
+    $(".display-help .solutions").append(solution);
+    $(".display-help .solutions-title").show(); // Show it if there are examples
+  }
 
   for(var i = 0; i < examples.length; i++){
     var example = $("<div class='example'>" + examples[i] + "</div>");
@@ -414,6 +431,22 @@ function fireRule(rule) {
   }
 
   if(win){
+    if (progress.guessHistory[currentLevel]) {
+      if (progress.guessHistory[currentLevel].solutions) {
+        if (!progress.guessHistory[currentLevel].solutions.includes(rule)) {
+          $(".display-help .solutions-title").show();
+          let solution = $("<solution>" + rule + "</solution>");
+          $(".display-help .solutions").append(solution);
+        }
+      }
+    }
+    else {
+      console.log('shit')
+      $(".display-help .solutions-title").show();
+      let solution = $("<solution>" + rule + "</solution>");
+      $(".display-help .solutions").append(solution);
+    }
+
     ruleSelected.removeClass("strobe");
     ruleSelected.addClass("clean");
     $("input").val("");
@@ -444,7 +477,7 @@ function fireRule(rule) {
   // If answer is correct, let's track progress
 
   if(win){
-    trackProgress(currentLevel-1, "correct");
+    trackProgress(currentLevel-1, "correct", rule);
   } else {
     trackProgress(currentLevel, "incorrect");
   }
@@ -461,12 +494,13 @@ function updateProgressUI(levelNumber, completed){
   }
 }
 
-function trackProgress(levelNumber, type){
+function trackProgress(levelNumber, type, rule = null){
   if(!progress.guessHistory[levelNumber]) {
     progress.guessHistory[levelNumber] = {
       correct : false,
       incorrectCount : 0,
-      gaSent : false
+      solutions : [],
+      gaSent : false,
     };
   }
 
@@ -483,6 +517,14 @@ function trackProgress(levelNumber, type){
       progress.percentComplete = progress.totalCorrect / levels.length;
       levelStats.gaSent = true;
       sendEvent("guess", "correct", levelNumber + 1); // Send event
+    }
+    if(levelStats.solutions) {
+      if (!levelStats.solutions.includes(rule.toString())) {
+        levelStats.solutions.push(rule.toString());
+      }
+    }
+    else {
+      levelStats.solutions = [rule]
     }
   }
 
