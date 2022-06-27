@@ -607,7 +607,7 @@ apple[data-hovered="true"] {
 */
 
 .helper {
-  position: absolute;
+  position: fixed;
   background: white;
   padding: 10px 15px 12px 15px;
   z-index: 1000;
@@ -916,7 +916,7 @@ plate orange:nth-last-child(4)
   text-align: center;
   margin-top: 35px;
   padding: 20px 0;
-  width: 725px;
+  width: 100%;
   color: rgba(255,255,255,.3);
   font-size: 15px;
   margin: 0 auto;
@@ -960,13 +960,13 @@ plate orange:nth-last-child(4)
 }
 
 .left-col {
-  width: calc(100% - 375px);
+  width: calc(100% - 375px - ((100vw - 1600px) * 1.2));
   text-align: center;
   overflow-x: visible;
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: calc((100vw - 1600px) * 0.6);
   z-index: 2;
 }
 
@@ -975,13 +975,24 @@ plate orange:nth-last-child(4)
 .right-col {
   position: fixed;
   width: 375px;
-  right: 0;
+  right: calc((100vw - 1600px) * 0.6);
 /*  overflow: auto;*/
   top: 40px;
   top: 0;
   bottom: 0;
   background: #221e18;
   z-index: 1;
+}
+
+@media (max-width: 1600px) {
+  .left-col {
+    width: calc(100% - 375px);
+    left: 0;
+  }
+
+  .right-col {
+    right: 0;
+  }
 }
 
 .level-menu {
