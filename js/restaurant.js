@@ -475,8 +475,10 @@ function fireRule(rule) {
     rule = null;
   }
 
-  var ruleSelected = $(".table").find(rule).not(baseTable);            // What the correct rule finds
-  var levelSelected = $(".table").find(level.selector).not(baseTable); // What the person finds
+  $(".table").html(level.boardMarkup)
+  var ruleSelected = $(".table").find(rule);                           // What the person finds
+  var highlightSelected = $(".table").find(rule).not(baseTable);       // What the person sees
+  var levelSelected = $(".table").find(level.selector).not(baseTable); // What the correct rule finds
 
   var win = false;
 
@@ -496,8 +498,8 @@ function fireRule(rule) {
         if (s.textContent === rule) {
 
           $(".strobe").removeClass("strobe");
-          ruleSelected.removeClass("strobe");
-          ruleSelected.addClass("shake");
+          highlightSelected.removeClass("strobe");
+          highlightSelected.addClass("shake");
 
           s.classList.add("shake")
           setTimeout(function(){
@@ -597,8 +599,9 @@ function fireRule(rule) {
   } else {
     trackProgress(currentLevel, "incorrect");
 
-    ruleSelected.removeClass("strobe");
-    ruleSelected.addClass("shake");
+    $(".strobe").removeClass("strobe");
+    highlightSelected.removeClass("strobe");
+    highlightSelected.addClass("shake");
 
     setTimeout(function(){
       $(".shake").removeClass("shake");
@@ -709,10 +712,20 @@ function winGame(){
 }
 
 function checkResults(ruleSelected,levelSelected,rule){
-  var ruleTable = $(".table").clone();
-  ruleTable.find(".strobe").removeClass("strobe");
+  var checkTable = $(".table").clone()
+  var htmlObject = document.createElement('div');
+  var ruleTable = $(htmlObject).html(level.boardMarkup);
   ruleTable.find(rule).addClass("strobe");
-  return($(".table").html() == ruleTable.html());
+  checkTable.find(level.selector).addClass("strobe");
+
+  checkTable.find("*").each(function () {
+    $(this).removeAttr("style");
+    if ($(this).attr('class') === "") {
+      $(this).removeAttr("class");
+    }
+  })
+
+  return(checkTable.html() === ruleTable.html());
 }
 
 // Returns all formatted markup within an element...
