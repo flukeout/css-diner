@@ -51,6 +51,28 @@ $(document).ready(function(){
     if(e.keyCode == 27) {
       closeMenu();
     }
+
+    if ($("input").val().trim() === "") {
+      if(e.keyCode === 37) {
+        currentLevel--;
+        if(currentLevel < 0) {
+          currentLevel = 0;
+        }
+
+        loadLevel();
+        $("input").focus();
+      }
+      else if (e.keyCode === 39) {
+        currentLevel++;
+        if(currentLevel >= levels.length) {
+          currentLevel = levels.length - 1;
+        }
+
+        loadLevel();
+        $("input").focus();
+      }
+    }
+
   });
 
   // Custom scrollbar plugin
