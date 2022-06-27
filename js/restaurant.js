@@ -87,6 +87,11 @@ $(document).ready(function(){
     autoHideScrollbar: true
   });
 
+  $(".right-col").mCustomScrollbar({
+    scrollInertia: 0,
+    autoHideScrollbar: true
+  });
+
   $(".note-toggle").on("click", function(){
     $(this).hide();
     $(".note").slideToggle();
@@ -278,10 +283,14 @@ function toggleMenuItems(){
 
 function closeMenu(){
   $(".right-col").removeClass("menu-open");
+  $("#mCSB_3_container").css('max-height', '');
+  $("#mCSB_3_scrollbar_vertical").css('opacity', '1');
 }
 
 function openMenu(){
   $(".right-col").addClass("menu-open");
+  $("#mCSB_3_container").css('max-height', '100%');
+  $("#mCSB_3_scrollbar_vertical").css('opacity', '0');
 }
 
 
@@ -419,6 +428,8 @@ function showHelp() {
       $(".display-help .examples-title").show(); // Show it if there are examples
     }
   }
+
+  $("#mCSB_3_container").css('min-height', '100%');
 }
 
 function resetTable(){
