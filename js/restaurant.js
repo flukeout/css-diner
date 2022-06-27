@@ -441,7 +441,6 @@ function fireRule(rule) {
       }
     }
     else {
-      console.log('shit')
       $(".display-help .solutions-title").show();
       let solution = $("<solution>" + rule + "</solution>");
       $(".display-help .solutions").append(solution);
