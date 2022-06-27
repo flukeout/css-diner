@@ -47,6 +47,12 @@ $(document).ready(function(){
     return false;
   });
 
+  $("input").on("input",function(e) {
+    localStorage.setItem("input", e.target.value)
+  })
+
+  $("input").val(localStorage.getItem("input"));
+
   $(window).on("keydown",function(e){
     if(e.keyCode == 27) {
       closeMenu();
