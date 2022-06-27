@@ -116,6 +116,7 @@ $(document).ready(function(){
     }
 
     loadLevel();
+    $("input").focus();
     return false;
   });
 
@@ -186,6 +187,7 @@ $(document).ready(function(){
   setTimeout(function(){
     loadLevel();
     $(".table-wrapper,.table-edge").css("opacity",1);
+    $("input").focus()
   },50);
 });
 
