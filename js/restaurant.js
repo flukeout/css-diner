@@ -550,11 +550,49 @@ function fireRule(rule) {
     }
 
     if(currentLevel >= levels.length) {
+
+      currentLevel = levels.length - 1;
+
+      for (let i = currentLevel; i >= 0; i--) {
+        if (!checkCompleted(i)) {
+          currentLevel = i;
+          setTimeout(function(){
+            loadLevel();
+          },levelTimeout);
+          return
+        }
+      }
+
       winGame();
     } else {
-      setTimeout(function(){
-        loadLevel();
-      },levelTimeout);
+      for (let i = currentLevel; i < levels.length; i++) {
+        if (!checkCompleted(i)) {
+          currentLevel = i;
+          setTimeout(function(){
+            loadLevel();
+          },levelTimeout);
+          return
+        }
+      }
+
+      for (let i = currentLevel; i >= 0; i--) {
+        if (!checkCompleted(i)) {
+          currentLevel = i;
+          setTimeout(function(){
+            loadLevel();
+          },levelTimeout);
+          return
+        }
+      }
+      if (localStorage.getItem("hardcore") !== "1") {
+        winGame();
+      }
+      else {
+        // TODO Make condition to win HARDCORE mode
+        setTimeout(function(){
+          loadLevel();
+        },levelTimeout);
+      }
     }
   } else {
     trackProgress(currentLevel, "incorrect");
