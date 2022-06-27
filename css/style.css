@@ -607,7 +607,7 @@ apple[data-hovered="true"] {
 */
 
 .helper {
-  position: absolute;
+  position: fixed;
   background: white;
   padding: 10px 15px 12px 15px;
   z-index: 1000;
@@ -689,20 +689,34 @@ orange {
   line-height: 150%;
 }
 
-.display-help .examples-title {
+.display-help .examples-title,
+.display-help .solutions-title{
   margin: 45px 0 10px 0;
   padding: 0;
 }
 
 .display-help .hint,
+.display-help solution,
 .display-help .example {
   color: #888;
   font-size: 15px;
 }
 
-.display-help .example {
+.display-help .example,
+.display-help solution {
   border-bottom: solid 1px rgba(255,255,255,.1);
   padding: 10px 0 12px 0;
+  line-height: 170%;
+}
+
+.display-help .solutions:not(empty) {
+  padding: 10px 0 12px 0;
+  line-height: 170%;
+  overflow: hidden;
+}
+
+.display-help .solutions:empty {
+  padding: 0;
   line-height: 170%;
 }
 
@@ -716,6 +730,18 @@ orange {
   background: rgba(255,255,255,.1);
   padding: 3px 6px 3px 6px;
   margin: 0px 2px;
+  font-size: 13px;
+  font-family: menlo,monospace;
+  font-weight: normal;
+}
+
+.display-help solution {
+  display: inline-block;
+  color: #AAA;
+  background: rgba(255,255,255,.1);
+  border: none;
+  padding: 0 6px 0 6px;
+  margin: 2px 4px 2px 0;
   font-size: 13px;
   font-family: menlo,monospace;
   font-weight: normal;
@@ -890,7 +916,7 @@ plate orange:nth-last-child(4)
   text-align: center;
   margin-top: 35px;
   padding: 20px 0;
-  width: 725px;
+  width: 100%;
   color: rgba(255,255,255,.3);
   font-size: 15px;
   margin: 0 auto;
@@ -934,13 +960,13 @@ plate orange:nth-last-child(4)
 }
 
 .left-col {
-  width: calc(100% - 375px);
+  width: calc(100% - 375px - ((100vw - 1600px) * 1.2));
   text-align: center;
   overflow-x: visible;
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: calc((100vw - 1600px) * 0.6);
   z-index: 2;
 }
 
@@ -949,13 +975,24 @@ plate orange:nth-last-child(4)
 .right-col {
   position: fixed;
   width: 375px;
-  right: 0;
+  right: calc((100vw - 1600px) * 0.6);
 /*  overflow: auto;*/
   top: 40px;
   top: 0;
   bottom: 0;
   background: #221e18;
   z-index: 1;
+}
+
+@media (max-width: 1600px) {
+  .left-col {
+    width: calc(100% - 375px);
+    left: 0;
+  }
+
+  .right-col {
+    right: 0;
+  }
 }
 
 .level-menu {
@@ -1254,6 +1291,14 @@ tag:before {
 
 tag:after {
   content: ">";
+}
+
+solution {
+  cursor: pointer;
+  padding: 0 3px;
+  color: #AAA;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .nametags {
