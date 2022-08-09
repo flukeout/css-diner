@@ -362,11 +362,6 @@ function resetTable(){
 
 function fireRule(rule) {
 
-  // prevent cheating
-  if(rule === ".strobe") {
-    rule = null;
-  }
-
   $(".shake").removeClass("shake");
 
   $(".strobe,.clean,.shake").each(function(){
@@ -410,7 +405,7 @@ function fireRule(rule) {
   }
 
   if(ruleSelected.length == levelSelected.length && ruleSelected.length > 0){
-    win = checkResults(ruleSelected,levelSelected,rule);
+    win = checkResults(rule);
   }
 
   if(win){
@@ -519,7 +514,7 @@ function winGame(){
   resetTable();
 }
 
-function checkResults(ruleSelected,levelSelected,rule){
+function checkResults(rule){
   var ruleTable = $(".table").clone();
   ruleTable.find(".strobe").removeClass("strobe");
   ruleTable.find(rule).addClass("strobe");
