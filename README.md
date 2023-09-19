@@ -31,7 +31,7 @@ Please file issues and PRs in the [css-diner repo](https://github.com/flukeout/c
 Here's the repo structure, it's a bit confusing...
 
 * Currently, all of the working code (including issues, PRs and in-progress branches) is hosted in the [css-diner repo](https://github.com/flukeout/css-diner/)
-  * The lastest version of the code is on the ``develop`` branch
+  * The latest version of the code is on the ``develop`` branch
 * The live version is published from the [flukeout.github.io repo](https://github.com/flukeout/flukeout.github.io/issues)
   * Live version lives on the ``master`` branch
 
